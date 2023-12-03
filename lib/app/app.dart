@@ -1,11 +1,13 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
 import '../core/constants/internet_connection.dart';
+import '../core/constants/themes_manager.dart';
 import '../core/global_bloc/app_cubit/app_cubit.dart';
 import '../core/global_bloc/app_cubit/app_state.dart';
 import '../core/router/app_router.dart';
+import 'generated/l10n.dart';
 
 class MyApp extends StatefulWidget {
   // named constructor
@@ -44,15 +46,20 @@ class _MyAppState extends State<MyApp> {
                     return const LostConnection();
                   }
                 else{
-                  return  const MaterialApp(
+                  return MaterialApp(
                     onGenerateRoute: AppRouter.onGenerateRoutes,
                     debugShowCheckedModeBanner: false,
-                    // locale: cubit.locale,
-                    // supportedLocales: supportedLocales,
-                    // localizationsDelegates: localizationDelegates,
-                    // themeMode: cubit.themeMode,
-                    // theme: ThemesManager.lightTheme,
-                    // darkTheme: ThemesManager.darkTheme,
+                    locale: cubit.locale,
+                    localizationsDelegates: const [
+                      S.delegate,
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                    ],
+                    supportedLocales: S.delegate.supportedLocales,
+                    themeMode: cubit.themeMode,
+                    theme: ThemesManager.lightTheme,
+                    darkTheme: ThemesManager.darkTheme,
                   );
                 }
               },

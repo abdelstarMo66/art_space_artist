@@ -24,6 +24,8 @@ dependencies:
   cached_network_image: ^3.3.0
   flutter_svg: ^2.0.9
   connectivity_plus: ^5.0.1
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -35,9 +37,9 @@ flutter:
 
   uses-material-design: true
 
-  assets:
-    - assets/images
-    - assets/icons
+#  assets:
+#    - assets/images
+#    - assets/icons
 
   fonts:
     - family: Alexandria

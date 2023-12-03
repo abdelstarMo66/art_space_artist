@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../../../../app/generated/l10n.dart';
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('LOGIN'),
+        child: Text(S.of(context).title),
       ),
     );
   }
