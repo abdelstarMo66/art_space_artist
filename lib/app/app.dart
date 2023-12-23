@@ -7,7 +7,7 @@ import '../core/constants/themes_manager.dart';
 import '../core/global_bloc/app_cubit/app_cubit.dart';
 import '../core/global_bloc/app_cubit/app_state.dart';
 import '../core/router/app_router.dart';
-import 'generated/l10n.dart';
+import '../generated/l10n.dart';
 
 class MyApp extends StatefulWidget {
   // named constructor
@@ -47,6 +47,7 @@ class _MyAppState extends State<MyApp> {
                   }
                 else{
                   return MaterialApp(
+                    title: "Art Space",
                     onGenerateRoute: AppRouter.onGenerateRoutes,
                     debugShowCheckedModeBanner: false,
                     locale: cubit.locale,

@@ -24,17 +24,7 @@ class AppCubit extends Cubit<AppState> {
 
 
   initAppCubit() {
-    // _initLocale();
     _initDarkTheme();
-  }
-
-  Future _initLocale() async {
-    final lang = CacheHelper.getDataFromSharedPreference(
-          key: CacheKeyManager.ckAppLang,
-        ) ??
-        'en';
-    _locale = Locale(lang);
-    emit(AppLanguageUpdateState());
   }
 
   Future changeAppLanguage(Locale locale) async {
@@ -48,9 +38,7 @@ class AppCubit extends Cubit<AppState> {
 
   Future _initDarkTheme() async {
     final isDarkTheme = CacheHelper.getDataFromSharedPreference(
-          key: CacheKeyManager.ckIsDarkTheme,
-        ) ??
-        false;
+          key: CacheKeyManager.ckIsDarkTheme,) ?? false;
     _themeMode = isDarkTheme ? ThemeMode.dark : ThemeMode.light;
     await CacheHelper.saveDataSharedPreference(
       key: CacheKeyManager.ckIsDarkTheme,
@@ -69,4 +57,6 @@ class AppCubit extends Cubit<AppState> {
     _isDark = _themeMode == ThemeMode.dark;
     emit(AppThemeUpdateState());
   }
+
+  bool lastScreenOnBoarding = false;
 }
