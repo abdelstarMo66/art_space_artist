@@ -7,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../generated/l10n.dart';
 
 class LostConnection extends StatelessWidget {
-  const LostConnection({Key? key}) : super(key: key);
+  const LostConnection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class LostConnection extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset('assets/images/No connection-pana 1.png',height: MediaQuery.of(context).size.height * 0.5),
+              Image.asset('assets/images/img_no_connection_internet.png',height: MediaQuery.of(context).size.height * 0.5),
               const SizedBox(
                 height: 20.0,
               ),

@@ -9,7 +9,6 @@ import 'core/services/dio_helper.dart';
 import 'core/services/notification_service.dart';
 
 Future<void> main() async {
-
   await runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
@@ -25,4 +24,3 @@ Future<void> main() async {
     },
   );
 }
-

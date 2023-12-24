@@ -1,6 +1,6 @@
 name: art_space_artist
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: 'https://github.com/abdelstarMo66/art_space_artist'
 version: 1.0.0+1
 
 environment:
@@ -33,7 +33,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 flutter:
   generate: true
@@ -41,6 +41,8 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/icons/
+
   fonts:
     - family: Alexandria
       fonts:
