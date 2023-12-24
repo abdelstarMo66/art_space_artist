@@ -4,7 +4,6 @@ import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../generated/l10n.dart';
 
 class LostConnection extends StatelessWidget {
@@ -20,20 +19,20 @@ class LostConnection extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SvgPicture.asset('assets/images/Onlinegallerypana1.svg',height: MediaQuery.of(context).size.height * 0.5),
+              Image.asset('assets/images/No connection-pana 1.png',height: MediaQuery.of(context).size.height * 0.5),
               const SizedBox(
                 height: 20.0,
               ),
-              const Text(
-                "Whoops !!",
+               const Text(
+                "Whoops",
                 style: TextStyles.textStyle24,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(
                 height: 35,
               ),
-               const Text(
-                "No internet connection found. \n Please check your internet setting}",
+                const Text(
+                "No internet connection found.\nPlease check your internet setting",
                 style: TextStyles.textStyle20,
                 textAlign: TextAlign.center,
               ),

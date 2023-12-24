@@ -1,0 +1,17 @@
+{
+  "onBoardingAppBarTitle" : "تخطي",
+  "onBoardingFirstScreenMain": "زيارة المعرض وعرض اللوحة المناسبه",
+  "onBoardingFirstScreenSecond": "إنها تريد الحصول على مزيد من التفاصيل حول الأفكار حول اللوحة",
+  "onBoardingSecScreenMain": "استكشاف المعرض في المنزل",
+  "onBoardingSecScreenSecond": "لوريم إيبسوم هو ببساطة نص وهمي من صناعة الطباعة والتنضيد.لوريم إيبسوم هو ببساطة نص وهمي من صناعة الطباعة والتنضيد.",
+  "onBoardingThirdScreenMain": "يقوم العميل بشراء اللوحة المناسبة ووضعها على الحائط",
+  "onBoardingThirdScreenSecond": "لوريم إيبسوم هو ببساطة نص وهمي من صناعة الطباعة والتنضيد.لوريم إيبسوم هو ببساطة نص وهمي من صناعة الطباعة والتنضيد.",
+  "login": "تسجيل الدخول",
+  "email" : "البريد الألكتروني",
+  "password" : "كلمة المرور",
+  "forgetPassword" : "نسيت كلمة المرور",
+  "don/'tHaveAccount": "ليس لدي حساب",
+  "register": "تسجيل حساب جديد",
+  "whoops": "أووووبس",
+  "noInternet": "لا يتوفر اتصال بالانترنت."
+}

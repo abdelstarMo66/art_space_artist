@@ -1,0 +1,18 @@
+{
+  "onBoardingAppBarTitle" : "Skip",
+  "onBoardingFirstScreenMain": "Visit the exhibition and show suitable painting",
+  "onBoardingFirstScreenSecond": "She want to get more details about insights about the painting",
+  "onBoardingSecScreenMain": "Explore the exhibition at home ",
+  "onBoardingSecScreenSecond": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  "onBoardingThirdScreenMain": "The client buy suitable painting and put in the wall",
+  "onBoardingThirdScreenSecond": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  "login": "Login",
+  "email" : "Email",
+  "password" : "password",
+  "forgetPassword" : "Forget password?",
+  "don/'tHaveAccount": "Don/'t have an account ?",
+  "register": "Register",
+  "whoops": "Whoops",
+  "noInternet": "No internet connection found.\nPlease check your internet setting"
+}
+
