@@ -4,5 +4,7 @@ class ColorManager {
   static const Color transparent = Color(0x00000000);
   static const Color originalWhite = Color(0xFFFFFFFF);
   static const Color originalBlack = Color(0xFF000000);
-  static const Color primaryColor = Color(0xFFBF722D);
+  static const Color primaryColor = Color(0xFF6C63FF);
+  static const Color secondaryColor = Color(0xFF9292FD);
+  static const Color textFormBGColor = Color(0x33C4C4C4);
 }

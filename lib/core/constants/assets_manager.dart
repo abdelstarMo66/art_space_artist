@@ -7,4 +7,7 @@ class AssetsManager {
 
   ///Images
   static const String imgLogoAp = "${_baseImg}ccc";
+  static const String imgOnBoardingScreen1 = "${_baseImg}Online gallery-amico (1).svg";
+  static const String imgOnBoardingScreen2 =  "${_baseImg}Online gallery-pana.svg";
+  static const String imgOnBoardingScreen3 = "${_baseImg}Artist-pana.svg";
 }

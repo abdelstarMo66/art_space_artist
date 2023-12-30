@@ -21,4 +21,34 @@ abstract class TextStyles {
        fontWeight: FontWeight.w200,
       fontFamily: 'Montserrat',
    );
+   static const textStyle18 = TextStyle(
+       color: ColorManager.originalBlack,
+       fontSize: 18,
+       fontWeight: FontWeight.w200,
+      fontFamily: 'Montserrat',
+   );
+   static const textStyle36 = TextStyle(
+       color: ColorManager.originalBlack,
+       fontSize: 34,
+       fontWeight: FontWeight.bold,
+      fontFamily: 'Montserrat',
+   );
+   static const textStyle30 = TextStyle(
+       color: ColorManager.originalBlack,
+       fontSize: 30,
+       fontWeight: FontWeight.w100,
+      fontFamily: 'Montserrat',
+   );
+   static const textStyle12 = TextStyle(
+       color: ColorManager.secondaryColor,
+       fontSize: 12,
+       fontWeight: FontWeight.normal,
+      fontFamily: 'Montserrat',
+   );
+   static const textStyle16 = TextStyle(
+       color: ColorManager.secondaryColor,
+       fontSize: 16,
+       fontWeight: FontWeight.w200,
+      fontFamily: 'Montserrat',
+   );
 }

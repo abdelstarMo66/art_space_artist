@@ -1,11 +1,11 @@
 class OnBoardingScreenUiModel {
   final String image;
-  final String mainText;
-  final String secondText;
+  final String title;
+  final String subTitle;
 
   OnBoardingScreenUiModel({
     required this.image,
-    required this.mainText,
-    required this.secondText,
+    required this.title,
+    required this.subTitle,
   });
 }

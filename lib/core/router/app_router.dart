@@ -1,6 +1,6 @@
 import 'package:art_space_artist/core/router/animation_transition.dart';
 import 'package:art_space_artist/features/auth/presentation/views/login_screen.dart';
-import 'package:art_space_artist/features/onboarding/presentation/views/onboardingScreen.dart';
+import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'app_router_names.dart';
 
@@ -8,9 +8,9 @@ class AppRouter {
   static Route<dynamic> onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
       case AppRouterNames.onBoarding:
-        return SlideRight(page: const OnBoardingScreen());
+        return SlideRight(page:  OnBoardingScreen());
       case AppRouterNames.login:
-        return SlideRight(page: const LoginScreen());
+        return SlideRight(page:  LoginScreen());
       default:
         return unDefinedRoute();
     }

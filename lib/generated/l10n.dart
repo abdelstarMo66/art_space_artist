@@ -120,30 +120,50 @@ class S {
     );
   }
 
-  /// `Login`
+  /// `Welcome back`
+  String get welcomeBack {
+    return Intl.message(
+      'Welcome back',
+      name: 'welcomeBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `sign in to access your account`
+  String get loginMessage {
+    return Intl.message(
+      'sign in to access your account',
+      name: 'loginMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `LOGIN`
   String get login {
     return Intl.message(
-      'Login',
+      'LOGIN',
       name: 'login',
       desc: '',
       args: [],
     );
   }
 
-  /// `Email`
+  /// `Enter your email`
   String get email {
     return Intl.message(
-      'Email',
+      'Enter your email',
       name: 'email',
       desc: '',
       args: [],
     );
   }
 
-  /// `password`
+  /// `Enter your password`
   String get password {
     return Intl.message(
-      'password',
+      'Enter your password',
       name: 'password',
       desc: '',
       args: [],
@@ -160,7 +180,15 @@ class S {
     );
   }
 
-  // skipped getter for the 'don/\'tHaveAccount' key
+  /// `Don't have an account ?`
+  String get newMember {
+    return Intl.message(
+      'Don\'t have an account ?',
+      name: 'newMember',
+      desc: '',
+      args: [],
+    );
+  }
 
   /// `Register`
   String get register {
