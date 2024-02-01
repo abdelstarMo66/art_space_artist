@@ -100,7 +100,7 @@ class OnBoardingScreen extends StatelessWidget {
                       );
                     }
                   },
-                  backgroundColor: ColorManager.originalBlack,
+                  backgroundColor: ColorManager.primaryColor,
                   child: const Icon(
                     Icons.arrow_forward_ios,
                     color: ColorManager.originalWhite,
@@ -108,7 +108,7 @@ class OnBoardingScreen extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

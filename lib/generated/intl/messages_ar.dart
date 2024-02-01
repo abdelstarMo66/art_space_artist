@@ -22,10 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "email": MessageLookupByLibrary.simpleMessage("البريد الألكتروني"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("تاكيد كلمة المرور"),
+        "email": MessageLookupByLibrary.simpleMessage("ادخل البريد الألكتروني"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "loginMessage":
+            MessageLookupByLibrary.simpleMessage("سجل دخولك لحسابك الخاص"),
+        "name": MessageLookupByLibrary.simpleMessage("ادخل اسمك"),
+        "newMember": MessageLookupByLibrary.simpleMessage("عضو جديد؟"),
         "noInternet":
             MessageLookupByLibrary.simpleMessage("لا يتوفر اتصال بالانترنت."),
         "onBoardingAppBarTitle": MessageLookupByLibrary.simpleMessage("تخطي"),
@@ -41,8 +47,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "يقوم العميل بشراء اللوحة المناسبة ووضعها على الحائط"),
         "onBoardingThirdScreenSecond": MessageLookupByLibrary.simpleMessage(
             "لوريم إيبسوم هو ببساطة نص وهمي من صناعة الطباعة والتنضيد.لوريم إيبسوم هو ببساطة نص وهمي من صناعة الطباعة والتنضيد."),
-        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "password": MessageLookupByLibrary.simpleMessage("ادخل كلمة المرور"),
+        "phone": MessageLookupByLibrary.simpleMessage("ادخل رقم الهاتف"),
         "register": MessageLookupByLibrary.simpleMessage("تسجيل حساب جديد"),
+        "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحبا بعودتك"),
         "whoops": MessageLookupByLibrary.simpleMessage("أووووبس")
       };
 }

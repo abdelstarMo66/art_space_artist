@@ -219,6 +219,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Enter your name`
+  String get name {
+    return Intl.message(
+      'Enter your name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your phone number`
+  String get phone {
+    return Intl.message(
+      'Enter your phone number',
+      name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

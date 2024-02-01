@@ -12,7 +12,7 @@ class AppCubit extends Cubit<AppState> {
 
   late ThemeMode _themeMode;
 
-  Locale _locale = const Locale('ar');
+  Locale _locale = const Locale('en');
 
   Locale get locale => _locale;
 

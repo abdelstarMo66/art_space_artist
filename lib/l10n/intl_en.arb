@@ -15,6 +15,9 @@
   "newMember": "Don't have an account ?",
   "register": "Register",
   "whoops": "Whoops",
-  "noInternet": "No internet connection found.\nPlease check your internet setting"
+  "noInternet": "No internet connection found.\nPlease check your internet setting",
+  "name" : "Enter your name",
+  "confirmPassword" : "Confirm password",
+  "phone" : "Enter your phone number"
 }
 

@@ -22,10 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm password"),
+        "email": MessageLookupByLibrary.simpleMessage("Enter your email"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget password?"),
-        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "login": MessageLookupByLibrary.simpleMessage("LOGIN"),
+        "loginMessage": MessageLookupByLibrary.simpleMessage(
+            "sign in to access your account"),
+        "name": MessageLookupByLibrary.simpleMessage("Enter your name"),
+        "newMember":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account ?"),
         "noInternet": MessageLookupByLibrary.simpleMessage(
             "No internet connection found.\nPlease check your internet setting"),
         "onBoardingAppBarTitle": MessageLookupByLibrary.simpleMessage("Skip"),
@@ -41,8 +48,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "The client buy suitable painting and put in the wall"),
         "onBoardingThirdScreenSecond": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
-        "password": MessageLookupByLibrary.simpleMessage("password"),
+        "password": MessageLookupByLibrary.simpleMessage("Enter your password"),
+        "phone":
+            MessageLookupByLibrary.simpleMessage("Enter your phone number"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
         "whoops": MessageLookupByLibrary.simpleMessage("Whoops")
       };
 }
