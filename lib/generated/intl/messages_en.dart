@@ -22,9 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "confirmNewPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm new password"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm password"),
+        "createNewPassword":
+            MessageLookupByLibrary.simpleMessage("Create New Password"),
+        "createNewPasswordText": MessageLookupByLibrary.simpleMessage(
+            "You New Password must different from previously password"),
         "email": MessageLookupByLibrary.simpleMessage("Enter your email"),
+        "enterNewPassword":
+            MessageLookupByLibrary.simpleMessage("Enter new password"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget password?"),
         "forgetPasswordText": MessageLookupByLibrary.simpleMessage(

@@ -24,6 +24,10 @@
   "verify" : "Verify",
   "save" : "Save",
   "verifyYourEmail" : "Verify Your Email",
-  "verifyYourEmailText" : "A 4 digits code has been sent to your email address"
+  "verifyYourEmailText" : "A 4 digits code has been sent to your email address",
+  "createNewPassword" : "Create New Password",
+  "createNewPasswordText" : "You New Password must different from previously password",
+  "enterNewPassword" : "Enter new password",
+  "confirmNewPassword": "Confirm new password"
 }
 

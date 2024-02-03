@@ -22,13 +22,16 @@ class CustomStackWidget extends StatelessWidget {
                 bottomLeft: Radius.circular(45),
                 bottomRight: Radius.circular(45)),
           ),
-          child: SvgPicture.asset(image),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.25,
+              child: SvgPicture.asset(image)),
         ),
         Column(
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.26,),
             Expanded(
               child: Container(
+                width: double.infinity,
                 decoration: const BoxDecoration(
                     color: ColorManager.originalWhite,
                     borderRadius: BorderRadiusDirectional.only(topEnd: Radius.circular(65),topStart: Radius.circular(65) )

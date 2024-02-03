@@ -309,6 +309,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Create New Password`
+  String get createNewPassword {
+    return Intl.message(
+      'Create New Password',
+      name: 'createNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You New Password must different from previously password`
+  String get createNewPasswordText {
+    return Intl.message(
+      'You New Password must different from previously password',
+      name: 'createNewPasswordText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter new password`
+  String get enterNewPassword {
+    return Intl.message(
+      'Enter new password',
+      name: 'enterNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm new password`
+  String get confirmNewPassword {
+    return Intl.message(
+      'Confirm new password',
+      name: 'confirmNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -12,6 +12,6 @@ class AssetsManager {
   static const String imgOnBoardingScreen3 = "${_baseImg}Artist-pana.svg";
   static const String registerAvatar = "${_baseImg}register_avatar.svg";
   static const String imgForgetPassword = "${_baseImg}img_forget_password.svg";
-  static const String imgResetPassword = "${_baseImg}img_Reset_password.svg";
-  static const String imgVerifyEmail = "${_baseImg}img_verified2.svg";
+  static const String imgResetPassword = "${_baseImg}img_Reset password2.svg";
+  static const String imgVerifyEmail = "${_baseImg}img_Verified.svg";
 }

@@ -1,4 +1,5 @@
 import 'package:art_space_artist/core/router/animation_transition.dart';
+import 'package:art_space_artist/features/auth/presentation/views/create_new_password.dart';
 import 'package:art_space_artist/features/auth/presentation/views/forget_password.dart';
 import 'package:art_space_artist/features/auth/presentation/views/login_screen.dart';
 import 'package:art_space_artist/features/auth/presentation/views/register_screen.dart';
@@ -20,8 +21,8 @@ class AppRouter {
         return SlideRight(page: const ForgetPassword());
       case AppRouterNames.verifyEmail:
         return SlideRight(page: const VerifyEmailScreen());
-      // case AppRouterNames.createNewPassword:
-      //   return SlideRight(page: const VerifyEmailScreen());
+      case AppRouterNames.createNewPassword:
+        return SlideRight(page: const CreateNewPassword());
       default:
         return unDefinedRoute();
     }
