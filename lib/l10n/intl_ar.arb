@@ -22,5 +22,7 @@
   "forgetPasswordText": "ادخل الايميل الخاص بحسابك",
   "send" : "ارسال",
   "verify" : "تأكيد",
-  "save": "حفظ"
+  "save": "حفظ",
+  "verifyYourEmail" : "تأكيد الأيميل",
+  "verifyYourEmailText" : "تم ارسال كدو مكون من 6 ارقام لحسابك"
 }

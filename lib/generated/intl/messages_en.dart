@@ -57,6 +57,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "verify": MessageLookupByLibrary.simpleMessage("Verify"),
+        "verifyYourEmail":
+            MessageLookupByLibrary.simpleMessage("Verify Your Email"),
+        "verifyYourEmailText": MessageLookupByLibrary.simpleMessage(
+            "A 4 digits code has been sent to your email address"),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
         "whoops": MessageLookupByLibrary.simpleMessage("Whoops")
       };

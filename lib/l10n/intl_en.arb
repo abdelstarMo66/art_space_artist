@@ -22,6 +22,8 @@
   "forgetPasswordText": "Please enter the email address associated with your account",
   "send" : "Send",
   "verify" : "Verify",
-  "save" : "Save"
+  "save" : "Save",
+  "verifyYourEmail" : "Verify Your Email",
+  "verifyYourEmailText" : "A 4 digits code has been sent to your email address"
 }
 

@@ -5,6 +5,7 @@ import '../../../../../core/constants/color_manager.dart';
 class CustomStackWidget extends StatelessWidget {
   final String image;
   final Widget widget;
+
    const CustomStackWidget({super.key, required this.image, required this.widget});
 
   @override

@@ -289,6 +289,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Verify Your Email`
+  String get verifyYourEmail {
+    return Intl.message(
+      'Verify Your Email',
+      name: 'verifyYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A 4 digits code has been sent to your email address`
+  String get verifyYourEmailText {
+    return Intl.message(
+      'A 4 digits code has been sent to your email address',
+      name: 'verifyYourEmailText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

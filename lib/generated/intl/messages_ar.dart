@@ -55,6 +55,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "send": MessageLookupByLibrary.simpleMessage("ارسال"),
         "verify": MessageLookupByLibrary.simpleMessage("تأكيد"),
+        "verifyYourEmail":
+            MessageLookupByLibrary.simpleMessage("تأكيد الأيميل"),
+        "verifyYourEmailText": MessageLookupByLibrary.simpleMessage(
+            "تم ارسال كدو مكون من 6 ارقام لحسابك"),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحبا بعودتك"),
         "whoops": MessageLookupByLibrary.simpleMessage("أووووبس")
       };

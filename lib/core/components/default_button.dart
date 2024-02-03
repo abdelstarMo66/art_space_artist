@@ -11,7 +11,7 @@ class DefaultButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialButton(
-      onPressed: () {},
+      onPressed: onPressed,
       color: ColorManager.primaryColor,
       height: MediaQuery.of(context).size.height * 0.06,
       shape: RoundedRectangleBorder(
