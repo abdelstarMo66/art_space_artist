@@ -12,7 +12,7 @@ class DefaultButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialButton(
       onPressed: () {},
-      color: ColorManager.secondaryColor,
+      color: ColorManager.primaryColor,
       height: MediaQuery.of(context).size.height * 0.06,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusDirectional.circular(10),
@@ -25,8 +25,6 @@ class DefaultButton extends StatelessWidget {
             style: TextStyles.textStyle24
                 .copyWith(color: ColorManager.originalWhite),
           ),
-          const Icon(Icons.arrow_forward_ios,
-              color: ColorManager.originalWhite),
         ],
       ),
     );

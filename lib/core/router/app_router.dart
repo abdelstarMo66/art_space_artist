@@ -1,4 +1,5 @@
 import 'package:art_space_artist/core/router/animation_transition.dart';
+import 'package:art_space_artist/features/auth/presentation/views/forget_password.dart';
 import 'package:art_space_artist/features/auth/presentation/views/login_screen.dart';
 import 'package:art_space_artist/features/auth/presentation/views/register_screen.dart';
 import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
@@ -9,15 +10,18 @@ class AppRouter {
   static Route<dynamic> onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
       case AppRouterNames.onBoarding:
-        return SlideRight(page:  OnBoardingScreen());
+        return SlideRight(page: OnBoardingScreen());
       case AppRouterNames.login:
-        return SlideRight(page:  LoginScreen());
+        return SlideRight(page: LoginScreen());
       case AppRouterNames.register:
-        return SlideRight(page:  const RegisterScreen());
+        return SlideRight(page: const RegisterScreen());
+      case AppRouterNames.forgetPassword:
+        return SlideRight(page: const ForgetPassword());
       default:
         return unDefinedRoute();
     }
   }
+
   static Route<dynamic> unDefinedRoute() {
     return MaterialPageRoute(
       builder: (_) => Scaffold(

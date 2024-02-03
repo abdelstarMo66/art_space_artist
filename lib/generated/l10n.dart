@@ -249,6 +249,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Please enter the email address associated with your account`
+  String get forgetPasswordText {
+    return Intl.message(
+      'Please enter the email address associated with your account',
+      name: 'forgetPasswordText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message(
+      'Send',
+      name: 'send',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify`
+  String get verify {
+    return Intl.message(
+      'Verify',
+      name: 'verify',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

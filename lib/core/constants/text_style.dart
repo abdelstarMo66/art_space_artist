@@ -40,7 +40,7 @@ abstract class TextStyles {
       fontFamily: 'Montserrat',
    );
    static const textStyle12 = TextStyle(
-       color: ColorManager.secondaryColor,
+       color: ColorManager.primaryColor,
        fontSize: 12,
        fontWeight: FontWeight.normal,
       fontFamily: 'Montserrat',

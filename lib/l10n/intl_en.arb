@@ -18,6 +18,10 @@
   "noInternet": "No internet connection found.\nPlease check your internet setting",
   "name" : "Enter your name",
   "confirmPassword" : "Confirm password",
-  "phone" : "Enter your phone number"
+  "phone" : "Enter your phone number",
+  "forgetPasswordText": "Please enter the email address associated with your account",
+  "send" : "Send",
+  "verify" : "Verify",
+  "save" : "Save"
 }
 

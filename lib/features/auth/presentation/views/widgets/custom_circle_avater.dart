@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../core/constants/assets_manager.dart';
 
 class CustomRegisterCircleAvatar extends StatelessWidget {
-  const CustomRegisterCircleAvatar({Key? key}) : super(key: key);
+  const CustomRegisterCircleAvatar({super.key});
 
   @override
   Widget build(BuildContext context) {

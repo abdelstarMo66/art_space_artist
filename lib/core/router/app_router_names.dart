@@ -3,6 +3,7 @@ class AppRouterNames {
   static const login = '/login';
   static const register = '/register';
   static const forgetPassword ='/forgetPassword';
-  static const createNewPassword ='/forgetPassword';
+  static const verifyEmail ='/verifyEmail';
+  static const createNewPassword ='/createNewPassword';
   static const home ='/home';
 }

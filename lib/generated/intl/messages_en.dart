@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Enter your email"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget password?"),
+        "forgetPasswordText": MessageLookupByLibrary.simpleMessage(
+            "Please enter the email address associated with your account"),
         "login": MessageLookupByLibrary.simpleMessage("LOGIN"),
         "loginMessage": MessageLookupByLibrary.simpleMessage(
             "sign in to access your account"),
@@ -52,6 +54,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone":
             MessageLookupByLibrary.simpleMessage("Enter your phone number"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
+        "send": MessageLookupByLibrary.simpleMessage("Send"),
+        "verify": MessageLookupByLibrary.simpleMessage("Verify"),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
         "whoops": MessageLookupByLibrary.simpleMessage("Whoops")
       };

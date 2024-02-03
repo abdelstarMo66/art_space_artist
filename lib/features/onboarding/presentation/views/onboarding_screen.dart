@@ -82,7 +82,7 @@ class OnBoardingScreen extends StatelessWidget {
                     dotWidth: 10.0,
                     spacing: 6.0,
                     expansionFactor: 5,
-                    activeDotColor: ColorManager.originalBlack,
+                    activeDotColor: ColorManager.secondaryColor,
                   ),
                 ),
                 const Spacer(),

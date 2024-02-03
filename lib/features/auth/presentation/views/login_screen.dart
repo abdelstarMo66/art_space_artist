@@ -70,7 +70,9 @@ class LoginScreen extends StatelessWidget {
                         S.of(context).forgetPassword,
                         style: TextStyles.textStyle12,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, AppRouterNames.forgetPassword);
+                      },
                     ),
                   ),
                   SizedBox(

@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("ادخل البريد الألكتروني"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
+        "forgetPasswordText":
+            MessageLookupByLibrary.simpleMessage("ادخل الايميل الخاص بحسابك"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginMessage":
             MessageLookupByLibrary.simpleMessage("سجل دخولك لحسابك الخاص"),
@@ -50,6 +52,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("ادخل كلمة المرور"),
         "phone": MessageLookupByLibrary.simpleMessage("ادخل رقم الهاتف"),
         "register": MessageLookupByLibrary.simpleMessage("تسجيل حساب جديد"),
+        "save": MessageLookupByLibrary.simpleMessage("حفظ"),
+        "send": MessageLookupByLibrary.simpleMessage("ارسال"),
+        "verify": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحبا بعودتك"),
         "whoops": MessageLookupByLibrary.simpleMessage("أووووبس")
       };
