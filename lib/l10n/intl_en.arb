@@ -28,6 +28,8 @@
   "createNewPassword" : "Create New Password",
   "createNewPasswordText" : "You New Password must different from previously password",
   "enterNewPassword" : "Enter new password",
-  "confirmNewPassword": "Confirm new password"
+  "confirmNewPassword": "Confirm new password",
+  "resend": "Resend",
+  "resendText": "if you didn't receive a code!"
 }
 

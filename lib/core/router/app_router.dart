@@ -4,6 +4,7 @@ import 'package:art_space_artist/features/auth/presentation/views/forget_passwor
 import 'package:art_space_artist/features/auth/presentation/views/login_screen.dart';
 import 'package:art_space_artist/features/auth/presentation/views/register_screen.dart';
 import 'package:art_space_artist/features/auth/presentation/views/verify_email_screen.dart';
+import 'package:art_space_artist/features/home/presentation/views/home_screen.dart';
 import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'app_router_names.dart';
@@ -23,6 +24,8 @@ class AppRouter {
         return SlideRight(page: const VerifyEmailScreen());
       case AppRouterNames.createNewPassword:
         return SlideRight(page: const CreateNewPassword());
+      case AppRouterNames.home:
+        return SlideRight(page: const HomeScreen());
       default:
         return unDefinedRoute();
     }

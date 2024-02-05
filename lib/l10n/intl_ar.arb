@@ -28,5 +28,7 @@
   "createNewPassword" : "انشاء كلمة مرور جديدة",
   "createNewPasswordText" : "يجب ان تكون كلمة المرور الجديده مختلفة عن السابقة",
   "enterNewPassword" : "ادخل كلمة المرور الجديدة",
-  "confirmNewPassword": "تأكيد كلمة المرور الجديدة"
+  "confirmNewPassword": "تأكيد كلمة المرور الجديدة",
+  "resend": "اعادة ارسال",
+  "resendText": "لم يتم استلام الكود !"
 }

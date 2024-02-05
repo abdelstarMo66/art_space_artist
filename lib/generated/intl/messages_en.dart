@@ -62,6 +62,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone":
             MessageLookupByLibrary.simpleMessage("Enter your phone number"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "resend": MessageLookupByLibrary.simpleMessage("Resend"),
+        "resendText": MessageLookupByLibrary.simpleMessage(
+            "if you didn\'t receive a code!"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "verify": MessageLookupByLibrary.simpleMessage("Verify"),

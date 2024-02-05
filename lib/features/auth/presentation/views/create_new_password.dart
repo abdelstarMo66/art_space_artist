@@ -19,48 +19,54 @@ class CreateNewPassword extends StatelessWidget {
       backgroundColor: ColorManager.thirdColor,
       body: CustomStackWidget(
           image: AssetsManager.imgResetPassword,
-          widget: Column(
-            children: [
-              Text(
-                S.of(context).createNewPassword,
-                style: TextStyles.textStyle24.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: ColorManager.secondaryColor,
+          widget: SingleChildScrollView(
+            child: Column(
+              children: [
+                Text(
+                  S.of(context).createNewPassword,
+                  style: TextStyles.textStyle24.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: ColorManager.secondaryColor,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              Text(
-                S.of(context).createNewPasswordText,
-                style: TextStyles.textStyle16,
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              DefaultTextField(
-                  controller: passwordController,
-                  hintText: S.of(context).enterNewPassword,
-                  validator: (value) {},
-                  keyboardType: TextInputType.visiblePassword,
-                  obscureText: true,
-                  maxLines: 1),
-              const SizedBox(height: 20.0),
-              DefaultTextField(
-                  controller: confirmPasswordController,
-                  hintText: S.of(context).confirmNewPassword,
-                  validator: (value) {},
-                  keyboardType: TextInputType.visiblePassword,
-                  obscureText: true,
-                  maxLines: 1),
-              const SizedBox(
-                height: 40.0,
-              ),
-              DefaultButton(
-                  text: 'Change password',
-                  onPressed: () {},
-              ),
-            ],
+                const SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  S.of(context).createNewPasswordText,
+                  style: TextStyles.textStyle16,
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                DefaultTextField(
+                    controller: passwordController,
+                    hintText: S.of(context).enterNewPassword,
+                    validator: (value) {
+                      return null;
+                    },
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: true,
+                    maxLines: 1),
+                const SizedBox(height: 20.0),
+                DefaultTextField(
+                    controller: confirmPasswordController,
+                    hintText: S.of(context).confirmNewPassword,
+                    validator: (value) {
+                      return null;
+                    },
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: true,
+                    maxLines: 1),
+                const SizedBox(
+                  height: 40.0,
+                ),
+                DefaultButton(
+                    text: 'Change password',
+                    onPressed: () {},
+                ),
+              ],
+            ),
           )),
     );
   }

@@ -1,10 +1,9 @@
 import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
-import 'package:art_space_artist/features/auth/presentation/views/widgets/custom_otp_widgets.dart';
 import 'package:art_space_artist/features/auth/presentation/views/widgets/custom_stack_widget.dart';
 import 'package:art_space_artist/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../../core/components/default_button.dart';
 import '../../../../core/constants/text_style.dart';
 import '../../../../core/router/app_router_names.dart';
@@ -39,17 +38,37 @@ class VerifyEmailScreen extends StatelessWidget {
               const SizedBox(
                 height: 30.0,
               ),
-              const SizedBox(height: 60.0),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomOTPWidget(),
-                  CustomOTPWidget(),
-                  CustomOTPWidget(),
-                  CustomOTPWidget(),
-                  CustomOTPWidget(),
-                  CustomOTPWidget(),
-                ],
+              const SizedBox(height: 40.0),
+              PinCodeTextField(
+                appContext: context,
+                animationCurve: Curves.easeInOut,
+                cursorColor: ColorManager.originalBlack,
+                keyboardType: TextInputType.number,
+                length: 4,
+                obscureText: false,
+                animationType: AnimationType.scale,
+                textStyle: TextStyles.textStyle16,
+                pinTheme: PinTheme(
+                  shape: PinCodeFieldShape.box,
+                  borderRadius: BorderRadius.circular(3),
+                  fieldHeight: 54,
+                  fieldWidth: 54,
+                  borderWidth: 1.2,
+                  activeFillColor: ColorManager
+                      .originalWhite, // اللون الي جوا لما يبقا متحدد
+                  inactiveFillColor: ColorManager
+                      .originalWhite, // اللون الي جوا لما يبقا مش متحدد
+                  activeColor: ColorManager.primaryColor, // لون البوردرالمتحدده
+                  inactiveColor:
+                      ColorManager.thirdColor, // لون البوردر الي مش متحدده
+                  selectedFillColor:
+                      ColorManager.originalWhite, // اللون الي انا واقف عليه
+                  selectedColor: ColorManager.primaryColor,
+                ),
+                animationDuration: const Duration(milliseconds: 300),
+                enableActiveFill: true,
+                onCompleted: (code) {},
+                onChanged: (value) {},
               ),
               const SizedBox(
                 height: 40.0,

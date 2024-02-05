@@ -60,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("ادخل كلمة المرور"),
         "phone": MessageLookupByLibrary.simpleMessage("ادخل رقم الهاتف"),
         "register": MessageLookupByLibrary.simpleMessage("تسجيل حساب جديد"),
+        "resend": MessageLookupByLibrary.simpleMessage("اعادة ارسال"),
+        "resendText":
+            MessageLookupByLibrary.simpleMessage("لم يتم استلام الكود !"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "send": MessageLookupByLibrary.simpleMessage("ارسال"),
         "verify": MessageLookupByLibrary.simpleMessage("تأكيد"),

@@ -2,15 +2,13 @@ import 'package:art_space_artist/core/components/default_button.dart';
 import 'package:art_space_artist/core/components/default_text_field.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
+import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/auth/presentation/views/widgets/custom_circle_avater.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../../../core/constants/assets_manager.dart';
 import '../../../../generated/l10n.dart';
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +18,18 @@ class RegisterScreen extends StatelessWidget {
     var phoneController = TextEditingController();
     var confirmPasswordController = TextEditingController();
     return Scaffold(
-      appBar: AppBar(title: Text('LOGO'), centerTitle: true, backgroundColor: Colors.white,),
+      appBar: AppBar(
+        title: IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios,
+            ),
+            onPressed: () {
+              Navigator.pushReplacementNamed(
+                context,
+                AppRouterNames.login,
+              );
+            }),
+      ),
       backgroundColor: ColorManager.originalWhite,
       body: SafeArea(
           child: SingleChildScrollView(
@@ -61,7 +70,9 @@ class RegisterScreen extends StatelessWidget {
               DefaultTextField(
                   controller: emailAddressController,
                   hintText: S.of(context).email,
-                  validator: (value) {},
+                  validator: (value) {
+                    return null;
+                  },
                   keyboardType: TextInputType.emailAddress,
                   obscureText: false,
                   maxLines: 1),
@@ -71,10 +82,13 @@ class RegisterScreen extends StatelessWidget {
               DefaultTextField(
                   controller: phoneController,
                   hintText: S.of(context).phone,
-                  validator: (value) {},
+                  validator: (value) {
+                    return null;
+                  },
                   keyboardType: TextInputType.number,
                   obscureText: false,
-                  maxLines: 1),
+                  maxLines: 1,
+              ),
               const SizedBox(
                 height: 20.0,
               ),
@@ -82,7 +96,9 @@ class RegisterScreen extends StatelessWidget {
                   icon: Icons.visibility,
                   controller: passwordController,
                   hintText: S.of(context).password,
-                  validator: (value) {},
+                  validator: (value) {
+                    return null;
+                  },
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: true,
                   maxLines: 1),
@@ -93,13 +109,13 @@ class RegisterScreen extends StatelessWidget {
                   icon: Icons.visibility,
                   controller: confirmPasswordController,
                   hintText: S.of(context).confirmPassword,
-                  validator: (value) {},
+                  validator: (value) {
+                    return null;
+                  },
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: true,
                   maxLines: 1),
-               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.12
-              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.12),
               DefaultButton(text: S.of(context).register, onPressed: () {}),
             ],
           ),
