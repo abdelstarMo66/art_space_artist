@@ -51,4 +51,24 @@ abstract class TextStyles {
        fontWeight: FontWeight.w200,
       fontFamily: 'Montserrat',
    );
+   static const textStyle14 = TextStyle(
+       color: ColorManager.originalWhite,
+       fontSize: 14,
+       fontWeight: FontWeight.bold,
+      fontFamily: 'Montserrat',
+     overflow: TextOverflow.ellipsis
+   );
+   static const textStyle14Primary = TextStyle(
+       color: ColorManager.primaryColor,
+       fontSize: 14,
+       fontWeight: FontWeight.w200,
+      fontFamily: 'Montserrat',
+   );
+
+   static const textStyle26 = TextStyle(
+       color: ColorManager.secondaryColor,
+       fontSize: 26,
+       fontWeight: FontWeight.normal,
+      fontFamily: 'Montserrat',
+   );
 }

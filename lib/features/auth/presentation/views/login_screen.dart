@@ -1,5 +1,6 @@
 import 'package:art_space_artist/core/components/default_button.dart';
 import 'package:art_space_artist/core/components/default_text_field.dart';
+import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
@@ -7,6 +8,7 @@ import 'package:art_space_artist/features/auth/presentation/view_model/auth_cubi
 import 'package:art_space_artist/features/auth/presentation/view_model/auth_cubit/auth_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../generated/l10n.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -26,13 +28,10 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text(
-                    'LOGO',
-                    style: TextStyles.textStyle36,
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
+                 SizedBox(
+                     height: MediaQuery.of(context).size.height * 0.14,
+                     child: SvgPicture.asset(AssetsManager.imgLogoAp)),
+                  const SizedBox(height: 15.0,),
                   Text(
                     S.of(context).welcomeBack,
                     style: TextStyles.textStyle36,

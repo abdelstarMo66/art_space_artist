@@ -30,5 +30,11 @@
   "enterNewPassword" : "ادخل كلمة المرور الجديدة",
   "confirmNewPassword": "تأكيد كلمة المرور الجديدة",
   "resend": "اعادة ارسال",
-  "resendText": "لم يتم استلام الكود !"
+  "resendText": "لم يتم استلام الكود !",
+  "all": "الكل",
+  "available": "المتاح",
+  "sold": "تم البيع",
+  "yourEvents": "معارضك ",
+  "yourProduct" : "منتجاتك",
+  "welcome" : "مرحبا,"
 }

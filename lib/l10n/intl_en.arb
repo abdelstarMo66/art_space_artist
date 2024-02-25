@@ -30,6 +30,12 @@
   "enterNewPassword" : "Enter new password",
   "confirmNewPassword": "Confirm new password",
   "resend": "Resend",
-  "resendText": "if you didn't receive a code!"
+  "resendText": "if you didn't receive a code!",
+  "all": "ALL",
+  "available": "Available",
+  "sold": "Sold",
+  "yourEvents": "Your events",
+  "yourProduct" : "Your product",
+  "welcome" : "Welcome,"
 }
 

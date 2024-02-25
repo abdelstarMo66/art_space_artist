@@ -1,3 +1,4 @@
+import 'package:art_space_artist/features/home/presentation/view_model/home_cubit.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,6 +35,8 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(
           create: (context) => AppCubit()..initAppCubit(),
         ),
+        BlocProvider(create: (context) => HomeCubit(),
+        )
       ],
       child: BlocBuilder<AppCubit, AppState>(
         builder: (context, state) {

@@ -3,10 +3,17 @@ class AssetsManager {
   static const String _baseImg = "assets/images/";
 
   ///Icons
-  static const String icLogoAp = "${_baseIc}ccc";
+  static const String icViews = "${_baseIc}ic_eye.svg";
+  static const String icMoney = "${_baseIc}ic_amount.svg";
+  static const String icBackArrow = "${_baseIc}ic_arrow_left.svg";
+  static const String icVr = "${_baseIc}ic_vr.svg";
+  static const String icLocation = "${_baseIc}ic_location.svg";
+  static const String icTrash = "${_baseIc}ic_trash.svg";
+  static const String icCalender = "${_baseIc}ic_calendar.svg";
+  static const String icTime = "${_baseIc}ic_time.svg";
 
   ///Images
-  static const String imgLogoAp = "${_baseImg}ccc";
+  static const String imgLogoAp = "${_baseImg}logo.svg";
   static const String imgOnBoardingScreen1 = "${_baseImg}Online gallery-amico (1).svg";
   static const String imgOnBoardingScreen2 =  "${_baseImg}Online gallery-pana.svg";
   static const String imgOnBoardingScreen3 = "${_baseImg}Artist-pana.svg";

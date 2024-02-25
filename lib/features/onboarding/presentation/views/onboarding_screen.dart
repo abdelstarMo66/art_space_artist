@@ -1,7 +1,6 @@
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/core/global_bloc/app_cubit/app_cubit.dart';
-import 'package:art_space_artist/core/router/app_router.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/onboarding/data/models/on_boarding_screen_ui_model.dart';
 import 'package:art_space_artist/features/onboarding/presentation/views/widgets/onboarding_ui_widget.dart';
@@ -9,26 +8,28 @@ import 'package:art_space_artist/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import '../../../../core/constants/assets_manager.dart';
 
 class OnBoardingScreen extends StatelessWidget {
-  OnBoardingScreen({super.key});
+  const OnBoardingScreen({super.key});
   @override
   Widget build(BuildContext context) {
     List<OnBoardingScreenUiModel> onBoardingData = [
       OnBoardingScreenUiModel(
         image: AssetsManager.imgOnBoardingScreen2,
         title: S.of(context).onBoardingFirstScreenMain,
-        subTitle: S.of(context).onBoardingFirstScreenSecond,),
+        subTitle: S.of(context).onBoardingFirstScreenSecond,
+      ),
       OnBoardingScreenUiModel(
         image: AssetsManager.imgOnBoardingScreen1,
         title: S.of(context).onBoardingSecScreenMain,
-        subTitle: S.of(context).onBoardingSecScreenSecond,),
+        subTitle: S.of(context).onBoardingSecScreenSecond,
+      ),
       OnBoardingScreenUiModel(
         image: AssetsManager.imgOnBoardingScreen3,
         title: S.of(context).onBoardingThirdScreenMain,
-        subTitle:S.of(context).onBoardingThirdScreenSecond,)
+        subTitle:S.of(context).onBoardingThirdScreenSecond,
+      ),
     ];
     PageController boardController = PageController();
     AppCubit cubit = AppCubit.get(context);

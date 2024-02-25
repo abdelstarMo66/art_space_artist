@@ -8,4 +8,5 @@ class ColorManager {
   static const Color secondaryColor = Color(0xFF050505);
   static const Color thirdColor = Color(0xFFD0CCD0);
   static const Color textFormBGColor = Color(0x33C4C4C4);
+  static  Color ?customGreyColor = Colors.grey[300];
 }

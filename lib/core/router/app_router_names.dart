@@ -6,4 +6,5 @@ class AppRouterNames {
   static const verifyEmail ='/verifyEmail';
   static const createNewPassword ='/createNewPassword';
   static const home ='/home';
+  static const eventDetails ='/eventDetails';
 }

@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "all": MessageLookupByLibrary.simpleMessage("الكل"),
+        "available": MessageLookupByLibrary.simpleMessage("المتاح"),
         "confirmNewPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور الجديدة"),
         "confirmPassword":
@@ -65,12 +67,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لم يتم استلام الكود !"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "send": MessageLookupByLibrary.simpleMessage("ارسال"),
+        "sold": MessageLookupByLibrary.simpleMessage("تم البيع"),
         "verify": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "verifyYourEmail":
             MessageLookupByLibrary.simpleMessage("تأكيد الأيميل"),
         "verifyYourEmailText": MessageLookupByLibrary.simpleMessage(
             "تم ارسال كدو مكون من 6 ارقام لحسابك"),
+        "welcome": MessageLookupByLibrary.simpleMessage("مرحبا,"),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحبا بعودتك"),
-        "whoops": MessageLookupByLibrary.simpleMessage("أووووبس")
+        "whoops": MessageLookupByLibrary.simpleMessage("أووووبس"),
+        "yourEvents": MessageLookupByLibrary.simpleMessage("معارضك "),
+        "yourProduct": MessageLookupByLibrary.simpleMessage("منتجاتك")
       };
 }
