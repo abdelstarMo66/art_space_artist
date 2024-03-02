@@ -48,7 +48,7 @@ class RegisterScreen extends StatelessWidget {
               DefaultButton(
                   text: S.of(context).register,
                   onPressed: () {
-                    validateThenLogin(context);
+                    validateThenRegister(context);
                   }),
               const RegisterListener(),
             ],
@@ -58,7 +58,7 @@ class RegisterScreen extends StatelessWidget {
     );
   }
 
-  void validateThenLogin(BuildContext context) {
+  void validateThenRegister(BuildContext context) {
     if (context.read<RegisterCubit>().formKey.currentState!.validate()) {
       context.read<RegisterCubit>().emitRegisterStates(RegisterRequestBody(
             name: context.read<RegisterCubit>().nameController.text,

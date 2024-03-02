@@ -1,6 +1,7 @@
 import 'package:art_space_artist/core/router/animation_transition.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/presentation/view_model/forget_password_cubit.dart';
 import 'package:art_space_artist/features/auth/login/presentation/view_model/login_cubit.dart';
-import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/forget_password.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/forget_password_screen.dart';
 import 'package:art_space_artist/features/auth/login/presentation/views/login_screen.dart';
 import 'package:art_space_artist/features/auth/register/presentation/view_model/register_cubit.dart';
 import 'package:art_space_artist/features/auth/register/presentation/views/register_screen.dart';
@@ -10,7 +11,6 @@ import 'package:art_space_artist/features/home/presentation/views/home_screen.da
 import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../features/auth/forgetPassword/presentation/views/create_new_password.dart';
 import '../di/dependency_injection.dart';
 import 'app_router_names.dart';
@@ -23,14 +23,17 @@ class AppRouter {
       case AppRouterNames.login:
         return SlideRight(page: BlocProvider(
             create: (context) => getIt<LoginCubit>(),
-            child: LoginScreen()));
+            child: const LoginScreen()));
       case AppRouterNames.register:
         return SlideRight(page: BlocProvider(
             create: (context) => getIt<RegisterCubit>(),
             child: const RegisterScreen(),
         ));
       case AppRouterNames.forgetPassword:
-        return SlideRight(page: const ForgetPassword());
+        return SlideRight(page: BlocProvider(
+          create: (context) => getIt<ForgetPasswordCubit>(),
+          child: const ForgetPasswordScreen(),
+        ));
       case AppRouterNames.verifyEmail:
         return SlideRight(page: const VerifyEmailScreen());
       case AppRouterNames.createNewPassword:
