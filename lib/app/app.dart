@@ -35,8 +35,7 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(
           create: (context) => AppCubit()..initAppCubit(),
         ),
-        BlocProvider(create: (context) => HomeCubit(),
-        )
+        BlocProvider(create: (context) => HomeCubit(),),
       ],
       child: BlocBuilder<AppCubit, AppState>(
         builder: (context, state) {

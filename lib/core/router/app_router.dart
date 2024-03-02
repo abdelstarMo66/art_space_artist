@@ -1,24 +1,34 @@
 import 'package:art_space_artist/core/router/animation_transition.dart';
-import 'package:art_space_artist/features/auth/presentation/views/create_new_password.dart';
-import 'package:art_space_artist/features/auth/presentation/views/forget_password.dart';
-import 'package:art_space_artist/features/auth/presentation/views/login_screen.dart';
-import 'package:art_space_artist/features/auth/presentation/views/register_screen.dart';
-import 'package:art_space_artist/features/auth/presentation/views/verify_email_screen.dart';
+import 'package:art_space_artist/features/auth/login/presentation/view_model/login_cubit.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/forget_password.dart';
+import 'package:art_space_artist/features/auth/login/presentation/views/login_screen.dart';
+import 'package:art_space_artist/features/auth/register/presentation/view_model/register_cubit.dart';
+import 'package:art_space_artist/features/auth/register/presentation/views/register_screen.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/verify_email_screen.dart';
 import 'package:art_space_artist/features/events/presentation/views/event_details_screen.dart';
 import 'package:art_space_artist/features/home/presentation/views/home_screen.dart';
 import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../features/auth/forgetPassword/presentation/views/create_new_password.dart';
+import '../di/dependency_injection.dart';
 import 'app_router_names.dart';
 
 class AppRouter {
   static Route<dynamic> onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
       case AppRouterNames.onBoarding:
-        return SlideRight(page: OnBoardingScreen());
+        return SlideRight(page: const OnBoardingScreen());
       case AppRouterNames.login:
-        return SlideRight(page: LoginScreen());
+        return SlideRight(page: BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: LoginScreen()));
       case AppRouterNames.register:
-        return SlideRight(page: const RegisterScreen());
+        return SlideRight(page: BlocProvider(
+            create: (context) => getIt<RegisterCubit>(),
+            child: const RegisterScreen(),
+        ));
       case AppRouterNames.forgetPassword:
         return SlideRight(page: const ForgetPassword());
       case AppRouterNames.verifyEmail:

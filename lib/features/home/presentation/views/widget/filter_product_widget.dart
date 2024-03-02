@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/constants/color_manager.dart';
-import '../../../../../core/constants/text_style.dart';
 
 class FilterProductWidget extends StatelessWidget {
   const FilterProductWidget({

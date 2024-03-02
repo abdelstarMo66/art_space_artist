@@ -1,12 +1,11 @@
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
-import 'package:art_space_artist/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class DefaultButton extends StatelessWidget {
-  String text ;
+  final String text ;
   final VoidCallback? onPressed;
-   DefaultButton({Key? key, required this.text, required this.onPressed}) : super(key: key);
+   const DefaultButton({super.key, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

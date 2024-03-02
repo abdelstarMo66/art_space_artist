@@ -3,8 +3,6 @@ import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import '../../generated/l10n.dart';
 
 class LostConnection extends StatelessWidget {
   const LostConnection({super.key});
