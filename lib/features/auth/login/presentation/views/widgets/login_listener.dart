@@ -16,7 +16,8 @@ class LoginListener extends StatelessWidget {
       listenWhen: (previous, current) =>
           current is Loading || current is Success || current is Error,
       listener: (context, state) {
-        state.whenOrNull(loading: () {
+        state.whenOrNull(
+            loading: () {
           showDialog(
             context: context,
             builder: (context) => const Center(
@@ -25,6 +26,7 @@ class LoginListener extends StatelessWidget {
             )),
           );
         }, success: (loginResponse) {
+          //CacheHelper.saveDataSharedPreference(key: 'token', value: Success(loginResponse).data);
           Navigator.of(context).pop();
           Navigator.of(context).pushReplacementNamed(
             AppRouterNames.home,

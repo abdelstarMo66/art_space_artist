@@ -53,7 +53,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                 height: 30.0,
               ),
               Form(
-                key: context.read<ForgetPasswordCubit>().formKey,
+                key: context.read<ForgetPasswordCubit>().formKeyEmailInForgetPassword,
                 child: DefaultTextField(
                     controller:
                         context.read<ForgetPasswordCubit>().emailController,
@@ -83,7 +83,7 @@ class ForgetPasswordScreen extends StatelessWidget {
   }
 
   void validateThenSendOTP(BuildContext context) {
-    if (context.read<ForgetPasswordCubit>().formKey.currentState!.validate()) {
+    if (context.read<ForgetPasswordCubit>().formKeyEmailInForgetPassword.currentState!.validate()) {
       context.read<ForgetPasswordCubit>().emitForgetPasswordStates(
           ForgetPasswordRequest(
               email: context.read<ForgetPasswordCubit>().emailController.text));

@@ -35,7 +35,10 @@ class AppRouter {
           child: const ForgetPasswordScreen(),
         ));
       case AppRouterNames.verifyEmail:
-        return SlideRight(page: const VerifyEmailScreen());
+        return SlideRight(page:  BlocProvider(
+          create: (context) => getIt<ForgetPasswordCubit>(),
+          child: const VerifyEmailScreen(),
+        ));
       case AppRouterNames.createNewPassword:
         return SlideRight(page: const CreateNewPassword());
       case AppRouterNames.home:

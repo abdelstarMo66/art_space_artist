@@ -1,12 +1,17 @@
 import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/data/model/verify_email_request.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/presentation/view_model/forget_password_cubit.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/widgets/custom_stack_widget.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/widgets/verify_email_listener.dart';
 import 'package:art_space_artist/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../../../core/components/default_button.dart';
 import '../../../../../core/constants/text_style.dart';
-import '../../../../../core/router/app_router_names.dart';
+
 
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({super.key});
@@ -16,6 +21,12 @@ class VerifyEmailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColorManager.primaryColor,
+        leading:IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: SvgPicture.asset(AssetsManager.icBackArrow, height: 40,),
+        ),
       ),
       backgroundColor: ColorManager.thirdColor,
       body: CustomStackWidget(
@@ -39,36 +50,47 @@ class VerifyEmailScreen extends StatelessWidget {
                 height: 30.0,
               ),
               const SizedBox(height: 40.0),
-              PinCodeTextField(
-                appContext: context,
-                animationCurve: Curves.easeInOut,
-                cursorColor: ColorManager.originalBlack,
-                keyboardType: TextInputType.number,
-                length: 4,
-                obscureText: false,
-                animationType: AnimationType.scale,
-                textStyle: TextStyles.textStyle16,
-                pinTheme: PinTheme(
-                  shape: PinCodeFieldShape.box,
-                  borderRadius: BorderRadius.circular(3),
-                  fieldHeight: 54,
-                  fieldWidth: 54,
-                  borderWidth: 1.2,
-                  activeFillColor: ColorManager
-                      .originalWhite, // اللون الي جوا لما يبقا متحدد
-                  inactiveFillColor: ColorManager
-                      .originalWhite, // اللون الي جوا لما يبقا مش متحدد
-                  activeColor: ColorManager.primaryColor, // لون البوردرالمتحدده
-                  inactiveColor:
-                      ColorManager.thirdColor, // لون البوردر الي مش متحدده
-                  selectedFillColor:
-                      ColorManager.originalWhite, // اللون الي انا واقف عليه
-                  selectedColor: ColorManager.primaryColor,
+              Form(
+                key: context.read<ForgetPasswordCubit>().formKeyOTP,
+                child: PinCodeTextField(
+                  validator: (value) {
+                    if(value == null || value.isEmpty)
+                      {
+                        return 'please enter code';
+                      }
+                    return null;
+                  },
+                  appContext: context,
+                  animationCurve: Curves.easeInOut,
+                  cursorColor: ColorManager.originalBlack,
+                  keyboardType: TextInputType.number,
+                  length: 4,
+                  obscureText: false,
+                  animationType: AnimationType.scale,
+                  textStyle: TextStyles.textStyle16,
+                  pinTheme: PinTheme(
+                    shape: PinCodeFieldShape.box,
+                    borderRadius: BorderRadius.circular(3),
+                    fieldHeight: 54,
+                    fieldWidth: 54,
+                    borderWidth: 1.2,
+                    activeFillColor: ColorManager
+                        .originalWhite, // اللون الي جوا لما يبقا متحدد
+                    inactiveFillColor: ColorManager
+                        .originalWhite, // اللون الي جوا لما يبقا مش متحدد
+                    activeColor: ColorManager.primaryColor, // لون البوردرالمتحدده
+                    inactiveColor:
+                        ColorManager.thirdColor, // لون البوردر الي مش متحدده
+                    selectedFillColor:
+                        ColorManager.originalWhite, // اللون الي انا واقف عليه
+                    selectedColor: ColorManager.primaryColor,
+                  ),
+                  animationDuration: const Duration(milliseconds: 300),
+                  enableActiveFill: true,
+                  onCompleted: (code) {},
+                  onChanged: (value) {},
+                  controller: context.read<ForgetPasswordCubit>().otpController,
                 ),
-                animationDuration: const Duration(milliseconds: 300),
-                enableActiveFill: true,
-                onCompleted: (code) {},
-                onChanged: (value) {},
               ),
               const SizedBox(
                 height: 40.0,
@@ -92,9 +114,15 @@ class VerifyEmailScreen extends StatelessWidget {
               DefaultButton(
                   text: S.of(context).verify,
                   onPressed: () {
-                    Navigator.pushNamed(
-                        context, AppRouterNames.createNewPassword);
+                 if(context.read<ForgetPasswordCubit>().formKeyOTP.currentState!.validate())
+                   {
+                     context.read<ForgetPasswordCubit>().emitVerifyEmailStates(
+                       VerifyEmailRequest(email: context.read<ForgetPasswordCubit>().emailController.text,
+                           resetCode: context.read<ForgetPasswordCubit>().otpController.text),
+                     );
+                   }
                   }),
+              const VerifyEmailListener(),
             ],
           ),
         ),

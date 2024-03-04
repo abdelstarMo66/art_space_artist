@@ -9,4 +9,10 @@ class ForgetPasswordState<T> with _$ForgetPasswordState<T> {
   const factory ForgetPasswordState.error({
     required String error
 }) = Error;
+
+  const factory ForgetPasswordState.verifyEmailLoading() = VerfiyEmailLoading;
+  const factory ForgetPasswordState.verifyEmailSuccess(T data) = VerfiyEmailSuccess;
+  const factory ForgetPasswordState.verifyEmailError({
+    required String error
+}) = VerfiyEmailError;
 }

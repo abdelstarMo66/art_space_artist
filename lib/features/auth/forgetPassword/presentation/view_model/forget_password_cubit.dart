@@ -1,4 +1,5 @@
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/forget_password_request.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/data/model/verify_email_request.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/repo/forget_password_repo.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/view_model/forget_password_state.dart';
 import 'package:bloc/bloc.dart';
@@ -22,6 +23,22 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
     });
   }
 
-  final formKey = GlobalKey<FormState>();
+  void emitVerifyEmailStates(
+      VerifyEmailRequest verifyEmailRequest
+      ) async {
+    emit(const ForgetPasswordState.verifyEmailLoading());
+    final response = await _forgetPasswordRepo.verifyEmail(verifyEmailRequest);
+    response.when(success: (verifyEmailResponse) {
+      emit(ForgetPasswordState.verifyEmailSuccess(verifyEmailResponse));
+    }, failure: (error) {
+      emit(ForgetPasswordState.verifyEmailError(error: error));
+    });
+  }
+
+
+
+  final formKeyEmailInForgetPassword = GlobalKey<FormState>();
+  final formKeyOTP = GlobalKey<FormState>();
   var emailController = TextEditingController();
+  var otpController = TextEditingController();
 }
