@@ -7,7 +7,8 @@ abstract class TextStyles {
       color: ColorManager.primaryColor,
       fontWeight: FontWeight.w400,
       fontSize: 21,
-     fontFamily: 'Montserrat'
+     fontFamily: 'Montserrat',
+     overflow: TextOverflow.ellipsis
   );
    static const textStyle24 = TextStyle(
        color: ColorManager.primaryColor,
@@ -44,6 +45,7 @@ abstract class TextStyles {
        fontSize: 12,
        fontWeight: FontWeight.normal,
       fontFamily: 'Montserrat',
+     overflow: TextOverflow.ellipsis
    );
    static const textStyle16 = TextStyle(
        color: ColorManager.secondaryColor,

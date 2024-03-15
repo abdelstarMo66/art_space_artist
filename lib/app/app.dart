@@ -30,13 +30,8 @@ class _MyAppState extends State<MyApp> {
   }
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => AppCubit()..initAppCubit(),
-        ),
-        BlocProvider(create: (context) => HomeCubit(),),
-      ],
+    return BlocProvider(
+      create: (context) => AppCubit()..initAppCubit(),
       child: BlocBuilder<AppCubit, AppState>(
         builder: (context, state) {
           final cubit = AppCubit.get(context);

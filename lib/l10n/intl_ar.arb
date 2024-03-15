@@ -36,5 +36,10 @@
   "sold": "تم البيع",
   "yourEvents": "معارضك ",
   "yourProduct" : "منتجاتك",
-  "welcome" : "مرحبا,"
+  "welcome" : "مرحبا,",
+  "alreadyHaveAnAccount": "بالفعل لدي حساب",
+  "createEvent": "إنشاء معرض",
+  "addProduct" : "إضافة لوحة",
+  "settings": "الأعدادات",
+  "logOut": "تسجيل الخروج"
 }

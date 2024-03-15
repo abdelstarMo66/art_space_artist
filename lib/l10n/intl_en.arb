@@ -36,6 +36,11 @@
   "sold": "Sold",
   "yourEvents": "Your events",
   "yourProduct" : "Your product",
-  "welcome" : "Welcome,"
+  "welcome" : "Welcome,",
+  "alreadyHaveAnAccount": "Already have an account !",
+  "createEvent": "Create event",
+  "addProduct" : "Add product",
+  "settings": "Settings",
+  "logOut": "Logout"
 }
 

@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class CacheHelper{
+class CacheHelper {
   static late SharedPreferences sharedPreferences;
 
   static init() async {
@@ -28,7 +28,7 @@ class CacheHelper{
     return await sharedPreferences.remove(key);
   }
 
-  static Future clearData(){
+  static Future clearData() {
     return sharedPreferences.clear();
   }
 }

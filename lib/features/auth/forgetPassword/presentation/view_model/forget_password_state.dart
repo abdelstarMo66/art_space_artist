@@ -15,4 +15,10 @@ class ForgetPasswordState<T> with _$ForgetPasswordState<T> {
   const factory ForgetPasswordState.verifyEmailError({
     required String error
 }) = VerfiyEmailError;
+
+  const factory ForgetPasswordState.resetPasswordLoading() = ResetPasswordLoading;
+  const factory ForgetPasswordState.resetPasswordSuccess(T data) = ResetPasswordSuccess;
+  const factory ForgetPasswordState.resetPasswordError({
+    required String error
+}) = ResetPasswordError;
 }

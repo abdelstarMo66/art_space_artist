@@ -9,6 +9,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit(this._registerRepo) : super(const RegisterState.initial());
 
   final formKey = GlobalKey<FormState>();
+  final formKeyVerifyEmail = GlobalKey<FormState>();
   var nameController = TextEditingController();
   var passwordController = TextEditingController();
   var emailAddressController = TextEditingController();
@@ -18,7 +19,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   void emitRegisterStates(RegisterRequestBody registerRequestBody) async {
     emit(const RegisterState.loading());
     final response = await _registerRepo.register(registerRequestBody);
-    response.when(success: (registerResponse) {
+    response.when(success: (data) {
       emit(RegisterState.success(response));
     }, failure: (error) {
       emit(RegisterState.error(error: error));

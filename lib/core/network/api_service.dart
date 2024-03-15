@@ -1,13 +1,15 @@
-
+import 'package:art_space_artist/core/helpers/cache_helper.dart';
 import 'package:art_space_artist/core/network/api_constants.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/forget_password_request.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_request.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_response.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/verify_email_request.dart';
 import 'package:art_space_artist/features/auth/login/data/model/login_request_body.dart';
 import 'package:art_space_artist/features/auth/register/data/models/register_request_body.dart';
 import 'package:art_space_artist/features/auth/register/data/models/register_response.dart';
+import 'package:art_space_artist/features/profile/data/model/get_profile_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
-
 import '../../features/auth/forgetPassword/data/model/forget_password_response.dart';
 import '../../features/auth/forgetPassword/data/model/verify_email_response.dart';
 import '../../features/auth/login/data/model/login_response.dart';
@@ -36,5 +38,15 @@ abstract class ApiService {
   @POST(ApiConstant.verifyCode)
   Future<VerifyEmailResponse> verifyEmail (
       @Body() VerifyEmailRequest verifyEmailRequest,
+      );
+
+  @PUT(ApiConstant.resetPassword)
+  Future<ResetPasswordResponse> resetPassword (
+      @Body() ResetPasswordRequest resetPasswordRequest,
+      );
+
+  @GET(ApiConstant.getProfile)
+  Future<GetProfileResponse> getProfile(
+      @Header('Authorization') String token,
       );
 }

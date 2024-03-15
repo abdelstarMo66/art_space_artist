@@ -22,12 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addProduct": MessageLookupByLibrary.simpleMessage("إضافة لوحة"),
         "all": MessageLookupByLibrary.simpleMessage("الكل"),
+        "alreadyHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("بالفعل لدي حساب"),
         "available": MessageLookupByLibrary.simpleMessage("المتاح"),
         "confirmNewPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور الجديدة"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("تاكيد كلمة المرور"),
+        "createEvent": MessageLookupByLibrary.simpleMessage("إنشاء معرض"),
         "createNewPassword":
             MessageLookupByLibrary.simpleMessage("انشاء كلمة مرور جديدة"),
         "createNewPasswordText": MessageLookupByLibrary.simpleMessage(
@@ -39,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "forgetPasswordText":
             MessageLookupByLibrary.simpleMessage("ادخل الايميل الخاص بحسابك"),
+        "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginMessage":
             MessageLookupByLibrary.simpleMessage("سجل دخولك لحسابك الخاص"),
@@ -67,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لم يتم استلام الكود !"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "send": MessageLookupByLibrary.simpleMessage("ارسال"),
+        "settings": MessageLookupByLibrary.simpleMessage("الأعدادات"),
         "sold": MessageLookupByLibrary.simpleMessage("تم البيع"),
         "verify": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "verifyYourEmail":

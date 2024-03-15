@@ -4,17 +4,17 @@ import 'package:art_space_artist/features/auth/register/data/models/register_res
 import '../../../../../core/network/api_result.dart';
 import '../models/register_request_body.dart';
 
-class RegisterRepo{
+class RegisterRepo {
   final ApiService _apiService;
 
   RegisterRepo(this._apiService);
 
-  Future<ApiResult<RegisterResponse>> register (
+  Future<ApiResult<RegisterResponse>> register(
       RegisterRequestBody registerRequestBody) async {
-    try{
+    try {
       final response = await _apiService.register(registerRequestBody);
       return ApiResult.success(response);
-    } catch(error) {
+    } catch (error) {
       return ApiResult.failure('$error');
     }
   }

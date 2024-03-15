@@ -16,18 +16,6 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios,
-            ),
-            onPressed: () {
-              Navigator.pushReplacementNamed(
-                context,
-                AppRouterNames.login,
-              );
-            }),
-      ),
       backgroundColor: ColorManager.originalWhite,
       body: SafeArea(
           child: SingleChildScrollView(
@@ -50,6 +38,23 @@ class RegisterScreen extends StatelessWidget {
                   onPressed: () {
                     validateThenRegister(context);
                   }),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(S.of(context).alreadyHaveAnAccount, style: TextStyles.textStyle16.copyWith(fontSize: 14),),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(
+                            context, AppRouterNames.login,
+                        );
+                      },
+                      child: Text(
+                        S.of(context).login,
+                        style: TextStyles.textStyle12
+                            .copyWith(fontWeight: FontWeight.bold),
+                      )),
+                ],
+              ),
               const RegisterListener(),
             ],
           ),

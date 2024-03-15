@@ -22,12 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addProduct": MessageLookupByLibrary.simpleMessage("Add product"),
         "all": MessageLookupByLibrary.simpleMessage("ALL"),
+        "alreadyHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Already have an account !"),
         "available": MessageLookupByLibrary.simpleMessage("Available"),
         "confirmNewPassword":
             MessageLookupByLibrary.simpleMessage("Confirm new password"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm password"),
+        "createEvent": MessageLookupByLibrary.simpleMessage("Create event"),
         "createNewPassword":
             MessageLookupByLibrary.simpleMessage("Create New Password"),
         "createNewPasswordText": MessageLookupByLibrary.simpleMessage(
@@ -39,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forget password?"),
         "forgetPasswordText": MessageLookupByLibrary.simpleMessage(
             "Please enter the email address associated with your account"),
+        "logOut": MessageLookupByLibrary.simpleMessage("Logout"),
         "login": MessageLookupByLibrary.simpleMessage("LOGIN"),
         "loginMessage": MessageLookupByLibrary.simpleMessage(
             "sign in to access your account"),
@@ -69,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "if you didn\'t receive a code!"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "sold": MessageLookupByLibrary.simpleMessage("Sold"),
         "verify": MessageLookupByLibrary.simpleMessage("Verify"),
         "verifyYourEmail":

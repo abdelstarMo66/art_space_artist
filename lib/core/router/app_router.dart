@@ -5,7 +5,8 @@ import 'package:art_space_artist/features/auth/forgetPassword/presentation/views
 import 'package:art_space_artist/features/auth/login/presentation/views/login_screen.dart';
 import 'package:art_space_artist/features/auth/register/presentation/view_model/register_cubit.dart';
 import 'package:art_space_artist/features/auth/register/presentation/views/register_screen.dart';
-import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/verify_email_screen.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/verify_email_otp_screen.dart';
+import 'package:art_space_artist/features/auth/register/presentation/views/widgets/verify_email.dart';
 import 'package:art_space_artist/features/events/presentation/views/event_details_screen.dart';
 import 'package:art_space_artist/features/home/presentation/views/home_screen.dart';
 import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
@@ -29,18 +30,26 @@ class AppRouter {
             create: (context) => getIt<RegisterCubit>(),
             child: const RegisterScreen(),
         ));
+      case AppRouterNames.verifyEmail:
+        return SlideRight(page: BlocProvider(
+            create: (context) => getIt<RegisterCubit>(),
+            child: const VerifyEmailScreen(),
+        ));
       case AppRouterNames.forgetPassword:
         return SlideRight(page: BlocProvider(
           create: (context) => getIt<ForgetPasswordCubit>(),
           child: const ForgetPasswordScreen(),
         ));
-      case AppRouterNames.verifyEmail:
+      case AppRouterNames.verifyEmailOPT:
         return SlideRight(page:  BlocProvider(
           create: (context) => getIt<ForgetPasswordCubit>(),
-          child: const VerifyEmailScreen(),
+          child: const VerifyEmailOTPScreen(),
         ));
       case AppRouterNames.createNewPassword:
-        return SlideRight(page: const CreateNewPassword());
+        return SlideRight(page:  BlocProvider(
+          create: (context) => getIt<ForgetPasswordCubit>(),
+          child: const CreateNewPassword(),
+        ));
       case AppRouterNames.home:
         return SlideRight(page: const HomeScreen());
       case AppRouterNames.eventDetails:

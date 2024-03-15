@@ -53,16 +53,18 @@ class CustomProductViewWidget extends StatelessWidget {
                 ],
               ),
             ),
-            Card(
-              margin: const EdgeInsets.all(15.0),
-              shape:RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25.0)
-              ) ,
-              shadowColor: ColorManager.primaryColor,
-              elevation: 10.0,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(25.0),
-                  child: Image.asset('assets/images/33028820_7947575.jpg')),
+            Expanded(
+              child: Card(
+                margin: const EdgeInsets.all(12.0),
+                shape:RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0)
+                ) ,
+                shadowColor: ColorManager.primaryColor,
+                elevation: 10.0,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(25.0),
+                    child: Image.asset('assets/images/33028820_7947575.jpg')),
+              ),
             ),
           ],
         )

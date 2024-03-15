@@ -1,6 +1,7 @@
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/enums.dart';
 import 'package:art_space_artist/core/constants/toast_color.dart';
+import 'package:art_space_artist/core/network/api_error_handler.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/auth/login/presentation/view_model/login_cubit.dart';
 import 'package:art_space_artist/features/auth/login/presentation/view_model/login_state.dart';
@@ -14,7 +15,7 @@ class LoginListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Success || current is Error,
+          current is Loading || current is Success || current is Error || current is ShowPassword,
       listener: (context, state) {
         state.whenOrNull(
             loading: () {
@@ -26,7 +27,6 @@ class LoginListener extends StatelessWidget {
             )),
           );
         }, success: (loginResponse) {
-          //CacheHelper.saveDataSharedPreference(key: 'token', value: Success(loginResponse).data);
           Navigator.of(context).pop();
           Navigator.of(context).pushReplacementNamed(
             AppRouterNames.home,
@@ -34,10 +34,14 @@ class LoginListener extends StatelessWidget {
         }, error: (error) {
           Navigator.of(context).pop();
           showToast(
-            msg: 'Error',
+            msg: '${ServerFailure(error)}',
             state: ToastState.error,
           );
-        });
+        },
+          changeVisiblePassword: () {
+              context.read<LoginCubit>().isSecure = false;
+          },
+        );
       },
       child: const SizedBox.shrink(),
     );

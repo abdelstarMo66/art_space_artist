@@ -1,8 +1,10 @@
 // if internet lost
+import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LostConnection extends StatelessWidget {
   const LostConnection({super.key});
@@ -15,9 +17,11 @@ class LostConnection extends StatelessWidget {
         backgroundColor: ColorManager.originalWhite,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset('assets/images/img_no_connection_internet.png',height: MediaQuery.of(context).size.height * 0.5),
+              SvgPicture.asset(AssetsManager.imgNoInternetConnection,
+              height: MediaQuery.of(context).size.height * 0.4,),
               const SizedBox(
                 height: 20.0,
               ),

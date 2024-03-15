@@ -1,10 +1,15 @@
 import 'package:art_space_artist/core/components/default_button.dart';
-import 'package:art_space_artist/core/components/default_text_field.dart';
 import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_request.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/presentation/view_model/forget_password_cubit.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/widgets/custom_stack_widget.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/widgets/reset_password_form.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/widgets/reset_password_listener.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../generated/l10n.dart';
 
 class CreateNewPassword extends StatelessWidget {
@@ -12,10 +17,11 @@ class CreateNewPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var passwordController = TextEditingController();
-    var confirmPasswordController = TextEditingController();
+    var cubit = context.read<ForgetPasswordCubit>();
     return Scaffold(
-      appBar: AppBar(backgroundColor: ColorManager.primaryColor),
+      appBar: AppBar(backgroundColor: ColorManager.primaryColor,
+      leading: SvgPicture.asset(AssetsManager.icBackArrow, height: 40,),
+      ),
       backgroundColor: ColorManager.thirdColor,
       body: CustomStackWidget(
           image: AssetsManager.imgResetPassword,
@@ -39,32 +45,23 @@ class CreateNewPassword extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                DefaultTextField(
-                    controller: passwordController,
-                    hintText: S.of(context).enterNewPassword,
-                    validator: (value) {
-                      return null;
-                    },
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    maxLines: 1),
-                const SizedBox(height: 20.0),
-                DefaultTextField(
-                    controller: confirmPasswordController,
-                    hintText: S.of(context).confirmNewPassword,
-                    validator: (value) {
-                      return null;
-                    },
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    maxLines: 1),
+               const ResetPasswordForm(),
                 const SizedBox(
                   height: 40.0,
                 ),
                 DefaultButton(
                     text: 'Change password',
-                    onPressed: () {},
+                    onPressed: () {
+                      if(cubit.formKeyResetPassword.currentState!.validate())
+                        {
+                          cubit.emitResetPasswordStates(ResetPasswordRequest(
+                              email: cubit.emailController.text,
+                              password: cubit.newPasswordController.text,
+                              passwordConfirm: cubit.confirmNewPasswordController.text));
+                        }
+                    },
                 ),
+                const ResetPasswordListener()
               ],
             ),
           )),

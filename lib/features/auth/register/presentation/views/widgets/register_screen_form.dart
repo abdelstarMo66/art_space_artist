@@ -27,7 +27,7 @@ class RegisterScreenForm extends StatelessWidget {
                       controller: context.read<RegisterCubit>().nameController,
                       hintText: S.of(context).name,
                       validator: (value) {
-                        if(value == null || value.isEmpty || !ExtString.isValidName(value))
+                        if(value == null || value.isEmpty || value.hashCode <= 3)
                         {
                           return 'Please enter valid name';
                         }

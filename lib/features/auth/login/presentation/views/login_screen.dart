@@ -97,7 +97,8 @@ class LoginScreen extends StatelessWidget {
   void validateThenLogin(BuildContext context){
     if(context.read<LoginCubit>().formKey.currentState!.validate())
       {
-        context.read<LoginCubit>().emitLoginStates(LoginRequestBody(
+        context.read<LoginCubit>().emitLoginStates(
+            LoginRequestBody(
             email: context.read<LoginCubit>().emailController.text,
             password: context.read<LoginCubit>().passwordController.text));
       }

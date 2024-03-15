@@ -28,7 +28,7 @@ class ForgetPasswordListener extends StatelessWidget {
             success: (data) {
               Navigator.of(context).pop();
               Navigator.of(context).pushNamed(
-                  AppRouterNames.verifyEmail,
+                  AppRouterNames.verifyEmailOPT,
               );
             },
             error: (error) {

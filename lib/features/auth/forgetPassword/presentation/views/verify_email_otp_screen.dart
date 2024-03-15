@@ -13,8 +13,8 @@ import '../../../../../core/components/default_button.dart';
 import '../../../../../core/constants/text_style.dart';
 
 
-class VerifyEmailScreen extends StatelessWidget {
-  const VerifyEmailScreen({super.key});
+class VerifyEmailOTPScreen extends StatelessWidget {
+  const VerifyEmailOTPScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class VerifyEmailScreen extends StatelessWidget {
       ),
       backgroundColor: ColorManager.thirdColor,
       body: CustomStackWidget(
-        image: AssetsManager.imgVerifyEmail,
+        image: AssetsManager.imgVerifyEmailOTP,
         widget: SingleChildScrollView(
           child: Column(
             children: [
