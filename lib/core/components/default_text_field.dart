@@ -26,7 +26,7 @@ class DefaultTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor:  ColorManager.primaryColor,
+      cursorColor: ColorManager.primaryColor,
       controller: controller,
       obscureText: obscureText,
       validator: validator,
@@ -34,24 +34,21 @@ class DefaultTextField extends StatelessWidget {
       maxLines: maxLines,
       decoration: InputDecoration(
         filled: true,
-        fillColor:  ColorManager.textFormBGColor,
+        fillColor: ColorManager.textFormBGColor,
         hintText: hintText,
         hintStyle: TextStyles.textStyle16.copyWith(color: Colors.grey),
         enabledBorder: customBorder(color: ColorManager.originalWhite),
         focusedBorder: customBorder(color: ColorManager.primaryColor),
         suffixIcon: IconButton(
-            icon: Icon(icon, color: Colors.grey),
-            onPressed: onPressedIcon,
+          icon: Icon(icon, color: Colors.grey),
+          onPressed: onPressedIcon,
         ),
       ),
-
     );
   }
+
   OutlineInputBorder customBorder({required Color color}) => OutlineInputBorder(
-    borderRadius: BorderRadius.circular(20),
-    borderSide: BorderSide(
-        color: color,
-        style: BorderStyle.solid
-    ),
-  );
+        borderRadius: BorderRadius.circular(20),
+        borderSide: BorderSide(color: color, style: BorderStyle.solid),
+      );
 }

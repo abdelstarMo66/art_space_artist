@@ -24,68 +24,69 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-               SizedBox(
-                   height: MediaQuery.of(context).size.height * 0.14,
-                   child: SvgPicture.asset(AssetsManager.imgLogoAp)),
-                const SizedBox(height: 15.0,),
+                SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.14,
+                    child: SvgPicture.asset(AssetsManager.imgLogoAp)),
+                const SizedBox(
+                  height: 15.0,
+                ),
                 Text(
                   S.of(context).welcomeBack,
                   style: TextStyles.textStyle36,
                 ),
-                Text(S.of(context).loginMessage,
-                    style: TextStyles.textStyle18),
+                Text(S.of(context).loginMessage, style: TextStyles.textStyle18),
                 const SizedBox(
                   height: 30,
                 ),
-                     Column(
+                Column(
+                  children: [
+                    const LoginForm(),
+                    Align(
+                      alignment: AlignmentDirectional.centerEnd,
+                      child: TextButton(
+                        child: Text(
+                          S.of(context).forgetPassword,
+                          style: TextStyles.textStyle12,
+                        ),
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, AppRouterNames.forgetPassword);
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.23,
+                    ),
+                    DefaultButton(
+                        text: S.of(context).login,
+                        onPressed: () {
+                          validateThenLogin(context);
+                        }),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const LoginForm(),
-                        Align(
-                          alignment: AlignmentDirectional.centerEnd,
-                          child: TextButton(
-                            child: Text(
-                              S.of(context).forgetPassword,
-                              style: TextStyles.textStyle12,
-                            ),
+                        Text(
+                          S.of(context).newMember,
+                          style: TextStyles.textStyle12
+                              .copyWith(color: ColorManager.originalBlack),
+                        ),
+                        TextButton(
                             onPressed: () {
-                              Navigator.pushNamed(
-                                  context, AppRouterNames.forgetPassword);
+                              Navigator.pushReplacementNamed(
+                                  context, AppRouterNames.register);
                             },
-                          ),
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.23,
-                        ),
-                        DefaultButton(
-                            text: S.of(context).login,
-                            onPressed: () {
-                              validateThenLogin(context);
-                            }),
-                        const SizedBox(
-                          height: 10.0,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              S.of(context).newMember,
+                            child: Text(
+                              S.of(context).register,
                               style: TextStyles.textStyle12
-                                  .copyWith(color: ColorManager.originalBlack),
-                            ),
-                            TextButton(
-                                onPressed: () {
-                                  Navigator.pushReplacementNamed(
-                                      context, AppRouterNames.register);
-                                },
-                                child: Text(
-                                  S.of(context).register,
-                                  style: TextStyles.textStyle12
-                                      .copyWith(fontWeight: FontWeight.bold),
-                                )),
-                            const LoginListener(),
-                          ],
-                        ),
+                                  .copyWith(fontWeight: FontWeight.bold),
+                            )),
+                        const LoginListener(),
                       ],
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -94,13 +95,12 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
-  void validateThenLogin(BuildContext context){
-    if(context.read<LoginCubit>().formKey.currentState!.validate())
-      {
-        context.read<LoginCubit>().emitLoginStates(
-            LoginRequestBody(
-            email: context.read<LoginCubit>().emailController.text,
-            password: context.read<LoginCubit>().passwordController.text));
-      }
+
+  void validateThenLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates(LoginRequestBody(
+          email: context.read<LoginCubit>().emailController.text,
+          password: context.read<LoginCubit>().passwordController.text));
+    }
   }
 }

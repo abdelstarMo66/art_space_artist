@@ -10,6 +10,7 @@ import 'package:art_space_artist/features/auth/register/presentation/views/widge
 import 'package:art_space_artist/features/events/presentation/views/event_details_screen.dart';
 import 'package:art_space_artist/features/home/presentation/views/home_screen.dart';
 import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
+import 'package:art_space_artist/features/products/presentation/views/create_prodect.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/auth/forgetPassword/presentation/views/create_new_password.dart';
@@ -22,36 +23,44 @@ class AppRouter {
       case AppRouterNames.onBoarding:
         return SlideRight(page: const OnBoardingScreen());
       case AppRouterNames.login:
-        return SlideRight(page: BlocProvider(
-            create: (context) => getIt<LoginCubit>(),
-            child: const LoginScreen()));
+        return SlideRight(
+            page: BlocProvider(
+                create: (context) => getIt<LoginCubit>(),
+                child: const LoginScreen()));
       case AppRouterNames.register:
-        return SlideRight(page: BlocProvider(
-            create: (context) => getIt<RegisterCubit>(),
-            child: const RegisterScreen(),
+        return SlideRight(
+            page: BlocProvider(
+          create: (context) => getIt<RegisterCubit>(),
+          child: const RegisterScreen(),
         ));
       case AppRouterNames.verifyEmail:
-        return SlideRight(page: BlocProvider(
-            create: (context) => getIt<RegisterCubit>(),
-            child: const VerifyEmailScreen(),
+        return SlideRight(
+            page: BlocProvider(
+          create: (context) => getIt<RegisterCubit>(),
+          child: const VerifyEmailScreen(),
         ));
       case AppRouterNames.forgetPassword:
-        return SlideRight(page: BlocProvider(
+        return SlideRight(
+            page: BlocProvider(
           create: (context) => getIt<ForgetPasswordCubit>(),
           child: const ForgetPasswordScreen(),
         ));
       case AppRouterNames.verifyEmailOPT:
-        return SlideRight(page:  BlocProvider(
+        return SlideRight(
+            page: BlocProvider(
           create: (context) => getIt<ForgetPasswordCubit>(),
           child: const VerifyEmailOTPScreen(),
         ));
       case AppRouterNames.createNewPassword:
-        return SlideRight(page:  BlocProvider(
+        return SlideRight(
+            page: BlocProvider(
           create: (context) => getIt<ForgetPasswordCubit>(),
           child: const CreateNewPassword(),
         ));
       case AppRouterNames.home:
         return SlideRight(page: const HomeScreen());
+      case AppRouterNames.createProduct:
+        return SlideRight(page: const CreateProduct());
       case AppRouterNames.eventDetails:
         return SlideRight(page: const EventDetailsScreen());
       default:

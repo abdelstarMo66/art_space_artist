@@ -144,6 +144,7 @@ class CustomProfileDrawer extends StatelessWidget {
               ],
             );
           },
+          error: (error) {} ,
         ),
       ),
     );

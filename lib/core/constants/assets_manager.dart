@@ -39,6 +39,8 @@ class AssetsManager {
   static const String icSearch = "${_baseIc}ic_Search.svg";
   static const String icTechnicalSupport = "${_baseIc}ic_tecnical-support.svg";
   static const String icUpload = "${_baseIc}ic_upload.svg";
+  static const String icMale = "${_baseIc}ic_male.svg";
+  static const String icFemale = "${_baseIc}ic_female.svg";
 
   ///Images
   static const String imgLogoAp = "${_baseImg}logo.svg";

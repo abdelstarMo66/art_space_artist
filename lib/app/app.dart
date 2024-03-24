@@ -1,3 +1,4 @@
+import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/home/presentation/view_model/home_cubit.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +45,7 @@ class _MyAppState extends State<MyApp> {
                   }
                 else{
                   return MaterialApp(
+                    initialRoute: AppRouterNames.eventDetails,
                     title: "Art Space",
                     onGenerateRoute: AppRouter.onGenerateRoutes,
                     debugShowCheckedModeBanner: false,

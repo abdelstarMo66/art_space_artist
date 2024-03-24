@@ -25,4 +25,7 @@ class RegisterCubit extends Cubit<RegisterState> {
       emit(RegisterState.error(error: error));
     });
   }
+
 }
+
+enum Gender {male, female}

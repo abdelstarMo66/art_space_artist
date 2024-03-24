@@ -8,4 +8,5 @@ class AppRouterNames {
   static const createNewPassword ='/createNewPassword';
   static const home ='/home';
   static const eventDetails ='/eventDetails';
+  static const createProduct ='/createProduct';
 }

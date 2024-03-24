@@ -27,8 +27,9 @@ class RegisterScreenForm extends StatelessWidget {
                       controller: context.read<RegisterCubit>().nameController,
                       hintText: S.of(context).name,
                       validator: (value) {
-                        if(value == null || value.isEmpty || value.hashCode <= 3)
-                        {
+                        if (value == null ||
+                            value.isEmpty ||
+                            value.hashCode <= 3) {
                           return 'Please enter valid name';
                         }
                         return null;
@@ -43,11 +44,13 @@ class RegisterScreenForm extends StatelessWidget {
               height: 20.0,
             ),
             DefaultTextField(
-                controller: context.read<RegisterCubit>().emailAddressController,
+                controller:
+                    context.read<RegisterCubit>().emailAddressController,
                 hintText: S.of(context).email,
                 validator: (value) {
-                  if(value == null || value.isEmpty || !ExtString.isValidEmail(value))
-                  {
+                  if (value == null ||
+                      value.isEmpty ||
+                      !ExtString.isValidEmail(value)) {
                     return 'Please enter valid email';
                   }
                   return null;
@@ -62,8 +65,9 @@ class RegisterScreenForm extends StatelessWidget {
               controller: context.read<RegisterCubit>().phoneController,
               hintText: S.of(context).phone,
               validator: (value) {
-                if(value == null || value.isEmpty || !ExtString.isValidPhone(value))
-                {
+                if (value == null ||
+                    value.isEmpty ||
+                    !ExtString.isValidPhone(value)) {
                   return 'Please enter valid phone';
                 }
                 return null;
@@ -80,8 +84,9 @@ class RegisterScreenForm extends StatelessWidget {
                 controller: context.read<RegisterCubit>().passwordController,
                 hintText: S.of(context).password,
                 validator: (value) {
-                  if(value == null || value.isEmpty || !ExtString.isValidPassword(value))
-                  {
+                  if (value == null ||
+                      value.isEmpty ||
+                      !ExtString.isValidPassword(value)) {
                     return 'Please enter valid password ';
                   }
                   return null;
@@ -94,11 +99,14 @@ class RegisterScreenForm extends StatelessWidget {
             ),
             DefaultTextField(
                 icon: Icons.visibility,
-                controller:  context.read<RegisterCubit>().confirmPasswordController,
+                controller:
+                    context.read<RegisterCubit>().confirmPasswordController,
                 hintText: S.of(context).confirmPassword,
                 validator: (value) {
-                  if(value == null || value.isEmpty || context.read<RegisterCubit>().confirmPasswordController == context.read<RegisterCubit>().passwordController)
-                  {
+                  if (value == null ||
+                      value.isEmpty ||
+                      context.read<RegisterCubit>().confirmPasswordController ==
+                          context.read<RegisterCubit>().passwordController) {
                     return 'Please enter valid password';
                   }
                   return null;
@@ -107,7 +115,6 @@ class RegisterScreenForm extends StatelessWidget {
                 obscureText: true,
                 maxLines: 1),
           ],
-        )
-    );
+        ));
   }
 }

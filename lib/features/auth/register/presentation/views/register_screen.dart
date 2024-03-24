@@ -1,4 +1,5 @@
 import 'package:art_space_artist/core/components/default_button.dart';
+import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
@@ -6,13 +7,20 @@ import 'package:art_space_artist/features/auth/register/data/models/register_req
 import 'package:art_space_artist/features/auth/register/presentation/view_model/register_cubit.dart';
 import 'package:art_space_artist/features/auth/register/presentation/views/widgets/register_listener.dart';
 import 'package:art_space_artist/features/auth/register/presentation/views/widgets/register_screen_form.dart';
+import 'package:art_space_artist/features/auth/register/presentation/views/widgets/select_gender_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../generated/l10n.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+bool isMale = true;
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +40,35 @@ class RegisterScreen extends StatelessWidget {
                 height: 30.0,
               ),
               const RegisterScreenForm(),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.12),
+              const SizedBox(height: 20.0,),
+              Row(
+                children: [
+                  const Text('Gender', style:  TextStyles.textStyle30,),
+                  const Spacer(),
+                  SelectGenderWidget(
+                      icon: AssetsManager.icMale,
+                      iconColor: isMale == true ? ColorManager.originalWhite : ColorManager.originalBlack,
+                      backgroundColor:isMale == true ? ColorManager.primaryColor : ColorManager.thirdColor,
+                  onTap: () {
+                    setState(() {
+                      isMale = true;
+                    });
+                  },
+                  ),
+                  const SizedBox(width: 25,),
+                  SelectGenderWidget(
+                    icon: AssetsManager.icFemale,
+                    iconColor: isMale == false ? ColorManager.originalWhite : ColorManager.originalBlack,
+                    backgroundColor: isMale == false ? ColorManager.primaryColor : ColorManager.thirdColor,
+                    onTap: () {
+                      setState(() {
+                        isMale = false;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.09),
               DefaultButton(
                   text: S.of(context).register,
                   onPressed: () {
