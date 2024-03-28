@@ -28,4 +28,3 @@ class RegisterCubit extends Cubit<RegisterState> {
 
 }
 
-enum Gender {male, female}

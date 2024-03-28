@@ -1,6 +1,6 @@
 class ApiConstant {
   //Base URL
-  static const apiBaseURL = 'https://artspace.cyclic.app/api/v1/';
+  static const apiBaseURL = 'https://art-space-v9.onrender.com/api/v1/';
   //Auth end points
   static const login = 'artistAuth/login';
   static const register = 'artistAuth/signup';
@@ -10,4 +10,5 @@ class ApiConstant {
   static const resetPassword = 'artistAuth/resetPassword';
   //Home end points
  static const getProfile = 'artists/getProfile';
+ static const getProducts = 'products/me';
 }

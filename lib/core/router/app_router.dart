@@ -14,6 +14,7 @@ import 'package:art_space_artist/features/products/presentation/views/create_pro
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/auth/forgetPassword/presentation/views/create_new_password.dart';
+import '../../features/products/presentation/views/view_product_details.dart';
 import '../di/dependency_injection.dart';
 import 'app_router_names.dart';
 
@@ -63,6 +64,8 @@ class AppRouter {
         return SlideRight(page: const CreateProduct());
       case AppRouterNames.eventDetails:
         return SlideRight(page: const EventDetailsScreen());
+      case AppRouterNames.viewProductDetails:
+        return SlideRight(page: const ViewProductDetails());
       default:
         return unDefinedRoute();
     }

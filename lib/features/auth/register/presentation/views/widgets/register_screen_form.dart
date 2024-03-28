@@ -1,15 +1,40 @@
+import 'dart:io';
+
+import 'package:art_space_artist/core/constants/constants.dart';
+import 'package:art_space_artist/core/constants/toast_color.dart';
 import 'package:art_space_artist/features/auth/register/presentation/view_model/register_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../../../../core/components/default_text_field.dart';
 import '../../../../../../core/helpers/validation_helper.dart';
 import '../../../../../../generated/l10n.dart';
 import 'custom_circle_avater.dart';
 
-class RegisterScreenForm extends StatelessWidget {
+class RegisterScreenForm extends StatefulWidget {
   const RegisterScreenForm({super.key});
 
+  @override
+  State<RegisterScreenForm> createState() => _RegisterScreenFormState();
+}
+
+class _RegisterScreenFormState extends State<RegisterScreenForm> {
+  bool isScurePassword = true;
+  File ? image;
+
+  Future pickImage() async {
+    try{
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      if(image == null) return;
+      final imgTemp = File(image.path);
+      setState(() => this.image = imgTemp);
+    } on PlatformException catch(e) {
+      showToast(msg: '$e',
+          state: ToastState.warning);
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -18,7 +43,7 @@ class RegisterScreenForm extends StatelessWidget {
           children: [
             Row(
               children: [
-                const CustomRegisterCircleAvatar(),
+                 const CustomRegisterCircleAvatar(),
                 const SizedBox(
                   width: 15.0,
                 ),
@@ -80,25 +105,36 @@ class RegisterScreenForm extends StatelessWidget {
               height: 20.0,
             ),
             DefaultTextField(
-                icon: Icons.visibility,
+                icon:isScurePassword ? Icons.visibility : Icons.visibility_off,
                 controller: context.read<RegisterCubit>().passwordController,
                 hintText: S.of(context).password,
                 validator: (value) {
                   if (value == null ||
                       value.isEmpty ||
-                      !ExtString.isValidPassword(value)) {
+                      ExtString.isValidPassword(value)) {
                     return 'Please enter valid password ';
                   }
                   return null;
                 },
                 keyboardType: TextInputType.visiblePassword,
-                obscureText: true,
-                maxLines: 1),
+                obscureText: isScurePassword,
+                maxLines: 1,
+              onPressedIcon: () {
+                setState(() {
+                  isScurePassword = ! isScurePassword;
+                });
+              },
+            ),
             const SizedBox(
               height: 20.0,
             ),
             DefaultTextField(
-                icon: Icons.visibility,
+              onPressedIcon: () {
+                setState(() {
+                  isScurePassword = ! isScurePassword;
+                });
+              },
+                icon: isScurePassword ? Icons.visibility : Icons.visibility_off,
                 controller:
                     context.read<RegisterCubit>().confirmPasswordController,
                 hintText: S.of(context).confirmPassword,
@@ -107,12 +143,12 @@ class RegisterScreenForm extends StatelessWidget {
                       value.isEmpty ||
                       context.read<RegisterCubit>().confirmPasswordController ==
                           context.read<RegisterCubit>().passwordController) {
-                    return 'Please enter valid password';
+                    return 'Please enter same password';
                   }
                   return null;
                 },
                 keyboardType: TextInputType.visiblePassword,
-                obscureText: true,
+                obscureText: isScurePassword,
                 maxLines: 1),
           ],
         ));

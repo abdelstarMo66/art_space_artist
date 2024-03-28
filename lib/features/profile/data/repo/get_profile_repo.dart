@@ -1,3 +1,4 @@
+import 'package:art_space_artist/core/constants/constants.dart';
 import 'package:art_space_artist/core/helpers/cache_helper.dart';
 import 'package:art_space_artist/core/network/api_service.dart';
 import 'package:art_space_artist/features/profile/data/model/get_profile_response.dart';
@@ -10,7 +11,7 @@ class GetProfileRepo{
 
   Future<ApiResult<GetProfileResponse>> getProfile() async {
     try {
-      final response = await _apiService.getProfile('Bearer ${CacheHelper.getDataFromSharedPreference(key: 'token')}');
+      final response = await _apiService.getProfile('Bearer $token');
       return ApiResult.success(response);
     } catch(error) {
       return ApiResult.failure(error.toString());

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'enums.dart';
+import 'constants.dart';
 
 void logError(String msg) => debugPrint(
       '\x1B[31m$msg\x1B[0m',

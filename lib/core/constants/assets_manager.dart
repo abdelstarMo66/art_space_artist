@@ -41,6 +41,7 @@ class AssetsManager {
   static const String icUpload = "${_baseIc}ic_upload.svg";
   static const String icMale = "${_baseIc}ic_male.svg";
   static const String icFemale = "${_baseIc}ic_female.svg";
+  static const String icEdit = "${_baseIc}ic_edit.svg";
 
   ///Images
   static const String imgLogoAp = "${_baseImg}logo.svg";

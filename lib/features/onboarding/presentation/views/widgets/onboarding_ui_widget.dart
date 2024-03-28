@@ -14,9 +14,11 @@ class OnBoardingScreenUi extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SvgPicture.asset(
-              onBoardingScreenUiModel.image,
-              height: MediaQuery.of(context).size.height * 0.4),
+          Center(
+            child: SvgPicture.asset(
+                onBoardingScreenUiModel.image,
+                height: MediaQuery.of(context).size.height * 0.4),
+          ),
           const Spacer(),
           Text(
             onBoardingScreenUiModel.title,

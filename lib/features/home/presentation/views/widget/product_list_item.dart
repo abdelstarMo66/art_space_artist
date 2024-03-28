@@ -1,14 +1,18 @@
 import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
+import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomProductViewWidget extends StatelessWidget {
-  const CustomProductViewWidget({super.key});
+  final int index;
+  const CustomProductViewWidget({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {
+    var productInfo = context.read<GetMyProductsCubit>().myProducts![index];
     return Stack(
       children: [
         Container(
@@ -26,14 +30,15 @@ class CustomProductViewWidget extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Product Name',
+                    '${productInfo.title}',
                     style: TextStyles.textStyle16.copyWith(
                         fontWeight: FontWeight.bold),
                   ),
+                  const SizedBox(height: 5.0,),
                   Row(
                     children: [
                       Text(
-                        '2,000',
+                        '${productInfo.price}',
                         style: TextStyles.textStyle14Primary.copyWith(fontWeight: FontWeight.bold),),
                       SvgPicture.asset(AssetsManager.icMoney,
 
@@ -41,30 +46,25 @@ class CustomProductViewWidget extends StatelessWidget {
                       ),
                       const Spacer(),
                       Text(
-                        '450',
+                        '${productInfo.category}',
                         style: TextStyles.textStyle12.copyWith(
                             color: ColorManager.originalBlack),
-                      ),
-                      SvgPicture.asset(
-                        AssetsManager.icViews,
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-            Expanded(
-              child: Card(
-                margin: const EdgeInsets.all(12.0),
-                shape:RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25.0)
-                ) ,
-                shadowColor: ColorManager.primaryColor,
-                elevation: 10.0,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(25.0),
-                    child: Image.asset('assets/images/33028820_7947575.jpg')),
-              ),
+            Card(
+              margin: const EdgeInsets.all(12.0),
+              shape:RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0)
+              ) ,
+              shadowColor: ColorManager.primaryColor,
+              elevation: 10.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(25.0),
+                  child: Image.network('${productInfo.coverImage!.profileImg}')),
             ),
           ],
         )

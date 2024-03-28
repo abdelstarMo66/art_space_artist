@@ -13,6 +13,7 @@ import 'package:retrofit/http.dart';
 import '../../features/auth/forgetPassword/data/model/forget_password_response.dart';
 import '../../features/auth/forgetPassword/data/model/verify_email_response.dart';
 import '../../features/auth/login/data/model/login_response.dart';
+import '../../features/products/data/models/get_my_products_response.dart';
 
 part 'api_service.g.dart';
 
@@ -47,6 +48,11 @@ abstract class ApiService {
 
   @GET(ApiConstant.getProfile)
   Future<GetProfileResponse> getProfile(
+      @Header('Authorization') String token,
+      );
+
+  @GET(ApiConstant.getProducts)
+  Future<GetMyProductsResponse> getMyProducts(
       @Header('Authorization') String token,
       );
 }

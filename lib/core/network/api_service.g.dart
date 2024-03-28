@@ -13,7 +13,7 @@ class _ApiService implements ApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://artspace.cyclic.app/api/v1/';
+    baseUrl ??= 'https://art-space-v9.onrender.com/api/v1/';
   }
 
   final Dio _dio;
@@ -189,6 +189,34 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     final value = GetProfileResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<GetMyProductsResponse> getMyProducts(String token) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<GetMyProductsResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'products/me',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = GetMyProductsResponse.fromJson(_result.data!);
     return value;
   }
 

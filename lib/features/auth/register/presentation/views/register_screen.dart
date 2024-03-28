@@ -10,7 +10,6 @@ import 'package:art_space_artist/features/auth/register/presentation/views/widge
 import 'package:art_space_artist/features/auth/register/presentation/views/widgets/select_gender_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../generated/l10n.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -20,7 +19,9 @@ class RegisterScreen extends StatefulWidget {
   State<RegisterScreen> createState() => _RegisterScreenState();
 }
 bool isMale = true;
+bool securePassword = true;
 class _RegisterScreenState extends State<RegisterScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,6 +103,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   void validateThenRegister(BuildContext context) {
     if (context.read<RegisterCubit>().formKey.currentState!.validate()) {
       context.read<RegisterCubit>().emitRegisterStates(RegisterRequestBody(
+        gender: isMale == true ? 'male' : 'female',
             name: context.read<RegisterCubit>().nameController.text,
             email: context.read<RegisterCubit>().emailAddressController.text,
             password: context.read<RegisterCubit>().passwordController.text,

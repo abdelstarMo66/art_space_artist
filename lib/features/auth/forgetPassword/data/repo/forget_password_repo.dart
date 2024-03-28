@@ -13,7 +13,8 @@ class ForgetPasswordRepo {
 
   Future<ApiResult<ForgetPasswordResponse>> forgetPassword(
       ForgetPasswordRequest forgetPasswordRequest
-      ) async{
+      ) async
+  {
     try{
       final response = await _apiService.forgetPassword(forgetPasswordRequest);
       return ApiResult.success(response);

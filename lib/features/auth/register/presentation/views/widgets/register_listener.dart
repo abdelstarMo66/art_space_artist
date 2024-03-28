@@ -1,6 +1,6 @@
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/const_method.dart';
-import 'package:art_space_artist/core/constants/enums.dart';
+import 'package:art_space_artist/core/constants/constants.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/auth/register/presentation/view_model/register_cubit.dart';
 import 'package:art_space_artist/features/auth/register/presentation/view_model/register_state.dart';

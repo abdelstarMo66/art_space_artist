@@ -1,5 +1,5 @@
 import 'package:art_space_artist/core/constants/color_manager.dart';
-import 'package:art_space_artist/core/constants/enums.dart';
+import 'package:art_space_artist/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 

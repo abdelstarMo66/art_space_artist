@@ -59,4 +59,13 @@ class AppCubit extends Cubit<AppState> {
   }
 
   bool lastScreenOnBoarding = false;
+  void finishOnBoardingScreen(lastScreen) {
+    if(lastScreen)
+      {
+        CacheHelper.saveDataSharedPreference(
+            key: 'onBoarding',
+            value: true
+        );
+      }
+  }
 }

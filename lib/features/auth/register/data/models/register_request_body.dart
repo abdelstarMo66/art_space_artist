@@ -8,6 +8,7 @@ class RegisterRequestBody {
   final String passwordConfirm;
   final String phone;
   final String profileImg;
+  final String gender;
 
   RegisterRequestBody({
     required this.name,
@@ -16,6 +17,7 @@ class RegisterRequestBody {
     required this.password,
     required this.passwordConfirm,
     required this.profileImg,
+    required this.gender
   });
 
   Map<String, dynamic> toJson() => _$RegisterRequestBodyToJson(this);

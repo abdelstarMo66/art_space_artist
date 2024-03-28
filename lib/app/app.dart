@@ -1,3 +1,4 @@
+import 'package:art_space_artist/core/constants/constants.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/home/presentation/view_model/home_cubit.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
@@ -35,6 +36,15 @@ class _MyAppState extends State<MyApp> {
       create: (context) => AppCubit()..initAppCubit(),
       child: BlocBuilder<AppCubit, AppState>(
         builder: (context, state) {
+          String ? initialScreen;
+          if(loginDone)
+            {
+              initialScreen = AppRouterNames.home;
+            } else if (onBoardingSeen) {
+            initialScreen  = AppRouterNames.login;
+          } else {
+            initialScreen = AppRouterNames.onBoarding;
+          }
           final cubit = AppCubit.get(context);
           return StreamBuilder<ConnectivityResult>(
               stream: Connectivity().onConnectivityChanged,
@@ -45,7 +55,7 @@ class _MyAppState extends State<MyApp> {
                   }
                 else{
                   return MaterialApp(
-                    initialRoute: AppRouterNames.eventDetails,
+                    initialRoute: initialScreen,
                     title: "Art Space",
                     onGenerateRoute: AppRouter.onGenerateRoutes,
                     debugShowCheckedModeBanner: false,
