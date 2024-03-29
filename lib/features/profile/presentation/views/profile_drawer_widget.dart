@@ -1,6 +1,7 @@
 import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
+import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/get_profile_cubit.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/get_profile_state.dart';
 import 'package:flutter/material.dart';
@@ -111,14 +112,17 @@ class CustomProfileDrawer extends StatelessWidget {
                     style: TextStyles.textStyle18,
                   ),
                 ),
-                ListTile(
-                  leading: SvgPicture.asset(
-                    AssetsManager.icAdd,
-                    height: 40,
-                  ),
-                  title: Text(
-                    S.of(context).addProduct,
-                    style: TextStyles.textStyle18,
+                InkWell(
+                  onTap: () => Navigator.of(context).pushNamed(AppRouterNames.createProduct),
+                  child: ListTile(
+                    leading: SvgPicture.asset(
+                      AssetsManager.icAdd,
+                      height: 40,
+                    ),
+                    title: Text(
+                      S.of(context).addProduct,
+                      style: TextStyles.textStyle18,
+                    ),
                   ),
                 ),
                 ListTile(

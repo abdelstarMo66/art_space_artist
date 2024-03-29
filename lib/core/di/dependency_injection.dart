@@ -35,7 +35,7 @@ Future<void> setupGetIt() async {
   //Get profile
   getIt.registerLazySingleton<GetProfileRepo>(() => GetProfileRepo(getIt()));
   getIt.registerLazySingleton<GetProfileCubit>(() => GetProfileCubit(getIt()));
-  // Get products
-  getIt.registerFactory<GetMyProductsRepo>(() => GetMyProductsRepo(getIt()));
-  getIt.registerFactory<GetMyProductsCubit>(() => GetMyProductsCubit(getIt()));
+  // Products
+  getIt.registerFactory<ProductsRepo>(() => ProductsRepo(getIt()));
+  getIt.registerFactory<ProductsCubit>(() => ProductsCubit(getIt()));
 }

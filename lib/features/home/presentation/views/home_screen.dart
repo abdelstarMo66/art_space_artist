@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
             create:(context) => getIt<GetProfileCubit>()..emitGetProfileStates(),
         ),
         BlocProvider(
-            create:(context) => getIt<GetMyProductsCubit>()..emitGetMyProducts(),
+            create:(context) => getIt<ProductsCubit>()..emitGetMyProducts(),
         ),
       ],
       child: BlocConsumer<GetProfileCubit, GetProfileState>(

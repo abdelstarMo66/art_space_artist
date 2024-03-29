@@ -8,7 +8,11 @@ class ApiConstant {
   static const forgotPassword = 'artistAuth/forgotPassword';
   static const verifyCode = 'artistAuth/verifyCode';
   static const resetPassword = 'artistAuth/resetPassword';
-  //Home end points
- static const getProfile = 'artists/getProfile';
- static const getProducts = 'products/me';
+  //Profile
+  static const getProfile = 'artists/getProfile';
+  //Products
+  static const getProducts = 'products/me';
+  static const getProductDetails = 'products/me/';
+  static const addProduct = 'products';
+
 }

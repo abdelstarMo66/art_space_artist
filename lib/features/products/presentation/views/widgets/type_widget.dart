@@ -6,7 +6,8 @@ import '../../../../../core/constants/text_style.dart';
 class TypeWidget extends StatelessWidget {
   final List<DropdownMenuItem> items;
   final String text;
-  const TypeWidget({Key? key, required this.items, required this.text}) : super(key: key);
+  final ValueChanged onChanged;
+  const TypeWidget({super.key, required this.items, required this.text, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +20,7 @@ class TypeWidget extends StatelessWidget {
           dropdownColor: ColorManager.customGreyColor,
           iconEnabledColor: ColorManager.primaryColor,
           items: items,
-          onChanged: (value) {
-
-          },),
+          onChanged: onChanged,),
       ],
     );
   }

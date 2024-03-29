@@ -4,15 +4,27 @@ import 'package:art_space_artist/features/products/presentation/view_model/produ
 import 'package:art_space_artist/features/products/presentation/view_model/product_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
+
+import '../../../../../core/constants/color_manager.dart';
 
 class GetProductList extends StatelessWidget {
   const GetProductList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GetMyProductsCubit, GetMyProductsState>(
+    return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
-        return Padding(
+        if(state is GetProductLoading)
+        {
+          return Scaffold(
+            body: LoadingAnimationWidget.staggeredDotsWave(
+                color: ColorManager.primaryColor,
+                size: 20
+            ),
+          );
+        }else {
+          return Padding(
           padding: const EdgeInsets.all(8.0),
           child: GridView.builder(
             shrinkWrap: true,
@@ -29,9 +41,10 @@ class GetProductList extends StatelessWidget {
                   Navigator.pushNamed(context, AppRouterNames.viewProductDetails);
                 },
                 child: CustomProductViewWidget(index: index,)),
-            itemCount: context.read<GetMyProductsCubit>().myProducts!.length,
+            itemCount: context.read<ProductsCubit>().myProducts!.length,
           ),
         );
+        }
       }
     );
   }

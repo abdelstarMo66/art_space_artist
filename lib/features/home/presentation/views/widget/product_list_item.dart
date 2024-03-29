@@ -12,7 +12,7 @@ class CustomProductViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var productInfo = context.read<GetMyProductsCubit>().myProducts![index];
+    var productInfo = context.read<ProductsCubit>().myProducts![index];
     return Stack(
       children: [
         Container(
@@ -41,8 +41,7 @@ class CustomProductViewWidget extends StatelessWidget {
                         '${productInfo.price}',
                         style: TextStyles.textStyle14Primary.copyWith(fontWeight: FontWeight.bold),),
                       SvgPicture.asset(AssetsManager.icMoney,
-
-                        color: ColorManager.primaryColor,
+                        colorFilter: const ColorFilter.mode(ColorManager.primaryColor, BlendMode.srcIn),
                       ),
                       const Spacer(),
                       Text(

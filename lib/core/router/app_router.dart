@@ -10,6 +10,7 @@ import 'package:art_space_artist/features/auth/register/presentation/views/widge
 import 'package:art_space_artist/features/events/presentation/views/event_details_screen.dart';
 import 'package:art_space_artist/features/home/presentation/views/home_screen.dart';
 import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
+import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
 import 'package:art_space_artist/features/products/presentation/views/create_prodect.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -61,7 +62,9 @@ class AppRouter {
       case AppRouterNames.home:
         return SlideRight(page: const HomeScreen());
       case AppRouterNames.createProduct:
-        return SlideRight(page: const CreateProduct());
+        return SlideRight(page: BlocProvider(
+          create: (context) => getIt<ProductsCubit>(),
+            child: const AddProduct()));
       case AppRouterNames.eventDetails:
         return SlideRight(page: const EventDetailsScreen());
       case AppRouterNames.viewProductDetails:

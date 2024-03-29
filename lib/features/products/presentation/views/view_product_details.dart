@@ -12,7 +12,9 @@ class ViewProductDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(left: 18.0),
+        padding: const EdgeInsets.only(
+            left: 18.0,
+        ),
         child: Stack(
           alignment: AlignmentDirectional.topEnd,
           children: [
@@ -20,9 +22,12 @@ class ViewProductDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SvgPicture.asset(
-                    AssetsManager.icBackArrow,
-                    height: 40.0,
+                  GestureDetector(
+                    child: SvgPicture.asset(
+                      AssetsManager.icBackArrow,
+                      height: 40.0,
+                    ),
+                    onTap: () => Navigator.of(context).pop(),
                   ),
                   const SizedBox(
                     height: 15.0,
@@ -31,7 +36,8 @@ class ViewProductDetails extends StatelessWidget {
                     AssetsManager.icEdit,
                     height: 40.0,
                     colorFilter: const ColorFilter.mode(
-                        ColorManager.primaryColor, BlendMode.srcIn),
+                        ColorManager.primaryColor, BlendMode.srcIn
+                    ),
                   ),
                   const SizedBox(
                     height: 15.0,
