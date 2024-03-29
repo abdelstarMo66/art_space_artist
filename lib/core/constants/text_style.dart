@@ -1,4 +1,3 @@
-
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:flutter/material.dart';
 

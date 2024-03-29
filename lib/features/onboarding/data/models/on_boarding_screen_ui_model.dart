@@ -3,7 +3,7 @@ class OnBoardingScreenUiModel {
   final String title;
   final String subTitle;
 
-  OnBoardingScreenUiModel({
+  const OnBoardingScreenUiModel({
     required this.image,
     required this.title,
     required this.subTitle,

@@ -4,14 +4,14 @@ class SlideRight extends PageRouteBuilder {
   final Widget page;
   SlideRight({required this.page})
       : super(
-    pageBuilder: (context, animation, animationTwo) => page,
-    transitionsBuilder: (context, animation, animationTwo, child) {
-      return FadeTransition(
-        opacity: animation,
-        child: child,
-      );
-    },
-  );
+          pageBuilder: (context, animation, animationTwo) => page,
+          transitionsBuilder: (context, animation, animationTwo, child) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+        );
 }
 
 // ScaleTransition => begin and end must be double value

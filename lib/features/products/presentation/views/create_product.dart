@@ -1,10 +1,9 @@
 import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
-import 'package:art_space_artist/core/di/dependency_injection.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_state.dart';
-import 'package:art_space_artist/features/products/presentation/views/widgets/create_prodect_text_form.dart';
+import 'package:art_space_artist/features/products/presentation/views/widgets/create_product_text_form.dart';
 import 'package:art_space_artist/features/products/presentation/views/widgets/custom_container_create_product.dart';
 import 'package:art_space_artist/features/products/presentation/views/widgets/price_and_size_widget.dart';
 import 'package:art_space_artist/features/products/presentation/views/widgets/type_widget.dart';
@@ -20,26 +19,21 @@ class AddProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
-        if(state is AddProductLoading)
-        {
+        if (state is AddProductLoading) {
           return Scaffold(
             body: Center(
               child: LoadingAnimationWidget.staggeredDotsWave(
-                  color: ColorManager.primaryColor,
-                  size: 100
-              ),
+                  color: ColorManager.primaryColor, size: 100),
             ),
           );
-        }else{
+        } else {
           var cubit = context.read<ProductsCubit>();
           return Scaffold(
             body: SafeArea(
               child: SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 15.0,
-                      vertical: 10.0
-                  ),
+                      horizontal: 15.0, vertical: 10.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -50,7 +44,8 @@ class AddProduct extends StatelessWidget {
                             padding: const EdgeInsetsDirectional.symmetric(
                                 horizontal: 10, vertical: 8),
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadiusDirectional.circular(25),
+                                borderRadius:
+                                    BorderRadiusDirectional.circular(25),
                                 border: Border.all(
                                   color: Colors.green,
                                 )),
@@ -85,7 +80,9 @@ class AddProduct extends StatelessWidget {
                               keyboardType: TextInputType.name,
                               text: 'Add name',
                               controller: cubit.nameController,
-                              validator: (value) {},
+                              validator: (value) {
+                                return null;
+                              },
                               widget: const Text(
                                 'Name',
                                 style: TextStyles.textStyle18,
@@ -96,7 +93,8 @@ class AddProduct extends StatelessWidget {
                             ),
                             Divider(
                               color: ColorManager.originalBlack,
-                              endIndent: MediaQuery.of(context).size.width * 0.15,
+                              endIndent:
+                                  MediaQuery.of(context).size.width * 0.15,
                               indent: MediaQuery.of(context).size.width * 0.15,
                             ),
                             const SizedBox(
@@ -108,7 +106,9 @@ class AddProduct extends StatelessWidget {
                                 padding: 15,
                                 textAlign: TextAlign.start,
                                 keyboardType: TextInputType.multiline,
-                                validator: (value) {},
+                                validator: (value) {
+                                  return null;
+                                },
                                 controller: cubit.descriptionController,
                                 text: 'Description ....',
                                 maxLines: 6,
@@ -190,93 +190,96 @@ class AddProduct extends StatelessWidget {
                         height: 240,
                         widget: Column(
                           children: [
-                             TypeWidget(
-                                items: const [
-                                  DropdownMenuItem(
-                                    value: 0,
-                                    child: Text(
-                                      'Category 1',
-                                      style: TextStyles.textStyle18,
-                                    ),
+                            TypeWidget(
+                              items: const [
+                                DropdownMenuItem(
+                                  value: 0,
+                                  child: Text(
+                                    'Category 1',
+                                    style: TextStyles.textStyle18,
                                   ),
-                                  DropdownMenuItem(
-                                    value: 1,
-                                    child: Text(
-                                      'Category 2',
-                                      style: TextStyles.textStyle18,
-                                    ),
+                                ),
+                                DropdownMenuItem(
+                                  value: 1,
+                                  child: Text(
+                                    'Category 2',
+                                    style: TextStyles.textStyle18,
                                   ),
-                                  DropdownMenuItem(
-                                    value: 2,
-                                    child: Text(
-                                      'Category 3',
-                                      style: TextStyles.textStyle18,
-                                    ),
+                                ),
+                                DropdownMenuItem(
+                                  value: 2,
+                                  child: Text(
+                                    'Category 3',
+                                    style: TextStyles.textStyle18,
                                   ),
-                                  DropdownMenuItem(
-                                    value: 3,
-                                    child: Text(
-                                      'Category 4',
-                                      style: TextStyles.textStyle18,
-                                    ),
+                                ),
+                                DropdownMenuItem(
+                                  value: 3,
+                                  child: Text(
+                                    'Category 4',
+                                    style: TextStyles.textStyle18,
                                   ),
-                                ], text: 'Category', onChanged: (value) {  },),
-                             TypeWidget(
-                               items: [
+                                ),
+                              ],
+                              text: 'Category',
+                              onChanged: (value) {},
+                            ),
+                            TypeWidget(
+                              items: [
+                                DropdownMenuItem(
+                                  value: 0,
+                                  child: Text(
+                                    cubit.styles[0],
+                                    style: TextStyles.textStyle18,
+                                  ),
+                                ),
+                                DropdownMenuItem(
+                                  value: 1,
+                                  child: Text(
+                                    cubit.styles[1],
+                                    style: TextStyles.textStyle18,
+                                  ),
+                                ),
+                              ],
+                              text: 'Style',
+                              onChanged: (value) {},
+                            ),
+                            TypeWidget(items: const [
                               DropdownMenuItem(
                                 value: 0,
                                 child: Text(
-                                  '${cubit.styles[0]}',
+                                  'Subject 1',
                                   style: TextStyles.textStyle18,
                                 ),
                               ),
                               DropdownMenuItem(
                                 value: 1,
                                 child: Text(
-                                  '${cubit.styles[1]}',
+                                  'Subject 2',
                                   style: TextStyles.textStyle18,
                                 ),
                               ),
-                            ],
-                               text: 'Style',
-                               onChanged: (value) {  },),
-                             TypeWidget(
-                                items: const [
-                                  DropdownMenuItem(
-                                    value: 0,
-                                    child: Text(
-                                      'Subject 1',
-                                      style: TextStyles.textStyle18,
-                                    ),
-                                  ),
-                                  DropdownMenuItem(
-                                    value: 1,
-                                    child: Text(
-                                      'Subject 2',
-                                      style: TextStyles.textStyle18,
-                                    ),
-                                  ),
-                                  DropdownMenuItem(
-                                    value: 2,
-                                    child: Text(
-                                      'Subject 3',
-                                      style: TextStyles.textStyle18,
-                                    ),
-                                  ),
-                                  DropdownMenuItem(
-                                    value: 3,
-                                    child: Text(
-                                      'Subject 4',
-                                      style: TextStyles.textStyle18,
-                                    ),
-                                  ),
-                                ],
-                                onChanged: (value) {},
-                                text: 'Subject'),
+                              DropdownMenuItem(
+                                value: 2,
+                                child: Text(
+                                  'Subject 3',
+                                  style: TextStyles.textStyle18,
+                                ),
+                              ),
+                              DropdownMenuItem(
+                                value: 3,
+                                child: Text(
+                                  'Subject 4',
+                                  style: TextStyles.textStyle18,
+                                ),
+                              ),
+                            ], onChanged: (value) {}, text: 'Subject'),
                             CreateProductTextForm(
                               text: 'Add material ...',
                               controller: cubit.materialController,
-                              validator: (value) {},
+                              validator: (value) {
+                                return null;
+                              },
                               keyboardType: TextInputType.name,
                               textAlign: TextAlign.start,
                               padding: 15.0,
@@ -316,8 +319,8 @@ class AddProduct extends StatelessWidget {
                             child: Container(
                               width: MediaQuery.of(context).size.width * 0.4,
                               height: MediaQuery.of(context).size.height * 0.2,
-                              decoration:
-                              BoxDecoration(color: ColorManager.customGreyColor,
+                              decoration: BoxDecoration(
+                                  color: ColorManager.customGreyColor,
                                   borderRadius: BorderRadius.circular(30)),
                               child: SvgPicture.asset(
                                 AssetsManager.icAdd,
@@ -335,7 +338,6 @@ class AddProduct extends StatelessWidget {
             ),
           );
         }
-
       },
     );
   }
