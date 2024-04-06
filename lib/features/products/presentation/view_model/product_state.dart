@@ -11,4 +11,12 @@ class ProductsState<T> with _$ProductsState<T> {
   const factory ProductsState.addProductLoading() = AddProductLoading;
   const factory ProductsState.addProductSuccess(T data) = AddProductSuccess;
   const factory ProductsState.addProductError({required String error}) = AddProductError;
+
+  const factory ProductsState.getProductDetailsLoading() = GetProductDetailsLoading;
+  const factory ProductsState.getProductDetailsSuccess(T data) = GetProductDetailsSuccess;
+  const factory ProductsState.getProductDetailsError({required String error}) = GetProductDetailsError;
+
+  const factory ProductsState.deleteProductLoading() = DeleteProductLoading;
+  const factory ProductsState.deleteProductSuccess(T data) = DeleteProductSuccess;
+  const factory ProductsState.deleteProductError({required String error}) = DeleteProductError;
 }

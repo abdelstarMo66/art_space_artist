@@ -12,7 +12,7 @@ class ApiConstant {
   static const getProfile = 'artists/getProfile';
   //Products
   static const getProducts = 'products/me';
-  static const getProductDetails = 'products/me/';
+  static const getProductDetails = 'products/me/{id}';
   static const addProduct = 'products';
-
+  static const deleteProduct = 'products/me/{id}';
 }

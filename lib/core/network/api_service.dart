@@ -7,14 +7,15 @@ import 'package:art_space_artist/features/auth/login/data/model/login_request_bo
 import 'package:art_space_artist/features/auth/register/data/models/register_request_body.dart';
 import 'package:art_space_artist/features/auth/register/data/models/register_response.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_response.dart';
+import 'package:art_space_artist/features/products/data/models/delete_product_response.dart';
 import 'package:art_space_artist/features/profile/data/model/get_profile_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
-
 import '../../features/auth/forgetPassword/data/model/forget_password_response.dart';
 import '../../features/auth/forgetPassword/data/model/verify_email_response.dart';
 import '../../features/auth/login/data/model/login_response.dart';
 import '../../features/products/data/models/get_my_products_response.dart';
+import '../../features/products/data/models/get_product_details_response.dart';
 
 part 'api_service.g.dart';
 
@@ -60,6 +61,18 @@ abstract class ApiService {
   @POST(ApiConstant.addProduct)
   Future<AddProductResponse> addProduct({
     @Body() required FormData body,
+    @Header('Authorization') required String token,
+  });
+
+  @GET(ApiConstant.getProductDetails)
+  Future<GetProductDetailsResponse> getProductDetails({
+    @Path('id') required String? id,
+    @Header('Authorization') required String token,
+  });
+
+  @DELETE(ApiConstant.deleteProduct)
+  Future<DeleteProductResponse> deleteProduct({
+    @Path('id') required String? id,
     @Header('Authorization') required String token,
   });
 }

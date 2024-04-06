@@ -68,7 +68,8 @@ class AppRouter {
       case AppRouterNames.eventDetails:
         return SlideRight(page: const EventDetailsScreen());
       case AppRouterNames.viewProductDetails:
-        return SlideRight(page: const ViewProductDetails());
+        return SlideRight(
+            page: ViewProductDetails(index:settings.arguments as int));
       default:
         return unDefinedRoute();
     }

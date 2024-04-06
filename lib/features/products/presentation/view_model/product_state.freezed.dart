@@ -25,6 +25,12 @@ mixin _$ProductsState<T> {
     required TResult Function() addProductLoading,
     required TResult Function(T data) addProductSuccess,
     required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +42,12 @@ mixin _$ProductsState<T> {
     TResult? Function()? addProductLoading,
     TResult? Function(T data)? addProductSuccess,
     TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +59,12 @@ mixin _$ProductsState<T> {
     TResult Function()? addProductLoading,
     TResult Function(T data)? addProductSuccess,
     TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +77,17 @@ mixin _$ProductsState<T> {
     required TResult Function(AddProductLoading<T> value) addProductLoading,
     required TResult Function(AddProductSuccess<T> value) addProductSuccess,
     required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +99,14 @@ mixin _$ProductsState<T> {
     TResult? Function(AddProductLoading<T> value)? addProductLoading,
     TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +118,14 @@ mixin _$ProductsState<T> {
     TResult Function(AddProductLoading<T> value)? addProductLoading,
     TResult Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -149,6 +194,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() addProductLoading,
     required TResult Function(T data) addProductSuccess,
     required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
   }) {
     return initial();
   }
@@ -163,6 +214,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? addProductLoading,
     TResult? Function(T data)? addProductSuccess,
     TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
   }) {
     return initial?.call();
   }
@@ -177,6 +234,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? addProductLoading,
     TResult Function(T data)? addProductSuccess,
     TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -195,6 +258,17 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(AddProductLoading<T> value) addProductLoading,
     required TResult Function(AddProductSuccess<T> value) addProductSuccess,
     required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
   }) {
     return initial(this);
   }
@@ -209,6 +283,14 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(AddProductLoading<T> value)? addProductLoading,
     TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
   }) {
     return initial?.call(this);
   }
@@ -223,6 +305,14 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(AddProductLoading<T> value)? addProductLoading,
     TResult Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -282,6 +372,12 @@ class _$GetProductLoadingImpl<T> implements GetProductLoading<T> {
     required TResult Function() addProductLoading,
     required TResult Function(T data) addProductSuccess,
     required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
   }) {
     return getProductLoading();
   }
@@ -296,6 +392,12 @@ class _$GetProductLoadingImpl<T> implements GetProductLoading<T> {
     TResult? Function()? addProductLoading,
     TResult? Function(T data)? addProductSuccess,
     TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
   }) {
     return getProductLoading?.call();
   }
@@ -310,6 +412,12 @@ class _$GetProductLoadingImpl<T> implements GetProductLoading<T> {
     TResult Function()? addProductLoading,
     TResult Function(T data)? addProductSuccess,
     TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
     required TResult orElse(),
   }) {
     if (getProductLoading != null) {
@@ -328,6 +436,17 @@ class _$GetProductLoadingImpl<T> implements GetProductLoading<T> {
     required TResult Function(AddProductLoading<T> value) addProductLoading,
     required TResult Function(AddProductSuccess<T> value) addProductSuccess,
     required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
   }) {
     return getProductLoading(this);
   }
@@ -342,6 +461,14 @@ class _$GetProductLoadingImpl<T> implements GetProductLoading<T> {
     TResult? Function(AddProductLoading<T> value)? addProductLoading,
     TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
   }) {
     return getProductLoading?.call(this);
   }
@@ -356,6 +483,14 @@ class _$GetProductLoadingImpl<T> implements GetProductLoading<T> {
     TResult Function(AddProductLoading<T> value)? addProductLoading,
     TResult Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
     required TResult orElse(),
   }) {
     if (getProductLoading != null) {
@@ -443,6 +578,12 @@ class _$GetProductSuccessImpl<T> implements GetProductSuccess<T> {
     required TResult Function() addProductLoading,
     required TResult Function(T data) addProductSuccess,
     required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
   }) {
     return getProductSuccess(data);
   }
@@ -457,6 +598,12 @@ class _$GetProductSuccessImpl<T> implements GetProductSuccess<T> {
     TResult? Function()? addProductLoading,
     TResult? Function(T data)? addProductSuccess,
     TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
   }) {
     return getProductSuccess?.call(data);
   }
@@ -471,6 +618,12 @@ class _$GetProductSuccessImpl<T> implements GetProductSuccess<T> {
     TResult Function()? addProductLoading,
     TResult Function(T data)? addProductSuccess,
     TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
     required TResult orElse(),
   }) {
     if (getProductSuccess != null) {
@@ -489,6 +642,17 @@ class _$GetProductSuccessImpl<T> implements GetProductSuccess<T> {
     required TResult Function(AddProductLoading<T> value) addProductLoading,
     required TResult Function(AddProductSuccess<T> value) addProductSuccess,
     required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
   }) {
     return getProductSuccess(this);
   }
@@ -503,6 +667,14 @@ class _$GetProductSuccessImpl<T> implements GetProductSuccess<T> {
     TResult? Function(AddProductLoading<T> value)? addProductLoading,
     TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
   }) {
     return getProductSuccess?.call(this);
   }
@@ -517,6 +689,14 @@ class _$GetProductSuccessImpl<T> implements GetProductSuccess<T> {
     TResult Function(AddProductLoading<T> value)? addProductLoading,
     TResult Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
     required TResult orElse(),
   }) {
     if (getProductSuccess != null) {
@@ -607,6 +787,12 @@ class _$GetProductErrorImpl<T> implements GetProductError<T> {
     required TResult Function() addProductLoading,
     required TResult Function(T data) addProductSuccess,
     required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
   }) {
     return getProductError(error);
   }
@@ -621,6 +807,12 @@ class _$GetProductErrorImpl<T> implements GetProductError<T> {
     TResult? Function()? addProductLoading,
     TResult? Function(T data)? addProductSuccess,
     TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
   }) {
     return getProductError?.call(error);
   }
@@ -635,6 +827,12 @@ class _$GetProductErrorImpl<T> implements GetProductError<T> {
     TResult Function()? addProductLoading,
     TResult Function(T data)? addProductSuccess,
     TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
     required TResult orElse(),
   }) {
     if (getProductError != null) {
@@ -653,6 +851,17 @@ class _$GetProductErrorImpl<T> implements GetProductError<T> {
     required TResult Function(AddProductLoading<T> value) addProductLoading,
     required TResult Function(AddProductSuccess<T> value) addProductSuccess,
     required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
   }) {
     return getProductError(this);
   }
@@ -667,6 +876,14 @@ class _$GetProductErrorImpl<T> implements GetProductError<T> {
     TResult? Function(AddProductLoading<T> value)? addProductLoading,
     TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
   }) {
     return getProductError?.call(this);
   }
@@ -681,6 +898,14 @@ class _$GetProductErrorImpl<T> implements GetProductError<T> {
     TResult Function(AddProductLoading<T> value)? addProductLoading,
     TResult Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
     required TResult orElse(),
   }) {
     if (getProductError != null) {
@@ -746,6 +971,12 @@ class _$AddProductLoadingImpl<T> implements AddProductLoading<T> {
     required TResult Function() addProductLoading,
     required TResult Function(T data) addProductSuccess,
     required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
   }) {
     return addProductLoading();
   }
@@ -760,6 +991,12 @@ class _$AddProductLoadingImpl<T> implements AddProductLoading<T> {
     TResult? Function()? addProductLoading,
     TResult? Function(T data)? addProductSuccess,
     TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
   }) {
     return addProductLoading?.call();
   }
@@ -774,6 +1011,12 @@ class _$AddProductLoadingImpl<T> implements AddProductLoading<T> {
     TResult Function()? addProductLoading,
     TResult Function(T data)? addProductSuccess,
     TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
     required TResult orElse(),
   }) {
     if (addProductLoading != null) {
@@ -792,6 +1035,17 @@ class _$AddProductLoadingImpl<T> implements AddProductLoading<T> {
     required TResult Function(AddProductLoading<T> value) addProductLoading,
     required TResult Function(AddProductSuccess<T> value) addProductSuccess,
     required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
   }) {
     return addProductLoading(this);
   }
@@ -806,6 +1060,14 @@ class _$AddProductLoadingImpl<T> implements AddProductLoading<T> {
     TResult? Function(AddProductLoading<T> value)? addProductLoading,
     TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
   }) {
     return addProductLoading?.call(this);
   }
@@ -820,6 +1082,14 @@ class _$AddProductLoadingImpl<T> implements AddProductLoading<T> {
     TResult Function(AddProductLoading<T> value)? addProductLoading,
     TResult Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
     required TResult orElse(),
   }) {
     if (addProductLoading != null) {
@@ -907,6 +1177,12 @@ class _$AddProductSuccessImpl<T> implements AddProductSuccess<T> {
     required TResult Function() addProductLoading,
     required TResult Function(T data) addProductSuccess,
     required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
   }) {
     return addProductSuccess(data);
   }
@@ -921,6 +1197,12 @@ class _$AddProductSuccessImpl<T> implements AddProductSuccess<T> {
     TResult? Function()? addProductLoading,
     TResult? Function(T data)? addProductSuccess,
     TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
   }) {
     return addProductSuccess?.call(data);
   }
@@ -935,6 +1217,12 @@ class _$AddProductSuccessImpl<T> implements AddProductSuccess<T> {
     TResult Function()? addProductLoading,
     TResult Function(T data)? addProductSuccess,
     TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
     required TResult orElse(),
   }) {
     if (addProductSuccess != null) {
@@ -953,6 +1241,17 @@ class _$AddProductSuccessImpl<T> implements AddProductSuccess<T> {
     required TResult Function(AddProductLoading<T> value) addProductLoading,
     required TResult Function(AddProductSuccess<T> value) addProductSuccess,
     required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
   }) {
     return addProductSuccess(this);
   }
@@ -967,6 +1266,14 @@ class _$AddProductSuccessImpl<T> implements AddProductSuccess<T> {
     TResult? Function(AddProductLoading<T> value)? addProductLoading,
     TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
   }) {
     return addProductSuccess?.call(this);
   }
@@ -981,6 +1288,14 @@ class _$AddProductSuccessImpl<T> implements AddProductSuccess<T> {
     TResult Function(AddProductLoading<T> value)? addProductLoading,
     TResult Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
     required TResult orElse(),
   }) {
     if (addProductSuccess != null) {
@@ -1071,6 +1386,12 @@ class _$AddProductErrorImpl<T> implements AddProductError<T> {
     required TResult Function() addProductLoading,
     required TResult Function(T data) addProductSuccess,
     required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
   }) {
     return addProductError(error);
   }
@@ -1085,6 +1406,12 @@ class _$AddProductErrorImpl<T> implements AddProductError<T> {
     TResult? Function()? addProductLoading,
     TResult? Function(T data)? addProductSuccess,
     TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
   }) {
     return addProductError?.call(error);
   }
@@ -1099,6 +1426,12 @@ class _$AddProductErrorImpl<T> implements AddProductError<T> {
     TResult Function()? addProductLoading,
     TResult Function(T data)? addProductSuccess,
     TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
     required TResult orElse(),
   }) {
     if (addProductError != null) {
@@ -1117,6 +1450,17 @@ class _$AddProductErrorImpl<T> implements AddProductError<T> {
     required TResult Function(AddProductLoading<T> value) addProductLoading,
     required TResult Function(AddProductSuccess<T> value) addProductSuccess,
     required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
   }) {
     return addProductError(this);
   }
@@ -1131,6 +1475,14 @@ class _$AddProductErrorImpl<T> implements AddProductError<T> {
     TResult? Function(AddProductLoading<T> value)? addProductLoading,
     TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
   }) {
     return addProductError?.call(this);
   }
@@ -1145,6 +1497,14 @@ class _$AddProductErrorImpl<T> implements AddProductError<T> {
     TResult Function(AddProductLoading<T> value)? addProductLoading,
     TResult Function(AddProductSuccess<T> value)? addProductSuccess,
     TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
     required TResult orElse(),
   }) {
     if (addProductError != null) {
@@ -1162,4 +1522,1213 @@ abstract class AddProductError<T> implements ProductsState<T> {
   @JsonKey(ignore: true)
   _$$AddProductErrorImplCopyWith<T, _$AddProductErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetProductDetailsLoadingImplCopyWith<T, $Res> {
+  factory _$$GetProductDetailsLoadingImplCopyWith(
+          _$GetProductDetailsLoadingImpl<T> value,
+          $Res Function(_$GetProductDetailsLoadingImpl<T>) then) =
+      __$$GetProductDetailsLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetProductDetailsLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res,
+        _$GetProductDetailsLoadingImpl<T>>
+    implements _$$GetProductDetailsLoadingImplCopyWith<T, $Res> {
+  __$$GetProductDetailsLoadingImplCopyWithImpl(
+      _$GetProductDetailsLoadingImpl<T> _value,
+      $Res Function(_$GetProductDetailsLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetProductDetailsLoadingImpl<T> implements GetProductDetailsLoading<T> {
+  const _$GetProductDetailsLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProductsState<$T>.getProductDetailsLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetProductDetailsLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(T data) getProductSuccess,
+    required TResult Function(String error) getProductError,
+    required TResult Function() addProductLoading,
+    required TResult Function(T data) addProductSuccess,
+    required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
+  }) {
+    return getProductDetailsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(T data)? getProductSuccess,
+    TResult? Function(String error)? getProductError,
+    TResult? Function()? addProductLoading,
+    TResult? Function(T data)? addProductSuccess,
+    TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
+  }) {
+    return getProductDetailsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(T data)? getProductSuccess,
+    TResult Function(String error)? getProductError,
+    TResult Function()? addProductLoading,
+    TResult Function(T data)? addProductSuccess,
+    TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
+    required TResult orElse(),
+  }) {
+    if (getProductDetailsLoading != null) {
+      return getProductDetailsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProductLoading<T> value) getProductLoading,
+    required TResult Function(GetProductSuccess<T> value) getProductSuccess,
+    required TResult Function(GetProductError<T> value) getProductError,
+    required TResult Function(AddProductLoading<T> value) addProductLoading,
+    required TResult Function(AddProductSuccess<T> value) addProductSuccess,
+    required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
+  }) {
+    return getProductDetailsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProductLoading<T> value)? getProductLoading,
+    TResult? Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult? Function(GetProductError<T> value)? getProductError,
+    TResult? Function(AddProductLoading<T> value)? addProductLoading,
+    TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
+  }) {
+    return getProductDetailsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProductLoading<T> value)? getProductLoading,
+    TResult Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult Function(GetProductError<T> value)? getProductError,
+    TResult Function(AddProductLoading<T> value)? addProductLoading,
+    TResult Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
+    required TResult orElse(),
+  }) {
+    if (getProductDetailsLoading != null) {
+      return getProductDetailsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetProductDetailsLoading<T> implements ProductsState<T> {
+  const factory GetProductDetailsLoading() = _$GetProductDetailsLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetProductDetailsSuccessImplCopyWith<T, $Res> {
+  factory _$$GetProductDetailsSuccessImplCopyWith(
+          _$GetProductDetailsSuccessImpl<T> value,
+          $Res Function(_$GetProductDetailsSuccessImpl<T>) then) =
+      __$$GetProductDetailsSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$GetProductDetailsSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res,
+        _$GetProductDetailsSuccessImpl<T>>
+    implements _$$GetProductDetailsSuccessImplCopyWith<T, $Res> {
+  __$$GetProductDetailsSuccessImplCopyWithImpl(
+      _$GetProductDetailsSuccessImpl<T> _value,
+      $Res Function(_$GetProductDetailsSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$GetProductDetailsSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetProductDetailsSuccessImpl<T> implements GetProductDetailsSuccess<T> {
+  const _$GetProductDetailsSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'ProductsState<$T>.getProductDetailsSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetProductDetailsSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetProductDetailsSuccessImplCopyWith<T, _$GetProductDetailsSuccessImpl<T>>
+      get copyWith => __$$GetProductDetailsSuccessImplCopyWithImpl<T,
+          _$GetProductDetailsSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(T data) getProductSuccess,
+    required TResult Function(String error) getProductError,
+    required TResult Function() addProductLoading,
+    required TResult Function(T data) addProductSuccess,
+    required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
+  }) {
+    return getProductDetailsSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(T data)? getProductSuccess,
+    TResult? Function(String error)? getProductError,
+    TResult? Function()? addProductLoading,
+    TResult? Function(T data)? addProductSuccess,
+    TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
+  }) {
+    return getProductDetailsSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(T data)? getProductSuccess,
+    TResult Function(String error)? getProductError,
+    TResult Function()? addProductLoading,
+    TResult Function(T data)? addProductSuccess,
+    TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
+    required TResult orElse(),
+  }) {
+    if (getProductDetailsSuccess != null) {
+      return getProductDetailsSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProductLoading<T> value) getProductLoading,
+    required TResult Function(GetProductSuccess<T> value) getProductSuccess,
+    required TResult Function(GetProductError<T> value) getProductError,
+    required TResult Function(AddProductLoading<T> value) addProductLoading,
+    required TResult Function(AddProductSuccess<T> value) addProductSuccess,
+    required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
+  }) {
+    return getProductDetailsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProductLoading<T> value)? getProductLoading,
+    TResult? Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult? Function(GetProductError<T> value)? getProductError,
+    TResult? Function(AddProductLoading<T> value)? addProductLoading,
+    TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
+  }) {
+    return getProductDetailsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProductLoading<T> value)? getProductLoading,
+    TResult Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult Function(GetProductError<T> value)? getProductError,
+    TResult Function(AddProductLoading<T> value)? addProductLoading,
+    TResult Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
+    required TResult orElse(),
+  }) {
+    if (getProductDetailsSuccess != null) {
+      return getProductDetailsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetProductDetailsSuccess<T> implements ProductsState<T> {
+  const factory GetProductDetailsSuccess(final T data) =
+      _$GetProductDetailsSuccessImpl<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$GetProductDetailsSuccessImplCopyWith<T, _$GetProductDetailsSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetProductDetailsErrorImplCopyWith<T, $Res> {
+  factory _$$GetProductDetailsErrorImplCopyWith(
+          _$GetProductDetailsErrorImpl<T> value,
+          $Res Function(_$GetProductDetailsErrorImpl<T>) then) =
+      __$$GetProductDetailsErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetProductDetailsErrorImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res,
+        _$GetProductDetailsErrorImpl<T>>
+    implements _$$GetProductDetailsErrorImplCopyWith<T, $Res> {
+  __$$GetProductDetailsErrorImplCopyWithImpl(
+      _$GetProductDetailsErrorImpl<T> _value,
+      $Res Function(_$GetProductDetailsErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetProductDetailsErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetProductDetailsErrorImpl<T> implements GetProductDetailsError<T> {
+  const _$GetProductDetailsErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'ProductsState<$T>.getProductDetailsError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetProductDetailsErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetProductDetailsErrorImplCopyWith<T, _$GetProductDetailsErrorImpl<T>>
+      get copyWith => __$$GetProductDetailsErrorImplCopyWithImpl<T,
+          _$GetProductDetailsErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(T data) getProductSuccess,
+    required TResult Function(String error) getProductError,
+    required TResult Function() addProductLoading,
+    required TResult Function(T data) addProductSuccess,
+    required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
+  }) {
+    return getProductDetailsError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(T data)? getProductSuccess,
+    TResult? Function(String error)? getProductError,
+    TResult? Function()? addProductLoading,
+    TResult? Function(T data)? addProductSuccess,
+    TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
+  }) {
+    return getProductDetailsError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(T data)? getProductSuccess,
+    TResult Function(String error)? getProductError,
+    TResult Function()? addProductLoading,
+    TResult Function(T data)? addProductSuccess,
+    TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
+    required TResult orElse(),
+  }) {
+    if (getProductDetailsError != null) {
+      return getProductDetailsError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProductLoading<T> value) getProductLoading,
+    required TResult Function(GetProductSuccess<T> value) getProductSuccess,
+    required TResult Function(GetProductError<T> value) getProductError,
+    required TResult Function(AddProductLoading<T> value) addProductLoading,
+    required TResult Function(AddProductSuccess<T> value) addProductSuccess,
+    required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
+  }) {
+    return getProductDetailsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProductLoading<T> value)? getProductLoading,
+    TResult? Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult? Function(GetProductError<T> value)? getProductError,
+    TResult? Function(AddProductLoading<T> value)? addProductLoading,
+    TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
+  }) {
+    return getProductDetailsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProductLoading<T> value)? getProductLoading,
+    TResult Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult Function(GetProductError<T> value)? getProductError,
+    TResult Function(AddProductLoading<T> value)? addProductLoading,
+    TResult Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
+    required TResult orElse(),
+  }) {
+    if (getProductDetailsError != null) {
+      return getProductDetailsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetProductDetailsError<T> implements ProductsState<T> {
+  const factory GetProductDetailsError({required final String error}) =
+      _$GetProductDetailsErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetProductDetailsErrorImplCopyWith<T, _$GetProductDetailsErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteProductLoadingImplCopyWith<T, $Res> {
+  factory _$$DeleteProductLoadingImplCopyWith(
+          _$DeleteProductLoadingImpl<T> value,
+          $Res Function(_$DeleteProductLoadingImpl<T>) then) =
+      __$$DeleteProductLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteProductLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res, _$DeleteProductLoadingImpl<T>>
+    implements _$$DeleteProductLoadingImplCopyWith<T, $Res> {
+  __$$DeleteProductLoadingImplCopyWithImpl(_$DeleteProductLoadingImpl<T> _value,
+      $Res Function(_$DeleteProductLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
+  const _$DeleteProductLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProductsState<$T>.deleteProductLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteProductLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(T data) getProductSuccess,
+    required TResult Function(String error) getProductError,
+    required TResult Function() addProductLoading,
+    required TResult Function(T data) addProductSuccess,
+    required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
+  }) {
+    return deleteProductLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(T data)? getProductSuccess,
+    TResult? Function(String error)? getProductError,
+    TResult? Function()? addProductLoading,
+    TResult? Function(T data)? addProductSuccess,
+    TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
+  }) {
+    return deleteProductLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(T data)? getProductSuccess,
+    TResult Function(String error)? getProductError,
+    TResult Function()? addProductLoading,
+    TResult Function(T data)? addProductSuccess,
+    TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
+    required TResult orElse(),
+  }) {
+    if (deleteProductLoading != null) {
+      return deleteProductLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProductLoading<T> value) getProductLoading,
+    required TResult Function(GetProductSuccess<T> value) getProductSuccess,
+    required TResult Function(GetProductError<T> value) getProductError,
+    required TResult Function(AddProductLoading<T> value) addProductLoading,
+    required TResult Function(AddProductSuccess<T> value) addProductSuccess,
+    required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
+  }) {
+    return deleteProductLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProductLoading<T> value)? getProductLoading,
+    TResult? Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult? Function(GetProductError<T> value)? getProductError,
+    TResult? Function(AddProductLoading<T> value)? addProductLoading,
+    TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
+  }) {
+    return deleteProductLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProductLoading<T> value)? getProductLoading,
+    TResult Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult Function(GetProductError<T> value)? getProductError,
+    TResult Function(AddProductLoading<T> value)? addProductLoading,
+    TResult Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
+    required TResult orElse(),
+  }) {
+    if (deleteProductLoading != null) {
+      return deleteProductLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteProductLoading<T> implements ProductsState<T> {
+  const factory DeleteProductLoading() = _$DeleteProductLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteProductSuccessImplCopyWith<T, $Res> {
+  factory _$$DeleteProductSuccessImplCopyWith(
+          _$DeleteProductSuccessImpl<T> value,
+          $Res Function(_$DeleteProductSuccessImpl<T>) then) =
+      __$$DeleteProductSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$DeleteProductSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res, _$DeleteProductSuccessImpl<T>>
+    implements _$$DeleteProductSuccessImplCopyWith<T, $Res> {
+  __$$DeleteProductSuccessImplCopyWithImpl(_$DeleteProductSuccessImpl<T> _value,
+      $Res Function(_$DeleteProductSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$DeleteProductSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
+  const _$DeleteProductSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'ProductsState<$T>.deleteProductSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteProductSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteProductSuccessImplCopyWith<T, _$DeleteProductSuccessImpl<T>>
+      get copyWith => __$$DeleteProductSuccessImplCopyWithImpl<T,
+          _$DeleteProductSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(T data) getProductSuccess,
+    required TResult Function(String error) getProductError,
+    required TResult Function() addProductLoading,
+    required TResult Function(T data) addProductSuccess,
+    required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
+  }) {
+    return deleteProductSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(T data)? getProductSuccess,
+    TResult? Function(String error)? getProductError,
+    TResult? Function()? addProductLoading,
+    TResult? Function(T data)? addProductSuccess,
+    TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
+  }) {
+    return deleteProductSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(T data)? getProductSuccess,
+    TResult Function(String error)? getProductError,
+    TResult Function()? addProductLoading,
+    TResult Function(T data)? addProductSuccess,
+    TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
+    required TResult orElse(),
+  }) {
+    if (deleteProductSuccess != null) {
+      return deleteProductSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProductLoading<T> value) getProductLoading,
+    required TResult Function(GetProductSuccess<T> value) getProductSuccess,
+    required TResult Function(GetProductError<T> value) getProductError,
+    required TResult Function(AddProductLoading<T> value) addProductLoading,
+    required TResult Function(AddProductSuccess<T> value) addProductSuccess,
+    required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
+  }) {
+    return deleteProductSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProductLoading<T> value)? getProductLoading,
+    TResult? Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult? Function(GetProductError<T> value)? getProductError,
+    TResult? Function(AddProductLoading<T> value)? addProductLoading,
+    TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
+  }) {
+    return deleteProductSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProductLoading<T> value)? getProductLoading,
+    TResult Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult Function(GetProductError<T> value)? getProductError,
+    TResult Function(AddProductLoading<T> value)? addProductLoading,
+    TResult Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
+    required TResult orElse(),
+  }) {
+    if (deleteProductSuccess != null) {
+      return deleteProductSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteProductSuccess<T> implements ProductsState<T> {
+  const factory DeleteProductSuccess(final T data) =
+      _$DeleteProductSuccessImpl<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$DeleteProductSuccessImplCopyWith<T, _$DeleteProductSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteProductErrorImplCopyWith<T, $Res> {
+  factory _$$DeleteProductErrorImplCopyWith(_$DeleteProductErrorImpl<T> value,
+          $Res Function(_$DeleteProductErrorImpl<T>) then) =
+      __$$DeleteProductErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$DeleteProductErrorImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res, _$DeleteProductErrorImpl<T>>
+    implements _$$DeleteProductErrorImplCopyWith<T, $Res> {
+  __$$DeleteProductErrorImplCopyWithImpl(_$DeleteProductErrorImpl<T> _value,
+      $Res Function(_$DeleteProductErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$DeleteProductErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteProductErrorImpl<T> implements DeleteProductError<T> {
+  const _$DeleteProductErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'ProductsState<$T>.deleteProductError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteProductErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteProductErrorImplCopyWith<T, _$DeleteProductErrorImpl<T>>
+      get copyWith => __$$DeleteProductErrorImplCopyWithImpl<T,
+          _$DeleteProductErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(T data) getProductSuccess,
+    required TResult Function(String error) getProductError,
+    required TResult Function() addProductLoading,
+    required TResult Function(T data) addProductSuccess,
+    required TResult Function(String error) addProductError,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
+  }) {
+    return deleteProductError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(T data)? getProductSuccess,
+    TResult? Function(String error)? getProductError,
+    TResult? Function()? addProductLoading,
+    TResult? Function(T data)? addProductSuccess,
+    TResult? Function(String error)? addProductError,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
+  }) {
+    return deleteProductError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(T data)? getProductSuccess,
+    TResult Function(String error)? getProductError,
+    TResult Function()? addProductLoading,
+    TResult Function(T data)? addProductSuccess,
+    TResult Function(String error)? addProductError,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
+    required TResult orElse(),
+  }) {
+    if (deleteProductError != null) {
+      return deleteProductError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProductLoading<T> value) getProductLoading,
+    required TResult Function(GetProductSuccess<T> value) getProductSuccess,
+    required TResult Function(GetProductError<T> value) getProductError,
+    required TResult Function(AddProductLoading<T> value) addProductLoading,
+    required TResult Function(AddProductSuccess<T> value) addProductSuccess,
+    required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
+  }) {
+    return deleteProductError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProductLoading<T> value)? getProductLoading,
+    TResult? Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult? Function(GetProductError<T> value)? getProductError,
+    TResult? Function(AddProductLoading<T> value)? addProductLoading,
+    TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
+  }) {
+    return deleteProductError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProductLoading<T> value)? getProductLoading,
+    TResult Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult Function(GetProductError<T> value)? getProductError,
+    TResult Function(AddProductLoading<T> value)? addProductLoading,
+    TResult Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
+    required TResult orElse(),
+  }) {
+    if (deleteProductError != null) {
+      return deleteProductError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteProductError<T> implements ProductsState<T> {
+  const factory DeleteProductError({required final String error}) =
+      _$DeleteProductErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$DeleteProductErrorImplCopyWith<T, _$DeleteProductErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:art_space_artist/features/products/data/models/get_my_products_response.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_state.dart';
 import 'package:bloc/bloc.dart';
@@ -7,7 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http_parser/http_parser.dart';
-
+import '../../data/models/get_product_details_response.dart';
 import '../../data/repo/repo.dart';
 
 class ProductsCubit extends Cubit<ProductsState> {
@@ -54,14 +53,13 @@ class ProductsCubit extends Cubit<ProductsState> {
     emit(const ProductsState.addProductLoading());
 
     FormData data = FormData.fromMap({
-      'title': "fdslhglkgjfdshg",
-      'description':
-          "fdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshg",
-      'price': 500.0,
-      'height': 150.0,
-      'width': 120.0,
-      'depth': 1.6,
-      'material': "paper",
+      'title': nameController.text,
+      'description': descriptionController.text,
+      'price': double.parse(priceController.text),
+      'height': heightController.text,
+      'width': widthController.text,
+      'depth': depthController.text,
+      'material': materialController.text,
       'category': '658dc953fb8a9862b9b3503b',
       'subject': '65a2ada7726b48afe615eb98',
       'style': '65ee850805797cb7c787bc5b',
@@ -89,6 +87,40 @@ class ProductsCubit extends Cubit<ProductsState> {
       failure: (error) {
         print(error);
         emit(ProductsState.addProductError(error: error));
+      },
+    );
+  }
+
+  ProductDetails ?productDetails;
+  void emitGetProductDetails({required int index}) async {
+    emit(const ProductsState.getProductDetailsLoading());
+    print(myProducts![index].id);
+    final response = await _getMyProductsRepo.getProductDetails(
+      productId: "${myProducts![index].id}",
+    );
+    response.when(
+      success: (data) {
+        productDetails = data.productDetails;
+        emit(ProductsState.getProductDetailsSuccess(data));
+      },
+      failure: (error) {
+        emit(ProductsState.getProductDetailsError(error: error));
+      },
+    );
+  }
+
+  void emitDeleteProduct({required int index}) async {
+    emit(const ProductsState.deleteProductLoading());
+    final response = await _getMyProductsRepo.deleteProduct(
+      productId: "${myProducts![index].id}",
+    );
+    response.when(
+      success: (data) {
+        myProducts!.removeAt(index);
+        emit(ProductsState.deleteProductSuccess(data));
+      },
+      failure: (error) {
+        emit(ProductsState.deleteProductError(error: error));
       },
     );
   }

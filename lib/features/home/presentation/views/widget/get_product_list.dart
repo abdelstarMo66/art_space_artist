@@ -38,7 +38,9 @@ class GetProductList extends StatelessWidget {
                 MediaQuery.of(context).size.height * 0.3),
             itemBuilder: (context, index) =>  InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, AppRouterNames.viewProductDetails);
+                  Navigator.pushNamed(context,
+                      AppRouterNames.viewProductDetails ,
+                      arguments: index);
                 },
                 child: CustomProductViewWidget(index: index,)),
             itemCount: context.read<ProductsCubit>().myProducts!.length,
