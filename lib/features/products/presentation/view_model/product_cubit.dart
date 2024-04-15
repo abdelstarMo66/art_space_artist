@@ -1,5 +1,7 @@
 import 'dart:io';
+import 'package:art_space_artist/features/products/data/models/get_category_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_my_products_response.dart';
+import 'package:art_space_artist/features/products/data/models/get_subject_response.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
@@ -34,11 +36,6 @@ class ProductsCubit extends Cubit<ProductsState> {
   var widthController = TextEditingController();
   var depthController = TextEditingController();
   var materialController = TextEditingController();
-
-  List<String> styles = [
-    'Dark',
-    'Light',
-  ];
 
   late File coverImage;
 
@@ -109,6 +106,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
+  List ?styles;
   void emitDeleteProduct({required int index}) async {
     emit(const ProductsState.deleteProductLoading());
     final response = await _getMyProductsRepo.deleteProduct(
@@ -122,6 +120,55 @@ class ProductsCubit extends Cubit<ProductsState> {
       failure: (error) {
         emit(ProductsState.deleteProductError(error: error));
       },
+    );
+  }
+
+  void emitGetStyles() async {
+    emit(const ProductsState.getStylesLoading());
+    final response = await _getMyProductsRepo.getStyles();
+    response.when(
+      success: (data) {
+        styles = data.stylesData;
+        print(styles);
+        emit(ProductsState.getStylesSuccess(data));
+      },
+      failure: (error) {
+        emit(ProductsState.getStylesError(error: error));
+      },
+    );
+  }
+
+  List<SubjectData> ?subjects;
+  void emitGetSubjects() async {
+    emit(const ProductsState.getSubjectsLoading());
+    final response = await _getMyProductsRepo.getSubject();
+    response.when(
+        success: (data) {
+          subjects = data.subjectData;
+          print(subjects);
+          emit(ProductsState.getSubjectsSuccess(data));
+        },
+        failure: (message) {
+         emit(ProductsState.getSubjectsError(error: message));
+         print(message);
+        },
+    );
+  }
+
+  List<CategoryData> ?categories;
+  void emitGetCategories() async {
+    emit(const ProductsState.getCategoriesLoading());
+    final response = await _getMyProductsRepo.getCategory();
+    response.when(
+        success: (data) {
+          categories = data.categoryData;
+          print(categories);
+          emit(ProductsState.getCategoriesSuccess(data));
+        },
+        failure: (message) {
+          emit(ProductsState.getCategoriesError(error: message));
+          print(message);
+        },
     );
   }
 }

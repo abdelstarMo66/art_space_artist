@@ -1,5 +1,4 @@
 import 'package:art_space_artist/core/constants/constants.dart';
-import 'package:art_space_artist/core/helpers/cache_helper.dart';
 import 'package:art_space_artist/core/network/api_service.dart';
 import 'package:art_space_artist/features/profile/data/model/get_profile_response.dart';
 

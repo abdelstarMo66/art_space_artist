@@ -1,4 +1,3 @@
-import 'package:image_picker/image_picker.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'add_product_request_body.g.dart';
 @JsonSerializable()

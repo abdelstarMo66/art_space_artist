@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class EventDetailsScreen extends StatelessWidget {
-  const EventDetailsScreen({Key? key}) : super(key: key);
+  const EventDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class EventDetailsScreen extends StatelessWidget {
                     child: SvgPicture.asset(
                       AssetsManager.icBackArrow,
                       height: 40.0,
-                      color: ColorManager.originalWhite,
+                      colorFilter: const ColorFilter.mode(ColorManager.originalWhite, BlendMode.srcIn),
                     )),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.2,

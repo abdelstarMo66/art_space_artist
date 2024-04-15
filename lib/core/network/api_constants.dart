@@ -15,4 +15,13 @@ class ApiConstant {
   static const getProductDetails = 'products/me/{id}';
   static const addProduct = 'products';
   static const deleteProduct = 'products/me/{id}';
+  static const getStyles = 'styles';
+  static const getCategories = 'subjects';
+  static const getSubjects = 'subjects';
+  //Events
+  static const getEvents = 'events/me';
+  static const getEventDetails = 'events/me/{id}';
+  static const addEvent = 'events';
+  static const deleteEvent = 'events/me/{id}';
+  static const getUpcomingEvents = 'events/upcoming';
 }

@@ -229,14 +229,14 @@ class AddProduct extends StatelessWidget {
                                 DropdownMenuItem(
                                   value: 0,
                                   child: Text(
-                                    cubit.styles[0],
+                                    cubit.styles![0].title,
                                     style: TextStyles.textStyle18,
                                   ),
                                 ),
                                 DropdownMenuItem(
                                   value: 1,
                                   child: Text(
-                                    cubit.styles[1],
+                                    cubit.styles![1].title,
                                     style: TextStyles.textStyle18,
                                   ),
                                 ),

@@ -11,7 +11,7 @@ import 'package:art_space_artist/features/events/presentation/views/event_detail
 import 'package:art_space_artist/features/home/presentation/views/home_screen.dart';
 import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
-import 'package:art_space_artist/features/products/presentation/views/create_product.dart';
+import 'package:art_space_artist/features/products/presentation/views/add_product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/auth/forgetPassword/presentation/views/create_new_password.dart';

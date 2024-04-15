@@ -61,6 +61,7 @@ class ViewProductDetails extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () {
+                              context.read<ProductsCubit>().emitDeleteProduct(index: index);
                               if (state is DeleteProductSuccess) {
                                 Navigator.pushReplacementNamed(
                                     context, AppRouterNames.home);

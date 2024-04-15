@@ -2,13 +2,11 @@ import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/core/di/dependency_injection.dart';
 import 'package:art_space_artist/features/home/presentation/view_model/home_cubit.dart';
-import 'package:art_space_artist/features/home/presentation/view_model/home_state.dart';
 import 'package:art_space_artist/features/home/presentation/views/widget/get_product_list.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/get_profile_state.dart';
 import 'package:art_space_artist/features/profile/presentation/views/profile_drawer_widget.dart';
 import 'package:art_space_artist/features/home/presentation/views/widget/filter_product_widget.dart';
-import 'package:art_space_artist/features/home/presentation/views/widget/product_list_item.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/get_profile_cubit.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +28,7 @@ class HomeScreen extends StatelessWidget {
             create:(context) => getIt<GetProfileCubit>()..emitGetProfileStates(),
         ),
         BlocProvider(
-            create:(context) => getIt<ProductsCubit>()..emitGetMyProducts(),
+            create:(context) => getIt<ProductsCubit>()..emitGetMyProducts()..emitGetStyles()..emitGetSubjects()..emitGetCategories(),
         ),
       ],
       child: BlocConsumer<GetProfileCubit, GetProfileState>(

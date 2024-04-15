@@ -14,8 +14,11 @@ import 'package:retrofit/http.dart';
 import '../../features/auth/forgetPassword/data/model/forget_password_response.dart';
 import '../../features/auth/forgetPassword/data/model/verify_email_response.dart';
 import '../../features/auth/login/data/model/login_response.dart';
+import '../../features/products/data/models/get_category_response.dart';
 import '../../features/products/data/models/get_my_products_response.dart';
 import '../../features/products/data/models/get_product_details_response.dart';
+import '../../features/products/data/models/get_styles_response.dart';
+import '../../features/products/data/models/get_subject_response.dart';
 
 part 'api_service.g.dart';
 
@@ -75,4 +78,17 @@ abstract class ApiService {
     @Path('id') required String? id,
     @Header('Authorization') required String token,
   });
+
+  @GET(ApiConstant.getStyles)
+  Future<GetStylesResponse> getStyles({
+  @Header('Authorization') required String token,
+});
+  @GET(ApiConstant.getCategories)
+  Future<GetCategoryResponse> getCategory ({
+  @Header('Authorization') required String token,
+});
+  @GET(ApiConstant.getSubjects)
+  Future<GetSubjectResponse> getSubject({
+  @Header('Authorization') required String token,
+});
 }
