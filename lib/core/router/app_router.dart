@@ -37,10 +37,7 @@ class AppRouter {
         ));
       case AppRouterNames.verifyEmail:
         return SlideRight(
-            page: BlocProvider(
-          create: (context) => getIt<RegisterCubit>(),
-          child: const VerifyEmailScreen(),
-        ));
+            page: const VerifyEmailScreen());
       case AppRouterNames.forgetPassword:
         return SlideRight(
             page: BlocProvider(

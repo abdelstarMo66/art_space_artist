@@ -19,7 +19,7 @@ class CustomProductViewWidget extends StatelessWidget {
           height: MediaQuery.of(context).size.height * 0.21,
           padding: const EdgeInsetsDirectional.all(10.0),
           decoration: BoxDecoration(
-            color: ColorManager.customGreyColor,
+            color: ColorManager.lighterGray,
             borderRadius: BorderRadiusDirectional.circular(30),
           ),
         ),
@@ -63,7 +63,7 @@ class CustomProductViewWidget extends StatelessWidget {
               elevation: 10.0,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(25.0),
-                  child: Image.network('${productInfo.coverImage!.profileImg}')),
+                  child: Image.network('${productInfo.coverImage!.image}')),
             ),
           ],
         )

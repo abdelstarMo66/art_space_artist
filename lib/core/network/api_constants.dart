@@ -16,7 +16,7 @@ class ApiConstant {
   static const addProduct = 'products';
   static const deleteProduct = 'products/me/{id}';
   static const getStyles = 'styles';
-  static const getCategories = 'subjects';
+  static const getCategories = 'categories';
   static const getSubjects = 'subjects';
   //Events
   static const getEvents = 'events/me';

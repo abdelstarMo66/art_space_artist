@@ -23,11 +23,11 @@ class ForgetPasswordRepo {
   }
 }
 
- Future<ApiResult<VerifyEmailResponse>> verifyEmail(
-     VerifyEmailRequest verifyEmailRequest
+ Future<ApiResult<VerifyCodeResponse>> verifyEmail(
+     VerifyCodeRequest verifyEmailRequest
      )async {
     try {
-      final response = await _apiService.verifyEmail(verifyEmailRequest);
+      final response = await _apiService.verifyCode(verifyEmailRequest);
       return ApiResult.success(response);
     } catch(error){
       return ApiResult.failure("$error");

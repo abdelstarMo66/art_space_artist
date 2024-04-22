@@ -54,8 +54,8 @@ class ProductsInfo {
 @JsonSerializable()
 class CoverImage {
   String ? imageId;
-  String? profileImg;
+  String? image;
 
-  CoverImage({this.imageId, this.profileImg});
+  CoverImage({this.imageId, this.image});
   factory CoverImage.fromJson(Map<String, dynamic> json) => _$CoverImageFromJson(json);
 }

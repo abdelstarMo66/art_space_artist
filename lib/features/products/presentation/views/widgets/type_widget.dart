@@ -7,7 +7,8 @@ class TypeWidget extends StatelessWidget {
   final List<DropdownMenuItem> items;
   final String text;
   final ValueChanged onChanged;
-  const TypeWidget({super.key, required this.items, required this.text, required this.onChanged});
+  final int value;
+  const TypeWidget({super.key, required this.items, required this.text, required this.onChanged, required this.value});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +17,8 @@ class TypeWidget extends StatelessWidget {
         Text(text, style: TextStyles.textStyle18,),
         const Spacer(),
         DropdownButton(
-          value: 0,
-          dropdownColor: ColorManager.customGreyColor,
+          value: value,
+          dropdownColor: ColorManager.gray,
           iconEnabledColor: ColorManager.primaryColor,
           items: items,
           onChanged: onChanged,),

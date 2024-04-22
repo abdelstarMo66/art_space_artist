@@ -4,6 +4,7 @@ import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/get_profile_cubit.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/get_profile_state.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,7 +16,9 @@ class CustomProfileDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GetProfileCubit, GetProfileState>(
-      builder: (context, state) => Drawer(
+      builder: (context, state) {
+        var cubit = context.read<GetProfileCubit>();
+        return Drawer(
         child: state.whenOrNull(
           loading: () => const Center(
               child: CircularProgressIndicator(
@@ -64,7 +67,7 @@ class CustomProfileDrawer extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  '${context.read<GetProfileCubit>().myProfile!.profileInfo!.name}',
+                                  '${cubit.myProfile!.profileInfo!.name}',
                                   style: TextStyles.textStyle21.copyWith(
                                       color: ColorManager.originalWhite),
                                 ),
@@ -72,9 +75,9 @@ class CustomProfileDrawer extends StatelessWidget {
                                   height: 12,
                                 ),
                                 Text(
-                                  '${context.read<GetProfileCubit>().myProfile!.profileInfo!.email}',
+                                  '${cubit.myProfile!.profileInfo!.email}',
                                   style: TextStyles.textStyle12.copyWith(
-                                      color: ColorManager.customGreyColor),
+                                      color: ColorManager.gray),
                                 ),
                               ],
                             ),
@@ -135,14 +138,17 @@ class CustomProfileDrawer extends StatelessWidget {
                     style: TextStyles.textStyle18,
                   ),
                 ),
-                ListTile(
-                  leading: SvgPicture.asset(
-                    AssetsManager.icLogOut,
-                    height: 40,
-                  ),
-                  title: Text(
-                    S.of(context).logOut,
-                    style: TextStyles.textStyle18,
+                GestureDetector(
+                  onTap: () => cubit.emitLogout(context: context),
+                  child: ListTile(
+                    leading: SvgPicture.asset(
+                      AssetsManager.icLogOut,
+                      height: 40,
+                    ),
+                    title: Text(
+                      S.of(context).logOut,
+                      style: TextStyles.textStyle18,
+                    ),
                   ),
                 ),
               ],
@@ -150,7 +156,8 @@ class CustomProfileDrawer extends StatelessWidget {
           },
           error: (error) {} ,
         ),
-      ),
+      );
+      },
     );
   }
 }

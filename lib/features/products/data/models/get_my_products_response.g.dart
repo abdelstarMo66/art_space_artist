@@ -80,11 +80,11 @@ Map<String, dynamic> _$ProductsInfoToJson(ProductsInfo instance) =>
 
 CoverImage _$CoverImageFromJson(Map<String, dynamic> json) => CoverImage(
       imageId: json['imageId'] as String?,
-      profileImg: json['profileImg'] as String?,
+      image: json['image'] as String?,
     );
 
 Map<String, dynamic> _$CoverImageToJson(CoverImage instance) =>
     <String, dynamic>{
       'imageId': instance.imageId,
-      'profileImg': instance.profileImg,
+      'image': instance.image,
     };

@@ -1,3 +1,4 @@
+import 'package:art_space_artist/core/components/loading_widget.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/core/di/dependency_injection.dart';
@@ -11,7 +12,6 @@ import 'package:art_space_artist/features/profile/presentation/view_model/get_pr
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../../../../generated/l10n.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -25,28 +25,21 @@ class HomeScreen extends StatelessWidget {
           create: (context) => HomeCubit(),
         ),
         BlocProvider(
-            create:(context) => getIt<GetProfileCubit>()..emitGetProfileStates(),
+          create: (context) => getIt<GetProfileCubit>()..emitGetProfileStates(),
         ),
         BlocProvider(
-            create:(context) => getIt<ProductsCubit>()..emitGetMyProducts()..emitGetStyles()..emitGetSubjects()..emitGetCategories(),
+          create: (context) => getIt<ProductsCubit>()
+            ..emitGetMyProducts()
+            ..emitGetStyles()
+            ..emitGetSubjects()
+            ..emitGetCategories(),
         ),
       ],
-      child: BlocConsumer<GetProfileCubit, GetProfileState>(
-        listener: (context, state) => () {},
-        builder: (context, state)
-        {
-          if(state is Loading)
-            {
-              return Scaffold(
-                body: Center(
-                  child: LoadingAnimationWidget.staggeredDotsWave(
-                      color: ColorManager.primaryColor,
-                      size: 100
-                  ),
-                ),
-              );
-            }
-          else{
+      child: BlocBuilder<GetProfileCubit, GetProfileState>(
+        builder: (context, state) {
+          if (state is Loading) {
+            return const LoadingWidget();
+          } else {
             var cubit = HomeCubit.get(context);
             return Scaffold(
               backgroundColor: ColorManager.originalWhite,

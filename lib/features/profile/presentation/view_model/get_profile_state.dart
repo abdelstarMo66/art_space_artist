@@ -6,4 +6,6 @@ class GetProfileState<T> with _$GetProfileState<T> {
   const factory GetProfileState.loading() = Loading;
   const factory GetProfileState.success(T data) = Success;
   const factory GetProfileState.error({required String error}) = Error;
+
+  const factory GetProfileState.logout() = Logout;
 }

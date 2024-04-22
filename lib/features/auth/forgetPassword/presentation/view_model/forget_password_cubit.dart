@@ -27,7 +27,7 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
   }
 
   void emitVerifyEmailStates(
-      VerifyEmailRequest verifyEmailRequest
+      VerifyCodeRequest verifyEmailRequest
       ) async {
     emit(const ForgetPasswordState.verifyEmailLoading());
     final response = await _forgetPasswordRepo.verifyEmail(verifyEmailRequest);

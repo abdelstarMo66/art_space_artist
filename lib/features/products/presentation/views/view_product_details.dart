@@ -205,7 +205,7 @@ class ViewProductDetails extends StatelessWidget {
                                       width: MediaQuery.of(context).size.width *
                                           0.7,
                                       child: Image.network(
-                                        '${productInfo.coverImage!.profileImg}',
+                                        '${productInfo.coverImage!.image}',
                                         height:
                                             MediaQuery.of(context).size.height *
                                                 0.24,

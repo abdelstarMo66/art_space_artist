@@ -22,6 +22,9 @@ mixin _$RegisterState<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() verifyEmailLoading,
+    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(String error) verifyEmailError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +33,9 @@ mixin _$RegisterState<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? verifyEmailLoading,
+    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(String error)? verifyEmailError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +44,9 @@ mixin _$RegisterState<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? verifyEmailLoading,
+    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(String error)? verifyEmailError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +56,9 @@ mixin _$RegisterState<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
+    required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
+    required TResult Function(VerifyEmailError<T> value) verifyEmailError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +67,9 @@ mixin _$RegisterState<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +78,9 @@ mixin _$RegisterState<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult Function(VerifyEmailError<T> value)? verifyEmailError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,6 +146,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() verifyEmailLoading,
+    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(String error) verifyEmailError,
   }) {
     return initial();
   }
@@ -139,6 +160,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? verifyEmailLoading,
+    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(String error)? verifyEmailError,
   }) {
     return initial?.call();
   }
@@ -150,6 +174,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? verifyEmailLoading,
+    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(String error)? verifyEmailError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -165,6 +192,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
+    required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
+    required TResult Function(VerifyEmailError<T> value) verifyEmailError,
   }) {
     return initial(this);
   }
@@ -176,6 +206,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
   }) {
     return initial?.call(this);
   }
@@ -187,6 +220,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult Function(VerifyEmailError<T> value)? verifyEmailError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -242,6 +278,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() verifyEmailLoading,
+    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(String error) verifyEmailError,
   }) {
     return loading();
   }
@@ -253,6 +292,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? verifyEmailLoading,
+    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(String error)? verifyEmailError,
   }) {
     return loading?.call();
   }
@@ -264,6 +306,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? verifyEmailLoading,
+    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(String error)? verifyEmailError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -279,6 +324,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
+    required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
+    required TResult Function(VerifyEmailError<T> value) verifyEmailError,
   }) {
     return loading(this);
   }
@@ -290,6 +338,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
   }) {
     return loading?.call(this);
   }
@@ -301,6 +352,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult Function(VerifyEmailError<T> value)? verifyEmailError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -383,6 +437,9 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() verifyEmailLoading,
+    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(String error) verifyEmailError,
   }) {
     return success(data);
   }
@@ -394,6 +451,9 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? verifyEmailLoading,
+    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(String error)? verifyEmailError,
   }) {
     return success?.call(data);
   }
@@ -405,6 +465,9 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? verifyEmailLoading,
+    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(String error)? verifyEmailError,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -420,6 +483,9 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
+    required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
+    required TResult Function(VerifyEmailError<T> value) verifyEmailError,
   }) {
     return success(this);
   }
@@ -431,6 +497,9 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
   }) {
     return success?.call(this);
   }
@@ -442,6 +511,9 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult Function(VerifyEmailError<T> value)? verifyEmailError,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -528,6 +600,9 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() verifyEmailLoading,
+    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(String error) verifyEmailError,
   }) {
     return error(this.error);
   }
@@ -539,6 +614,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? verifyEmailLoading,
+    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(String error)? verifyEmailError,
   }) {
     return error?.call(this.error);
   }
@@ -550,6 +628,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? verifyEmailLoading,
+    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(String error)? verifyEmailError,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -565,6 +646,9 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
+    required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
+    required TResult Function(VerifyEmailError<T> value) verifyEmailError,
   }) {
     return error(this);
   }
@@ -576,6 +660,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
   }) {
     return error?.call(this);
   }
@@ -587,6 +674,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult Function(VerifyEmailError<T> value)? verifyEmailError,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -602,5 +692,468 @@ abstract class Error<T> implements RegisterState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyEmailLoadingImplCopyWith<T, $Res> {
+  factory _$$VerifyEmailLoadingImplCopyWith(_$VerifyEmailLoadingImpl<T> value,
+          $Res Function(_$VerifyEmailLoadingImpl<T>) then) =
+      __$$VerifyEmailLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$VerifyEmailLoadingImplCopyWithImpl<T, $Res>
+    extends _$RegisterStateCopyWithImpl<T, $Res, _$VerifyEmailLoadingImpl<T>>
+    implements _$$VerifyEmailLoadingImplCopyWith<T, $Res> {
+  __$$VerifyEmailLoadingImplCopyWithImpl(_$VerifyEmailLoadingImpl<T> _value,
+      $Res Function(_$VerifyEmailLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$VerifyEmailLoadingImpl<T> implements VerifyEmailLoading<T> {
+  const _$VerifyEmailLoadingImpl();
+
+  @override
+  String toString() {
+    return 'RegisterState<$T>.verifyEmailLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyEmailLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) error,
+    required TResult Function() verifyEmailLoading,
+    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(String error) verifyEmailError,
+  }) {
+    return verifyEmailLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function()? verifyEmailLoading,
+    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(String error)? verifyEmailError,
+  }) {
+    return verifyEmailLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? error,
+    TResult Function()? verifyEmailLoading,
+    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(String error)? verifyEmailError,
+    required TResult orElse(),
+  }) {
+    if (verifyEmailLoading != null) {
+      return verifyEmailLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
+    required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
+    required TResult Function(VerifyEmailError<T> value) verifyEmailError,
+  }) {
+    return verifyEmailLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
+  }) {
+    return verifyEmailLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult Function(VerifyEmailError<T> value)? verifyEmailError,
+    required TResult orElse(),
+  }) {
+    if (verifyEmailLoading != null) {
+      return verifyEmailLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerifyEmailLoading<T> implements RegisterState<T> {
+  const factory VerifyEmailLoading() = _$VerifyEmailLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$VerifyEmailSuccessImplCopyWith<T, $Res> {
+  factory _$$VerifyEmailSuccessImplCopyWith(_$VerifyEmailSuccessImpl<T> value,
+          $Res Function(_$VerifyEmailSuccessImpl<T>) then) =
+      __$$VerifyEmailSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$VerifyEmailSuccessImplCopyWithImpl<T, $Res>
+    extends _$RegisterStateCopyWithImpl<T, $Res, _$VerifyEmailSuccessImpl<T>>
+    implements _$$VerifyEmailSuccessImplCopyWith<T, $Res> {
+  __$$VerifyEmailSuccessImplCopyWithImpl(_$VerifyEmailSuccessImpl<T> _value,
+      $Res Function(_$VerifyEmailSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$VerifyEmailSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VerifyEmailSuccessImpl<T> implements VerifyEmailSuccess<T> {
+  const _$VerifyEmailSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'RegisterState<$T>.verifyEmailSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyEmailSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VerifyEmailSuccessImplCopyWith<T, _$VerifyEmailSuccessImpl<T>>
+      get copyWith => __$$VerifyEmailSuccessImplCopyWithImpl<T,
+          _$VerifyEmailSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) error,
+    required TResult Function() verifyEmailLoading,
+    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(String error) verifyEmailError,
+  }) {
+    return verifyEmailSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function()? verifyEmailLoading,
+    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(String error)? verifyEmailError,
+  }) {
+    return verifyEmailSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? error,
+    TResult Function()? verifyEmailLoading,
+    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(String error)? verifyEmailError,
+    required TResult orElse(),
+  }) {
+    if (verifyEmailSuccess != null) {
+      return verifyEmailSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
+    required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
+    required TResult Function(VerifyEmailError<T> value) verifyEmailError,
+  }) {
+    return verifyEmailSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
+  }) {
+    return verifyEmailSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult Function(VerifyEmailError<T> value)? verifyEmailError,
+    required TResult orElse(),
+  }) {
+    if (verifyEmailSuccess != null) {
+      return verifyEmailSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerifyEmailSuccess<T> implements RegisterState<T> {
+  const factory VerifyEmailSuccess(final T data) = _$VerifyEmailSuccessImpl<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$VerifyEmailSuccessImplCopyWith<T, _$VerifyEmailSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyEmailErrorImplCopyWith<T, $Res> {
+  factory _$$VerifyEmailErrorImplCopyWith(_$VerifyEmailErrorImpl<T> value,
+          $Res Function(_$VerifyEmailErrorImpl<T>) then) =
+      __$$VerifyEmailErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$VerifyEmailErrorImplCopyWithImpl<T, $Res>
+    extends _$RegisterStateCopyWithImpl<T, $Res, _$VerifyEmailErrorImpl<T>>
+    implements _$$VerifyEmailErrorImplCopyWith<T, $Res> {
+  __$$VerifyEmailErrorImplCopyWithImpl(_$VerifyEmailErrorImpl<T> _value,
+      $Res Function(_$VerifyEmailErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$VerifyEmailErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VerifyEmailErrorImpl<T> implements VerifyEmailError<T> {
+  const _$VerifyEmailErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'RegisterState<$T>.verifyEmailError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyEmailErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VerifyEmailErrorImplCopyWith<T, _$VerifyEmailErrorImpl<T>> get copyWith =>
+      __$$VerifyEmailErrorImplCopyWithImpl<T, _$VerifyEmailErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) error,
+    required TResult Function() verifyEmailLoading,
+    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(String error) verifyEmailError,
+  }) {
+    return verifyEmailError(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function()? verifyEmailLoading,
+    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(String error)? verifyEmailError,
+  }) {
+    return verifyEmailError?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? error,
+    TResult Function()? verifyEmailLoading,
+    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(String error)? verifyEmailError,
+    required TResult orElse(),
+  }) {
+    if (verifyEmailError != null) {
+      return verifyEmailError(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
+    required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
+    required TResult Function(VerifyEmailError<T> value) verifyEmailError,
+  }) {
+    return verifyEmailError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
+  }) {
+    return verifyEmailError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult Function(VerifyEmailError<T> value)? verifyEmailError,
+    required TResult orElse(),
+  }) {
+    if (verifyEmailError != null) {
+      return verifyEmailError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerifyEmailError<T> implements RegisterState<T> {
+  const factory VerifyEmailError({required final String error}) =
+      _$VerifyEmailErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$VerifyEmailErrorImplCopyWith<T, _$VerifyEmailErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

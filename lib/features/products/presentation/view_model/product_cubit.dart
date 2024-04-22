@@ -37,18 +37,36 @@ class ProductsCubit extends Cubit<ProductsState> {
   var depthController = TextEditingController();
   var materialController = TextEditingController();
 
-  late File coverImage;
+  final formKey = GlobalKey<FormState>();
 
-  Future<void> getImage() async {
+   File ?coverImage;
+   List<File> images = [];
+  Future<void> getCoverImage() async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(source: ImageSource.gallery);
     File file = File(image!.path);
     coverImage = file;
+    emit(const ProductsState.addCoverPhotoProduct());
   }
+
+  Future<void> getImages() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+    File file = File(image!.path);
+    images.add(file);
+  }
+
+  void deleteImage({required int index}) async {
+    images.removeAt(index);
+  }
+
+
+  String ?categoryId;
+  String ?styleId;
+  String ?subjectId;
 
   void emitAddProduct() async {
     emit(const ProductsState.addProductLoading());
-
     FormData data = FormData.fromMap({
       'title': nameController.text,
       'description': descriptionController.text,
@@ -57,17 +75,17 @@ class ProductsCubit extends Cubit<ProductsState> {
       'width': widthController.text,
       'depth': depthController.text,
       'material': materialController.text,
-      'category': '658dc953fb8a9862b9b3503b',
-      'subject': '65a2ada7726b48afe615eb98',
-      'style': '65ee850805797cb7c787bc5b',
+      'category': categoryId,
+      'subject': subjectId,
+      'style': styleId,
     });
 
     data.files.add(
       MapEntry(
         "coverImage",
         await MultipartFile.fromFile(
-          coverImage.path,
-          filename: coverImage.path.split('/').last,
+          coverImage!.path,
+          filename: coverImage!.path.split('/').last,
           contentType: MediaType("image", "*"),
         ),
       ),
@@ -145,7 +163,6 @@ class ProductsCubit extends Cubit<ProductsState> {
     response.when(
         success: (data) {
           subjects = data.subjectData;
-          print(subjects);
           emit(ProductsState.getSubjectsSuccess(data));
         },
         failure: (message) {
@@ -162,7 +179,6 @@ class ProductsCubit extends Cubit<ProductsState> {
     response.when(
         success: (data) {
           categories = data.categoryData;
-          print(categories);
           emit(ProductsState.getCategoriesSuccess(data));
         },
         failure: (message) {
@@ -171,4 +187,11 @@ class ProductsCubit extends Cubit<ProductsState> {
         },
     );
   }
+
+void addProduct() {
+    if(formKey.currentState!.validate())
+      {
+        emitAddProduct();
+      }
+}
 }

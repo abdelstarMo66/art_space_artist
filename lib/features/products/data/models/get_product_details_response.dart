@@ -28,8 +28,8 @@ class ProductDetails {
   final String? category;
   final String? style;
   final String? subject;
-  final int? height;
-  final int? width;
+  final double? height;
+  final double? width;
   final double ?depth;
   final CoverImage? coverImage;
   final List<CoverImage>? productImage;
@@ -57,8 +57,8 @@ class ProductDetails {
 @JsonSerializable()
 class CoverImage {
   String ? imageId;
-  String? profileImg;
+  String? image;
 
-  CoverImage({this.imageId, this.profileImg});
+  CoverImage({this.imageId, this.image});
   factory CoverImage.fromJson(Map<String, dynamic> json) => _$CoverImageFromJson(json);
 }

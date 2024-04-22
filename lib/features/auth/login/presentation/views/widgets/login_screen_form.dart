@@ -6,9 +6,15 @@ import '../../../../../../core/components/default_text_field.dart';
 import '../../../../../../generated/l10n.dart';
 import '../../view_model/login_cubit.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
 
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  bool isScurePassword = true;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -18,6 +24,7 @@ class LoginForm extends StatelessWidget {
           DefaultTextField(
               controller: context.read<LoginCubit>().emailController,
               hintText: S.of(context).email,
+
               validator: (value) {
                 if(value == null || value.isEmpty || !ExtString.isValidEmail(value))
                   {
@@ -32,6 +39,7 @@ class LoginForm extends StatelessWidget {
             height: 20.0,
           ),
           DefaultTextField(
+            icon:isScurePassword ? Icons.visibility : Icons.visibility_off,
             controller:  context.read<LoginCubit>().passwordController,
             hintText: S.of(context).password,
             validator: (value) {
@@ -42,11 +50,12 @@ class LoginForm extends StatelessWidget {
               return null;
             },
             keyboardType: TextInputType.text,
-            obscureText:  context.read<LoginCubit>().isSecure,
+            obscureText: isScurePassword,
             maxLines: 1,
-            icon: Icons.remove_red_eye_outlined,
             onPressedIcon: () {
-              context.read<LoginCubit>().changeVisibilityPassword();
+              setState(() {
+                isScurePassword = ! isScurePassword;
+              });
             },
           ),
         ],
