@@ -5,6 +5,7 @@ import 'package:art_space_artist/core/helpers/validation_helper.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/profile_state.dart';
+import 'package:art_space_artist/features/profile/presentation/views/change_password/widgets/change_password_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -32,6 +33,7 @@ class ChangePasswordScreen extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: Form(
+            key: context.read<ProfileCubit>().formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -51,7 +53,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 ),
                 DefaultTextField(
                   controller:
-                      context.read<ProfileCubit>().currentPasswordController,
+                      context.read<ProfileCubit>().newPasswordController,
                   hintText: 'Enter your new password',
                   validator: (value) => newPasswordValidation(value),
                   keyboardType: TextInputType.name,
@@ -65,7 +67,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 ),
                 DefaultTextField(
                   controller:
-                      context.read<ProfileCubit>().currentPasswordController,
+                      context.read<ProfileCubit>().confirmPasswordController,
                   hintText: 'confirm your new password',
                   validator: (value) => confirmPasswordValidation(
                     value,
@@ -85,7 +87,7 @@ class ChangePasswordScreen extends StatelessWidget {
                     onPressed: () {
                       validateThenChangePassword(context);
                     }),
-
+                const ChangePasswordListener(),
               ],
             ),
           ),
@@ -107,7 +109,7 @@ class ChangePasswordScreen extends StatelessWidget {
       return "Please Enter a valid password";
     } else if (password.length < 8) {
       return "password too short, minimum 8 characters";
-    } else if (!ExtString.isValidPassword(password)) {
+    } else if (ExtString.isValidPassword(password)) {
       return "Please Enter a strong password";
     } else {
       return null;

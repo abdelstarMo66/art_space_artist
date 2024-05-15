@@ -65,7 +65,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   }
 
   TextEditingController currentPasswordController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController newPasswordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -75,7 +75,7 @@ class ProfileCubit extends Cubit<ProfileState> {
     final response = await _profileRepo.changePassword(
         changePasswordRequestBody: ChangePasswordRequestBody(
       currentPassword: currentPasswordController.text,
-      password: passwordController.text,
+      password: newPasswordController.text,
       confirmPassword: confirmPasswordController.text,
     ));
     response.when(success: (getProfileResponse) {
