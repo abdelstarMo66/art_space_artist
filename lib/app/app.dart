@@ -18,6 +18,7 @@ class MyApp extends StatefulWidget {
   static const MyApp _instance = MyApp._internal();
 
   factory MyApp() => _instance;
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -29,49 +30,47 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     lostConnection();
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AppCubit()..initAppCubit(),
       child: BlocBuilder<AppCubit, AppState>(
         builder: (context, state) {
-          String ? initialScreen;
-          if(loginDone)
-            {
-              initialScreen = AppRouterNames.home;
-            } else if (onBoardingSeen) {
-            initialScreen  = AppRouterNames.login;
+          String? initialScreen;
+          if (loginDone) {
+            initialScreen = AppRouterNames.home;
+          } else if (onBoardingSeen) {
+            initialScreen = AppRouterNames.login;
           } else {
             initialScreen = AppRouterNames.onBoarding;
           }
           final cubit = AppCubit.get(context);
           return StreamBuilder<ConnectivityResult>(
-              stream: Connectivity().onConnectivityChanged,
-              builder: (context, snapshot) {
-                if(snapshot.data == ConnectivityResult.none)
-                  {
-                    return const LostConnection();
-                  }
-                else{
-                  return MaterialApp(
-                    initialRoute: initialScreen,
-                    title: "Art Space",
-                    onGenerateRoute: AppRouter.onGenerateRoutes,
-                    debugShowCheckedModeBanner: false,
-                    locale: cubit.locale,
-                    localizationsDelegates: const [
-                      S.delegate,
-                      GlobalMaterialLocalizations.delegate,
-                      GlobalWidgetsLocalizations.delegate,
-                      GlobalCupertinoLocalizations.delegate,
-                    ],
-                    supportedLocales: S.delegate.supportedLocales,
-                    themeMode: cubit.themeMode,
-                    theme: ThemesManager.lightTheme,
-                    darkTheme: ThemesManager.darkTheme,
-                  );
-                }
-              },
+            stream: Connectivity().onConnectivityChanged,
+            builder: (context, snapshot) {
+              if (snapshot.data == ConnectivityResult.none) {
+                return const LostConnection();
+              } else {
+                return MaterialApp(
+                  initialRoute: initialScreen,
+                  title: "Art Space",
+                  onGenerateRoute: AppRouter.onGenerateRoutes,
+                  debugShowCheckedModeBanner: false,
+                  locale: cubit.locale,
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  supportedLocales: S.delegate.supportedLocales,
+                  themeMode: cubit.themeMode,
+                  theme: ThemesManager.lightTheme,
+                  darkTheme: ThemesManager.darkTheme,
+                );
+              }
+            },
           );
         },
       ),
