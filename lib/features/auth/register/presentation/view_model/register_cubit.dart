@@ -1,4 +1,5 @@
 import 'package:art_space_artist/features/auth/register/data/models/register_request_body.dart';
+import 'package:art_space_artist/features/auth/register/data/models/verify_email_request_body.dart';
 import 'package:art_space_artist/features/auth/register/data/repo/register_repo.dart';
 import 'package:art_space_artist/features/auth/register/presentation/view_model/register_state.dart';
 import 'package:bloc/bloc.dart';
@@ -23,6 +24,16 @@ class RegisterCubit extends Cubit<RegisterState> {
       emit(RegisterState.success(response));
     }, failure: (error) {
       emit(RegisterState.error(error: error));
+    });
+  }
+
+  void emitVerifyEmailStates(VerifyEmailRequestBody verifyEmailRequestBody) async {
+    emit(const RegisterState.verifyEmailLoading());
+    final response = await _registerRepo.verifyEmail(verifyEmailRequestBody);
+    response.when(success: (data) {
+      emit(RegisterState.verifyEmailSuccess(response));
+    }, failure: (error) {
+      emit(RegisterState.verifyEmailError(error: error));
     });
   }
 

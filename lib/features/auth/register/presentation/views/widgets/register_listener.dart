@@ -28,7 +28,7 @@ class RegisterListener extends StatelessWidget {
             },
             success: (data) {
               Navigator.of(context).pop();
-              Navigator.of(context).pushNamed(AppRouterNames.verifyEmailOPT);
+              Navigator.of(context).pushNamed(AppRouterNames.verifyEmail);
             },
             error: (error) {
               Navigator.of(context).pop();

@@ -3,18 +3,18 @@ import 'package:art_space_artist/features/auth/login/data/model/login_request_bo
 import 'package:art_space_artist/features/auth/login/data/model/login_response.dart';
 import '../../../../../core/network/api_result.dart';
 
-class LoginRepo{
+class LoginRepo {
   final ApiService _apiService;
 
   LoginRepo(this._apiService);
 
-  Future<ApiResult<LoginResponse>> login (
-      LoginRequestBody loginRequestBody) async{
-  try {
-    final response = await _apiService.login(loginRequestBody);
-    return ApiResult.success(response);
-  }  catch (error){
-    return  ApiResult.failure('$error');
-  }
+  Future<ApiResult<LoginResponse>> login(
+      LoginRequestBody loginRequestBody) async {
+    try {
+      final response = await _apiService.login(loginRequestBody);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(error.toString());
+    }
   }
 }

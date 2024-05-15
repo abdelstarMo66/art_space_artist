@@ -117,7 +117,7 @@ class VerifyEmailOTPScreen extends StatelessWidget {
                  if(context.read<ForgetPasswordCubit>().formKeyOTP.currentState!.validate())
                    {
                      context.read<ForgetPasswordCubit>().emitVerifyEmailStates(
-                       VerifyEmailRequest(email: context.read<ForgetPasswordCubit>().emailController.text,
+                       VerifyCodeRequest(email: context.read<ForgetPasswordCubit>().emailController.text,
                            resetCode: context.read<ForgetPasswordCubit>().otpController.text),
                      );
                    }

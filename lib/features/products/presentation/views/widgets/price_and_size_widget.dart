@@ -31,7 +31,12 @@ class PriceAndSizeWidget extends StatelessWidget {
             textAlign: TextAlign.center,
             text: '0',
             controller: controller,
-            validator: (value) {},
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter a value';
+              }
+              return null;
+            },
             keyboardType: TextInputType.number,
           ),
         ),

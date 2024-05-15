@@ -1,6 +1,5 @@
 import 'package:art_space_artist/core/constants/constants.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
-import 'package:art_space_artist/features/home/presentation/view_model/home_cubit.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -74,8 +73,6 @@ class _MyAppState extends State<MyApp> {
                 }
               },
           );
-
-
         },
       ),
     );

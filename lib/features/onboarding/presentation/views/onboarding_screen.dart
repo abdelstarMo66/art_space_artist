@@ -1,7 +1,6 @@
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/core/global_bloc/app_cubit/app_cubit.dart';
-import 'package:art_space_artist/core/helpers/cache_helper.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/onboarding/data/models/on_boarding_screen_ui_model.dart';
 import 'package:art_space_artist/features/onboarding/presentation/views/widgets/onboarding_ui_widget.dart';

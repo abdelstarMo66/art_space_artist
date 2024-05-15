@@ -6,13 +6,13 @@ part of 'verify_email_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-VerifyEmailRequest _$VerifyEmailRequestFromJson(Map<String, dynamic> json) =>
-    VerifyEmailRequest(
+VerifyCodeRequest _$VerifyCodeRequestFromJson(Map<String, dynamic> json) =>
+    VerifyCodeRequest(
       email: json['email'] as String,
       resetCode: json['resetCode'] as String,
     );
 
-Map<String, dynamic> _$VerifyEmailRequestToJson(VerifyEmailRequest instance) =>
+Map<String, dynamic> _$VerifyCodeRequestToJson(VerifyCodeRequest instance) =>
     <String, dynamic>{
       'email': instance.email,
       'resetCode': instance.resetCode,

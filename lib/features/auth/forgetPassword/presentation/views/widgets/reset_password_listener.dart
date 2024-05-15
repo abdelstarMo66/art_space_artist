@@ -10,7 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../core/constants/color_manager.dart';
 
 class ResetPasswordListener extends StatelessWidget {
-  const ResetPasswordListener({Key? key}) : super(key: key);
+  const ResetPasswordListener({super.key});
 
   @override
   Widget build(BuildContext context) {

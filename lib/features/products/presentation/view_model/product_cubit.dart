@@ -1,13 +1,14 @@
 import 'dart:io';
-
+import 'package:art_space_artist/features/products/data/models/get_category_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_my_products_response.dart';
+import 'package:art_space_artist/features/products/data/models/get_subject_response.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http_parser/http_parser.dart';
-
+import '../../data/models/get_product_details_response.dart';
 import '../../data/repo/repo.dart';
 
 class ProductsCubit extends Cubit<ProductsState> {
@@ -36,43 +37,55 @@ class ProductsCubit extends Cubit<ProductsState> {
   var depthController = TextEditingController();
   var materialController = TextEditingController();
 
-  List<String> styles = [
-    'Dark',
-    'Light',
-  ];
+  final formKey = GlobalKey<FormState>();
 
-  late File coverImage;
-
-  Future<void> getImage() async {
+   File ?coverImage;
+   List<File> images = [];
+  Future<void> getCoverImage() async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(source: ImageSource.gallery);
     File file = File(image!.path);
     coverImage = file;
+    emit(const ProductsState.addCoverPhotoProduct());
   }
+
+  Future<void> getImages() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+    File file = File(image!.path);
+    images.add(file);
+  }
+
+  void deleteImage({required int index}) async {
+    images.removeAt(index);
+  }
+
+
+  String ?categoryId;
+  String ?styleId;
+  String ?subjectId;
 
   void emitAddProduct() async {
     emit(const ProductsState.addProductLoading());
-
     FormData data = FormData.fromMap({
-      'title': "fdslhglkgjfdshg",
-      'description':
-          "fdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshgfdslhglkgjfdshg",
-      'price': 500.0,
-      'height': 150.0,
-      'width': 120.0,
-      'depth': 1.6,
-      'material': "paper",
-      'category': '658dc953fb8a9862b9b3503b',
-      'subject': '65a2ada7726b48afe615eb98',
-      'style': '65ee850805797cb7c787bc5b',
+      'title': nameController.text,
+      'description': descriptionController.text,
+      'price': double.parse(priceController.text),
+      'height': heightController.text,
+      'width': widthController.text,
+      'depth': depthController.text,
+      'material': materialController.text,
+      'category': categoryId,
+      'subject': subjectId,
+      'style': styleId,
     });
 
     data.files.add(
       MapEntry(
         "coverImage",
         await MultipartFile.fromFile(
-          coverImage.path,
-          filename: coverImage.path.split('/').last,
+          coverImage!.path,
+          filename: coverImage!.path.split('/').last,
           contentType: MediaType("image", "*"),
         ),
       ),
@@ -92,4 +105,93 @@ class ProductsCubit extends Cubit<ProductsState> {
       },
     );
   }
+
+  ProductDetails ?productDetails;
+  void emitGetProductDetails({required int index}) async {
+    emit(const ProductsState.getProductDetailsLoading());
+    print(myProducts![index].id);
+    final response = await _getMyProductsRepo.getProductDetails(
+      productId: "${myProducts![index].id}",
+    );
+    response.when(
+      success: (data) {
+        productDetails = data.productDetails;
+        emit(ProductsState.getProductDetailsSuccess(data));
+      },
+      failure: (error) {
+        emit(ProductsState.getProductDetailsError(error: error));
+      },
+    );
+  }
+
+  List ?styles;
+  void emitDeleteProduct({required int index}) async {
+    emit(const ProductsState.deleteProductLoading());
+    final response = await _getMyProductsRepo.deleteProduct(
+      productId: "${myProducts![index].id}",
+    );
+    response.when(
+      success: (data) {
+        myProducts!.removeAt(index);
+        emit(ProductsState.deleteProductSuccess(data));
+      },
+      failure: (error) {
+        emit(ProductsState.deleteProductError(error: error));
+      },
+    );
+  }
+
+  void emitGetStyles() async {
+    emit(const ProductsState.getStylesLoading());
+    final response = await _getMyProductsRepo.getStyles();
+    response.when(
+      success: (data) {
+        styles = data.stylesData;
+        print(styles);
+        emit(ProductsState.getStylesSuccess(data));
+      },
+      failure: (error) {
+        emit(ProductsState.getStylesError(error: error));
+      },
+    );
+  }
+
+  List<SubjectData> ?subjects;
+  void emitGetSubjects() async {
+    emit(const ProductsState.getSubjectsLoading());
+    final response = await _getMyProductsRepo.getSubject();
+    response.when(
+        success: (data) {
+          subjects = data.subjectData;
+          emit(ProductsState.getSubjectsSuccess(data));
+        },
+        failure: (message) {
+         emit(ProductsState.getSubjectsError(error: message));
+         print(message);
+        },
+    );
+  }
+
+  List<CategoryData> ?categories;
+  void emitGetCategories() async {
+    emit(const ProductsState.getCategoriesLoading());
+    final response = await _getMyProductsRepo.getCategory();
+    response.when(
+        success: (data) {
+          categories = data.categoryData;
+          emit(ProductsState.getCategoriesSuccess(data));
+        },
+        failure: (message) {
+          emit(ProductsState.getCategoriesError(error: message));
+          print(message);
+        },
+    );
+  }
+
+void addProduct() {
+    if(formKey.currentState!.validate())
+      {
+        emitAddProduct();
+      }
+}
 }
