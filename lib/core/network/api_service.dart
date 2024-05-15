@@ -10,6 +10,8 @@ import 'package:art_space_artist/features/auth/register/data/models/verify_email
 import 'package:art_space_artist/features/auth/register/data/models/verify_email_response.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_response.dart';
 import 'package:art_space_artist/features/products/data/models/delete_product_response.dart';
+import 'package:art_space_artist/features/profile/data/model/edit_profile_request_body.dart';
+import 'package:art_space_artist/features/profile/data/model/edit_profile_response.dart';
 import 'package:art_space_artist/features/profile/data/model/get_profile_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
@@ -21,6 +23,8 @@ import '../../features/products/data/models/get_my_products_response.dart';
 import '../../features/products/data/models/get_product_details_response.dart';
 import '../../features/products/data/models/get_styles_response.dart';
 import '../../features/products/data/models/get_subject_response.dart';
+import '../../features/profile/data/model/change_password_request_body.dart';
+import '../../features/profile/data/model/change_password_response.dart';
 
 part 'api_service.g.dart';
 
@@ -97,5 +101,17 @@ abstract class ApiService {
   @GET(ApiConstant.getSubjects)
   Future<GetSubjectResponse> getSubject({
   @Header('Authorization') required String token,
+});
+
+  @PATCH(ApiConstant.updateProfile)
+  Future<EditProfileResponse> editProfile({
+    @Body() required EditProfileRequestBody editProfileRequestBody,
+    @Header('Authorization') required String token,
+  });
+
+  @PATCH(ApiConstant.changePassword)
+  Future<ChangePasswordResponse> changePassword({
+    @Body() required ChangePasswordRequestBody changePasswordRequestBody,
+    @Header('Authorization') required String token,
 });
 }

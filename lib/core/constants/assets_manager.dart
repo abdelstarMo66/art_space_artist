@@ -54,4 +54,5 @@ class AssetsManager {
   static const String imgResetPassword = "${_baseImg}img_Reset password2.svg";
   static const String imgVerifyEmailOTP = "${_baseImg}img_Verified.svg";
   static const String imgVerifyEmail = "${_baseImg}img_Verified.svg";
+  static const String imgMaleProfile = "${_baseImg}img_male_profile.png";
 }

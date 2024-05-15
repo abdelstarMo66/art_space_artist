@@ -12,10 +12,13 @@ import 'package:art_space_artist/features/home/presentation/views/home_screen.da
 import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
 import 'package:art_space_artist/features/products/presentation/views/add_product.dart';
+import 'package:art_space_artist/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/auth/forgetPassword/presentation/views/create_new_password.dart';
 import '../../features/products/presentation/views/view_product_details.dart';
+import '../../features/profile/presentation/views/change_password/change_password.dart';
+import '../../features/profile/presentation/views/edit_profile/edit_profile_screen.dart';
 import '../di/dependency_injection.dart';
 import 'app_router_names.dart';
 
@@ -23,7 +26,8 @@ class AppRouter {
   static Route<dynamic> onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
       case AppRouterNames.onBoarding:
-        return SlideRight(page: const OnBoardingScreen());
+        return SlideRight(
+            page: const OnBoardingScreen());
       case AppRouterNames.login:
         return SlideRight(
             page: BlocProvider(
@@ -57,16 +61,28 @@ class AppRouter {
           child: const CreateNewPassword(),
         ));
       case AppRouterNames.home:
-        return SlideRight(page: const HomeScreen());
+        return SlideRight(
+            page: const HomeScreen());
       case AppRouterNames.createProduct:
-        return SlideRight(page: BlocProvider(
-          create: (context) => getIt<ProductsCubit>(),
-            child: const AddProduct()));
+        return SlideRight(
+            page: BlocProvider(
+                create: (context) => getIt<ProductsCubit>(),
+                child: const AddProduct()));
       case AppRouterNames.eventDetails:
         return SlideRight(page: const EventDetailsScreen());
       case AppRouterNames.viewProductDetails:
         return SlideRight(
-            page: ViewProductDetails(index:settings.arguments as int));
+            page: ViewProductDetails(index: settings.arguments as int));
+      case AppRouterNames.editProfile:
+        return SlideRight(
+            page: BlocProvider.value(
+                value: getIt<ProfileCubit>(),
+                child: const EditProfileScreen()));
+      case AppRouterNames.changePassword:
+        return SlideRight(page: BlocProvider.value(
+            value: getIt<ProfileCubit>(),
+            child: const ChangePasswordScreen()));
+
       default:
         return unDefinedRoute();
     }

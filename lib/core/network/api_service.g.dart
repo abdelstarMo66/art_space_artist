@@ -428,6 +428,70 @@ class _ApiService implements ApiService {
     return value;
   }
 
+  @override
+  Future<EditProfileResponse> editProfile({
+    required EditProfileRequestBody editProfileRequestBody,
+    required String token,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    _data.addAll(editProfileRequestBody.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<EditProfileResponse>(Options(
+      method: 'PATCH',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'artists/updateProfile',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = EditProfileResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ChangePasswordResponse> changePassword({
+    required ChangePasswordRequestBody changePasswordRequestBody,
+    required String token,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    _data.addAll(changePasswordRequestBody.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ChangePasswordResponse>(Options(
+      method: 'PATCH',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'artists/changePassword',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = ChangePasswordResponse.fromJson(_result.data!);
+    return value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

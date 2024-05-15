@@ -10,4 +10,8 @@ class AppRouterNames {
   static const eventDetails ='/eventDetails';
   static const createProduct ='/createProduct';
   static const viewProductDetails ='/viewProductDetails';
+  static const editProfile ='/editProfile';
+  static const createEvent ='/createEvent';
+  static const settings ='/settings';
+  static const changePassword ='/changePassword';
 }

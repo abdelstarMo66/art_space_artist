@@ -23,6 +23,8 @@ class ProfileInfo {
   String? phone;
   bool? accountActive;
   List<String>? addresses;
+  String? bio;
+  String? image;
 
   ProfileInfo(
       {this.email,
@@ -30,7 +32,10 @@ class ProfileInfo {
       this.name,
       this.addresses,
       this.accountActive,
-      this.id});
+      this.id,
+      this.bio,
+        this.image
+      });
 
   factory ProfileInfo.fromJson(Map<String, dynamic> json) =>
       _$ProfileInfoFromJson(json);

@@ -5,10 +5,10 @@ import 'package:art_space_artist/core/di/dependency_injection.dart';
 import 'package:art_space_artist/features/home/presentation/view_model/home_cubit.dart';
 import 'package:art_space_artist/features/home/presentation/views/widget/get_product_list.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
-import 'package:art_space_artist/features/profile/presentation/view_model/get_profile_state.dart';
+import 'package:art_space_artist/features/profile/presentation/view_model/profile_state.dart';
 import 'package:art_space_artist/features/profile/presentation/views/profile_drawer_widget.dart';
 import 'package:art_space_artist/features/home/presentation/views/widget/filter_product_widget.dart';
-import 'package:art_space_artist/features/profile/presentation/view_model/get_profile_cubit.dart';
+import 'package:art_space_artist/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
           create: (context) => HomeCubit(),
         ),
         BlocProvider(
-          create: (context) => getIt<GetProfileCubit>()..emitGetProfileStates(),
+          create: (context) => getIt<ProfileCubit>()..emitGetProfileStates(),
         ),
         BlocProvider(
           create: (context) => getIt<ProductsCubit>()
@@ -35,9 +35,9 @@ class HomeScreen extends StatelessWidget {
             ..emitGetCategories(),
         ),
       ],
-      child: BlocBuilder<GetProfileCubit, GetProfileState>(
+      child: BlocBuilder<ProfileCubit, ProfileState>(
         builder: (context, state) {
-          if (state is Loading) {
+          if (state is GetProfileLoading) {
             return const LoadingWidget();
           } else {
             var cubit = HomeCubit.get(context);
@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyles.textStyle18,
                     ),
                     Text(
-                      '${context.read<GetProfileCubit>().myProfile!.profileInfo!.name}',
+                      '${context.read<ProfileCubit>().myProfile!.profileInfo!.name}',
                       style: TextStyles.textStyle18
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
@@ -98,7 +98,7 @@ class HomeScreen extends StatelessWidget {
                             Text(
                               S.of(context).yourProduct,
                               style: TextStyles.textStyle26,
-                            ), // ToDo localization
+                            ),
                             const SizedBox(
                               height: 15.0,
                             ),

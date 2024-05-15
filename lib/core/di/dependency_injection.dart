@@ -8,8 +8,8 @@ import 'package:art_space_artist/features/auth/register/data/repo/register_repo.
 import 'package:art_space_artist/features/auth/register/presentation/view_model/register_cubit.dart';
 import 'package:art_space_artist/features/products/data/repo/repo.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
-import 'package:art_space_artist/features/profile/data/repo/get_profile_repo.dart';
-import 'package:art_space_artist/features/profile/presentation/view_model/get_profile_cubit.dart';
+import 'package:art_space_artist/features/profile/data/repo/profile_repo.dart';
+import 'package:art_space_artist/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -33,8 +33,8 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<ForgetPasswordCubit>(
       () => ForgetPasswordCubit(getIt()));
   //Get profile
-  getIt.registerLazySingleton<GetProfileRepo>(() => GetProfileRepo(getIt()));
-  getIt.registerLazySingleton<GetProfileCubit>(() => GetProfileCubit(getIt()));
+  getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(getIt()));
+  getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit(getIt()));
   // Products
   getIt.registerLazySingleton<ProductsRepo>(() => ProductsRepo(getIt()));
   getIt.registerLazySingleton<ProductsCubit>(() => ProductsCubit(getIt()));

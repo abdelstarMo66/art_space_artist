@@ -10,6 +10,8 @@ class ApiConstant {
   static const resetPassword = 'artistAuth/resetPassword';
   //Profile
   static const getProfile = 'artists/getProfile';
+  static const updateProfile = 'artists/updateProfile';
+  static const changePassword = 'artists/changePassword';
   //Products
   static const getProducts = 'products/me';
   static const getProductDetails = 'products/me/{id}';
