@@ -30,12 +30,12 @@ class VerifyEmailListener extends StatelessWidget {
             );
           },
           success: (data) {
-            Navigator.of(context).pop();
-            Navigator.of(context).pushNamed(AppRouterNames.home);
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil(AppRouterNames.home, (route) => false);
           },
           error: (error) {
             Navigator.of(context).pop();
-            showToast('Error ya3m zeft', ToastState.error);
+            showToast(error, ToastState.error);
           },
         );
       },

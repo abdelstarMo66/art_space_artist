@@ -15,31 +15,35 @@ class LoginListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Success || current is Error || current is ShowPassword,
+          current is Loading ||
+          current is Success ||
+          current is Error ||
+          current is ShowPassword,
       listener: (context, state) {
         state.whenOrNull(
-            loading: () {
-          showDialog(
-            context: context,
-            builder: (context) => const Center(
-                child: CircularProgressIndicator(
-              color: ColorManager.primaryColor,
-            )),
-          );
-        }, success: (loginResponse) {
-          Navigator.of(context).pop();
-          Navigator.of(context).pushReplacementNamed(
-            AppRouterNames.home,
-          );
-        }, error: (error) {
-          Navigator.of(context).pop();
-          showToast(
-            msg: '${ServerFailure(error)}',
-            state: ToastState.error,
-          );
-        },
+          loading: () {
+            showDialog(
+              context: context,
+              builder: (context) => const Center(
+                  child: CircularProgressIndicator(
+                color: ColorManager.primaryColor,
+              )),
+            );
+          },
+          success: (loginResponse) {
+            Navigator.of(context).pop();
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil(AppRouterNames.home, (route) => false);
+          },
+          error: (error) {
+            Navigator.of(context).pop();
+            showToast(
+              msg: '${ServerFailure(error)}',
+              state: ToastState.error,
+            );
+          },
           changeVisiblePassword: () {
-              context.read<LoginCubit>().isSecure = false;
+            context.read<LoginCubit>().isSecure = false;
           },
         );
       },

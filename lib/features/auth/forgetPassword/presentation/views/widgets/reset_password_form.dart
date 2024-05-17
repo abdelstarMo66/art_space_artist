@@ -15,36 +15,34 @@ class ResetPasswordForm extends StatelessWidget {
     return Form(
         key: cubit.formKeyResetPassword,
         child: Column(
-      children: [
-        DefaultTextField(
-            controller: cubit.newPasswordController,
-            hintText: S.of(context).enterNewPassword,
-            validator: (value) {
-              if(value == null || !ExtString.isValidPassword(value))
-                {
-                  return 'Please enter valid password';
-                }
-              return null;
-            },
-            keyboardType: TextInputType.visiblePassword,
-            obscureText: true,
-            maxLines: 1),
-        const SizedBox(height: 20.0),
-        DefaultTextField(
-            controller: cubit.confirmNewPasswordController,
-            icon: Icons.remove_red_eye_outlined,
-            hintText: S.of(context).confirmNewPassword,
-            validator: (value) {
-              if(cubit.newPasswordController.text != cubit.confirmNewPasswordController.text)
-                {
-                  return 'confirm password incorrect';
-                }
-              return null;
-            },
-            keyboardType: TextInputType.visiblePassword,
-            obscureText: true,
-            maxLines: 1),
-      ],
-    ));
+          children: [
+            DefaultTextField(
+                controller: cubit.newPasswordController,
+                hintText: S.of(context).enterNewPassword,
+                validator: (value) {
+                  if (value == null) {
+                    return 'Please enter valid password';
+                  }
+                  return null;
+                },
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
+                maxLines: 1),
+            const SizedBox(height: 20.0),
+            DefaultTextField(
+                controller: cubit.confirmNewPasswordController,
+                hintText: S.of(context).confirmNewPassword,
+                validator: (value) {
+                  if (cubit.newPasswordController.text !=
+                      cubit.confirmNewPasswordController.text) {
+                    return 'confirm password incorrect';
+                  }
+                  return null;
+                },
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
+                maxLines: 1),
+          ],
+        ));
   }
 }

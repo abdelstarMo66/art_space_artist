@@ -10,17 +10,28 @@ import 'package:art_space_artist/features/auth/forgetPassword/presentation/views
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import '../../../../../generated/l10n.dart';
 
 class CreateNewPassword extends StatelessWidget {
-  const CreateNewPassword({super.key});
+  final String email;
+  const CreateNewPassword({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
     var cubit = context.read<ForgetPasswordCubit>();
     return Scaffold(
-      appBar: AppBar(backgroundColor: ColorManager.primaryColor,
-      leading: SvgPicture.asset(AssetsManager.icBackArrow, height: 40,),
+      appBar: AppBar(
+        backgroundColor: ColorManager.primaryColor,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: SvgPicture.asset(
+            AssetsManager.icBackArrow,
+            height: 40,
+          ),
+        ),
       ),
       backgroundColor: ColorManager.thirdColor,
       body: CustomStackWidget(
@@ -45,21 +56,21 @@ class CreateNewPassword extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-               const ResetPasswordForm(),
+                const ResetPasswordForm(),
                 const SizedBox(
                   height: 40.0,
                 ),
                 DefaultButton(
-                    text: 'Change password',
-                    onPressed: () {
-                      if(cubit.formKeyResetPassword.currentState!.validate())
-                        {
-                          cubit.emitResetPasswordStates(ResetPasswordRequest(
-                              email: cubit.emailController.text,
-                              password: cubit.newPasswordController.text,
-                              passwordConfirm: cubit.confirmNewPasswordController.text));
-                        }
-                    },
+                  text: 'Change password',
+                  onPressed: () {
+                    if (cubit.formKeyResetPassword.currentState!.validate()) {
+                      cubit.emitResetPasswordStates(ResetPasswordRequest(
+                          email: email,
+                          password: cubit.newPasswordController.text,
+                          passwordConfirm:
+                              cubit.confirmNewPasswordController.text));
+                    }
+                  },
                 ),
                 const ResetPasswordListener()
               ],

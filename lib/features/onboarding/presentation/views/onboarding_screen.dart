@@ -8,10 +8,12 @@ import 'package:art_space_artist/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 import '../../../../core/constants/assets_manager.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     List<OnBoardingScreenUiModel> onBoardingData = [
@@ -28,7 +30,7 @@ class OnBoardingScreen extends StatelessWidget {
       OnBoardingScreenUiModel(
         image: AssetsManager.imgOnBoardingScreen3,
         title: S.of(context).onBoardingThirdScreenMain,
-        subTitle:S.of(context).onBoardingThirdScreenSecond,
+        subTitle: S.of(context).onBoardingThirdScreenSecond,
       ),
     ];
     PageController boardController = PageController();
@@ -44,7 +46,8 @@ class OnBoardingScreen extends StatelessWidget {
         actions: [
           TextButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, AppRouterNames.login);
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    AppRouterNames.login, (route) => false);
                 cubit.finishOnBoardingScreen(true);
               },
               child: Text(
@@ -61,12 +64,13 @@ class OnBoardingScreen extends StatelessWidget {
               onPageChanged: (value) {
                 if (value == onBoardingData.length - 1) {
                   cubit.lastScreenOnBoarding = true;
-                 cubit.finishOnBoardingScreen(true);
+                  cubit.finishOnBoardingScreen(true);
                 } else {
                   cubit.lastScreenOnBoarding = false;
                 }
               },
-              itemBuilder: (context, index) => OnBoardingScreenUi(onBoardingScreenUiModel: onBoardingData[index]),
+              itemBuilder: (context, index) => OnBoardingScreenUi(
+                  onBoardingScreenUiModel: onBoardingData[index]),
               itemCount: onBoardingData.length,
               controller: boardController,
             ),
@@ -92,8 +96,8 @@ class OnBoardingScreen extends StatelessWidget {
                 FloatingActionButton(
                   onPressed: () {
                     if (cubit.lastScreenOnBoarding == true) {
-                      Navigator.pushReplacementNamed(
-                          context, AppRouterNames.login);
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          AppRouterNames.login, (route) => false);
                     } else {
                       boardController.nextPage(
                         duration: const Duration(

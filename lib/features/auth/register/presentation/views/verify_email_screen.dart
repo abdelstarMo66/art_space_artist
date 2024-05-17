@@ -1,9 +1,9 @@
 import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
-import 'package:art_space_artist/features/auth/forgetPassword/data/model/verify_email_request.dart';
-import 'package:art_space_artist/features/auth/forgetPassword/presentation/view_model/forget_password_cubit.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/widgets/custom_stack_widget.dart';
-import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/widgets/verify_email_listener.dart';
+import 'package:art_space_artist/features/auth/register/data/models/verify_email_request_body.dart';
+import 'package:art_space_artist/features/auth/register/presentation/view_model/register_cubit.dart';
+import 'package:art_space_artist/features/auth/register/presentation/views/widgets/verify_email_listener.dart';
 import 'package:art_space_artist/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,9 +13,10 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../../../core/components/default_button.dart';
 import '../../../../../core/constants/text_style.dart';
 
-class VerifyEmailOTPScreen extends StatelessWidget {
+class VerifyEmailScreen extends StatelessWidget {
   final String email;
-  const VerifyEmailOTPScreen({super.key, required this.email});
+
+  const VerifyEmailScreen({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class VerifyEmailOTPScreen extends StatelessWidget {
       ),
       backgroundColor: ColorManager.thirdColor,
       body: CustomStackWidget(
-        image: AssetsManager.imgVerifyEmailOTP,
+        image: AssetsManager.imgVerifyEmail,
         widget: SingleChildScrollView(
           child: Column(
             children: [
@@ -55,7 +56,7 @@ class VerifyEmailOTPScreen extends StatelessWidget {
               ),
               const SizedBox(height: 40.0),
               Form(
-                key: context.read<ForgetPasswordCubit>().formKeyOTP,
+                key: context.read<RegisterCubit>().formKeyVerifyEmail,
                 child: PinCodeTextField(
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -78,22 +79,17 @@ class VerifyEmailOTPScreen extends StatelessWidget {
                     fieldWidth: 54,
                     borderWidth: 1.2,
                     activeFillColor: ColorManager.originalWhite,
-                    // اللون الي جوا لما يبقا متحدد
                     inactiveFillColor: ColorManager.originalWhite,
-                    // اللون الي جوا لما يبقا مش متحدد
                     activeColor: ColorManager.primaryColor,
-                    // لون البوردرالمتحدده
                     inactiveColor: ColorManager.thirdColor,
-                    // لون البوردر الي مش متحدده
                     selectedFillColor: ColorManager.originalWhite,
-                    // اللون الي انا واقف عليه
                     selectedColor: ColorManager.primaryColor,
                   ),
                   animationDuration: const Duration(milliseconds: 300),
                   enableActiveFill: true,
                   onCompleted: (code) {},
                   onChanged: (value) {},
-                  controller: context.read<ForgetPasswordCubit>().otpController,
+                  controller: context.read<RegisterCubit>().otpController,
                 ),
               ),
               const SizedBox(
@@ -102,42 +98,46 @@ class VerifyEmailOTPScreen extends StatelessWidget {
               Row(
                 children: [
                   const Text(
-                    'If you didn’t recieve a code!',
+                    'If you didn’t receive a code!',
                     style: TextStyles.textStyle16,
                   ),
                   TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Resend',
-                        style: TextStyles.textStyle16.copyWith(
-                            color: ColorManager.primaryColor,
-                            fontWeight: FontWeight.bold),
-                      )),
+                    onPressed: () {},
+                    child: Text(
+                      'Resend',
+                      style: TextStyles.textStyle16.copyWith(
+                          color: ColorManager.primaryColor,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ],
               ),
               DefaultButton(
-                  text: S.of(context).verify,
-                  onPressed: () {
-                    if (context
-                        .read<ForgetPasswordCubit>()
-                        .formKeyOTP
-                        .currentState!
-                        .validate()) {
-                      context.read<ForgetPasswordCubit>().emitVerifyEmailStates(
-                            VerifyCodeRequest(
-                                email: email,
-                                resetCode: context
-                                    .read<ForgetPasswordCubit>()
-                                    .otpController
-                                    .text),
-                          );
-                    }
-                  }),
-              VerifyCodeListener(email: email),
+                text: S.of(context).verify,
+                onPressed: () {
+                  validateThenVerify(context);
+                },
+              ),
+              const VerifyEmailListener(),
             ],
           ),
         ),
       ),
     );
+  }
+
+  void validateThenVerify(BuildContext context) {
+    if (context
+        .read<RegisterCubit>()
+        .formKeyVerifyEmail
+        .currentState!
+        .validate()) {
+      context
+          .read<RegisterCubit>()
+          .emitVerifyEmailStates(VerifyEmailRequestBody(
+            email: email,
+            activateCode: context.read<RegisterCubit>().otpController.text,
+          ));
+    }
   }
 }

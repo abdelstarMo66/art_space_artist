@@ -25,8 +25,7 @@ class EventDetailsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 GestureDetector(
-                    onTap: () => Navigator.pushReplacementNamed(
-                        context, AppRouterNames.home),
+                    onTap: () => Navigator.pop(context),
                     child: SvgPicture.asset(
                       AssetsManager.icBackArrow,
                       height: 40.0,

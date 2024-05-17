@@ -10,6 +10,7 @@ import 'package:art_space_artist/features/auth/register/presentation/views/widge
 import 'package:art_space_artist/features/auth/register/presentation/views/widgets/select_gender_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../../generated/l10n.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -18,9 +19,10 @@ class RegisterScreen extends StatefulWidget {
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
 }
-bool isMale = true;
-bool securePassword = true;
+
 class _RegisterScreenState extends State<RegisterScreen> {
+  bool isMale = true;
+  bool securePassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -41,26 +43,41 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 height: 30.0,
               ),
               const RegisterScreenForm(),
-              const SizedBox(height: 20.0,),
+              const SizedBox(
+                height: 20.0,
+              ),
               Row(
                 children: [
-                  const Text('Gender', style:  TextStyles.textStyle30,),
+                  const Text(
+                    'Gender',
+                    style: TextStyles.textStyle30,
+                  ),
                   const Spacer(),
                   SelectGenderWidget(
-                      icon: AssetsManager.icMale,
-                      iconColor: isMale == true ? ColorManager.originalWhite : ColorManager.originalBlack,
-                      backgroundColor:isMale == true ? ColorManager.primaryColor : ColorManager.thirdColor,
-                  onTap: () {
-                    setState(() {
-                      isMale = true;
-                    });
-                  },
+                    icon: AssetsManager.icMale,
+                    iconColor: isMale == true
+                        ? ColorManager.originalWhite
+                        : ColorManager.originalBlack,
+                    backgroundColor: isMale == true
+                        ? ColorManager.primaryColor
+                        : ColorManager.thirdColor,
+                    onTap: () {
+                      setState(() {
+                        isMale = true;
+                      });
+                    },
                   ),
-                  const SizedBox(width: 25,),
+                  const SizedBox(
+                    width: 25,
+                  ),
                   SelectGenderWidget(
                     icon: AssetsManager.icFemale,
-                    iconColor: isMale == false ? ColorManager.originalWhite : ColorManager.originalBlack,
-                    backgroundColor: isMale == false ? ColorManager.primaryColor : ColorManager.thirdColor,
+                    iconColor: isMale == false
+                        ? ColorManager.originalWhite
+                        : ColorManager.originalBlack,
+                    backgroundColor: isMale == false
+                        ? ColorManager.primaryColor
+                        : ColorManager.thirdColor,
                     onTap: () {
                       setState(() {
                         isMale = false;
@@ -78,11 +95,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(S.of(context).alreadyHaveAnAccount, style: TextStyles.textStyle16.copyWith(fontSize: 14),),
+                  Text(
+                    S.of(context).alreadyHaveAnAccount,
+                    style: TextStyles.textStyle16.copyWith(fontSize: 14),
+                  ),
                   TextButton(
                       onPressed: () {
                         Navigator.pushReplacementNamed(
-                            context, AppRouterNames.login,
+                          context,
+                          AppRouterNames.login,
                         );
                       },
                       child: Text(
@@ -102,16 +123,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   void validateThenRegister(BuildContext context) {
     if (context.read<RegisterCubit>().formKey.currentState!.validate()) {
-      context.read<RegisterCubit>().emitRegisterStates(RegisterRequestBody(
-        gender: isMale == true ? 'male' : 'female',
-            name: context.read<RegisterCubit>().nameController.text,
-            email: context.read<RegisterCubit>().emailAddressController.text,
-            password: context.read<RegisterCubit>().passwordController.text,
-            passwordConfirm:
-                context.read<RegisterCubit>().confirmPasswordController.text,
-            phone: context.read<RegisterCubit>().phoneController.text,
-            profileImg: '',
-          ));
+      context.read<RegisterCubit>().emitRegisterStates(
+            RegisterFormData(
+              gender: isMale == true ? 'male' : 'female',
+              name: context.read<RegisterCubit>().nameController.text,
+              email: context.read<RegisterCubit>().emailAddressController.text,
+              password: context.read<RegisterCubit>().passwordController.text,
+              passwordConfirm:
+                  context.read<RegisterCubit>().confirmPasswordController.text,
+              phone: context.read<RegisterCubit>().phoneController.text,
+            ),
+          );
     }
   }
 }

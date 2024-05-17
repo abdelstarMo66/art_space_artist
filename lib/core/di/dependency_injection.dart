@@ -23,14 +23,14 @@ Future<void> setupGetIt() async {
   // Auth
   //Login
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
-  getIt.registerLazySingleton<LoginCubit>(() => LoginCubit(getIt()));
+  getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
   //Register
   getIt.registerLazySingleton<RegisterRepo>(() => RegisterRepo(getIt()));
-  getIt.registerLazySingleton<RegisterCubit>(() => RegisterCubit(getIt()));
+  getIt.registerFactory<RegisterCubit>(() => RegisterCubit(getIt()));
   //Forget Password And Reset it
   getIt.registerLazySingleton<ForgetPasswordRepo>(
       () => ForgetPasswordRepo(getIt()));
-  getIt.registerLazySingleton<ForgetPasswordCubit>(
+  getIt.registerFactory<ForgetPasswordCubit>(
       () => ForgetPasswordCubit(getIt()));
   //Get profile
   getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(getIt()));

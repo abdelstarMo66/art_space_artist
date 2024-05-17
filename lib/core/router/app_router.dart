@@ -1,12 +1,12 @@
 import 'package:art_space_artist/core/router/animation_transition.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/view_model/forget_password_cubit.dart';
-import 'package:art_space_artist/features/auth/login/presentation/view_model/login_cubit.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/forget_password_screen.dart';
+import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/verify_email_otp_screen.dart';
+import 'package:art_space_artist/features/auth/login/presentation/view_model/login_cubit.dart';
 import 'package:art_space_artist/features/auth/login/presentation/views/login_screen.dart';
 import 'package:art_space_artist/features/auth/register/presentation/view_model/register_cubit.dart';
 import 'package:art_space_artist/features/auth/register/presentation/views/register_screen.dart';
-import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/verify_email_otp_screen.dart';
-import 'package:art_space_artist/features/auth/register/presentation/views/widgets/verify_email.dart';
+import 'package:art_space_artist/features/auth/register/presentation/views/verify_email_screen.dart';
 import 'package:art_space_artist/features/events/presentation/views/event_details_screen.dart';
 import 'package:art_space_artist/features/home/presentation/views/home_screen.dart';
 import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
@@ -15,6 +15,7 @@ import 'package:art_space_artist/features/products/presentation/views/add_produc
 import 'package:art_space_artist/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../features/auth/forgetPassword/presentation/views/create_new_password.dart';
 import '../../features/products/presentation/views/view_product_details.dart';
 import '../../features/profile/presentation/views/change_password/change_password.dart';
@@ -26,8 +27,7 @@ class AppRouter {
   static Route<dynamic> onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
       case AppRouterNames.onBoarding:
-        return SlideRight(
-            page: const OnBoardingScreen());
+        return SlideRight(page: const OnBoardingScreen());
       case AppRouterNames.login:
         return SlideRight(
             page: BlocProvider(
@@ -41,7 +41,10 @@ class AppRouter {
         ));
       case AppRouterNames.verifyEmail:
         return SlideRight(
-            page: const VerifyEmailScreen());
+            page: BlocProvider.value(
+          value: getIt<RegisterCubit>(),
+          child: VerifyEmailScreen(email: settings.arguments as String),
+        ));
       case AppRouterNames.forgetPassword:
         return SlideRight(
             page: BlocProvider(
@@ -52,17 +55,16 @@ class AppRouter {
         return SlideRight(
             page: BlocProvider(
           create: (context) => getIt<ForgetPasswordCubit>(),
-          child: const VerifyEmailOTPScreen(),
+          child:  VerifyEmailOTPScreen(email: settings.arguments as String),
         ));
       case AppRouterNames.createNewPassword:
         return SlideRight(
             page: BlocProvider(
           create: (context) => getIt<ForgetPasswordCubit>(),
-          child: const CreateNewPassword(),
+          child: CreateNewPassword(email: settings.arguments as String),
         ));
       case AppRouterNames.home:
-        return SlideRight(
-            page: const HomeScreen());
+        return SlideRight(page: const HomeScreen());
       case AppRouterNames.createProduct:
         return SlideRight(
             page: BlocProvider(
@@ -79,9 +81,10 @@ class AppRouter {
                 value: getIt<ProfileCubit>(),
                 child: const EditProfileScreen()));
       case AppRouterNames.changePassword:
-        return SlideRight(page: BlocProvider.value(
-            value: getIt<ProfileCubit>(),
-            child: const ChangePasswordScreen()));
+        return SlideRight(
+            page: BlocProvider.value(
+                value: getIt<ProfileCubit>(),
+                child: const ChangePasswordScreen()));
 
       default:
         return unDefinedRoute();

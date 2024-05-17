@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:art_space_artist/core/network/api_constants.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/forget_password_request.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_request.dart';
@@ -15,6 +17,7 @@ import 'package:art_space_artist/features/profile/data/model/edit_profile_respon
 import 'package:art_space_artist/features/profile/data/model/get_profile_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
+
 import '../../features/auth/forgetPassword/data/model/forget_password_response.dart';
 import '../../features/auth/forgetPassword/data/model/verify_email_response.dart';
 import '../../features/auth/login/data/model/login_response.dart';
@@ -38,9 +41,12 @@ abstract class ApiService {
   );
 
   @POST(ApiConstant.register)
-  Future<RegisterResponse> register(
-    @Body() RegisterRequestBody registerRequestBody,
-  );
+  // @MultiPart()
+  Future<RegisterResponse> register({
+    // @Part() required RegisterRequestBody registerRequestBody,
+    // @Part(contentType: "image/*") required File profileImg,
+    @Body() required FormData registerFormData,
+  });
 
   @POST(ApiConstant.forgotPassword)
   Future<ForgetPasswordResponse> forgetPassword(
@@ -92,16 +98,18 @@ abstract class ApiService {
 
   @GET(ApiConstant.getStyles)
   Future<GetStylesResponse> getStyles({
-  @Header('Authorization') required String token,
-});
+    @Header('Authorization') required String token,
+  });
+
   @GET(ApiConstant.getCategories)
-  Future<GetCategoryResponse> getCategory ({
-  @Header('Authorization') required String token,
-});
+  Future<GetCategoryResponse> getCategory({
+    @Header('Authorization') required String token,
+  });
+
   @GET(ApiConstant.getSubjects)
   Future<GetSubjectResponse> getSubject({
-  @Header('Authorization') required String token,
-});
+    @Header('Authorization') required String token,
+  });
 
   @PATCH(ApiConstant.updateProfile)
   Future<EditProfileResponse> editProfile({
@@ -113,5 +121,5 @@ abstract class ApiService {
   Future<ChangePasswordResponse> changePassword({
     @Body() required ChangePasswordRequestBody changePasswordRequestBody,
     @Header('Authorization') required String token,
-});
+  });
 }

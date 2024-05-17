@@ -8,35 +8,41 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../core/constants/color_manager.dart';
 
-class VerifyEmailListener extends StatelessWidget {
-  const VerifyEmailListener({super.key});
+class VerifyCodeListener extends StatelessWidget {
+  final String email;
+
+  const VerifyCodeListener({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
-    return  BlocListener<ForgetPasswordCubit, ForgetPasswordState>(
-        listenWhen: (previous, current) => current is VerfiyEmailLoading || current is VerfiyEmailSuccess || current is VerfiyEmailError,
-        listener: (context, state) {
-          state.whenOrNull(
-            verifyEmailLoading: () {
-              showDialog(
-                  context: context,
-                  builder: (context) => const Center(
-                    child: CircularProgressIndicator(
-                      color: ColorManager.primaryColor,
-                    ),
-                  ));
-            },
-            verifyEmailSuccess: (data) {
-              Navigator.of(context).pop();
-              Navigator.of(context).pushNamed(AppRouterNames.createNewPassword);
-            },
-            verifyEmailError: (error) {
-              Navigator.of(context).pop();
-              showToast(msg: error, state: ToastState.error);
-            },
-          );
-        },
-    child: const SizedBox.shrink(),
+    return BlocListener<ForgetPasswordCubit, ForgetPasswordState>(
+      listenWhen: (previous, current) =>
+          current is VerfiyEmailLoading ||
+          current is VerfiyEmailSuccess ||
+          current is VerfiyEmailError,
+      listener: (context, state) {
+        state.whenOrNull(
+          verifyEmailLoading: () {
+            showDialog(
+                context: context,
+                builder: (context) => const Center(
+                      child: CircularProgressIndicator(
+                        color: ColorManager.primaryColor,
+                      ),
+                    ));
+          },
+          verifyEmailSuccess: (data) {
+            Navigator.of(context).pop();
+            Navigator.of(context)
+                .pushNamed(AppRouterNames.createNewPassword, arguments: email);
+          },
+          verifyEmailError: (error) {
+            Navigator.of(context).pop();
+            showToast(msg: error, state: ToastState.error);
+          },
+        );
+      },
+      child: const SizedBox.shrink(),
     );
   }
 }

@@ -13,31 +13,34 @@ class RegisterListener extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<RegisterCubit, RegisterState>(
-        listenWhen: (previous, current) =>
+      listenWhen: (previous, current) =>
           current is Loading || current is Success || current is Error,
-        listener: (context, state) {
-          state.whenOrNull(
-            loading: () {
-              showDialog(
-                context: context,
-                builder: (context) => const Center(child: CircularProgressIndicator(
-                  color: ColorManager.primaryColor,
-                )
-                ),
-              );
-            },
-            success: (data) {
-              Navigator.of(context).pop();
-              Navigator.of(context).pushNamed(AppRouterNames.verifyEmail);
-            },
-            error: (error) {
-              Navigator.of(context).pop();
-              showToast(
-                  'Error ya3m zeft', ToastState.error);
-            },
-          );
-        },
-    child: const SizedBox.shrink(),
+      listener: (context, state) {
+        state.whenOrNull(
+          loading: () {
+            showDialog(
+              context: context,
+              builder: (context) => const Center(
+                  child: CircularProgressIndicator(
+                color: ColorManager.primaryColor,
+              )),
+            );
+          },
+          success: (data) {
+            Navigator.of(context).pop();
+            Navigator.of(context).pushNamed(
+              AppRouterNames.verifyEmail,
+              arguments:
+                  context.read<RegisterCubit>().emailAddressController.text,
+            );
+          },
+          error: (error) {
+            Navigator.of(context).pop();
+            showToast(error, ToastState.error);
+          },
+        );
+      },
+      child: const SizedBox.shrink(),
     );
   }
 }
