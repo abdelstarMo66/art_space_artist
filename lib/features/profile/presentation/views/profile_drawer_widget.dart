@@ -4,11 +4,10 @@ import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/profile_state.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import '../../../../generated/l10n.dart';
 
 class CustomProfileDrawer extends StatelessWidget {
@@ -19,14 +18,14 @@ class CustomProfileDrawer extends StatelessWidget {
     return BlocBuilder<ProfileCubit, ProfileState>(
       builder: (context, state) {
         var cubit = context.read<ProfileCubit>();
-        if(cubit.myProfile != null) {
+        if (cubit.myProfile != null) {
           return Drawer(
             child: ListView(
               padding: EdgeInsets.zero,
               children: [
                 Container(
                   padding:
-                  const EdgeInsetsDirectional.only(top: 50.0, start: 15.0),
+                      const EdgeInsetsDirectional.only(top: 50.0, start: 15.0),
                   height: 190,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
@@ -46,19 +45,44 @@ class CustomProfileDrawer extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context).pushNamed(AppRouterNames.editProfile);
+                          Navigator.of(context)
+                              .pushNamed(AppRouterNames.editProfile);
                         },
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const CircleAvatar(
-                              radius: 31.5,
-                              backgroundColor: ColorManager.originalWhite,
-                              child: CircleAvatar(
-                                backgroundColor: ColorManager.secondaryColor,
-                                radius: 30,
-                              ),
-                            ),
+                            CircleAvatar(
+                                backgroundColor: ColorManager.originalWhite,
+                                radius: 36.0,
+                                child: context
+                                            .read<ProfileCubit>()
+                                            .myProfile!
+                                            .profileInfo!
+                                            .image ==
+                                        null
+                                    ? CircleAvatar(
+                                        backgroundColor: ColorManager.darkGray,
+                                        radius: 34,
+                                        child: Align(
+                                            alignment: AlignmentDirectional
+                                                .bottomCenter,
+                                            child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadiusDirectional
+                                                        .circular(48),
+                                                child: Image.asset(
+                                                  AssetsManager.imgMaleProfile,
+                                                  height: 100,
+                                                  fit: BoxFit.cover,
+                                                ))),
+                                      )
+                                    : CircleAvatar(
+                                        radius: 34,
+                                        child: Image(
+                                          image: NetworkImage(
+                                              '${context.read<ProfileCubit>().myProfile!.profileInfo!.image}'),
+                                        ),
+                                      )),
                             const SizedBox(
                               width: 10.0,
                             ),
@@ -86,10 +110,7 @@ class CustomProfileDrawer extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: MediaQuery
-                            .of(context)
-                            .size
-                            .height * 0.012,
+                        height: MediaQuery.of(context).size.height * 0.012,
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -115,25 +136,20 @@ class CustomProfileDrawer extends StatelessWidget {
                     height: 40,
                   ),
                   title: Text(
-                    S
-                        .of(context)
-                        .createEvent,
+                    S.of(context).createEvent,
                     style: TextStyles.textStyle18,
                   ),
                 ),
                 InkWell(
-                  onTap: () =>
-                      Navigator.of(context)
-                          .pushReplacementNamed(AppRouterNames.createProduct),
+                  onTap: () => Navigator.of(context)
+                      .pushReplacementNamed(AppRouterNames.createProduct),
                   child: ListTile(
                     leading: SvgPicture.asset(
                       AssetsManager.icAdd,
                       height: 40,
                     ),
                     title: Text(
-                      S
-                          .of(context)
-                          .addProduct,
+                      S.of(context).addProduct,
                       style: TextStyles.textStyle18,
                     ),
                   ),
@@ -144,9 +160,7 @@ class CustomProfileDrawer extends StatelessWidget {
                     height: 40,
                   ),
                   title: Text(
-                    S
-                        .of(context)
-                        .settings,
+                    S.of(context).settings,
                     style: TextStyles.textStyle18,
                   ),
                 ),
@@ -158,9 +172,7 @@ class CustomProfileDrawer extends StatelessWidget {
                       height: 40,
                     ),
                     title: Text(
-                      S
-                          .of(context)
-                          .logOut,
+                      S.of(context).logOut,
                       style: TextStyles.textStyle18,
                     ),
                   ),
