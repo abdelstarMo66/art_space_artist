@@ -7,7 +7,9 @@ import 'package:art_space_artist/features/auth/login/presentation/views/login_sc
 import 'package:art_space_artist/features/auth/register/presentation/view_model/register_cubit.dart';
 import 'package:art_space_artist/features/auth/register/presentation/views/register_screen.dart';
 import 'package:art_space_artist/features/auth/register/presentation/views/verify_email_screen.dart';
+import 'package:art_space_artist/features/events/presentation/view_model/event_cubit.dart';
 import 'package:art_space_artist/features/events/presentation/views/event_details_screen.dart';
+import 'package:art_space_artist/features/events/presentation/views/create_event_screen.dart';
 import 'package:art_space_artist/features/home/presentation/views/home_screen.dart';
 import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
@@ -55,7 +57,7 @@ class AppRouter {
         return SlideRight(
             page: BlocProvider(
           create: (context) => getIt<ForgetPasswordCubit>(),
-          child:  VerifyEmailOTPScreen(email: settings.arguments as String),
+          child: VerifyEmailOTPScreen(email: settings.arguments as String),
         ));
       case AppRouterNames.createNewPassword:
         return SlideRight(
@@ -85,6 +87,11 @@ class AppRouter {
             page: BlocProvider.value(
                 value: getIt<ProfileCubit>(),
                 child: const ChangePasswordScreen()));
+      case AppRouterNames.createEvent:
+        return SlideRight(
+            page: BlocProvider(
+              create:(context) => getIt<EventCubit>(),
+                child: const CreateEvent()));
 
       default:
         return unDefinedRoute();

@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:art_space_artist/features/products/data/models/get_category_response.dart';
-import 'package:art_space_artist/features/products/data/models/get_my_products_response.dart';
+import 'package:art_space_artist/features/home/data/models/get_my_products_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_subject_response.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_state.dart';
 import 'package:bloc/bloc.dart';
@@ -29,18 +29,18 @@ class ProductsCubit extends Cubit<ProductsState> {
     });
   }
 
-  var nameController = TextEditingController();
-  var descriptionController = TextEditingController();
-  var priceController = TextEditingController();
-  var heightController = TextEditingController();
-  var widthController = TextEditingController();
-  var depthController = TextEditingController();
-  var materialController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
+  TextEditingController priceController = TextEditingController();
+  TextEditingController heightController = TextEditingController();
+  TextEditingController widthController = TextEditingController();
+  TextEditingController depthController = TextEditingController();
+  TextEditingController materialController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
 
-   File ?coverImage;
-   List<File> images = [];
+  File? coverImage;
+  List<File> images = [];
   Future<void> getCoverImage() async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(source: ImageSource.gallery);
@@ -60,10 +60,9 @@ class ProductsCubit extends Cubit<ProductsState> {
     images.removeAt(index);
   }
 
-
-  String ?categoryId;
-  String ?styleId;
-  String ?subjectId;
+  String? categoryId;
+  String? styleId;
+  String? subjectId;
 
   void emitAddProduct() async {
     emit(const ProductsState.addProductLoading());
@@ -106,7 +105,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  ProductDetails ?productDetails;
+  ProductDetails? productDetails;
   void emitGetProductDetails({required int index}) async {
     emit(const ProductsState.getProductDetailsLoading());
     print(myProducts![index].id);
@@ -124,7 +123,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  List ?styles;
+  List? styles;
   void emitDeleteProduct({required int index}) async {
     emit(const ProductsState.deleteProductLoading());
     final response = await _getMyProductsRepo.deleteProduct(
@@ -156,42 +155,41 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  List<SubjectData> ?subjects;
+  List<SubjectData>? subjects;
   void emitGetSubjects() async {
     emit(const ProductsState.getSubjectsLoading());
     final response = await _getMyProductsRepo.getSubject();
     response.when(
-        success: (data) {
-          subjects = data.subjectData;
-          emit(ProductsState.getSubjectsSuccess(data));
-        },
-        failure: (message) {
-         emit(ProductsState.getSubjectsError(error: message));
-         print(message);
-        },
+      success: (data) {
+        subjects = data.subjectData;
+        emit(ProductsState.getSubjectsSuccess(data));
+      },
+      failure: (message) {
+        emit(ProductsState.getSubjectsError(error: message));
+        print(message);
+      },
     );
   }
 
-  List<CategoryData> ?categories;
+  List<CategoryData>? categories;
   void emitGetCategories() async {
     emit(const ProductsState.getCategoriesLoading());
     final response = await _getMyProductsRepo.getCategory();
     response.when(
-        success: (data) {
-          categories = data.categoryData;
-          emit(ProductsState.getCategoriesSuccess(data));
-        },
-        failure: (message) {
-          emit(ProductsState.getCategoriesError(error: message));
-          print(message);
-        },
+      success: (data) {
+        categories = data.categoryData;
+        emit(ProductsState.getCategoriesSuccess(data));
+      },
+      failure: (message) {
+        emit(ProductsState.getCategoriesError(error: message));
+        print(message);
+      },
     );
   }
 
-void addProduct() {
-    if(formKey.currentState!.validate())
-      {
-        emitAddProduct();
-      }
-}
+  void addProduct() {
+    if (formKey.currentState!.validate()) {
+      emitAddProduct();
+    }
+  }
 }

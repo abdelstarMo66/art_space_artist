@@ -9,7 +9,7 @@ part of 'forget_password_response.dart';
 ForgetPasswordResponse _$ForgetPasswordResponseFromJson(
         Map<String, dynamic> json) =>
     ForgetPasswordResponse(
-      code: json['code'] as int?,
+      code: (json['code'] as num?)?.toInt(),
       status: json['status'] as String?,
       message: json['message'] as String?,
     );

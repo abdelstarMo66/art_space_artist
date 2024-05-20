@@ -6,12 +6,17 @@ import 'package:art_space_artist/features/auth/login/data/repo/Login_repository.
 import 'package:art_space_artist/features/auth/login/presentation/view_model/login_cubit.dart';
 import 'package:art_space_artist/features/auth/register/data/repo/register_repo.dart';
 import 'package:art_space_artist/features/auth/register/presentation/view_model/register_cubit.dart';
+import 'package:art_space_artist/features/home/data/repositories/home_repository.dart';
 import 'package:art_space_artist/features/products/data/repo/repo.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
 import 'package:art_space_artist/features/profile/data/repo/profile_repo.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+
+import '../../features/events/data/repo/repo.dart';
+import '../../features/events/presentation/view_model/event_cubit.dart';
+import '../../features/home/presentation/view_model/home_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -28,14 +33,18 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<RegisterRepo>(() => RegisterRepo(getIt()));
   getIt.registerFactory<RegisterCubit>(() => RegisterCubit(getIt()));
   //Forget Password And Reset it
-  getIt.registerLazySingleton<ForgetPasswordRepo>(
-      () => ForgetPasswordRepo(getIt()));
-  getIt.registerFactory<ForgetPasswordCubit>(
-      () => ForgetPasswordCubit(getIt()));
+  getIt.registerLazySingleton<ForgetPasswordRepo>(() => ForgetPasswordRepo(getIt()));
+  getIt.registerFactory<ForgetPasswordCubit>(() => ForgetPasswordCubit(getIt()));
+  // Home Page
+  getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
+  getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt()));
   //Get profile
   getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(getIt()));
   getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit(getIt()));
   // Products
   getIt.registerLazySingleton<ProductsRepo>(() => ProductsRepo(getIt()));
   getIt.registerLazySingleton<ProductsCubit>(() => ProductsCubit(getIt()));
+  // Events
+  getIt.registerLazySingleton<EventRepo>(() => EventRepo(getIt()));
+  getIt.registerLazySingleton<EventCubit>(() => EventCubit(getIt()));
 }

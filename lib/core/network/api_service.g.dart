@@ -50,12 +50,11 @@ class _ApiService implements ApiService {
 
   @override
   Future<RegisterResponse> register(
-      RegisterRequestBody registerRequestBody) async {
+      {required FormData registerFormData}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(registerRequestBody.toJson());
+    final _data = registerFormData;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<RegisterResponse>(Options(
       method: 'POST',
@@ -489,6 +488,37 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     final value = ChangePasswordResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<CreateEventResponse> createEvent({
+    required FormData body,
+    required String token,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = body;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<CreateEventResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'events',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = CreateEventResponse.fromJson(_result.data!);
     return value;
   }
 
