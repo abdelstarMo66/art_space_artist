@@ -26,7 +26,8 @@ class GetProductList extends StatelessWidget {
           itemBuilder: (context, index) => InkWell(
               onTap: () {
                 Navigator.pushNamed(context, AppRouterNames.viewProductDetails,
-                    arguments: index);
+                    arguments: cubit.myProducts[index].id
+                );
               },
               child: cubit.myProducts.isEmpty
                   ? AppCustomShimmer(

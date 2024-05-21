@@ -9,7 +9,7 @@ class HomeRepo {
 
   HomeRepo(this._apiService);
 
-  Future<ApiResult<GetMyProductsResponse>> getMyProducts() async {
+  Future<ApiResult<GetAllProductsResponse>> getMyProducts() async {
     try {
       final response = await _apiService.getMyProducts('Bearer $token');
       return ApiResult.success(response);

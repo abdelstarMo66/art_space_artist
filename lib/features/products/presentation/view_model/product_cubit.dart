@@ -16,19 +16,6 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   ProductsCubit(this._getMyProductsRepo) : super(const ProductsState.initial());
 
-  List<ProductsInfo>? myProducts;
-
-  void emitGetMyProducts() async {
-    emit(const ProductsState.getProductLoading());
-    final response = await _getMyProductsRepo.getMyProducts();
-    response.when(success: (data) {
-      myProducts = data.products!.productsInfo;
-      emit(ProductsState.addProductSuccess(data));
-    }, failure: (error) {
-      emit(ProductsState.getProductError(error: error));
-    });
-  }
-
   TextEditingController nameController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
   TextEditingController priceController = TextEditingController();
@@ -106,11 +93,10 @@ class ProductsCubit extends Cubit<ProductsState> {
   }
 
   ProductDetails? productDetails;
-  void emitGetProductDetails({required int index}) async {
+  void emitGetProductDetails({required String productId}) async {
     emit(const ProductsState.getProductDetailsLoading());
-    print(myProducts![index].id);
     final response = await _getMyProductsRepo.getProductDetails(
-      productId: "${myProducts![index].id}",
+      productId: productId,
     );
     response.when(
       success: (data) {
@@ -124,14 +110,13 @@ class ProductsCubit extends Cubit<ProductsState> {
   }
 
   List? styles;
-  void emitDeleteProduct({required int index}) async {
+  void emitDeleteProduct({required String productId}) async {
     emit(const ProductsState.deleteProductLoading());
     final response = await _getMyProductsRepo.deleteProduct(
-      productId: "${myProducts![index].id}",
+      productId: productId,
     );
     response.when(
       success: (data) {
-        myProducts!.removeAt(index);
         emit(ProductsState.deleteProductSuccess(data));
       },
       failure: (error) {

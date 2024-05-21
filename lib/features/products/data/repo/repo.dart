@@ -6,7 +6,6 @@ import 'package:art_space_artist/features/home/data/models/get_my_products_respo
 import 'package:art_space_artist/features/products/data/models/get_styles_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_subject_response.dart';
 import 'package:dio/dio.dart';
-
 import '../../../../core/network/api_result.dart';
 import '../models/get_category_response.dart';
 import '../models/get_product_details_response.dart';
@@ -16,7 +15,7 @@ class ProductsRepo {
 
   ProductsRepo(this._apiService);
 
-  Future<ApiResult<GetMyProductsResponse>> getMyProducts() async {
+  Future<ApiResult<GetAllProductsResponse>> getMyProducts() async {
     try {
       final response = await _apiService.getMyProducts('Bearer $token');
       return ApiResult.success(response);

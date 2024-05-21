@@ -12,8 +12,8 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ViewProductDetails extends StatelessWidget {
-  final int index;
-  const ViewProductDetails({required this.index, super.key});
+  final String productId;
+  const ViewProductDetails({required this.productId, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +22,8 @@ class ViewProductDetails extends StatelessWidget {
         padding: const EdgeInsets.only(
           left: 18.0,
         ),
-        child: BlocProvider.value(
-          value: getIt<ProductsCubit>()..emitGetProductDetails(index: index),
+        child: BlocProvider(
+          create:(context) => getIt<ProductsCubit>()..emitGetProductDetails(productId: productId),
           child: BlocBuilder<ProductsCubit, ProductsState>(
             builder: (context, state) {
               if (state is GetProductDetailsLoading) {
@@ -61,7 +61,7 @@ class ViewProductDetails extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () {
-                              context.read<ProductsCubit>().emitDeleteProduct(index: index);
+                              context.read<ProductsCubit>().emitDeleteProduct(productId: productId);
                               if (state is DeleteProductSuccess) {
                                 Navigator.pushReplacementNamed(
                                     context, AppRouterNames.home);

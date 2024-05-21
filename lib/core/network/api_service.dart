@@ -73,7 +73,7 @@ abstract class ApiService {
   );
 
   @GET(ApiConstant.getProducts)
-  Future<GetMyProductsResponse> getMyProducts(
+  Future<GetAllProductsResponse> getMyProducts(
     @Header('Authorization') String token,
   );
 

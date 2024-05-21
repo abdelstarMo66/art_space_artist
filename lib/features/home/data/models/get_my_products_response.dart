@@ -1,18 +1,18 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'get_my_products_response.g.dart';
 @JsonSerializable()
-class GetMyProductsResponse {
+class GetAllProductsResponse {
   final String? status;
   final String? message;
   int? code;
   @JsonKey(name: 'data')
   Products? products;
 
-  GetMyProductsResponse(
+  GetAllProductsResponse(
       {this.status, this.code, this.message, this.products});
 
-  factory GetMyProductsResponse.fromJson(Map<String, dynamic> json) =>
-      _$GetMyProductsResponseFromJson(json);
+  factory GetAllProductsResponse.fromJson(Map<String, dynamic> json) =>
+      _$GetAllProductsResponseFromJson(json);
 }
 
 @JsonSerializable()

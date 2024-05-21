@@ -12,7 +12,6 @@ import '../../../../generated/l10n.dart';
 
 class CustomProfileDrawer extends StatelessWidget {
   const CustomProfileDrawer({super.key});
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProfileCubit, ProfileState>(

@@ -76,7 +76,7 @@ class AppRouter {
         return SlideRight(page: const EventDetailsScreen());
       case AppRouterNames.viewProductDetails:
         return SlideRight(
-            page: ViewProductDetails(index: settings.arguments as int));
+            page: ViewProductDetails(productId: settings.arguments as String,));
       case AppRouterNames.editProfile:
         return SlideRight(
             page: BlocProvider.value(

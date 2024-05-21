@@ -221,14 +221,14 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<GetMyProductsResponse> getMyProducts(String token) async {
+  Future<GetAllProductsResponse> getMyProducts(String token) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetMyProductsResponse>(Options(
+        _setStreamType<GetAllProductsResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -244,7 +244,7 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = GetMyProductsResponse.fromJson(_result.data!);
+    final value = GetAllProductsResponse.fromJson(_result.data!);
     return value;
   }
 
