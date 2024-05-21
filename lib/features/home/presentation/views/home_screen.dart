@@ -3,6 +3,7 @@ import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/core/di/dependency_injection.dart';
 import 'package:art_space_artist/features/home/presentation/view_model/home_cubit.dart';
+import 'package:art_space_artist/features/home/presentation/view_model/home_state.dart';
 import 'package:art_space_artist/features/home/presentation/views/widget/get_product_list.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/profile_state.dart';
 import 'package:art_space_artist/features/profile/presentation/views/profile_drawer_widget.dart';
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => getIt<HomeCubit>()..emitGetMyProducts(),
+          create: (context) => getIt<HomeCubit>()..emitGetMyProducts()..emitGetAllEvents(),
         ),
         BlocProvider(
           create: (context) => getIt<ProfileCubit>()..emitGetProfileStates(),
@@ -69,20 +70,24 @@ class HomeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(S.of(context).yourEvents,
-                                style: TextStyles.textStyle26),
+                                style: TextStyles.textStyle20.copyWith(fontWeight: FontWeight.bold)),
                             const SizedBox(
                               height: 15.0,
                             ),
-                            CarouselSlider(
-                              items: cubit.images,
-                              options: CarouselOptions(
-                                enlargeCenterPage: true,
-                                enableInfiniteScroll: false,
-                                initialPage: 0,
-                                height:
+                            BlocBuilder<HomeCubit, HomeState>(
+                              builder: (context, state) {
+                                return CarouselSlider(
+                                  items: cubit.allEventImages.isEmpty ? cubit.shimmerEventLoading : cubit.allEventImages,
+                                  options: CarouselOptions(
+                                    enlargeCenterPage: true,
+                                    enableInfiniteScroll: false,
+                                    initialPage: 0,
+                                    height:
                                     MediaQuery.of(context).size.height * 0.23,
-                                autoPlay: false,
-                              ),
+                                    autoPlay: false,
+                                  ),
+                                );
+                              },
                             ),
                             const SizedBox(
                               height: 30.0,

@@ -18,4 +18,5 @@ class EventRepo{
      return ApiResult.failure(error.toString());
    }
   }
+
 }

@@ -1,21 +1,31 @@
+import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:flutter/material.dart';
 
 class EventListItem extends StatelessWidget {
-  const EventListItem({super.key, required this.imgLink,});
-
+  const EventListItem(
+      {super.key,
+      required this.imgLink,
+      required this.title,
+      required this.endDate,
+      required this.eventId});
+  final String eventId;
   final String imgLink;
+  final String title;
+  final String endDate;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushReplacementNamed(context, AppRouterNames.eventDetails),
+      onTap: () =>
+          Navigator.pushReplacementNamed(context, AppRouterNames.eventDetails),
       child: Stack(
         alignment: AlignmentDirectional.bottomCenter,
         children: [
           Container(
             decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage(imgLink), fit: BoxFit.fill),
+              image: DecorationImage(
+                  image: NetworkImage(imgLink), fit: BoxFit.fill),
               borderRadius: BorderRadiusDirectional.circular(25.0),
             ),
           ),
@@ -37,19 +47,18 @@ class EventListItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Inspiration event',
+                  title,
                   style: TextStyles.textStyle16.copyWith(
-                      fontWeight: FontWeight.bold,
-                      ),
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                const SizedBox(height: 18.0,),
-                const Row(
-                  children: [
-                    Text('Paints: 5', style: TextStyles.textStyle16,),
-                    Spacer(),
-                    Text('12 Feb 2024', style: TextStyles.textStyle16),
-                  ],
-                )
+                const SizedBox(
+                  height: 18.0,
+                ),
+                Text(
+                  endDate,
+                  style: TextStyles.textStyle16.copyWith(color: ColorManager.primaryColor),
+                ),
               ],
             ),
           ),
