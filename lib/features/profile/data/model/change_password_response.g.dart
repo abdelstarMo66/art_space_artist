@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_response.dart';
+part of 'change_password_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
-    LoginResponse(
+ChangePasswordResponse _$ChangePasswordResponseFromJson(
+        Map<String, dynamic> json) =>
+    ChangePasswordResponse(
       userData: json['data'] == null
           ? null
           : UserData.fromJson(json['data'] as Map<String, dynamic>),
@@ -16,7 +17,8 @@ LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
       status: json['status'] as String?,
     );
 
-Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
+Map<String, dynamic> _$ChangePasswordResponseToJson(
+        ChangePasswordResponse instance) =>
     <String, dynamic>{
       'message': instance.message,
       'data': instance.userData,

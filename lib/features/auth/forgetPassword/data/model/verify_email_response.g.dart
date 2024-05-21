@@ -10,7 +10,7 @@ VerifyCodeResponse _$VerifyCodeResponseFromJson(Map<String, dynamic> json) =>
     VerifyCodeResponse(
       message: json['message'] as String?,
       status: json['status'] as String?,
-      code: json['code'] as int?,
+      code: (json['code'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$VerifyCodeResponseToJson(VerifyCodeResponse instance) =>

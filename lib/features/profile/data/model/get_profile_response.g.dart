@@ -12,7 +12,7 @@ GetProfileResponse _$GetProfileResponseFromJson(Map<String, dynamic> json) =>
           ? null
           : ProfileInfo.fromJson(json['data'] as Map<String, dynamic>),
       status: json['status'] as String?,
-      code: json['code'] as int?,
+      code: (json['code'] as num?)?.toInt(),
       message: json['message'] as String?,
     );
 

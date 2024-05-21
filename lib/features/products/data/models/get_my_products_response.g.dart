@@ -10,7 +10,7 @@ GetMyProductsResponse _$GetMyProductsResponseFromJson(
         Map<String, dynamic> json) =>
     GetMyProductsResponse(
       status: json['status'] as String?,
-      code: json['code'] as int?,
+      code: (json['code'] as num?)?.toInt(),
       message: json['message'] as String?,
       products: json['data'] == null
           ? null
@@ -41,10 +41,10 @@ Map<String, dynamic> _$ProductsToJson(Products instance) => <String, dynamic>{
     };
 
 Pagination _$PaginationFromJson(Map<String, dynamic> json) => Pagination(
-      currentPage: json['currentPage'] as int?,
-      limit: json['limit'] as int?,
-      numbersOfPages: json['numbersOfPages'] as int?,
-      totalResults: json['totalResults'] as int?,
+      currentPage: (json['currentPage'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt(),
+      numbersOfPages: (json['numbersOfPages'] as num?)?.toInt(),
+      totalResults: (json['totalResults'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$PaginationToJson(Pagination instance) =>

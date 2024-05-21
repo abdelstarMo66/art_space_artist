@@ -20,33 +20,36 @@ mixin _$RegisterState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(RegisterResponse data) success,
     required TResult Function(String error) error,
     required TResult Function() verifyEmailLoading,
-    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(VerifyEmailResponse data) verifyEmailSuccess,
     required TResult Function(String error) verifyEmailError,
+    required TResult Function() addProfileImageInRegister,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(RegisterResponse data)? success,
     TResult? Function(String error)? error,
     TResult? Function()? verifyEmailLoading,
-    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult? Function(String error)? verifyEmailError,
+    TResult? Function()? addProfileImageInRegister,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(RegisterResponse data)? success,
     TResult Function(String error)? error,
     TResult Function()? verifyEmailLoading,
-    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult Function(String error)? verifyEmailError,
+    TResult Function()? addProfileImageInRegister,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +62,8 @@ mixin _$RegisterState<T> {
     required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
     required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
     required TResult Function(VerifyEmailError<T> value) verifyEmailError,
+    required TResult Function(AddProfileImageInRegister<T> value)
+        addProfileImageInRegister,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +75,8 @@ mixin _$RegisterState<T> {
     TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult? Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +88,8 @@ mixin _$RegisterState<T> {
     TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -144,11 +153,12 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(RegisterResponse data) success,
     required TResult Function(String error) error,
     required TResult Function() verifyEmailLoading,
-    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(VerifyEmailResponse data) verifyEmailSuccess,
     required TResult Function(String error) verifyEmailError,
+    required TResult Function() addProfileImageInRegister,
   }) {
     return initial();
   }
@@ -158,11 +168,12 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(RegisterResponse data)? success,
     TResult? Function(String error)? error,
     TResult? Function()? verifyEmailLoading,
-    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult? Function(String error)? verifyEmailError,
+    TResult? Function()? addProfileImageInRegister,
   }) {
     return initial?.call();
   }
@@ -172,11 +183,12 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(RegisterResponse data)? success,
     TResult Function(String error)? error,
     TResult Function()? verifyEmailLoading,
-    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult Function(String error)? verifyEmailError,
+    TResult Function()? addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -195,6 +207,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
     required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
     required TResult Function(VerifyEmailError<T> value) verifyEmailError,
+    required TResult Function(AddProfileImageInRegister<T> value)
+        addProfileImageInRegister,
   }) {
     return initial(this);
   }
@@ -209,6 +223,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult? Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
   }) {
     return initial?.call(this);
   }
@@ -223,6 +239,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -276,11 +294,12 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(RegisterResponse data) success,
     required TResult Function(String error) error,
     required TResult Function() verifyEmailLoading,
-    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(VerifyEmailResponse data) verifyEmailSuccess,
     required TResult Function(String error) verifyEmailError,
+    required TResult Function() addProfileImageInRegister,
   }) {
     return loading();
   }
@@ -290,11 +309,12 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(RegisterResponse data)? success,
     TResult? Function(String error)? error,
     TResult? Function()? verifyEmailLoading,
-    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult? Function(String error)? verifyEmailError,
+    TResult? Function()? addProfileImageInRegister,
   }) {
     return loading?.call();
   }
@@ -304,11 +324,12 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(RegisterResponse data)? success,
     TResult Function(String error)? error,
     TResult Function()? verifyEmailLoading,
-    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult Function(String error)? verifyEmailError,
+    TResult Function()? addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -327,6 +348,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
     required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
     required TResult Function(VerifyEmailError<T> value) verifyEmailError,
+    required TResult Function(AddProfileImageInRegister<T> value)
+        addProfileImageInRegister,
   }) {
     return loading(this);
   }
@@ -341,6 +364,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult? Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
   }) {
     return loading?.call(this);
   }
@@ -355,6 +380,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -374,7 +401,7 @@ abstract class _$$SuccessImplCopyWith<T, $Res> {
           _$SuccessImpl<T> value, $Res Function(_$SuccessImpl<T>) then) =
       __$$SuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({RegisterResponse data});
 }
 
 /// @nodoc
@@ -388,13 +415,13 @@ class __$$SuccessImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$SuccessImpl<T>(
-      freezed == data
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as RegisterResponse,
     ));
   }
 }
@@ -405,7 +432,7 @@ class _$SuccessImpl<T> implements Success<T> {
   const _$SuccessImpl(this.data);
 
   @override
-  final T data;
+  final RegisterResponse data;
 
   @override
   String toString() {
@@ -417,12 +444,11 @@ class _$SuccessImpl<T> implements Success<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
@@ -435,11 +461,12 @@ class _$SuccessImpl<T> implements Success<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(RegisterResponse data) success,
     required TResult Function(String error) error,
     required TResult Function() verifyEmailLoading,
-    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(VerifyEmailResponse data) verifyEmailSuccess,
     required TResult Function(String error) verifyEmailError,
+    required TResult Function() addProfileImageInRegister,
   }) {
     return success(data);
   }
@@ -449,11 +476,12 @@ class _$SuccessImpl<T> implements Success<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(RegisterResponse data)? success,
     TResult? Function(String error)? error,
     TResult? Function()? verifyEmailLoading,
-    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult? Function(String error)? verifyEmailError,
+    TResult? Function()? addProfileImageInRegister,
   }) {
     return success?.call(data);
   }
@@ -463,11 +491,12 @@ class _$SuccessImpl<T> implements Success<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(RegisterResponse data)? success,
     TResult Function(String error)? error,
     TResult Function()? verifyEmailLoading,
-    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult Function(String error)? verifyEmailError,
+    TResult Function()? addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -486,6 +515,8 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
     required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
     required TResult Function(VerifyEmailError<T> value) verifyEmailError,
+    required TResult Function(AddProfileImageInRegister<T> value)
+        addProfileImageInRegister,
   }) {
     return success(this);
   }
@@ -500,6 +531,8 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult? Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
   }) {
     return success?.call(this);
   }
@@ -514,6 +547,8 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -524,9 +559,9 @@ class _$SuccessImpl<T> implements Success<T> {
 }
 
 abstract class Success<T> implements RegisterState<T> {
-  const factory Success(final T data) = _$SuccessImpl<T>;
+  const factory Success(final RegisterResponse data) = _$SuccessImpl<T>;
 
-  T get data;
+  RegisterResponse get data;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<T, _$SuccessImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -598,11 +633,12 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(RegisterResponse data) success,
     required TResult Function(String error) error,
     required TResult Function() verifyEmailLoading,
-    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(VerifyEmailResponse data) verifyEmailSuccess,
     required TResult Function(String error) verifyEmailError,
+    required TResult Function() addProfileImageInRegister,
   }) {
     return error(this.error);
   }
@@ -612,11 +648,12 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(RegisterResponse data)? success,
     TResult? Function(String error)? error,
     TResult? Function()? verifyEmailLoading,
-    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult? Function(String error)? verifyEmailError,
+    TResult? Function()? addProfileImageInRegister,
   }) {
     return error?.call(this.error);
   }
@@ -626,11 +663,12 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(RegisterResponse data)? success,
     TResult Function(String error)? error,
     TResult Function()? verifyEmailLoading,
-    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult Function(String error)? verifyEmailError,
+    TResult Function()? addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -649,6 +687,8 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
     required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
     required TResult Function(VerifyEmailError<T> value) verifyEmailError,
+    required TResult Function(AddProfileImageInRegister<T> value)
+        addProfileImageInRegister,
   }) {
     return error(this);
   }
@@ -663,6 +703,8 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult? Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
   }) {
     return error?.call(this);
   }
@@ -677,6 +719,8 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -736,11 +780,12 @@ class _$VerifyEmailLoadingImpl<T> implements VerifyEmailLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(RegisterResponse data) success,
     required TResult Function(String error) error,
     required TResult Function() verifyEmailLoading,
-    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(VerifyEmailResponse data) verifyEmailSuccess,
     required TResult Function(String error) verifyEmailError,
+    required TResult Function() addProfileImageInRegister,
   }) {
     return verifyEmailLoading();
   }
@@ -750,11 +795,12 @@ class _$VerifyEmailLoadingImpl<T> implements VerifyEmailLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(RegisterResponse data)? success,
     TResult? Function(String error)? error,
     TResult? Function()? verifyEmailLoading,
-    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult? Function(String error)? verifyEmailError,
+    TResult? Function()? addProfileImageInRegister,
   }) {
     return verifyEmailLoading?.call();
   }
@@ -764,11 +810,12 @@ class _$VerifyEmailLoadingImpl<T> implements VerifyEmailLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(RegisterResponse data)? success,
     TResult Function(String error)? error,
     TResult Function()? verifyEmailLoading,
-    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult Function(String error)? verifyEmailError,
+    TResult Function()? addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (verifyEmailLoading != null) {
@@ -787,6 +834,8 @@ class _$VerifyEmailLoadingImpl<T> implements VerifyEmailLoading<T> {
     required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
     required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
     required TResult Function(VerifyEmailError<T> value) verifyEmailError,
+    required TResult Function(AddProfileImageInRegister<T> value)
+        addProfileImageInRegister,
   }) {
     return verifyEmailLoading(this);
   }
@@ -801,6 +850,8 @@ class _$VerifyEmailLoadingImpl<T> implements VerifyEmailLoading<T> {
     TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult? Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
   }) {
     return verifyEmailLoading?.call(this);
   }
@@ -815,6 +866,8 @@ class _$VerifyEmailLoadingImpl<T> implements VerifyEmailLoading<T> {
     TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (verifyEmailLoading != null) {
@@ -834,7 +887,7 @@ abstract class _$$VerifyEmailSuccessImplCopyWith<T, $Res> {
           $Res Function(_$VerifyEmailSuccessImpl<T>) then) =
       __$$VerifyEmailSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({VerifyEmailResponse data});
 }
 
 /// @nodoc
@@ -848,13 +901,13 @@ class __$$VerifyEmailSuccessImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$VerifyEmailSuccessImpl<T>(
-      freezed == data
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as VerifyEmailResponse,
     ));
   }
 }
@@ -865,7 +918,7 @@ class _$VerifyEmailSuccessImpl<T> implements VerifyEmailSuccess<T> {
   const _$VerifyEmailSuccessImpl(this.data);
 
   @override
-  final T data;
+  final VerifyEmailResponse data;
 
   @override
   String toString() {
@@ -877,12 +930,11 @@ class _$VerifyEmailSuccessImpl<T> implements VerifyEmailSuccess<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VerifyEmailSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
@@ -896,11 +948,12 @@ class _$VerifyEmailSuccessImpl<T> implements VerifyEmailSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(RegisterResponse data) success,
     required TResult Function(String error) error,
     required TResult Function() verifyEmailLoading,
-    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(VerifyEmailResponse data) verifyEmailSuccess,
     required TResult Function(String error) verifyEmailError,
+    required TResult Function() addProfileImageInRegister,
   }) {
     return verifyEmailSuccess(data);
   }
@@ -910,11 +963,12 @@ class _$VerifyEmailSuccessImpl<T> implements VerifyEmailSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(RegisterResponse data)? success,
     TResult? Function(String error)? error,
     TResult? Function()? verifyEmailLoading,
-    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult? Function(String error)? verifyEmailError,
+    TResult? Function()? addProfileImageInRegister,
   }) {
     return verifyEmailSuccess?.call(data);
   }
@@ -924,11 +978,12 @@ class _$VerifyEmailSuccessImpl<T> implements VerifyEmailSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(RegisterResponse data)? success,
     TResult Function(String error)? error,
     TResult Function()? verifyEmailLoading,
-    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult Function(String error)? verifyEmailError,
+    TResult Function()? addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (verifyEmailSuccess != null) {
@@ -947,6 +1002,8 @@ class _$VerifyEmailSuccessImpl<T> implements VerifyEmailSuccess<T> {
     required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
     required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
     required TResult Function(VerifyEmailError<T> value) verifyEmailError,
+    required TResult Function(AddProfileImageInRegister<T> value)
+        addProfileImageInRegister,
   }) {
     return verifyEmailSuccess(this);
   }
@@ -961,6 +1018,8 @@ class _$VerifyEmailSuccessImpl<T> implements VerifyEmailSuccess<T> {
     TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult? Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
   }) {
     return verifyEmailSuccess?.call(this);
   }
@@ -975,6 +1034,8 @@ class _$VerifyEmailSuccessImpl<T> implements VerifyEmailSuccess<T> {
     TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (verifyEmailSuccess != null) {
@@ -985,9 +1046,10 @@ class _$VerifyEmailSuccessImpl<T> implements VerifyEmailSuccess<T> {
 }
 
 abstract class VerifyEmailSuccess<T> implements RegisterState<T> {
-  const factory VerifyEmailSuccess(final T data) = _$VerifyEmailSuccessImpl<T>;
+  const factory VerifyEmailSuccess(final VerifyEmailResponse data) =
+      _$VerifyEmailSuccessImpl<T>;
 
-  T get data;
+  VerifyEmailResponse get data;
   @JsonKey(ignore: true)
   _$$VerifyEmailSuccessImplCopyWith<T, _$VerifyEmailSuccessImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
@@ -1060,11 +1122,12 @@ class _$VerifyEmailErrorImpl<T> implements VerifyEmailError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(RegisterResponse data) success,
     required TResult Function(String error) error,
     required TResult Function() verifyEmailLoading,
-    required TResult Function(T data) verifyEmailSuccess,
+    required TResult Function(VerifyEmailResponse data) verifyEmailSuccess,
     required TResult Function(String error) verifyEmailError,
+    required TResult Function() addProfileImageInRegister,
   }) {
     return verifyEmailError(this.error);
   }
@@ -1074,11 +1137,12 @@ class _$VerifyEmailErrorImpl<T> implements VerifyEmailError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(RegisterResponse data)? success,
     TResult? Function(String error)? error,
     TResult? Function()? verifyEmailLoading,
-    TResult? Function(T data)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult? Function(String error)? verifyEmailError,
+    TResult? Function()? addProfileImageInRegister,
   }) {
     return verifyEmailError?.call(this.error);
   }
@@ -1088,11 +1152,12 @@ class _$VerifyEmailErrorImpl<T> implements VerifyEmailError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(RegisterResponse data)? success,
     TResult Function(String error)? error,
     TResult Function()? verifyEmailLoading,
-    TResult Function(T data)? verifyEmailSuccess,
+    TResult Function(VerifyEmailResponse data)? verifyEmailSuccess,
     TResult Function(String error)? verifyEmailError,
+    TResult Function()? addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (verifyEmailError != null) {
@@ -1111,6 +1176,8 @@ class _$VerifyEmailErrorImpl<T> implements VerifyEmailError<T> {
     required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
     required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
     required TResult Function(VerifyEmailError<T> value) verifyEmailError,
+    required TResult Function(AddProfileImageInRegister<T> value)
+        addProfileImageInRegister,
   }) {
     return verifyEmailError(this);
   }
@@ -1125,6 +1192,8 @@ class _$VerifyEmailErrorImpl<T> implements VerifyEmailError<T> {
     TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult? Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
   }) {
     return verifyEmailError?.call(this);
   }
@@ -1139,6 +1208,8 @@ class _$VerifyEmailErrorImpl<T> implements VerifyEmailError<T> {
     TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
     TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
     TResult Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
     required TResult orElse(),
   }) {
     if (verifyEmailError != null) {
@@ -1156,4 +1227,151 @@ abstract class VerifyEmailError<T> implements RegisterState<T> {
   @JsonKey(ignore: true)
   _$$VerifyEmailErrorImplCopyWith<T, _$VerifyEmailErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddProfileImageInRegisterImplCopyWith<T, $Res> {
+  factory _$$AddProfileImageInRegisterImplCopyWith(
+          _$AddProfileImageInRegisterImpl<T> value,
+          $Res Function(_$AddProfileImageInRegisterImpl<T>) then) =
+      __$$AddProfileImageInRegisterImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AddProfileImageInRegisterImplCopyWithImpl<T, $Res>
+    extends _$RegisterStateCopyWithImpl<T, $Res,
+        _$AddProfileImageInRegisterImpl<T>>
+    implements _$$AddProfileImageInRegisterImplCopyWith<T, $Res> {
+  __$$AddProfileImageInRegisterImplCopyWithImpl(
+      _$AddProfileImageInRegisterImpl<T> _value,
+      $Res Function(_$AddProfileImageInRegisterImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AddProfileImageInRegisterImpl<T>
+    implements AddProfileImageInRegister<T> {
+  const _$AddProfileImageInRegisterImpl();
+
+  @override
+  String toString() {
+    return 'RegisterState<$T>.addProfileImageInRegister()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddProfileImageInRegisterImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(RegisterResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function() verifyEmailLoading,
+    required TResult Function(VerifyEmailResponse data) verifyEmailSuccess,
+    required TResult Function(String error) verifyEmailError,
+    required TResult Function() addProfileImageInRegister,
+  }) {
+    return addProfileImageInRegister();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(RegisterResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function()? verifyEmailLoading,
+    TResult? Function(VerifyEmailResponse data)? verifyEmailSuccess,
+    TResult? Function(String error)? verifyEmailError,
+    TResult? Function()? addProfileImageInRegister,
+  }) {
+    return addProfileImageInRegister?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(RegisterResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function()? verifyEmailLoading,
+    TResult Function(VerifyEmailResponse data)? verifyEmailSuccess,
+    TResult Function(String error)? verifyEmailError,
+    TResult Function()? addProfileImageInRegister,
+    required TResult orElse(),
+  }) {
+    if (addProfileImageInRegister != null) {
+      return addProfileImageInRegister();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(VerifyEmailLoading<T> value) verifyEmailLoading,
+    required TResult Function(VerifyEmailSuccess<T> value) verifyEmailSuccess,
+    required TResult Function(VerifyEmailError<T> value) verifyEmailError,
+    required TResult Function(AddProfileImageInRegister<T> value)
+        addProfileImageInRegister,
+  }) {
+    return addProfileImageInRegister(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult? Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult? Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult? Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
+  }) {
+    return addProfileImageInRegister?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(VerifyEmailLoading<T> value)? verifyEmailLoading,
+    TResult Function(VerifyEmailSuccess<T> value)? verifyEmailSuccess,
+    TResult Function(VerifyEmailError<T> value)? verifyEmailError,
+    TResult Function(AddProfileImageInRegister<T> value)?
+        addProfileImageInRegister,
+    required TResult orElse(),
+  }) {
+    if (addProfileImageInRegister != null) {
+      return addProfileImageInRegister(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddProfileImageInRegister<T> implements RegisterState<T> {
+  const factory AddProfileImageInRegister() =
+      _$AddProfileImageInRegisterImpl<T>;
 }

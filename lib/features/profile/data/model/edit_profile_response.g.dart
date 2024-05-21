@@ -1,21 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'register_response.dart';
+part of 'edit_profile_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-RegisterResponse _$RegisterResponseFromJson(Map<String, dynamic> json) =>
-    RegisterResponse(
-      message: json['message'] as String?,
+EditProfileResponse _$EditProfileResponseFromJson(Map<String, dynamic> json) =>
+    EditProfileResponse(
       status: json['status'] as String?,
       code: (json['code'] as num?)?.toInt(),
+      message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$RegisterResponseToJson(RegisterResponse instance) =>
+Map<String, dynamic> _$EditProfileResponseToJson(
+        EditProfileResponse instance) =>
     <String, dynamic>{
-      'message': instance.message,
       'status': instance.status,
       'code': instance.code,
+      'message': instance.message,
     };

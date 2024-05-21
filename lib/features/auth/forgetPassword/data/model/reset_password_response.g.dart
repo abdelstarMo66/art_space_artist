@@ -13,7 +13,7 @@ ResetPasswordResponse _$ResetPasswordResponseFromJson(
           ? null
           : UserData.fromJson(json['data'] as Map<String, dynamic>),
       message: json['message'] as String?,
-      code: json['code'] as int?,
+      code: (json['code'] as num?)?.toInt(),
       status: json['status'] as String?,
     );
 
