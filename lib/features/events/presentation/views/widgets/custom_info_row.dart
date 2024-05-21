@@ -9,16 +9,15 @@ final String icon;
 final String text;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SvgPicture.asset(icon, height: MediaQuery.of(context).size.height * 0.045),
-        Expanded(
-          child: Text(
-            text,
-            style: TextStyles.textStyle14.copyWith(color: ColorManager.originalBlack),
-          ),
-        ),
-      ],
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      dense: true,
+      horizontalTitleGap: 4.0,
+      leading: SvgPicture.asset(icon, height: 24.0, colorFilter: const ColorFilter.mode(ColorManager.primaryColor, BlendMode.srcIn),),
+      title: Text(
+        text,
+        style: TextStyles.textStyle14.copyWith(color: ColorManager.originalBlack),
+      ),
     );
   }
 }

@@ -22,7 +22,7 @@ class GetProductList extends StatelessWidget {
               crossAxisCount: 2,
               mainAxisSpacing: MediaQuery.of(context).size.height * 0.02,
               crossAxisSpacing: 16.0,
-              mainAxisExtent: MediaQuery.of(context).size.height * 0.235),
+          ),
           itemBuilder: (context, index) => cubit.myProducts.isEmpty
               ? AppCustomShimmer(
                   child: Container(

@@ -33,7 +33,7 @@ class EventInfo{
 class Products{
   String id;
   String title;
-  String price;
+  num price;
   String coverImage;
   String category;
 

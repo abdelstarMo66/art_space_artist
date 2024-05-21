@@ -69,15 +69,15 @@ class EventCubit extends Cubit<EventState> {
   EventInfo? eventInfo;
   void emitGetEventDetails({required String eventId}) async {
     emit(const EventState.getEventDetailsLoading());
+
     final response = await _eventRepo.getEventDetails(eventId: eventId);
+
     response.when(
       success: (data) {
-        print('Ba3at data ya sa7bi');
         eventInfo = data.eventInfo;
         emit(EventState.getEventDetailsSuccess(data));
       },
       failure: (error) {
-        print(error);
         emit(EventState.getEventDetailsFailure(error));
       },
     );

@@ -6,6 +6,7 @@ import 'package:art_space_artist/features/home/presentation/views/widget/event_l
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../data/models/get_event_response.dart';
 import '../../data/models/get_my_products_response.dart';
 
@@ -36,7 +37,7 @@ class HomeCubit extends Cubit<HomeState> {
   List<Widget> shimmerEventLoading = [
     AppCustomShimmer(
         child: Container(
-          height: 200,
+      height: 200,
       decoration: BoxDecoration(
         color: ColorManager.originalWhite,
         borderRadius: BorderRadiusDirectional.circular(25.0),
@@ -44,25 +45,21 @@ class HomeCubit extends Cubit<HomeState> {
     )),
     AppCustomShimmer(
         child: Container(
-          height: 200,
+      height: 200,
       decoration: BoxDecoration(
         color: ColorManager.originalWhite,
         borderRadius: BorderRadiusDirectional.circular(25.0),
       ),
     )),
   ];
+
   void emitGetAllEvents() async {
     emit(const HomeState.getEventLoading());
     final response = await _homeRepo.getAllEvents();
     response.when(success: (data) {
-      for (EventInfo events in data.event.eventInfo) {
-        allEvents.add(events);
-        allEventImages.add(EventListItem(
-          imgLink: events.coverImage,
-          title: events.title,
-          endDate: events.end.split("T")[0],
-          eventId: events.id,
-        ));
+      for (EventInfo event in data.event.eventInfo) {
+        allEvents.add(event);
+        allEventImages.add(EventListItem(eventInfo: event));
       }
       emit(HomeState.getEventSuccess(data));
     }, failure: (error) {

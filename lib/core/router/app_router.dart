@@ -8,8 +8,8 @@ import 'package:art_space_artist/features/auth/register/presentation/view_model/
 import 'package:art_space_artist/features/auth/register/presentation/views/register_screen.dart';
 import 'package:art_space_artist/features/auth/register/presentation/views/verify_email_screen.dart';
 import 'package:art_space_artist/features/events/presentation/view_model/event_cubit.dart';
-import 'package:art_space_artist/features/events/presentation/views/event_details_screen.dart';
 import 'package:art_space_artist/features/events/presentation/views/create_event_screen.dart';
+import 'package:art_space_artist/features/events/presentation/views/event_details_screen.dart';
 import 'package:art_space_artist/features/home/presentation/views/home_screen.dart';
 import 'package:art_space_artist/features/onboarding/presentation/views/onboarding_screen.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
@@ -74,17 +74,18 @@ class AppRouter {
                 child: const AddProduct()));
       case AppRouterNames.eventDetails:
         return SlideRight(
-            page: BlocProvider<EventCubit>(
-                create: (context) => getIt<EventCubit>(),
-                child: const EventDetailsScreen()));
+          page: BlocProvider<EventCubit>(
+            create: (context) => getIt<EventCubit>()
+              ..emitGetEventDetails(eventId: settings.arguments as String),
+            child: const EventDetailsScreen(),
+          ),
+        );
       case AppRouterNames.viewProductDetails:
         return SlideRight(
           page: BlocProvider<ProductsCubit>(
             create: (context) => getIt<ProductsCubit>()
               ..emitGetProductDetails(productId: settings.arguments as String),
-            child: ViewProductDetails(
-              productId: settings.arguments as String,
-            ),
+            child: const ViewProductDetails(),
           ),
         );
       case AppRouterNames.editProfile:
