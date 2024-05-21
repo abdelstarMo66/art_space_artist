@@ -47,7 +47,7 @@ abstract class TextStyles {
      overflow: TextOverflow.ellipsis
    );
    static const textStyle16 = TextStyle(
-     overflow: TextOverflow.ellipsis,
+     overflow: TextOverflow.clip,
        color: ColorManager.secondaryColor,
        fontSize: 16,
        fontWeight: FontWeight.w200,

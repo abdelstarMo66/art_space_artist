@@ -23,7 +23,7 @@ class ApiConstant {
   //Events
   static const getEvents = 'events/me';
   static const getEventDetails = 'events/me/{id}';
-  static const addEvent = 'events';
+  static const createEvent = 'events';
   static const deleteEvent = 'events/me/{id}';
   static const getUpcomingEvents = 'events/upcoming';
 }

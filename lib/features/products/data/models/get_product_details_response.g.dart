@@ -9,12 +9,11 @@ part of 'get_product_details_response.dart';
 GetProductDetailsResponse _$GetProductDetailsResponseFromJson(
         Map<String, dynamic> json) =>
     GetProductDetailsResponse(
-      message: json['message'] as String?,
-      status: json['status'] as String?,
-      code: (json['code'] as num?)?.toInt(),
-      productDetails: json['data'] == null
-          ? null
-          : ProductDetails.fromJson(json['data'] as Map<String, dynamic>),
+      message: json['message'] as String,
+      status: json['status'] as String,
+      code: (json['code'] as num).toInt(),
+      productDetails:
+          ProductDetails.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$GetProductDetailsResponseToJson(
@@ -28,22 +27,21 @@ Map<String, dynamic> _$GetProductDetailsResponseToJson(
 
 ProductDetails _$ProductDetailsFromJson(Map<String, dynamic> json) =>
     ProductDetails(
-      id: json['id'] as String?,
-      title: json['title'] as String?,
-      description: json['description'] as String?,
-      price: (json['price'] as num?)?.toInt(),
-      isAvailable: json['isAvailable'] as bool?,
-      category: json['category'] as String?,
-      style: json['style'] as String?,
-      subject: json['subject'] as String?,
-      height: (json['height'] as num?)?.toDouble(),
-      width: (json['width'] as num?)?.toDouble(),
-      depth: (json['depth'] as num?)?.toDouble(),
-      coverImage: json['coverImage'] == null
-          ? null
-          : CoverImage.fromJson(json['coverImage'] as Map<String, dynamic>),
-      productImage: (json['productImage'] as List<dynamic>?)
-          ?.map((e) => CoverImage.fromJson(e as Map<String, dynamic>))
+      id: json['id'] as String,
+      title: json['title'] as String,
+      description: json['description'] as String,
+      price: (json['price'] as num).toInt(),
+      isAvailable: json['isAvailable'] as bool,
+      category: json['category'] as String,
+      style: json['style'] as String,
+      subject: json['subject'] as String,
+      height: (json['height'] as num).toDouble(),
+      width: (json['width'] as num).toDouble(),
+      depth: (json['depth'] as num).toDouble(),
+      coverImage:
+          CoverImage.fromJson(json['coverImage'] as Map<String, dynamic>),
+      images: (json['images'] as List<dynamic>)
+          .map((e) => CoverImage.fromJson(e as Map<String, dynamic>))
           .toList(),
       material: json['material'] as String?,
     );
@@ -62,13 +60,13 @@ Map<String, dynamic> _$ProductDetailsToJson(ProductDetails instance) =>
       'width': instance.width,
       'depth': instance.depth,
       'coverImage': instance.coverImage,
-      'productImage': instance.productImage,
+      'images': instance.images,
       'material': instance.material,
     };
 
 CoverImage _$CoverImageFromJson(Map<String, dynamic> json) => CoverImage(
-      imageId: json['imageId'] as String?,
-      image: json['image'] as String?,
+      imageId: json['imageId'] as String,
+      image: json['image'] as String,
     );
 
 Map<String, dynamic> _$CoverImageToJson(CoverImage instance) =>

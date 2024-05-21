@@ -24,7 +24,6 @@ class _LoginFormState extends State<LoginForm> {
           DefaultTextField(
               controller: context.read<LoginCubit>().emailController,
               hintText: S.of(context).email,
-
               validator: (value) {
                 if(value == null || value.isEmpty || !ExtString.isValidEmail(value))
                   {

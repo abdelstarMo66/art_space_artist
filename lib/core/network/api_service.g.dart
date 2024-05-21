@@ -221,14 +221,14 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<GetMyProductsResponse> getMyProducts(String token) async {
+  Future<GetAllProductsResponse> getMyProducts(String token) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetMyProductsResponse>(Options(
+        _setStreamType<GetAllProductsResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -244,7 +244,7 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = GetMyProductsResponse.fromJson(_result.data!);
+    final value = GetAllProductsResponse.fromJson(_result.data!);
     return value;
   }
 
@@ -488,6 +488,37 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     final value = ChangePasswordResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<CreateEventResponse> createEvent({
+    required FormData body,
+    required String token,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = body;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<CreateEventResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'events',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = CreateEventResponse.fromJson(_result.data!);
     return value;
   }
 

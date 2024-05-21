@@ -4,7 +4,7 @@ import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_state.dart';
-import 'package:art_space_artist/features/products/presentation/views/widgets/create_product_text_form.dart';
+import 'package:art_space_artist/core/components/create_text_form.dart';
 import 'package:art_space_artist/features/products/presentation/views/widgets/custom_container_create_product.dart';
 import 'package:art_space_artist/features/products/presentation/views/widgets/price_and_size_widget.dart';
 import 'package:art_space_artist/features/products/presentation/views/widgets/type_widget.dart';
@@ -64,7 +64,8 @@ class _AddProductState extends State<AddProduct> {
                                 child: cubit.coverImage != null
                                     ? ClipRRect(
                                         borderRadius:
-                                            BorderRadiusDirectional.circular(25),
+                                            BorderRadiusDirectional.circular(
+                                                25),
                                         child: Image.file(
                                           cubit.coverImage!,
                                           fit: BoxFit.cover,
@@ -97,7 +98,7 @@ class _AddProductState extends State<AddProduct> {
                             height: 240,
                             widget: Column(
                               children: [
-                                CreateProductTextForm(
+                                CreateTextForm(
                                   padding: 15,
                                   textAlign: TextAlign.start,
                                   keyboardType: TextInputType.name,
@@ -129,12 +130,13 @@ class _AddProductState extends State<AddProduct> {
                                 ),
                                 SizedBox(
                                   height: 140.0,
-                                  child: CreateProductTextForm(
+                                  child: CreateTextForm(
                                     padding: 15,
                                     textAlign: TextAlign.start,
                                     keyboardType: TextInputType.multiline,
                                     validator: (value) {
-                                      if (value == null || value.hashCode < 15) {
+                                      if (value == null ||
+                                          value.hashCode < 15) {
                                         return 'please enter description';
                                       }
                                       return null;
@@ -242,14 +244,17 @@ class _AddProductState extends State<AddProduct> {
                                   onChanged: (value) {
                                     setState(() {
                                       category = value;
-                                      cubit.categoryId = cubit.categories![value].id;
+                                      cubit.categoryId =
+                                          cubit.categories![value].id;
                                     });
                                   },
                                 ),
                                 TypeWidget(
                                   value: style,
                                   items: [
-                                    for (int i = 0; i < cubit.styles!.length; i++)
+                                    for (int i = 0;
+                                        i < cubit.styles!.length;
+                                        i++)
                                       DropdownMenuItem(
                                         value: i,
                                         child: Text(
@@ -269,21 +274,26 @@ class _AddProductState extends State<AddProduct> {
                                 TypeWidget(
                                     value: subject,
                                     items: [
-                                  for (int i = 0; i < cubit.subjects!.length; i++)
-                                    DropdownMenuItem(
-                                      value: i,
-                                      child: Text(
-                                        '${cubit.subjects![i].title}',
-                                        style: TextStyles.textStyle18,
-                                      ),
-                                    ),
-                                ], onChanged: (value) {
-                                  setState(() {
-                                    subject = value;
-                                    cubit.subjectId = cubit.subjects![value].id;
-                                  });
-                                }, text: 'Subject'),
-                                CreateProductTextForm(
+                                      for (int i = 0;
+                                          i < cubit.subjects!.length;
+                                          i++)
+                                        DropdownMenuItem(
+                                          value: i,
+                                          child: Text(
+                                            '${cubit.subjects![i].title}',
+                                            style: TextStyles.textStyle18,
+                                          ),
+                                        ),
+                                    ],
+                                    onChanged: (value) {
+                                      setState(() {
+                                        subject = value;
+                                        cubit.subjectId =
+                                            cubit.subjects![value].id;
+                                      });
+                                    },
+                                    text: 'Subject'),
+                                CreateTextForm(
                                   text: 'Add material ...',
                                   controller: cubit.materialController,
                                   validator: (value) {
@@ -320,13 +330,15 @@ class _AddProductState extends State<AddProduct> {
                                     alignment: Alignment.topRight,
                                     children: [
                                       SizedBox(
-                                        width: MediaQuery.of(context).size.width *
-                                            0.2,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.2,
                                         height:
                                             MediaQuery.of(context).size.height *
                                                 0.1,
                                         child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(30),
+                                          borderRadius:
+                                              BorderRadius.circular(30),
                                           child: Image.file(cubit.images[i],
                                               fit: BoxFit.cover),
                                         ),
@@ -358,7 +370,8 @@ class _AddProductState extends State<AddProduct> {
                                   });
                                 },
                                 child: Container(
-                                  width: MediaQuery.of(context).size.width * 0.2,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.2,
                                   height:
                                       MediaQuery.of(context).size.height * 0.1,
                                   decoration: BoxDecoration(
@@ -379,7 +392,7 @@ class _AddProductState extends State<AddProduct> {
                           ),
                           DefaultButton(
                             text: 'Add',
-                            onPressed: (){
+                            onPressed: () {
                               cubit.addProduct();
                             },
                           ),

@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:art_space_artist/features/products/data/models/get_category_response.dart';
-import 'package:art_space_artist/features/products/data/models/get_my_products_response.dart';
+import 'package:art_space_artist/features/home/data/models/get_my_products_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_subject_response.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_state.dart';
 import 'package:bloc/bloc.dart';
@@ -16,31 +16,18 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   ProductsCubit(this._getMyProductsRepo) : super(const ProductsState.initial());
 
-  List<ProductsInfo>? myProducts;
-
-  void emitGetMyProducts() async {
-    emit(const ProductsState.getProductLoading());
-    final response = await _getMyProductsRepo.getMyProducts();
-    response.when(success: (data) {
-      myProducts = data.products!.productsInfo;
-      emit(ProductsState.addProductSuccess(data));
-    }, failure: (error) {
-      emit(ProductsState.getProductError(error: error));
-    });
-  }
-
-  var nameController = TextEditingController();
-  var descriptionController = TextEditingController();
-  var priceController = TextEditingController();
-  var heightController = TextEditingController();
-  var widthController = TextEditingController();
-  var depthController = TextEditingController();
-  var materialController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
+  TextEditingController priceController = TextEditingController();
+  TextEditingController heightController = TextEditingController();
+  TextEditingController widthController = TextEditingController();
+  TextEditingController depthController = TextEditingController();
+  TextEditingController materialController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
 
-   File ?coverImage;
-   List<File> images = [];
+  File? coverImage;
+  List<File> images = [];
   Future<void> getCoverImage() async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(source: ImageSource.gallery);
@@ -60,10 +47,9 @@ class ProductsCubit extends Cubit<ProductsState> {
     images.removeAt(index);
   }
 
-
-  String ?categoryId;
-  String ?styleId;
-  String ?subjectId;
+  String? categoryId;
+  String? styleId;
+  String? subjectId;
 
   void emitAddProduct() async {
     emit(const ProductsState.addProductLoading());
@@ -106,12 +92,11 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  ProductDetails ?productDetails;
-  void emitGetProductDetails({required int index}) async {
+  ProductDetails? productDetails;
+  void emitGetProductDetails({required String productId}) async {
     emit(const ProductsState.getProductDetailsLoading());
-    print(myProducts![index].id);
     final response = await _getMyProductsRepo.getProductDetails(
-      productId: "${myProducts![index].id}",
+      productId: productId,
     );
     response.when(
       success: (data) {
@@ -124,15 +109,14 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  List ?styles;
-  void emitDeleteProduct({required int index}) async {
+  List? styles;
+  void emitDeleteProduct({required String productId}) async {
     emit(const ProductsState.deleteProductLoading());
     final response = await _getMyProductsRepo.deleteProduct(
-      productId: "${myProducts![index].id}",
+      productId: productId,
     );
     response.when(
       success: (data) {
-        myProducts!.removeAt(index);
         emit(ProductsState.deleteProductSuccess(data));
       },
       failure: (error) {
@@ -156,42 +140,41 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  List<SubjectData> ?subjects;
+  List<SubjectData>? subjects;
   void emitGetSubjects() async {
     emit(const ProductsState.getSubjectsLoading());
     final response = await _getMyProductsRepo.getSubject();
     response.when(
-        success: (data) {
-          subjects = data.subjectData;
-          emit(ProductsState.getSubjectsSuccess(data));
-        },
-        failure: (message) {
-         emit(ProductsState.getSubjectsError(error: message));
-         print(message);
-        },
+      success: (data) {
+        subjects = data.subjectData;
+        emit(ProductsState.getSubjectsSuccess(data));
+      },
+      failure: (message) {
+        emit(ProductsState.getSubjectsError(error: message));
+        print(message);
+      },
     );
   }
 
-  List<CategoryData> ?categories;
+  List<CategoryData>? categories;
   void emitGetCategories() async {
     emit(const ProductsState.getCategoriesLoading());
     final response = await _getMyProductsRepo.getCategory();
     response.when(
-        success: (data) {
-          categories = data.categoryData;
-          emit(ProductsState.getCategoriesSuccess(data));
-        },
-        failure: (message) {
-          emit(ProductsState.getCategoriesError(error: message));
-          print(message);
-        },
+      success: (data) {
+        categories = data.categoryData;
+        emit(ProductsState.getCategoriesSuccess(data));
+      },
+      failure: (message) {
+        emit(ProductsState.getCategoriesError(error: message));
+        print(message);
+      },
     );
   }
 
-void addProduct() {
-    if(formKey.currentState!.validate())
-      {
-        emitAddProduct();
-      }
-}
+  void addProduct() {
+    if (formKey.currentState!.validate()) {
+      emitAddProduct();
+    }
+  }
 }

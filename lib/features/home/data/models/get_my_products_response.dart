@@ -1,53 +1,53 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'get_my_products_response.g.dart';
 @JsonSerializable()
-class GetMyProductsResponse {
+class GetAllProductsResponse {
   final String? status;
   final String? message;
   int? code;
   @JsonKey(name: 'data')
   Products? products;
 
-  GetMyProductsResponse(
+  GetAllProductsResponse(
       {this.status, this.code, this.message, this.products});
 
-  factory GetMyProductsResponse.fromJson(Map<String, dynamic> json) =>
-      _$GetMyProductsResponseFromJson(json);
+  factory GetAllProductsResponse.fromJson(Map<String, dynamic> json) =>
+      _$GetAllProductsResponseFromJson(json);
 }
 
 @JsonSerializable()
 class Products {
-  Pagination? pagination;
+  Pagination pagination;
   @JsonKey(name: 'products')
-  List<ProductsInfo> ? productsInfo;
+  List<ProductsInfo> productsInfo;
 
-  Products({this.productsInfo, this.pagination});
+  Products({required this.productsInfo, required this.pagination});
 
   factory Products.fromJson(Map<String, dynamic> json) => _$ProductsFromJson(json);
 }
 
 @JsonSerializable()
 class Pagination {
-  int ? currentPage;
-  int ? limit;
-  int ? numbersOfPages;
-  int ? totalResults;
+  int  currentPage;
+  int  limit;
+  int  numbersOfPages;
+  int  totalResults;
 
-  Pagination({this.currentPage, this.limit, this.numbersOfPages, this.totalResults});
+  Pagination({required this.currentPage, required this.limit, required this.numbersOfPages, required this.totalResults});
 
   factory Pagination.fromJson(Map<String, dynamic> json) => _$PaginationFromJson(json);
 }
 @JsonSerializable()
 class ProductsInfo {
-  String ? id;
-  String ? title;
-  String ? description;
-  String ? category;
-  double ? price;
-  bool ? isAvailable;
-  CoverImage ?coverImage;
+  String  id;
+  String  title;
+  String  description;
+  String  category;
+  double  price;
+  bool  isAvailable;
+  CoverImage coverImage;
 
-  ProductsInfo({this.id, this.title, this.description, this.price, this.coverImage, this.isAvailable, this.category});
+  ProductsInfo({required this.id, required this.title, required this.description, required this.price, required this.coverImage, required this.isAvailable, required this.category});
 
   factory ProductsInfo.fromJson(Map<String, dynamic> json) => _$ProductsInfoFromJson(json);
 }

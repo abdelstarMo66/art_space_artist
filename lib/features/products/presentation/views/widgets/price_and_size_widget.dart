@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/text_style.dart';
-import 'create_product_text_form.dart';
+import '../../../../../core/components/create_text_form.dart';
 
 class PriceAndSizeWidget extends StatelessWidget {
   final TextEditingController controller;
@@ -26,7 +26,7 @@ class PriceAndSizeWidget extends StatelessWidget {
         SizedBox(
           height: 30,
           width: 70,
-          child: CreateProductTextForm(
+          child: CreateTextForm(
             padding: 5,
             textAlign: TextAlign.center,
             text: '0',

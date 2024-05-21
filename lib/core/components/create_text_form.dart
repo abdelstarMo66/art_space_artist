@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CreateProductTextForm extends StatelessWidget {
+class CreateTextForm extends StatelessWidget {
   final String text;
   final double padding;
   final TextEditingController controller;
@@ -10,7 +10,7 @@ class CreateProductTextForm extends StatelessWidget {
   final TextInputType keyboardType;
   final TextAlign textAlign;
 
-  const CreateProductTextForm(
+  const CreateTextForm(
       {super.key,
       required this.text,
       required this.controller,
