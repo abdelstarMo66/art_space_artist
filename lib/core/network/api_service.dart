@@ -1,4 +1,3 @@
-
 import 'package:art_space_artist/core/network/api_constants.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/forget_password_request.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_request.dart';
@@ -9,6 +8,7 @@ import 'package:art_space_artist/features/auth/register/data/models/register_res
 import 'package:art_space_artist/features/auth/register/data/models/verify_email_request_body.dart';
 import 'package:art_space_artist/features/auth/register/data/models/verify_email_response.dart';
 import 'package:art_space_artist/features/events/data/model/create_event_response.dart';
+import 'package:art_space_artist/features/home/data/models/get_event_response.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_response.dart';
 import 'package:art_space_artist/features/products/data/models/delete_product_response.dart';
 import 'package:art_space_artist/features/profile/data/model/edit_profile_request_body.dart';
@@ -16,7 +16,6 @@ import 'package:art_space_artist/features/profile/data/model/edit_profile_respon
 import 'package:art_space_artist/features/profile/data/model/get_profile_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
-
 import '../../features/auth/forgetPassword/data/model/forget_password_response.dart';
 import '../../features/auth/forgetPassword/data/model/verify_email_response.dart';
 import '../../features/auth/login/data/model/login_response.dart';
@@ -73,9 +72,9 @@ abstract class ApiService {
   );
 
   @GET(ApiConstant.getProducts)
-  Future<GetAllProductsResponse> getMyProducts(
-    @Header('Authorization') String token,
-  );
+  Future<GetAllProductsResponse> getMyProducts({
+    @Header('Authorization') required String token,
+  });
 
   @POST(ApiConstant.addProduct)
   Future<AddProductResponse> addProduct({
@@ -125,6 +124,11 @@ abstract class ApiService {
   @POST(ApiConstant.createEvent)
   Future<CreateEventResponse> createEvent({
     @Body() required FormData body,
+    @Header('Authorization') required String token,
+  });
+
+  @GET(ApiConstant.getEvents)
+  Future<GetAllEventsResponse> getAllEvents({
     @Header('Authorization') required String token,
   });
 }

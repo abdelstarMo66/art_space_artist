@@ -221,7 +221,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<GetAllProductsResponse> getMyProducts(String token) async {
+  Future<GetAllProductsResponse> getMyProducts({required String token}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
@@ -519,6 +519,34 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     final value = CreateEventResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<GetAllEventsResponse> getAllEvents({required String token}) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<GetAllEventsResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'events/me',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = GetAllEventsResponse.fromJson(_result.data!);
     return value;
   }
 
