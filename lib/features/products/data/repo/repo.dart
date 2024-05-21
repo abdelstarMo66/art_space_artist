@@ -68,6 +68,7 @@ class ProductsRepo {
     try {
       final response = await _apiService.getCategory(token: 'Bearer $token');
       return ApiResult.success(response);
+
     } catch (error) {
       return ApiResult.failure(error.toString());
     }
