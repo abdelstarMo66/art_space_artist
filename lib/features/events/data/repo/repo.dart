@@ -1,6 +1,7 @@
 import 'package:art_space_artist/core/constants/constants.dart';
 import 'package:art_space_artist/core/network/api_result.dart';
 import 'package:art_space_artist/features/events/data/model/create_event_response.dart';
+import 'package:art_space_artist/features/events/data/model/get_event_details_response.dart';
 import 'package:dio/dio.dart';
 import '../../../../core/network/api_service.dart';
 
@@ -17,6 +18,15 @@ class EventRepo{
    } catch(error) {
      return ApiResult.failure(error.toString());
    }
+  }
+
+  Future<ApiResult<GetEventDetailsResponse>> getEventDetails({required String eventId}) async{
+    try{
+      final response = await _apiService.getEventDetails(token: 'Bearer $token', id: eventId);
+      return ApiResult.success(response);
+    } catch(error) {
+      return ApiResult.failure(error.toString());
+    }
   }
 
 }

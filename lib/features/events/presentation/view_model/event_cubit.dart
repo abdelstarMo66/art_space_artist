@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:art_space_artist/features/events/data/model/get_event_details_response.dart';
 import 'package:art_space_artist/features/events/data/repo/repo.dart';
 import 'package:art_space_artist/features/events/presentation/view_model/event_state.dart';
 import 'package:bloc/bloc.dart';
@@ -64,4 +65,22 @@ class EventCubit extends Cubit<EventState> {
       },
     );
   }
+
+  EventInfo? eventInfo;
+  void emitGetEventDetails({required String eventId}) async {
+    emit(const EventState.getEventDetailsLoading());
+    final response = await _eventRepo.getEventDetails(eventId: eventId);
+    response.when(
+      success: (data) {
+        print('Ba3at data ya sa7bi');
+        eventInfo = data.eventInfo;
+        emit(EventState.getEventDetailsSuccess(data));
+      },
+      failure: (error) {
+        print(error);
+        emit(EventState.getEventDetailsFailure(error));
+      },
+    );
+  }
+
 }

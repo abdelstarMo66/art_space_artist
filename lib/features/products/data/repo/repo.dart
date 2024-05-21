@@ -28,7 +28,7 @@ class ProductsRepo {
   }
 
   Future<ApiResult<GetProductDetailsResponse>> getProductDetails({
-    required String? productId,
+    required String productId,
   }) async {
     try {
       final response = await _apiService.getProductDetails(

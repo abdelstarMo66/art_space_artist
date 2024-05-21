@@ -73,10 +73,20 @@ class AppRouter {
                 create: (context) => getIt<ProductsCubit>(),
                 child: const AddProduct()));
       case AppRouterNames.eventDetails:
-        return SlideRight(page: const EventDetailsScreen());
+        return SlideRight(
+            page: BlocProvider<EventCubit>(
+                create: (context) => getIt<EventCubit>(),
+                child: const EventDetailsScreen()));
       case AppRouterNames.viewProductDetails:
         return SlideRight(
-            page: ViewProductDetails(productId: settings.arguments as String,));
+          page: BlocProvider<ProductsCubit>(
+            create: (context) => getIt<ProductsCubit>()
+              ..emitGetProductDetails(productId: settings.arguments as String),
+            child: ViewProductDetails(
+              productId: settings.arguments as String,
+            ),
+          ),
+        );
       case AppRouterNames.editProfile:
         return SlideRight(
             page: BlocProvider.value(
@@ -90,7 +100,7 @@ class AppRouter {
       case AppRouterNames.createEvent:
         return SlideRight(
             page: BlocProvider(
-              create:(context) => getIt<EventCubit>(),
+                create: (context) => getIt<EventCubit>(),
                 child: const CreateEvent()));
 
       default:

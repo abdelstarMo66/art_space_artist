@@ -7,4 +7,7 @@ class EventState<T> with _$EventState<T> {
   const factory EventState.createEventSuccess(T event) = CreateEventSuccess;
   const factory EventState.createEventFailure(String message) = CreateEventFailure;
   const factory EventState.addEventCoverImage() = AddEventCoverImage;
+  const factory EventState.getEventDetailsLoading() = GetEventDetailsLoading;
+  const factory EventState.getEventDetailsSuccess(T event) = GetEventDetailsSuccess;
+  const factory EventState.getEventDetailsFailure(String message) = GetEventDetailsFailure;
 }

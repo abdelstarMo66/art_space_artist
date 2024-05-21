@@ -22,6 +22,9 @@ mixin _$HomeState<T> {
     required TResult Function() getProductLoading,
     required TResult Function(T data) getProductSuccess,
     required TResult Function(String error) getProductError,
+    required TResult Function() getEventLoading,
+    required TResult Function(T data) getEventSuccess,
+    required TResult Function(String error) getEventError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +33,9 @@ mixin _$HomeState<T> {
     TResult? Function()? getProductLoading,
     TResult? Function(T data)? getProductSuccess,
     TResult? Function(String error)? getProductError,
+    TResult? Function()? getEventLoading,
+    TResult? Function(T data)? getEventSuccess,
+    TResult? Function(String error)? getEventError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +44,9 @@ mixin _$HomeState<T> {
     TResult Function()? getProductLoading,
     TResult Function(T data)? getProductSuccess,
     TResult Function(String error)? getProductError,
+    TResult Function()? getEventLoading,
+    TResult Function(T data)? getEventSuccess,
+    TResult Function(String error)? getEventError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +56,9 @@ mixin _$HomeState<T> {
     required TResult Function(GetHomeProductLoading<T> value) getProductLoading,
     required TResult Function(GetHomeProductSuccess<T> value) getProductSuccess,
     required TResult Function(GetHomeProductError<T> value) getProductError,
+    required TResult Function(GetHomeEventLoading<T> value) getEventLoading,
+    required TResult Function(GetHomeEventSuccess<T> value) getEventSuccess,
+    required TResult Function(GetHomeEventError<T> value) getEventError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +67,9 @@ mixin _$HomeState<T> {
     TResult? Function(GetHomeProductLoading<T> value)? getProductLoading,
     TResult? Function(GetHomeProductSuccess<T> value)? getProductSuccess,
     TResult? Function(GetHomeProductError<T> value)? getProductError,
+    TResult? Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult? Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult? Function(GetHomeEventError<T> value)? getEventError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +78,9 @@ mixin _$HomeState<T> {
     TResult Function(GetHomeProductLoading<T> value)? getProductLoading,
     TResult Function(GetHomeProductSuccess<T> value)? getProductSuccess,
     TResult Function(GetHomeProductError<T> value)? getProductError,
+    TResult Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult Function(GetHomeEventError<T> value)? getEventError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,6 +146,9 @@ class _$InitialStateImpl<T> implements _InitialState<T> {
     required TResult Function() getProductLoading,
     required TResult Function(T data) getProductSuccess,
     required TResult Function(String error) getProductError,
+    required TResult Function() getEventLoading,
+    required TResult Function(T data) getEventSuccess,
+    required TResult Function(String error) getEventError,
   }) {
     return initial();
   }
@@ -139,6 +160,9 @@ class _$InitialStateImpl<T> implements _InitialState<T> {
     TResult? Function()? getProductLoading,
     TResult? Function(T data)? getProductSuccess,
     TResult? Function(String error)? getProductError,
+    TResult? Function()? getEventLoading,
+    TResult? Function(T data)? getEventSuccess,
+    TResult? Function(String error)? getEventError,
   }) {
     return initial?.call();
   }
@@ -150,6 +174,9 @@ class _$InitialStateImpl<T> implements _InitialState<T> {
     TResult Function()? getProductLoading,
     TResult Function(T data)? getProductSuccess,
     TResult Function(String error)? getProductError,
+    TResult Function()? getEventLoading,
+    TResult Function(T data)? getEventSuccess,
+    TResult Function(String error)? getEventError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -165,6 +192,9 @@ class _$InitialStateImpl<T> implements _InitialState<T> {
     required TResult Function(GetHomeProductLoading<T> value) getProductLoading,
     required TResult Function(GetHomeProductSuccess<T> value) getProductSuccess,
     required TResult Function(GetHomeProductError<T> value) getProductError,
+    required TResult Function(GetHomeEventLoading<T> value) getEventLoading,
+    required TResult Function(GetHomeEventSuccess<T> value) getEventSuccess,
+    required TResult Function(GetHomeEventError<T> value) getEventError,
   }) {
     return initial(this);
   }
@@ -176,6 +206,9 @@ class _$InitialStateImpl<T> implements _InitialState<T> {
     TResult? Function(GetHomeProductLoading<T> value)? getProductLoading,
     TResult? Function(GetHomeProductSuccess<T> value)? getProductSuccess,
     TResult? Function(GetHomeProductError<T> value)? getProductError,
+    TResult? Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult? Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult? Function(GetHomeEventError<T> value)? getEventError,
   }) {
     return initial?.call(this);
   }
@@ -187,6 +220,9 @@ class _$InitialStateImpl<T> implements _InitialState<T> {
     TResult Function(GetHomeProductLoading<T> value)? getProductLoading,
     TResult Function(GetHomeProductSuccess<T> value)? getProductSuccess,
     TResult Function(GetHomeProductError<T> value)? getProductError,
+    TResult Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult Function(GetHomeEventError<T> value)? getEventError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -245,6 +281,9 @@ class _$GetHomeProductLoadingImpl<T> implements GetHomeProductLoading<T> {
     required TResult Function() getProductLoading,
     required TResult Function(T data) getProductSuccess,
     required TResult Function(String error) getProductError,
+    required TResult Function() getEventLoading,
+    required TResult Function(T data) getEventSuccess,
+    required TResult Function(String error) getEventError,
   }) {
     return getProductLoading();
   }
@@ -256,6 +295,9 @@ class _$GetHomeProductLoadingImpl<T> implements GetHomeProductLoading<T> {
     TResult? Function()? getProductLoading,
     TResult? Function(T data)? getProductSuccess,
     TResult? Function(String error)? getProductError,
+    TResult? Function()? getEventLoading,
+    TResult? Function(T data)? getEventSuccess,
+    TResult? Function(String error)? getEventError,
   }) {
     return getProductLoading?.call();
   }
@@ -267,6 +309,9 @@ class _$GetHomeProductLoadingImpl<T> implements GetHomeProductLoading<T> {
     TResult Function()? getProductLoading,
     TResult Function(T data)? getProductSuccess,
     TResult Function(String error)? getProductError,
+    TResult Function()? getEventLoading,
+    TResult Function(T data)? getEventSuccess,
+    TResult Function(String error)? getEventError,
     required TResult orElse(),
   }) {
     if (getProductLoading != null) {
@@ -282,6 +327,9 @@ class _$GetHomeProductLoadingImpl<T> implements GetHomeProductLoading<T> {
     required TResult Function(GetHomeProductLoading<T> value) getProductLoading,
     required TResult Function(GetHomeProductSuccess<T> value) getProductSuccess,
     required TResult Function(GetHomeProductError<T> value) getProductError,
+    required TResult Function(GetHomeEventLoading<T> value) getEventLoading,
+    required TResult Function(GetHomeEventSuccess<T> value) getEventSuccess,
+    required TResult Function(GetHomeEventError<T> value) getEventError,
   }) {
     return getProductLoading(this);
   }
@@ -293,6 +341,9 @@ class _$GetHomeProductLoadingImpl<T> implements GetHomeProductLoading<T> {
     TResult? Function(GetHomeProductLoading<T> value)? getProductLoading,
     TResult? Function(GetHomeProductSuccess<T> value)? getProductSuccess,
     TResult? Function(GetHomeProductError<T> value)? getProductError,
+    TResult? Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult? Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult? Function(GetHomeEventError<T> value)? getEventError,
   }) {
     return getProductLoading?.call(this);
   }
@@ -304,6 +355,9 @@ class _$GetHomeProductLoadingImpl<T> implements GetHomeProductLoading<T> {
     TResult Function(GetHomeProductLoading<T> value)? getProductLoading,
     TResult Function(GetHomeProductSuccess<T> value)? getProductSuccess,
     TResult Function(GetHomeProductError<T> value)? getProductError,
+    TResult Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult Function(GetHomeEventError<T> value)? getEventError,
     required TResult orElse(),
   }) {
     if (getProductLoading != null) {
@@ -389,6 +443,9 @@ class _$GetHomeProductSuccessImpl<T> implements GetHomeProductSuccess<T> {
     required TResult Function() getProductLoading,
     required TResult Function(T data) getProductSuccess,
     required TResult Function(String error) getProductError,
+    required TResult Function() getEventLoading,
+    required TResult Function(T data) getEventSuccess,
+    required TResult Function(String error) getEventError,
   }) {
     return getProductSuccess(data);
   }
@@ -400,6 +457,9 @@ class _$GetHomeProductSuccessImpl<T> implements GetHomeProductSuccess<T> {
     TResult? Function()? getProductLoading,
     TResult? Function(T data)? getProductSuccess,
     TResult? Function(String error)? getProductError,
+    TResult? Function()? getEventLoading,
+    TResult? Function(T data)? getEventSuccess,
+    TResult? Function(String error)? getEventError,
   }) {
     return getProductSuccess?.call(data);
   }
@@ -411,6 +471,9 @@ class _$GetHomeProductSuccessImpl<T> implements GetHomeProductSuccess<T> {
     TResult Function()? getProductLoading,
     TResult Function(T data)? getProductSuccess,
     TResult Function(String error)? getProductError,
+    TResult Function()? getEventLoading,
+    TResult Function(T data)? getEventSuccess,
+    TResult Function(String error)? getEventError,
     required TResult orElse(),
   }) {
     if (getProductSuccess != null) {
@@ -426,6 +489,9 @@ class _$GetHomeProductSuccessImpl<T> implements GetHomeProductSuccess<T> {
     required TResult Function(GetHomeProductLoading<T> value) getProductLoading,
     required TResult Function(GetHomeProductSuccess<T> value) getProductSuccess,
     required TResult Function(GetHomeProductError<T> value) getProductError,
+    required TResult Function(GetHomeEventLoading<T> value) getEventLoading,
+    required TResult Function(GetHomeEventSuccess<T> value) getEventSuccess,
+    required TResult Function(GetHomeEventError<T> value) getEventError,
   }) {
     return getProductSuccess(this);
   }
@@ -437,6 +503,9 @@ class _$GetHomeProductSuccessImpl<T> implements GetHomeProductSuccess<T> {
     TResult? Function(GetHomeProductLoading<T> value)? getProductLoading,
     TResult? Function(GetHomeProductSuccess<T> value)? getProductSuccess,
     TResult? Function(GetHomeProductError<T> value)? getProductError,
+    TResult? Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult? Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult? Function(GetHomeEventError<T> value)? getEventError,
   }) {
     return getProductSuccess?.call(this);
   }
@@ -448,6 +517,9 @@ class _$GetHomeProductSuccessImpl<T> implements GetHomeProductSuccess<T> {
     TResult Function(GetHomeProductLoading<T> value)? getProductLoading,
     TResult Function(GetHomeProductSuccess<T> value)? getProductSuccess,
     TResult Function(GetHomeProductError<T> value)? getProductError,
+    TResult Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult Function(GetHomeEventError<T> value)? getEventError,
     required TResult orElse(),
   }) {
     if (getProductSuccess != null) {
@@ -536,6 +608,9 @@ class _$GetHomeProductErrorImpl<T> implements GetHomeProductError<T> {
     required TResult Function() getProductLoading,
     required TResult Function(T data) getProductSuccess,
     required TResult Function(String error) getProductError,
+    required TResult Function() getEventLoading,
+    required TResult Function(T data) getEventSuccess,
+    required TResult Function(String error) getEventError,
   }) {
     return getProductError(error);
   }
@@ -547,6 +622,9 @@ class _$GetHomeProductErrorImpl<T> implements GetHomeProductError<T> {
     TResult? Function()? getProductLoading,
     TResult? Function(T data)? getProductSuccess,
     TResult? Function(String error)? getProductError,
+    TResult? Function()? getEventLoading,
+    TResult? Function(T data)? getEventSuccess,
+    TResult? Function(String error)? getEventError,
   }) {
     return getProductError?.call(error);
   }
@@ -558,6 +636,9 @@ class _$GetHomeProductErrorImpl<T> implements GetHomeProductError<T> {
     TResult Function()? getProductLoading,
     TResult Function(T data)? getProductSuccess,
     TResult Function(String error)? getProductError,
+    TResult Function()? getEventLoading,
+    TResult Function(T data)? getEventSuccess,
+    TResult Function(String error)? getEventError,
     required TResult orElse(),
   }) {
     if (getProductError != null) {
@@ -573,6 +654,9 @@ class _$GetHomeProductErrorImpl<T> implements GetHomeProductError<T> {
     required TResult Function(GetHomeProductLoading<T> value) getProductLoading,
     required TResult Function(GetHomeProductSuccess<T> value) getProductSuccess,
     required TResult Function(GetHomeProductError<T> value) getProductError,
+    required TResult Function(GetHomeEventLoading<T> value) getEventLoading,
+    required TResult Function(GetHomeEventSuccess<T> value) getEventSuccess,
+    required TResult Function(GetHomeEventError<T> value) getEventError,
   }) {
     return getProductError(this);
   }
@@ -584,6 +668,9 @@ class _$GetHomeProductErrorImpl<T> implements GetHomeProductError<T> {
     TResult? Function(GetHomeProductLoading<T> value)? getProductLoading,
     TResult? Function(GetHomeProductSuccess<T> value)? getProductSuccess,
     TResult? Function(GetHomeProductError<T> value)? getProductError,
+    TResult? Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult? Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult? Function(GetHomeEventError<T> value)? getEventError,
   }) {
     return getProductError?.call(this);
   }
@@ -595,6 +682,9 @@ class _$GetHomeProductErrorImpl<T> implements GetHomeProductError<T> {
     TResult Function(GetHomeProductLoading<T> value)? getProductLoading,
     TResult Function(GetHomeProductSuccess<T> value)? getProductSuccess,
     TResult Function(GetHomeProductError<T> value)? getProductError,
+    TResult Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult Function(GetHomeEventError<T> value)? getEventError,
     required TResult orElse(),
   }) {
     if (getProductError != null) {
@@ -611,5 +701,470 @@ abstract class GetHomeProductError<T> implements HomeState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$GetHomeProductErrorImplCopyWith<T, _$GetHomeProductErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetHomeEventLoadingImplCopyWith<T, $Res> {
+  factory _$$GetHomeEventLoadingImplCopyWith(_$GetHomeEventLoadingImpl<T> value,
+          $Res Function(_$GetHomeEventLoadingImpl<T>) then) =
+      __$$GetHomeEventLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetHomeEventLoadingImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$GetHomeEventLoadingImpl<T>>
+    implements _$$GetHomeEventLoadingImplCopyWith<T, $Res> {
+  __$$GetHomeEventLoadingImplCopyWithImpl(_$GetHomeEventLoadingImpl<T> _value,
+      $Res Function(_$GetHomeEventLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetHomeEventLoadingImpl<T> implements GetHomeEventLoading<T> {
+  const _$GetHomeEventLoadingImpl();
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.getEventLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetHomeEventLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(T data) getProductSuccess,
+    required TResult Function(String error) getProductError,
+    required TResult Function() getEventLoading,
+    required TResult Function(T data) getEventSuccess,
+    required TResult Function(String error) getEventError,
+  }) {
+    return getEventLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(T data)? getProductSuccess,
+    TResult? Function(String error)? getProductError,
+    TResult? Function()? getEventLoading,
+    TResult? Function(T data)? getEventSuccess,
+    TResult? Function(String error)? getEventError,
+  }) {
+    return getEventLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(T data)? getProductSuccess,
+    TResult Function(String error)? getProductError,
+    TResult Function()? getEventLoading,
+    TResult Function(T data)? getEventSuccess,
+    TResult Function(String error)? getEventError,
+    required TResult orElse(),
+  }) {
+    if (getEventLoading != null) {
+      return getEventLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialState<T> value) initial,
+    required TResult Function(GetHomeProductLoading<T> value) getProductLoading,
+    required TResult Function(GetHomeProductSuccess<T> value) getProductSuccess,
+    required TResult Function(GetHomeProductError<T> value) getProductError,
+    required TResult Function(GetHomeEventLoading<T> value) getEventLoading,
+    required TResult Function(GetHomeEventSuccess<T> value) getEventSuccess,
+    required TResult Function(GetHomeEventError<T> value) getEventError,
+  }) {
+    return getEventLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialState<T> value)? initial,
+    TResult? Function(GetHomeProductLoading<T> value)? getProductLoading,
+    TResult? Function(GetHomeProductSuccess<T> value)? getProductSuccess,
+    TResult? Function(GetHomeProductError<T> value)? getProductError,
+    TResult? Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult? Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult? Function(GetHomeEventError<T> value)? getEventError,
+  }) {
+    return getEventLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialState<T> value)? initial,
+    TResult Function(GetHomeProductLoading<T> value)? getProductLoading,
+    TResult Function(GetHomeProductSuccess<T> value)? getProductSuccess,
+    TResult Function(GetHomeProductError<T> value)? getProductError,
+    TResult Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult Function(GetHomeEventError<T> value)? getEventError,
+    required TResult orElse(),
+  }) {
+    if (getEventLoading != null) {
+      return getEventLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetHomeEventLoading<T> implements HomeState<T> {
+  const factory GetHomeEventLoading() = _$GetHomeEventLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetHomeEventSuccessImplCopyWith<T, $Res> {
+  factory _$$GetHomeEventSuccessImplCopyWith(_$GetHomeEventSuccessImpl<T> value,
+          $Res Function(_$GetHomeEventSuccessImpl<T>) then) =
+      __$$GetHomeEventSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$GetHomeEventSuccessImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$GetHomeEventSuccessImpl<T>>
+    implements _$$GetHomeEventSuccessImplCopyWith<T, $Res> {
+  __$$GetHomeEventSuccessImplCopyWithImpl(_$GetHomeEventSuccessImpl<T> _value,
+      $Res Function(_$GetHomeEventSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$GetHomeEventSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetHomeEventSuccessImpl<T> implements GetHomeEventSuccess<T> {
+  const _$GetHomeEventSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.getEventSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetHomeEventSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetHomeEventSuccessImplCopyWith<T, _$GetHomeEventSuccessImpl<T>>
+      get copyWith => __$$GetHomeEventSuccessImplCopyWithImpl<T,
+          _$GetHomeEventSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(T data) getProductSuccess,
+    required TResult Function(String error) getProductError,
+    required TResult Function() getEventLoading,
+    required TResult Function(T data) getEventSuccess,
+    required TResult Function(String error) getEventError,
+  }) {
+    return getEventSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(T data)? getProductSuccess,
+    TResult? Function(String error)? getProductError,
+    TResult? Function()? getEventLoading,
+    TResult? Function(T data)? getEventSuccess,
+    TResult? Function(String error)? getEventError,
+  }) {
+    return getEventSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(T data)? getProductSuccess,
+    TResult Function(String error)? getProductError,
+    TResult Function()? getEventLoading,
+    TResult Function(T data)? getEventSuccess,
+    TResult Function(String error)? getEventError,
+    required TResult orElse(),
+  }) {
+    if (getEventSuccess != null) {
+      return getEventSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialState<T> value) initial,
+    required TResult Function(GetHomeProductLoading<T> value) getProductLoading,
+    required TResult Function(GetHomeProductSuccess<T> value) getProductSuccess,
+    required TResult Function(GetHomeProductError<T> value) getProductError,
+    required TResult Function(GetHomeEventLoading<T> value) getEventLoading,
+    required TResult Function(GetHomeEventSuccess<T> value) getEventSuccess,
+    required TResult Function(GetHomeEventError<T> value) getEventError,
+  }) {
+    return getEventSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialState<T> value)? initial,
+    TResult? Function(GetHomeProductLoading<T> value)? getProductLoading,
+    TResult? Function(GetHomeProductSuccess<T> value)? getProductSuccess,
+    TResult? Function(GetHomeProductError<T> value)? getProductError,
+    TResult? Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult? Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult? Function(GetHomeEventError<T> value)? getEventError,
+  }) {
+    return getEventSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialState<T> value)? initial,
+    TResult Function(GetHomeProductLoading<T> value)? getProductLoading,
+    TResult Function(GetHomeProductSuccess<T> value)? getProductSuccess,
+    TResult Function(GetHomeProductError<T> value)? getProductError,
+    TResult Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult Function(GetHomeEventError<T> value)? getEventError,
+    required TResult orElse(),
+  }) {
+    if (getEventSuccess != null) {
+      return getEventSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetHomeEventSuccess<T> implements HomeState<T> {
+  const factory GetHomeEventSuccess(final T data) =
+      _$GetHomeEventSuccessImpl<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$GetHomeEventSuccessImplCopyWith<T, _$GetHomeEventSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetHomeEventErrorImplCopyWith<T, $Res> {
+  factory _$$GetHomeEventErrorImplCopyWith(_$GetHomeEventErrorImpl<T> value,
+          $Res Function(_$GetHomeEventErrorImpl<T>) then) =
+      __$$GetHomeEventErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetHomeEventErrorImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$GetHomeEventErrorImpl<T>>
+    implements _$$GetHomeEventErrorImplCopyWith<T, $Res> {
+  __$$GetHomeEventErrorImplCopyWithImpl(_$GetHomeEventErrorImpl<T> _value,
+      $Res Function(_$GetHomeEventErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetHomeEventErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetHomeEventErrorImpl<T> implements GetHomeEventError<T> {
+  const _$GetHomeEventErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.getEventError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetHomeEventErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetHomeEventErrorImplCopyWith<T, _$GetHomeEventErrorImpl<T>>
+      get copyWith =>
+          __$$GetHomeEventErrorImplCopyWithImpl<T, _$GetHomeEventErrorImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(T data) getProductSuccess,
+    required TResult Function(String error) getProductError,
+    required TResult Function() getEventLoading,
+    required TResult Function(T data) getEventSuccess,
+    required TResult Function(String error) getEventError,
+  }) {
+    return getEventError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(T data)? getProductSuccess,
+    TResult? Function(String error)? getProductError,
+    TResult? Function()? getEventLoading,
+    TResult? Function(T data)? getEventSuccess,
+    TResult? Function(String error)? getEventError,
+  }) {
+    return getEventError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(T data)? getProductSuccess,
+    TResult Function(String error)? getProductError,
+    TResult Function()? getEventLoading,
+    TResult Function(T data)? getEventSuccess,
+    TResult Function(String error)? getEventError,
+    required TResult orElse(),
+  }) {
+    if (getEventError != null) {
+      return getEventError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialState<T> value) initial,
+    required TResult Function(GetHomeProductLoading<T> value) getProductLoading,
+    required TResult Function(GetHomeProductSuccess<T> value) getProductSuccess,
+    required TResult Function(GetHomeProductError<T> value) getProductError,
+    required TResult Function(GetHomeEventLoading<T> value) getEventLoading,
+    required TResult Function(GetHomeEventSuccess<T> value) getEventSuccess,
+    required TResult Function(GetHomeEventError<T> value) getEventError,
+  }) {
+    return getEventError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialState<T> value)? initial,
+    TResult? Function(GetHomeProductLoading<T> value)? getProductLoading,
+    TResult? Function(GetHomeProductSuccess<T> value)? getProductSuccess,
+    TResult? Function(GetHomeProductError<T> value)? getProductError,
+    TResult? Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult? Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult? Function(GetHomeEventError<T> value)? getEventError,
+  }) {
+    return getEventError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialState<T> value)? initial,
+    TResult Function(GetHomeProductLoading<T> value)? getProductLoading,
+    TResult Function(GetHomeProductSuccess<T> value)? getProductSuccess,
+    TResult Function(GetHomeProductError<T> value)? getProductError,
+    TResult Function(GetHomeEventLoading<T> value)? getEventLoading,
+    TResult Function(GetHomeEventSuccess<T> value)? getEventSuccess,
+    TResult Function(GetHomeEventError<T> value)? getEventError,
+    required TResult orElse(),
+  }) {
+    if (getEventError != null) {
+      return getEventError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetHomeEventError<T> implements HomeState<T> {
+  const factory GetHomeEventError({required final String error}) =
+      _$GetHomeEventErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetHomeEventErrorImplCopyWith<T, _$GetHomeEventErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

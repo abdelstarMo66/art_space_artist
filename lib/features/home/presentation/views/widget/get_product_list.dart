@@ -23,28 +23,22 @@ class GetProductList extends StatelessWidget {
               mainAxisSpacing: MediaQuery.of(context).size.height * 0.02,
               crossAxisSpacing: 16.0,
               mainAxisExtent: MediaQuery.of(context).size.height * 0.235),
-          itemBuilder: (context, index) => InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, AppRouterNames.viewProductDetails,
-                    arguments: cubit.myProducts[index].id
-                );
-              },
-              child: cubit.myProducts.isEmpty
-                  ? AppCustomShimmer(
-                      child: Container(
-                        height: 200.0,
-                        margin: const EdgeInsets.symmetric(
-                          vertical: 8.0,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                      ),
-                    )
-                  : CustomProductViewWidget(
-                      index: index,
-                    )),
+          itemBuilder: (context, index) => cubit.myProducts.isEmpty
+              ? AppCustomShimmer(
+                  child: Container(
+                    height: 200.0,
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 8.0,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                )
+              : CustomProductViewWidget(
+                  productInfo: cubit.myProducts[index] ,
+                ),
           itemCount: cubit.myProducts.isEmpty
               ? 6
               : cubit.myProducts.length,

@@ -8,6 +8,7 @@ import 'package:art_space_artist/features/auth/register/data/models/register_res
 import 'package:art_space_artist/features/auth/register/data/models/verify_email_request_body.dart';
 import 'package:art_space_artist/features/auth/register/data/models/verify_email_response.dart';
 import 'package:art_space_artist/features/events/data/model/create_event_response.dart';
+import 'package:art_space_artist/features/events/data/model/get_event_details_response.dart';
 import 'package:art_space_artist/features/home/data/models/get_event_response.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_response.dart';
 import 'package:art_space_artist/features/products/data/models/delete_product_response.dart';
@@ -131,4 +132,12 @@ abstract class ApiService {
   Future<GetAllEventsResponse> getAllEvents({
     @Header('Authorization') required String token,
   });
+
+
+  @GET(ApiConstant.getEventDetails)
+  Future<GetEventDetailsResponse> getEventDetails({
+    @Path('id') required String? id,
+    @Header('Authorization') required String token,
+  });
+
 }
