@@ -1,4 +1,6 @@
 import 'package:art_space_artist/core/router/animation_transition.dart';
+import 'package:art_space_artist/features/auction/presentation/view_model/auction_cubit.dart';
+import 'package:art_space_artist/features/auction/presentation/views/auction_screen.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/view_model/forget_password_cubit.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/forget_password_screen.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/verify_email_otp_screen.dart';
@@ -66,11 +68,15 @@ class AppRouter {
           child: CreateNewPassword(email: settings.arguments as String),
         ));
       case AppRouterNames.home:
-        return SlideRight(page: const HomeScreen());
+        return SlideRight(
+            page: const HomeScreen());
       case AppRouterNames.createProduct:
         return SlideRight(
           page: BlocProvider(
-            create: (context) => getIt<ProductsCubit>()..emitGetCategories()..emitGetStyles()..emitGetSubjects(),
+            create: (context) => getIt<ProductsCubit>()
+              ..emitGetCategories()
+              ..emitGetStyles()
+              ..emitGetSubjects(),
             child: const AddProduct(),
           ),
         );
@@ -105,7 +111,16 @@ class AppRouter {
             page: BlocProvider(
                 create: (context) => getIt<EventCubit>(),
                 child: const CreateEvent()));
-
+      case AppRouterNames.createAuction:
+        return MaterialPageRoute(
+              builder: (_) => BlocProvider<AuctionCubit>(
+                        create: (context) => getIt<AuctionCubit>()
+              ..emitGetCategories()
+              ..emitGetStyles()
+              ..emitGetSubjects(),
+                        child: const CreateAuctionScreen(),
+                      ),
+            );
       default:
         return unDefinedRoute();
     }

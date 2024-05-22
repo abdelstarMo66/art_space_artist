@@ -163,6 +163,20 @@ class CustomProfileDrawer extends StatelessWidget {
                     style: TextStyles.textStyle18,
                   ),
                 ),
+                InkWell(
+                  onTap: () => Navigator.of(context)
+                      .pushReplacementNamed(AppRouterNames.createAuction),
+                  child: ListTile(
+                    leading: SvgPicture.asset(
+                      AssetsManager.icAuction,
+                      height: 35,
+                    ),
+                    title: const Text(
+                      'Create auction',
+                      style: TextStyles.textStyle18,
+                    ),
+                  ),
+                ),
                 GestureDetector(
                   onTap: () => cubit.emitLogout(context: context),
                   child: ListTile(

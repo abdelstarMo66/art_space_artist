@@ -1,20 +1,21 @@
 import 'dart:io';
-import 'package:art_space_artist/features/products/data/models/get_category_response.dart';
-import 'package:art_space_artist/features/products/data/models/get_styles_response.dart';
-import 'package:art_space_artist/features/products/data/models/get_subject_response.dart';
-import 'package:art_space_artist/features/products/presentation/view_model/product_state.dart';
+
+import 'package:art_space_artist/features/auction/presentation/view_model/auction_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
-import '../../data/models/get_product_details_response.dart';
+
+import '../../../products/data/models/get_category_response.dart';
+import '../../../products/data/models/get_styles_response.dart';
+import '../../../products/data/models/get_subject_response.dart';
 import '../../data/repo/repo.dart';
 
-class ProductsCubit extends Cubit<ProductsState> {
-  final ProductsRepo _getMyProductsRepo;
+class AuctionCubit extends Cubit<AuctionState> {
+  final AuctionRepo _auctionRepo;
 
-  ProductsCubit(this._getMyProductsRepo) : super(const ProductsState.initial());
+  AuctionCubit(this._auctionRepo) : super(const AuctionState.initial());
 
   TextEditingController nameController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
@@ -23,6 +24,8 @@ class ProductsCubit extends Cubit<ProductsState> {
   TextEditingController widthController = TextEditingController();
   TextEditingController depthController = TextEditingController();
   TextEditingController materialController = TextEditingController();
+  TextEditingController beganController = TextEditingController();
+  TextEditingController durationController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
 
@@ -34,7 +37,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     final XFile? image = await picker.pickImage(source: ImageSource.gallery);
     File file = File(image!.path);
     coverImage = file;
-    emit(const ProductsState.addCoverPhotoProduct());
+    emit(const AuctionState.initial());
   }
 
   Future<File> getImages() async {
@@ -55,12 +58,12 @@ class ProductsCubit extends Cubit<ProductsState> {
   bool getStylesSuccess = false;
   bool getSubjectsSuccess = false;
 
-  void emitAddProduct() async {
-    emit(const ProductsState.addProductLoading());
+  void emitCreateAuction() async {
+    emit(const AuctionState.createAuctionLoading());
     FormData data = FormData.fromMap({
       'title': nameController.text,
       'description': descriptionController.text,
-      'price': double.parse(priceController.text),
+      'finalPrice': double.parse(priceController.text),
       'height': heightController.text,
       'width': widthController.text,
       'depth': depthController.text,
@@ -68,6 +71,8 @@ class ProductsCubit extends Cubit<ProductsState> {
       'category': categoryId,
       'subject': subjectId,
       'style': styleId,
+      'duration' : durationController.text,
+      'began' : beganController.text,
     });
 
     data.files.add(
@@ -96,48 +101,15 @@ class ProductsCubit extends Cubit<ProductsState> {
       }
     }
 
-    final response = await _getMyProductsRepo.addProduct(
+    final response = await _auctionRepo.createAuction(
       body: data,
     );
     response.when(
       success: (data) {
-        emit(ProductsState.addProductSuccess(data));
+        emit(AuctionState.createAuctionSuccess(data));
       },
       failure: (error) {
-        emit(ProductsState.addProductError(error: error));
-      },
-    );
-  }
-
-  ProductDetails? productDetails;
-
-  void emitGetProductDetails({required String productId}) async {
-    emit(const ProductsState.getProductDetailsLoading());
-    final response = await _getMyProductsRepo.getProductDetails(
-      productId: productId,
-    );
-    response.when(
-      success: (data) {
-        productDetails = data.productDetails;
-        emit(ProductsState.getProductDetailsSuccess(data));
-      },
-      failure: (error) {
-        emit(ProductsState.getProductDetailsError(error: error));
-      },
-    );
-  }
-
-  void emitDeleteProduct({required String productId}) async {
-    emit(const ProductsState.deleteProductLoading());
-    final response = await _getMyProductsRepo.deleteProduct(
-      productId: productId,
-    );
-    response.when(
-      success: (data) {
-        emit(ProductsState.deleteProductSuccess(data));
-      },
-      failure: (error) {
-        emit(ProductsState.deleteProductError(error: error));
+        emit(AuctionState.createAuctionError(error: error));
       },
     );
   }
@@ -145,16 +117,16 @@ class ProductsCubit extends Cubit<ProductsState> {
   List<StylesData>? styles;
 
   void emitGetStyles() async {
-    emit(const ProductsState.getStylesLoading());
-    final response = await _getMyProductsRepo.getStyles();
+    emit(const AuctionState.getStylesLoading());
+    final response = await _auctionRepo.getStyles();
     response.when(
       success: (data) {
         styles = data.stylesData;
         getStylesSuccess = true;
-        emit(ProductsState.getStylesSuccess(data));
+        emit(AuctionState.getStylesSuccess(data));
       },
       failure: (error) {
-        emit(ProductsState.getStylesError(error: error));
+        emit(AuctionState.getStylesError(error: error));
       },
     );
   }
@@ -162,16 +134,16 @@ class ProductsCubit extends Cubit<ProductsState> {
   List<SubjectData>? subjects;
 
   void emitGetSubjects() async {
-    emit(const ProductsState.getSubjectsLoading());
-    final response = await _getMyProductsRepo.getSubject();
+    emit(const AuctionState.getSubjectsLoading());
+    final response = await _auctionRepo.getSubject();
     response.when(
       success: (data) {
         subjects = data.subjectData;
         getSubjectsSuccess = true;
-        emit(ProductsState.getSubjectsSuccess(data));
+        emit(AuctionState.getSubjectsSuccess(data));
       },
       failure: (message) {
-        emit(ProductsState.getSubjectsError(error: message));
+        emit(AuctionState.getSubjectsError(error: message));
       },
     );
   }
@@ -179,23 +151,23 @@ class ProductsCubit extends Cubit<ProductsState> {
   List<CategoryData>? categories;
 
   void emitGetCategories() async {
-    emit(const ProductsState.getCategoriesLoading());
-    final response = await _getMyProductsRepo.getCategory();
+    emit(const AuctionState.getCategoriesLoading());
+    final response = await _auctionRepo.getCategory();
     response.when(
       success: (data) {
         categories = data.categoryData;
         getCategoriesSuccess = true;
-        emit(ProductsState.getCategoriesSuccess(data));
+        emit(AuctionState.getCategoriesSuccess(data));
       },
       failure: (message) {
-        emit(ProductsState.getCategoriesError(error: message));
+        emit(AuctionState.getCategoriesError(error: message));
       },
     );
   }
 
-  void addProduct() {
+  void createAuction() {
     if (formKey.currentState!.validate()) {
-      emitAddProduct();
+      emitCreateAuction();
     }
   }
 }

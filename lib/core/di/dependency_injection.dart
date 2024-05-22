@@ -14,6 +14,8 @@ import 'package:art_space_artist/features/profile/presentation/view_model/profil
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../features/auction/data/repo/repo.dart';
+import '../../features/auction/presentation/view_model/auction_cubit.dart';
 import '../../features/events/data/repo/repo.dart';
 import '../../features/events/presentation/view_model/event_cubit.dart';
 import '../../features/home/presentation/view_model/home_cubit.dart';
@@ -47,4 +49,8 @@ Future<void> setupGetIt() async {
   // Events
   getIt.registerLazySingleton<EventRepo>(() => EventRepo(getIt()));
   getIt.registerFactory<EventCubit>(() => EventCubit(getIt()));
+  // Auction
+  getIt.registerLazySingleton<AuctionRepo>(() => AuctionRepo(getIt()));
+  getIt.registerFactory<AuctionCubit>(() => AuctionCubit(getIt()));
+
 }

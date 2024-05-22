@@ -14,10 +14,11 @@ class CreateTextForm extends StatelessWidget {
   final int? maxLength;
   final TextInputType keyboardType;
   final TextAlign textAlign;
-
+  final TextInputType ?textInputType;
   const CreateTextForm({
     super.key,
     required this.text,
+    this.textInputType,
     required this.controller,
     this.widget,
     this.counterWidget,

@@ -1,4 +1,5 @@
 import 'package:art_space_artist/core/network/api_constants.dart';
+import 'package:art_space_artist/features/auction/data/models/create_auction_response.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/forget_password_request.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_request.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_response.dart';
@@ -140,4 +141,9 @@ abstract class ApiService {
     @Header('Authorization') required String token,
   });
 
+  @POST(ApiConstant.createAuction)
+  Future<CreateAuctionResponse> createAuction({
+    @Body() required FormData body,
+    @Header('Authorization') required String token,
+  });
 }
