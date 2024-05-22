@@ -11,7 +11,7 @@ class LoadingWidget extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: LoadingAnimationWidget.staggeredDotsWave(
-            color: ColorManager.primaryColor, size: 50),
+            color: ColorManager.primaryColor, size: 35),
       ),
     );
   }

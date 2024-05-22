@@ -1,3 +1,5 @@
+import 'package:art_space_artist/core/constants/color_manager.dart';
+import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:flutter/material.dart';
 
 class CreateTextForm extends StatelessWidget {
@@ -5,21 +7,28 @@ class CreateTextForm extends StatelessWidget {
   final double padding;
   final TextEditingController controller;
   final Widget? widget;
+  final Widget? counterWidget;
   final FormFieldValidator validator;
   final int? maxLines;
+  final int? minLines;
+  final int? maxLength;
   final TextInputType keyboardType;
   final TextAlign textAlign;
 
-  const CreateTextForm(
-      {super.key,
-      required this.text,
-      required this.controller,
-      this.widget,
-      required this.validator,
-      this.maxLines,
-      required this.keyboardType,
-      required this.textAlign,
-      required this.padding});
+  const CreateTextForm({
+    super.key,
+    required this.text,
+    required this.controller,
+    this.widget,
+    this.counterWidget,
+    required this.validator,
+    this.maxLines,
+    this.minLines,
+    this.maxLength,
+    required this.keyboardType,
+    required this.textAlign,
+    required this.padding,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +38,30 @@ class CreateTextForm extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         hintText: text,
+        hintStyle: TextStyles.textStyle16,
         isDense: true,
         contentPadding: EdgeInsets.all(padding),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24.0),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12.0),
+          borderSide: const BorderSide(
+            color: ColorManager.darkGray,
+            width: 0.6,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12.0),
+          borderSide: const BorderSide(
+            color: ColorManager.primaryColor,
+            width: 0.6,
+          ),
         ),
         icon: widget,
+        counter: counterWidget,
       ),
+      maxLength: maxLength,
       validator: validator,
       maxLines: maxLines,
+      minLines: minLines,
     );
   }
 }

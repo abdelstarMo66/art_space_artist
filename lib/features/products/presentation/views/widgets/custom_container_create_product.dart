@@ -1,21 +1,27 @@
+import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:flutter/material.dart';
 
 class CustomContainerForCreateProduct extends StatelessWidget {
   final Widget widget;
-  final double height;
-  const CustomContainerForCreateProduct({super.key, required this.widget, required this.height});
+
+  const CustomContainerForCreateProduct({
+    super.key,
+    required this.widget,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: height,
-        padding:
-            const EdgeInsetsDirectional.symmetric(horizontal: 10, vertical: 8),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadiusDirectional.circular(25),
-            border: Border.all(
-              color: Colors.grey,
-            )),
-        child: widget);
+      padding:
+          const EdgeInsetsDirectional.symmetric(horizontal: 18, vertical: 12),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadiusDirectional.circular(18),
+        border: Border.all(
+          width: 0.6,
+          color: ColorManager.darkGray,
+        ),
+      ),
+      child: widget,
+    );
   }
 }

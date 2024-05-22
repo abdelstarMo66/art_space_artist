@@ -69,9 +69,11 @@ class AppRouter {
         return SlideRight(page: const HomeScreen());
       case AppRouterNames.createProduct:
         return SlideRight(
-            page: BlocProvider(
-                create: (context) => getIt<ProductsCubit>(),
-                child: const AddProduct()));
+          page: BlocProvider(
+            create: (context) => getIt<ProductsCubit>()..emitGetCategories()..emitGetStyles()..emitGetSubjects(),
+            child: const AddProduct(),
+          ),
+        );
       case AppRouterNames.eventDetails:
         return SlideRight(
           page: BlocProvider<EventCubit>(
