@@ -6,6 +6,8 @@ import 'package:art_space_artist/features/home/data/models/get_my_products_respo
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+
+// TODO: will edit to be responsive
 class CustomProductViewWidget extends StatelessWidget {
   final ProductsInfo productInfo;
 
