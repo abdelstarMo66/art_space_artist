@@ -66,7 +66,7 @@ class _AddProductState extends State<AddProduct> {
       builder: (context, state) {
         ProductsCubit cubit = context.read<ProductsCubit>();
 
-        if (!cubit.getCategoriesSuccess &&
+        if (cubit.getCategoriesSuccess &&
             cubit.getStylesSuccess &&
             cubit.getSubjectsSuccess) {
           return Scaffold(
