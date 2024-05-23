@@ -1,4 +1,10 @@
 import 'dart:io';
+
+import 'package:art_space_artist/core/constants/constants.dart';
+import 'package:art_space_artist/core/constants/toast_color.dart';
+import 'package:art_space_artist/features/products/data/models/add_product_response.dart';
+import 'package:art_space_artist/features/products/data/models/add_product_to_event_request_body.dart';
+import 'package:art_space_artist/features/products/data/models/add_product_to_event_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_category_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_styles_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_subject_response.dart';
@@ -8,6 +14,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
+
 import '../../data/models/get_product_details_response.dart';
 import '../../data/repo/repo.dart';
 
@@ -193,9 +200,85 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  void addProduct() {
-    if (formKey.currentState!.validate()) {
-      emitAddProduct();
+  void emitAddProductToEvent({required String eventId}) async {
+    FormData data = FormData.fromMap({
+      'title': nameController.text,
+      'description': descriptionController.text,
+      'price': double.parse(priceController.text),
+      'height': heightController.text,
+      'width': widthController.text,
+      'depth': depthController.text,
+      'material': materialController.text,
+      'category': categoryId,
+      'subject': subjectId,
+      'style': styleId,
+      'inEvent': true,
+    });
+
+    data.files.add(
+      MapEntry(
+        "coverImage",
+        await MultipartFile.fromFile(
+          coverImage!.path,
+          filename: coverImage!.path.split('/').last,
+          contentType: MediaType("image", "*"),
+        ),
+      ),
+    );
+
+    if (images.isNotEmpty) {
+      for (var image in images) {
+        data.files.add(
+          MapEntry(
+            "images",
+            await MultipartFile.fromFile(
+              image.path,
+              filename: image.path.split('/').last,
+              contentType: MediaType("image", "*"),
+            ),
+          ),
+        );
+      }
+    }
+
+    final response = await _getMyProductsRepo.addProduct(
+      body: data,
+    );
+
+    response.when(
+      success: (AddProductResponse addProductResponse) async {
+        final eventResponse = await _getMyProductsRepo.addProductToEvent(
+          eventId: eventId,
+          addProductToEventRequestBody: AddProductToEventRequestBody(
+              productId: addProductResponse.data.id),
+        );
+
+        eventResponse.when(
+            success: (AddProductToEventResponse addProductToEventResponse) {
+          emit(ProductsState.addProductToEventSuccess(
+              addProductToEventResponse));
+        }, failure: (String error) {
+          emit(ProductsState.addProductToEventError(error: error));
+        });
+      },
+      failure: (String error) {
+        emit(ProductsState.addProductToEventError(error: error));
+      },
+    );
+  }
+
+  void addProduct({String? eventId}) {
+    if (formKey.currentState!.validate() && coverImage != null) {
+      if (eventId != null) {
+        emitAddProductToEvent(eventId: eventId);
+      } else {
+        emitAddProduct();
+      }
+    } else if (coverImage == null) {
+      showToast(
+        msg: "coverImage is required",
+        state: ToastState.error,
+      );
     }
   }
 }

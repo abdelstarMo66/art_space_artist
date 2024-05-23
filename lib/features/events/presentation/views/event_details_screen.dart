@@ -2,11 +2,10 @@ import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
-import 'package:art_space_artist/features/events/data/model/get_event_details_response.dart';
 import 'package:art_space_artist/features/events/presentation/view_model/event_cubit.dart';
 import 'package:art_space_artist/features/events/presentation/view_model/event_state.dart';
-import 'package:art_space_artist/features/events/presentation/views/widgets/custom_info_row.dart';
 import 'package:art_space_artist/features/events/presentation/views/widgets/artwork_item.dart';
+import 'package:art_space_artist/features/events/presentation/views/widgets/custom_info_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -25,16 +24,17 @@ class EventDetailsScreen extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: ColorManager.originalWhite.withOpacity(0.0),
             leading: IconButton(
-                onPressed: () => Navigator.pushReplacementNamed(
-                      context,
-                      AppRouterNames.home,
-                    ),
-                icon: SvgPicture.asset(
-                  AssetsManager.icBackArrow,
-                  height: 40.0,
-                  colorFilter: const ColorFilter.mode(
-                      ColorManager.originalWhite, BlendMode.srcIn),
-                ),),
+              onPressed: () => Navigator.pushReplacementNamed(
+                context,
+                AppRouterNames.home,
+              ),
+              icon: SvgPicture.asset(
+                AssetsManager.icBackArrow,
+                height: 40.0,
+                colorFilter: const ColorFilter.mode(
+                    ColorManager.originalWhite, BlendMode.srcIn),
+              ),
+            ),
           ),
           extendBodyBehindAppBar: true,
           body: cubit.eventInfo != null
@@ -92,8 +92,9 @@ class EventDetailsScreen extends StatelessWidget {
                                           AssetsManager.icEdit,
                                           height: 32.0,
                                           colorFilter: const ColorFilter.mode(
-                                              ColorManager.primaryColor,
-                                              BlendMode.srcIn),
+                                            ColorManager.primaryColor,
+                                            BlendMode.srcIn,
+                                          ),
                                         ),
                                       ),
                                       IconButton(
@@ -102,7 +103,9 @@ class EventDetailsScreen extends StatelessWidget {
                                           AssetsManager.icTrash,
                                           height: 32.0,
                                           colorFilter: const ColorFilter.mode(
-                                              Colors.red, BlendMode.srcIn),
+                                            Colors.red,
+                                            BlendMode.srcIn,
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -128,22 +131,31 @@ class EventDetailsScreen extends StatelessWidget {
                                         'End: ${cubit.eventInfo!.end.split("T")[0]}',
                                     icon: AssetsManager.icCalender,
                                   ),
-                                  const Text(
-                                    "Artworks",
-                                    style: TextStyles.textStyle26,
+                                  Row(
+                                    children: [
+                                      const Text(
+                                        "Artworks",
+                                        style: TextStyles.textStyle26,
+                                      ),
+                                      const Spacer(),
+                                      TextButton(onPressed: (){
+                                        Navigator.pushReplacementNamed(context, AppRouterNames.createProduct, arguments: cubit.eventInfo!.id);
+                                      }, child: const Text("Add New Product", style: TextStyles.textStyle18,),),
+                                    ],
                                   ),
-                                  SizedBox(height: 12.0,),
+                                  const SizedBox(height: 12.0),
                                   Row(
                                     children: [
                                       for (var i = 0;
-                                      i < cubit.eventInfo!.products.length;
-                                      i++) ...[
+                                          i < cubit.eventInfo!.products.length;
+                                          i++) ...[
                                         Container(
                                           width: 180.0,
                                           padding: const EdgeInsets.symmetric(
                                               horizontal: 12.0),
                                           child: ArtworkItem(
-                                            product: cubit.eventInfo!.products[i],
+                                            product:
+                                                cubit.eventInfo!.products[i],
                                           ),
                                         ),
                                       ],

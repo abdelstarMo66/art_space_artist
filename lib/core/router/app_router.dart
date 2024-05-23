@@ -77,7 +77,7 @@ class AppRouter {
               ..emitGetCategories()
               ..emitGetStyles()
               ..emitGetSubjects(),
-            child: const AddProduct(),
+            child: AddProduct(eventId: settings.arguments as String?),
           ),
         );
       case AppRouterNames.eventDetails:

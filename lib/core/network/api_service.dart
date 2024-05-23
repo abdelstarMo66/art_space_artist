@@ -12,17 +12,20 @@ import 'package:art_space_artist/features/events/data/model/create_event_respons
 import 'package:art_space_artist/features/events/data/model/get_event_details_response.dart';
 import 'package:art_space_artist/features/home/data/models/get_event_response.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_response.dart';
+import 'package:art_space_artist/features/products/data/models/add_product_to_event_request_body.dart';
+import 'package:art_space_artist/features/products/data/models/add_product_to_event_response.dart';
 import 'package:art_space_artist/features/products/data/models/delete_product_response.dart';
 import 'package:art_space_artist/features/profile/data/model/edit_profile_request_body.dart';
 import 'package:art_space_artist/features/profile/data/model/edit_profile_response.dart';
 import 'package:art_space_artist/features/profile/data/model/get_profile_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
+
 import '../../features/auth/forgetPassword/data/model/forget_password_response.dart';
 import '../../features/auth/forgetPassword/data/model/verify_email_response.dart';
 import '../../features/auth/login/data/model/login_response.dart';
-import '../../features/products/data/models/get_category_response.dart';
 import '../../features/home/data/models/get_my_products_response.dart';
+import '../../features/products/data/models/get_category_response.dart';
 import '../../features/products/data/models/get_product_details_response.dart';
 import '../../features/products/data/models/get_styles_response.dart';
 import '../../features/products/data/models/get_subject_response.dart';
@@ -41,10 +44,7 @@ abstract class ApiService {
   );
 
   @POST(ApiConstant.register)
-  // @MultiPart()
   Future<RegisterResponse> register({
-    // @Part() required RegisterRequestBody registerRequestBody,
-    // @Part(contentType: "image/*") required File profileImg,
     @Body() required FormData registerFormData,
   });
 
@@ -134,7 +134,6 @@ abstract class ApiService {
     @Header('Authorization') required String token,
   });
 
-
   @GET(ApiConstant.getEventDetails)
   Future<GetEventDetailsResponse> getEventDetails({
     @Path('id') required String? id,
@@ -145,5 +144,12 @@ abstract class ApiService {
   Future<CreateAuctionResponse> createAuction({
     @Body() required FormData body,
     @Header('Authorization') required String token,
+  });
+
+  @POST(ApiConstant.addProductToEvent)
+  Future<AddProductToEventResponse> addProductToEvent({
+    @Path('eventId') required String eventId,
+    @Header('Authorization') required String token,
+    @Body() required AddProductToEventRequestBody addProductToEventRequestBody,
   });
 }

@@ -19,7 +19,8 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../../../../core/components/default_button.dart';
 
 class AddProduct extends StatefulWidget {
-  const AddProduct({super.key});
+  final String? eventId;
+  const AddProduct({super.key, this.eventId});
 
   @override
   State<AddProduct> createState() => _AddProductState();
@@ -34,17 +35,16 @@ class _AddProductState extends State<AddProduct> {
   Widget build(BuildContext context) {
     return BlocConsumer<ProductsCubit, ProductsState>(
       listener: (context, state) {
-        if (state is AddProductLoading) {
+        if (state is AddProductLoading || state is AddProductToEventLoading) {
           showDialog(
             context: context,
-            builder: (context) =>
-                Center(
-                  child: LoadingAnimationWidget.inkDrop(
-                      color: ColorManager.primaryColor, size: 45),
-                ),
+            builder: (context) => Center(
+              child: LoadingAnimationWidget.inkDrop(
+                  color: ColorManager.primaryColor, size: 45),
+            ),
           );
         }
-        if (state is AddProductSuccess) {
+        if (state is AddProductSuccess|| state is AddProductToEventSuccess) {
           Navigator.pop(context);
 
           showToast(
@@ -52,13 +52,12 @@ class _AddProductState extends State<AddProduct> {
             state: ToastState.success,
           );
 
-          Navigator.of(context)
-              .pushReplacementNamed(AppRouterNames.home);
+          Navigator.of(context).pushReplacementNamed(AppRouterNames.home);
         }
-        if (state is AddProductError) {
+        if (state is AddProductError || state is AddProductToEventError) {
           Navigator.pop(context);
           showToast(
-            msg: state.error,
+            msg: "something went wrong",
             state: ToastState.error,
           );
         }
@@ -83,9 +82,8 @@ class _AddProductState extends State<AddProduct> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         GestureDetector(
-                          onTap: () =>
-                              Navigator.of(context)
-                                  .pushReplacementNamed(AppRouterNames.home),
+                          onTap: () => Navigator.of(context)
+                              .pushReplacementNamed(AppRouterNames.home),
                           child: SvgPicture.asset(
                             AssetsManager.icBackArrow,
                             height: 35.0,
@@ -99,7 +97,7 @@ class _AddProductState extends State<AddProduct> {
                                   horizontal: 18, vertical: 12),
                               decoration: BoxDecoration(
                                 borderRadius:
-                                BorderRadiusDirectional.circular(18),
+                                    BorderRadiusDirectional.circular(18),
                                 border: Border.all(
                                   width: 0.8,
                                   color: Colors.green,
@@ -107,37 +105,37 @@ class _AddProductState extends State<AddProduct> {
                               ),
                               child: cubit.coverImage != null
                                   ? ClipRRect(
-                                borderRadius:
-                                BorderRadiusDirectional.circular(
-                                    18.0),
-                                child: Image.file(
-                                  cubit.coverImage!,
-                                  fit: BoxFit.cover,
-                                  height: 200,
-                                  width: 400,
-                                ),
-                              )
-                                  : Column(
-                                crossAxisAlignment:
-                                CrossAxisAlignment.center,
-                                children: [
-                                  Opacity(
-                                    opacity: 0.6,
-                                    child: SvgPicture.asset(
-                                      AssetsManager.icImage,
-                                      height: 120,
-                                      colorFilter: const ColorFilter.mode(
-                                        Colors.green,
-                                        BlendMode.srcIn,
+                                      borderRadius:
+                                          BorderRadiusDirectional.circular(
+                                              18.0),
+                                      child: Image.file(
+                                        cubit.coverImage!,
+                                        fit: BoxFit.cover,
+                                        height: 200,
+                                        width: 400,
                                       ),
+                                    )
+                                  : Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Opacity(
+                                          opacity: 0.6,
+                                          child: SvgPicture.asset(
+                                            AssetsManager.icImage,
+                                            height: 120,
+                                            colorFilter: const ColorFilter.mode(
+                                              Colors.green,
+                                              BlendMode.srcIn,
+                                            ),
+                                          ),
+                                        ),
+                                        const Text(
+                                          'Tap here to add cover',
+                                          style: TextStyles.textStyle18,
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                  const Text(
-                                    'Tap here to add cover',
-                                    style: TextStyles.textStyle18,
-                                  ),
-                                ],
-                              ),
                             ),
                           ),
                         ),
@@ -242,8 +240,7 @@ class _AddProductState extends State<AddProduct> {
                                 items: cubit.categories!
                                     .asMap()
                                     .map(
-                                      (key, value) =>
-                                      MapEntry(
+                                      (key, value) => MapEntry(
                                         key,
                                         DropdownMenuItem(
                                           value: key,
@@ -253,7 +250,7 @@ class _AddProductState extends State<AddProduct> {
                                           ),
                                         ),
                                       ),
-                                )
+                                    )
                                     .values
                                     .toList(),
                                 text: 'Category',
@@ -270,8 +267,7 @@ class _AddProductState extends State<AddProduct> {
                                 items: cubit.styles!
                                     .asMap()
                                     .map(
-                                      (key, value) =>
-                                      MapEntry(
+                                      (key, value) => MapEntry(
                                         key,
                                         DropdownMenuItem(
                                           value: key,
@@ -281,7 +277,7 @@ class _AddProductState extends State<AddProduct> {
                                           ),
                                         ),
                                       ),
-                                )
+                                    )
                                     .values
                                     .toList(),
                                 text: 'Style',
@@ -297,8 +293,7 @@ class _AddProductState extends State<AddProduct> {
                                   items: cubit.subjects!
                                       .asMap()
                                       .map(
-                                        (key, value) =>
-                                        MapEntry(
+                                        (key, value) => MapEntry(
                                           key,
                                           DropdownMenuItem(
                                             value: key,
@@ -308,7 +303,7 @@ class _AddProductState extends State<AddProduct> {
                                             ),
                                           ),
                                         ),
-                                  )
+                                      )
                                       .values
                                       .toList(),
                                   onChanged: (value) {
@@ -349,83 +344,75 @@ class _AddProductState extends State<AddProduct> {
                           height: 8.0,
                         ),
                         Builder(
-                          builder: (context) =>
-                              Wrap(
-                                spacing: 12.0,
-                                children: [
-                                  for (int i = 0; i < cubit.images.length; i++)
-                                    Stack(
-                                      alignment: Alignment.topRight,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius: BorderRadius.circular(
-                                              18),
-                                          child: Image.file(
-                                            cubit.images[i],
-                                            fit: BoxFit.cover,
-                                            height: 100.0,
-                                            width: 100.0,
-                                          ),
-                                        ),
-                                        InkWell(
-                                          onTap: () {
-                                            setState(() {
-                                              cubit.deleteImage(index: i);
-                                            });
-                                          },
-                                          child: CircleAvatar(
-                                            backgroundColor:
+                          builder: (context) => Wrap(
+                            spacing: 12.0,
+                            children: [
+                              for (int i = 0; i < cubit.images.length; i++)
+                                Stack(
+                                  alignment: Alignment.topRight,
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(18),
+                                      child: Image.file(
+                                        cubit.images[i],
+                                        fit: BoxFit.cover,
+                                        height: 100.0,
+                                        width: 100.0,
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        setState(() {
+                                          cubit.deleteImage(index: i);
+                                        });
+                                      },
+                                      child: CircleAvatar(
+                                        backgroundColor:
                                             ColorManager.originalWhite,
-                                            radius: 16,
-                                            child: SvgPicture.asset(
-                                              AssetsManager.icTrash,
-                                              height: 28.0,
-                                              colorFilter: const ColorFilter
-                                                  .mode(
-                                                ColorManager.primaryColor,
-                                                BlendMode.srcIn,
-                                              ),
-                                            ),
+                                        radius: 16,
+                                        child: SvgPicture.asset(
+                                          AssetsManager.icTrash,
+                                          height: 28.0,
+                                          colorFilter: const ColorFilter.mode(
+                                            ColorManager.primaryColor,
+                                            BlendMode.srcIn,
                                           ),
                                         ),
-                                      ],
+                                      ),
                                     ),
-                                  InkWell(
-                                    onTap: () async {
-                                      cubit.images.add(await cubit.getImages());
-                                      setState(() {});
-                                      // cubit.getImages();
-                                    },
-                                    child: Container(
-                                      padding: const EdgeInsets.all(12.0),
-                                      decoration: BoxDecoration(
-                                        color:
+                                  ],
+                                ),
+                              InkWell(
+                                onTap: () async {
+                                  cubit.images.add(await cubit.getImages());
+                                  setState(() {});
+                                  // cubit.getImages();
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.all(12.0),
+                                  decoration: BoxDecoration(
+                                    color:
                                         ColorManager.lightGray.withOpacity(0.8),
-                                        borderRadius: BorderRadius.circular(18),
-                                      ),
-                                      child: SvgPicture.asset(
-                                        AssetsManager.icAdd,
-                                        height: 75.0,
-                                        colorFilter: const ColorFilter.mode(
-                                            ColorManager.primaryColor,
-                                            BlendMode.srcIn),
-                                      ),
-                                    ),
+                                    borderRadius: BorderRadius.circular(18),
                                   ),
-                                ],
+                                  child: SvgPicture.asset(
+                                    AssetsManager.icAdd,
+                                    height: 75.0,
+                                    colorFilter: const ColorFilter.mode(
+                                        ColorManager.primaryColor,
+                                        BlendMode.srcIn),
+                                  ),
+                                ),
                               ),
+                            ],
+                          ),
                         ),
                         const SizedBox(
                           height: 32.0,
                         ),
                         DefaultButton(
                           text: 'Add',
-                          onPressed: () {
-                            if (cubit.formKey.currentState!.validate() &&
-                                cubit.coverImage != null) {
-                              cubit.addProduct();
-                            }
-                          },
+                          onPressed: () => cubit.addProduct(eventId: widget.eventId),
                         ),
                         const SizedBox(
                           height: 32.0,

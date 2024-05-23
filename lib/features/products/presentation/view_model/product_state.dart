@@ -1,3 +1,5 @@
+import 'package:art_space_artist/features/products/data/models/add_product_to_event_request_body.dart';
+import 'package:art_space_artist/features/products/data/models/add_product_to_event_response.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'product_state.freezed.dart';
 @freezed
@@ -34,4 +36,8 @@ class ProductsState<T> with _$ProductsState<T> {
   const factory ProductsState.getSubjectsLoading() = GetBrandsLoading;
   const factory ProductsState.getSubjectsSuccess(T data) = GetBrandsSuccess;
   const factory ProductsState.getSubjectsError({required String error}) = GetBrandsError;
+
+  const factory ProductsState.addProductToEventLoading() = AddProductToEventLoading;
+  const factory ProductsState.addProductToEventSuccess(AddProductToEventResponse addProductToEventRequestBody) = AddProductToEventSuccess;
+  const factory ProductsState.addProductToEventError({required String error}) = AddProductToEventError;
 }
