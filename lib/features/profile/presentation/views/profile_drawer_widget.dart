@@ -7,8 +7,8 @@ import 'package:art_space_artist/features/profile/presentation/view_model/profil
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../../../generated/l10n.dart';
+
 
 class CustomProfileDrawer extends StatelessWidget {
   const CustomProfileDrawer({super.key});
@@ -130,6 +130,10 @@ class CustomProfileDrawer extends StatelessWidget {
                   height: 20.0,
                 ),
                 ListTile(
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushNamed(AppRouterNames.createEvent,);
+                  },
                   leading: SvgPicture.asset(
                     AssetsManager.icVr,
                     height: 40,
@@ -139,18 +143,18 @@ class CustomProfileDrawer extends StatelessWidget {
                     style: TextStyles.textStyle18,
                   ),
                 ),
-                InkWell(
-                  onTap: () => Navigator.of(context)
-                      .pushReplacementNamed(AppRouterNames.createProduct),
-                  child: ListTile(
-                    leading: SvgPicture.asset(
-                      AssetsManager.icAdd,
-                      height: 40,
-                    ),
-                    title: Text(
-                      S.of(context).addProduct,
-                      style: TextStyles.textStyle18,
-                    ),
+                ListTile(
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushNamed(AppRouterNames.createProduct);
+                  },
+                  leading: SvgPicture.asset(
+                    AssetsManager.icAdd,
+                    height: 40,
+                  ),
+                  title: Text(
+                    S.of(context).addProduct,
+                    style: TextStyles.textStyle18,
                   ),
                 ),
                 ListTile(
@@ -163,18 +167,16 @@ class CustomProfileDrawer extends StatelessWidget {
                     style: TextStyles.textStyle18,
                   ),
                 ),
-                InkWell(
+                ListTile(
                   onTap: () => Navigator.of(context)
-                      .pushReplacementNamed(AppRouterNames.createAuction),
-                  child: ListTile(
-                    leading: SvgPicture.asset(
-                      AssetsManager.icAuction,
-                      height: 35,
-                    ),
-                    title: const Text(
-                      'Create auction',
-                      style: TextStyles.textStyle18,
-                    ),
+                      .pushNamed(AppRouterNames.createAuction),
+                  leading: SvgPicture.asset(
+                    AssetsManager.icAuction,
+                    height: 35,
+                  ),
+                  title: const Text(
+                    'Create auction',
+                    style: TextStyles.textStyle18,
                   ),
                 ),
                 GestureDetector(

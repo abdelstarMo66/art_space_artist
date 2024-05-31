@@ -32,7 +32,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   void emitLogout({required context}) {
     CacheHelper.removeData(key: 'token');
     emit(const ProfileState.logout());
-    Navigator.of(context).pushReplacementNamed(AppRouterNames.login);
+    Navigator.of(context).pushNamedAndRemoveUntil(AppRouterNames.login, (route) => false,);
   }
 
   TextEditingController nameController = TextEditingController();

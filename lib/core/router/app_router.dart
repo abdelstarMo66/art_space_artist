@@ -19,7 +19,6 @@ import 'package:art_space_artist/features/products/presentation/views/add_produc
 import 'package:art_space_artist/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../features/auth/forgetPassword/presentation/views/create_new_password.dart';
 import '../../features/products/presentation/views/view_product_details.dart';
 import '../../features/profile/presentation/views/change_password/change_password.dart';
@@ -31,7 +30,9 @@ class AppRouter {
   static Route<dynamic> onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
       case AppRouterNames.onBoarding:
-        return SlideRight(page: const OnBoardingScreen());
+        return SlideRight(
+            page: const OnBoardingScreen()
+        );
       case AppRouterNames.login:
         return SlideRight(
             page: BlocProvider(
@@ -40,14 +41,14 @@ class AppRouter {
       case AppRouterNames.register:
         return SlideRight(
             page: BlocProvider(
-          create: (context) => getIt<RegisterCubit>(),
-          child: const RegisterScreen(),
+                create: (context) => getIt<RegisterCubit>(),
+                child: const RegisterScreen(),
         ));
       case AppRouterNames.verifyEmail:
         return SlideRight(
             page: BlocProvider.value(
-          value: getIt<RegisterCubit>(),
-          child: VerifyEmailScreen(email: settings.arguments as String),
+                value: getIt<RegisterCubit>(),
+                child: VerifyEmailScreen(email: settings.arguments as String),
         ));
       case AppRouterNames.forgetPassword:
         return SlideRight(
@@ -68,8 +69,7 @@ class AppRouter {
           child: CreateNewPassword(email: settings.arguments as String),
         ));
       case AppRouterNames.home:
-        return SlideRight(
-            page: const HomeScreen());
+        return SlideRight(page: const HomeScreen());
       case AppRouterNames.createProduct:
         return SlideRight(
           page: BlocProvider(
@@ -77,7 +77,7 @@ class AppRouter {
               ..emitGetCategories()
               ..emitGetStyles()
               ..emitGetSubjects(),
-            child: AddProduct(eventId: settings.arguments as String?),
+            child: CreateProductScreen(eventId: settings.arguments as String?),
           ),
         );
       case AppRouterNames.eventDetails:
@@ -113,27 +113,27 @@ class AppRouter {
                 child: const CreateEvent()));
       case AppRouterNames.createAuction:
         return MaterialPageRoute(
-              builder: (_) => BlocProvider<AuctionCubit>(
-                        create: (context) => getIt<AuctionCubit>()
+          builder: (_) => BlocProvider<AuctionCubit>(
+            create: (context) => getIt<AuctionCubit>()
               ..emitGetCategories()
               ..emitGetStyles()
               ..emitGetSubjects(),
-                        child: const CreateAuctionScreen(),
-                      ),
-            );
+            child: const CreateAuctionScreen(),
+          ),
+        );
       default:
-        return unDefinedRoute();
+        return unDefinedRoute(settings);
     }
   }
 
-  static Route<dynamic> unDefinedRoute() {
+  static Route<dynamic> unDefinedRoute(RouteSettings settings) {
     return MaterialPageRoute(
       builder: (_) => Scaffold(
         appBar: AppBar(
           title: const Text("Not Found Route"),
         ),
-        body: const Center(
-          child: Text("Not Found Route"),
+        body:  Center(
+          child: Text("Not Found Route ${settings.name}"),
         ),
       ),
     );

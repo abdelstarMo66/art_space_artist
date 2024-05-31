@@ -18,15 +18,15 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 import '../../../../core/components/default_button.dart';
 
-class AddProduct extends StatefulWidget {
+class CreateProductScreen extends StatefulWidget {
   final String? eventId;
-  const AddProduct({super.key, this.eventId});
+  const CreateProductScreen({super.key, this.eventId});
 
   @override
-  State<AddProduct> createState() => _AddProductState();
+  State<CreateProductScreen> createState() => _CreateProductScreenState();
 }
 
-class _AddProductState extends State<AddProduct> {
+class _CreateProductScreenState extends State<CreateProductScreen> {
   int style = 0;
   int category = 0;
   int subject = 0;
@@ -46,7 +46,6 @@ class _AddProductState extends State<AddProduct> {
         }
         if (state is AddProductSuccess|| state is AddProductToEventSuccess) {
           Navigator.pop(context);
-
           showToast(
             msg: "Add Product Success",
             state: ToastState.success,
@@ -82,8 +81,7 @@ class _AddProductState extends State<AddProduct> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         GestureDetector(
-                          onTap: () => Navigator.of(context)
-                              .pushReplacementNamed(AppRouterNames.home),
+                          onTap: () => Navigator.of(context).pop(),
                           child: SvgPicture.asset(
                             AssetsManager.icBackArrow,
                             height: 35.0,

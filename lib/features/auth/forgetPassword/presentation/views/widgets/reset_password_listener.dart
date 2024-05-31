@@ -6,7 +6,6 @@ import 'package:art_space_artist/features/auth/forgetPassword/presentation/view_
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/view_model/forget_password_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../../core/constants/color_manager.dart';
 
 class ResetPasswordListener extends StatelessWidget {

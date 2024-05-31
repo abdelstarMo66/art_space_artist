@@ -19,15 +19,13 @@ class EventDetailsScreen extends StatelessWidget {
     return BlocBuilder<EventCubit, EventState>(
       builder: (context, state) {
         EventCubit cubit = context.read<EventCubit>();
-
         return Scaffold(
           appBar: AppBar(
             backgroundColor: ColorManager.originalWhite.withOpacity(0.0),
             leading: IconButton(
-              onPressed: () => Navigator.pushReplacementNamed(
+              onPressed: () => Navigator.of(
                 context,
-                AppRouterNames.home,
-              ),
+              ).pop(),
               icon: SvgPicture.asset(
                 AssetsManager.icBackArrow,
                 height: 40.0,
@@ -138,9 +136,18 @@ class EventDetailsScreen extends StatelessWidget {
                                         style: TextStyles.textStyle26,
                                       ),
                                       const Spacer(),
-                                      TextButton(onPressed: (){
-                                        Navigator.pushReplacementNamed(context, AppRouterNames.createProduct, arguments: cubit.eventInfo!.id);
-                                      }, child: const Text("Add New Product", style: TextStyles.textStyle18,),),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pushReplacementNamed(
+                                              context,
+                                              AppRouterNames.createProduct,
+                                              arguments: cubit.eventInfo!.id);
+                                        },
+                                        child: const Text(
+                                          "Add New Product",
+                                          style: TextStyles.textStyle18,
+                                        ),
+                                      ),
                                     ],
                                   ),
                                   const SizedBox(height: 12.0),

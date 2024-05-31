@@ -33,7 +33,9 @@ class LoginListener extends StatelessWidget {
           success: (loginResponse) {
             Navigator.of(context).pop();
             Navigator.of(context)
-                .pushNamedAndRemoveUntil(AppRouterNames.home, (route) => false);
+                .pushNamedAndRemoveUntil(
+                AppRouterNames.home, (route) => false
+            );
           },
           error: (error) {
             Navigator.of(context).pop();

@@ -20,7 +20,7 @@ class GetProductList extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisSpacing: MediaQuery.of(context).size.height * 0.02,
+              mainAxisSpacing: MediaQuery.of(context).size.height * 0.04,
               crossAxisSpacing: 16.0,
           ),
           itemBuilder: (context, index) => cubit.myProducts.isEmpty

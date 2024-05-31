@@ -105,7 +105,8 @@ class HomeScreen extends StatelessWidget {
                             ),
                             Text(
                               S.of(context).yourProduct,
-                              style: TextStyles.textStyle26,
+                                style: TextStyles.textStyle20
+                                    .copyWith(fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(
                               height: 15.0,

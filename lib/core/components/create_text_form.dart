@@ -15,6 +15,7 @@ class CreateTextForm extends StatelessWidget {
   final TextInputType keyboardType;
   final TextAlign textAlign;
   final TextInputType ?textInputType;
+  final GestureTapCallback? onTap;
   const CreateTextForm({
     super.key,
     required this.text,
@@ -29,11 +30,13 @@ class CreateTextForm extends StatelessWidget {
     required this.keyboardType,
     required this.textAlign,
     required this.padding,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onTap: onTap,
       textAlign: textAlign,
       keyboardType: keyboardType,
       controller: controller,

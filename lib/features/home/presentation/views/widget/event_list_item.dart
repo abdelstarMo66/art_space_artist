@@ -12,7 +12,7 @@ class EventListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushReplacementNamed(
+      onTap: () => Navigator.pushNamed(
         context,
         AppRouterNames.eventDetails,
         arguments: eventInfo.id,

@@ -71,7 +71,7 @@ class _CreateAuctionScreenState extends State<CreateAuctionScreen> {
               scrolledUnderElevation: 0.0,
               title: const Text('Create Auction'),
               leading: GestureDetector(
-                  onTap: () => Navigator.pop(context),
+                  onTap: () => Navigator.of(context).pop(),
                   child: SvgPicture.asset(
                     AssetsManager.icBackArrow,
                   )),

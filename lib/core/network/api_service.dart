@@ -20,7 +20,6 @@ import 'package:art_space_artist/features/profile/data/model/edit_profile_respon
 import 'package:art_space_artist/features/profile/data/model/get_profile_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
-
 import '../../features/auth/forgetPassword/data/model/forget_password_response.dart';
 import '../../features/auth/forgetPassword/data/model/verify_email_response.dart';
 import '../../features/auth/login/data/model/login_response.dart';
@@ -31,7 +30,6 @@ import '../../features/products/data/models/get_styles_response.dart';
 import '../../features/products/data/models/get_subject_response.dart';
 import '../../features/profile/data/model/change_password_request_body.dart';
 import '../../features/profile/data/model/change_password_response.dart';
-
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: ApiConstant.apiBaseURL)

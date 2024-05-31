@@ -7,6 +7,7 @@ enum ToastState {
 }
 
 bool onBoardingSeen = CacheHelper.getDataFromSharedPreference(key: 'onBoarding') == null ? false : true;
+
 bool loginDone = CacheHelper.getDataFromSharedPreference(key: 'token') == null ? false : true;
 
 String token = CacheHelper.getDataFromSharedPreference(key: 'token');

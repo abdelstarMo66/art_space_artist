@@ -43,6 +43,11 @@ mixin _$ProductsState<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +77,10 @@ mixin _$ProductsState<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -101,6 +110,10 @@ mixin _$ProductsState<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +152,12 @@ mixin _$ProductsState<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -170,6 +189,11 @@ mixin _$ProductsState<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -201,6 +225,11 @@ mixin _$ProductsState<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -287,6 +316,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return initial();
   }
@@ -319,6 +353,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return initial?.call();
   }
@@ -351,6 +389,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -395,6 +437,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return initial(this);
   }
@@ -429,6 +477,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return initial?.call(this);
   }
@@ -463,6 +516,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -540,6 +598,11 @@ class _$GetProductLoadingImpl<T> implements GetProductLoading<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getProductLoading();
   }
@@ -572,6 +635,10 @@ class _$GetProductLoadingImpl<T> implements GetProductLoading<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getProductLoading?.call();
   }
@@ -604,6 +671,10 @@ class _$GetProductLoadingImpl<T> implements GetProductLoading<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getProductLoading != null) {
@@ -648,6 +719,12 @@ class _$GetProductLoadingImpl<T> implements GetProductLoading<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getProductLoading(this);
   }
@@ -682,6 +759,11 @@ class _$GetProductLoadingImpl<T> implements GetProductLoading<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getProductLoading?.call(this);
   }
@@ -716,6 +798,11 @@ class _$GetProductLoadingImpl<T> implements GetProductLoading<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getProductLoading != null) {
@@ -821,6 +908,11 @@ class _$GetProductSuccessImpl<T> implements GetProductSuccess<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getProductSuccess(data);
   }
@@ -853,6 +945,10 @@ class _$GetProductSuccessImpl<T> implements GetProductSuccess<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getProductSuccess?.call(data);
   }
@@ -885,6 +981,10 @@ class _$GetProductSuccessImpl<T> implements GetProductSuccess<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getProductSuccess != null) {
@@ -929,6 +1029,12 @@ class _$GetProductSuccessImpl<T> implements GetProductSuccess<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getProductSuccess(this);
   }
@@ -963,6 +1069,11 @@ class _$GetProductSuccessImpl<T> implements GetProductSuccess<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getProductSuccess?.call(this);
   }
@@ -997,6 +1108,11 @@ class _$GetProductSuccessImpl<T> implements GetProductSuccess<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getProductSuccess != null) {
@@ -1105,6 +1221,11 @@ class _$GetProductErrorImpl<T> implements GetProductError<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getProductError(error);
   }
@@ -1137,6 +1258,10 @@ class _$GetProductErrorImpl<T> implements GetProductError<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getProductError?.call(error);
   }
@@ -1169,6 +1294,10 @@ class _$GetProductErrorImpl<T> implements GetProductError<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getProductError != null) {
@@ -1213,6 +1342,12 @@ class _$GetProductErrorImpl<T> implements GetProductError<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getProductError(this);
   }
@@ -1247,6 +1382,11 @@ class _$GetProductErrorImpl<T> implements GetProductError<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getProductError?.call(this);
   }
@@ -1281,6 +1421,11 @@ class _$GetProductErrorImpl<T> implements GetProductError<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getProductError != null) {
@@ -1364,6 +1509,11 @@ class _$AddProductLoadingImpl<T> implements AddProductLoading<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return addProductLoading();
   }
@@ -1396,6 +1546,10 @@ class _$AddProductLoadingImpl<T> implements AddProductLoading<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return addProductLoading?.call();
   }
@@ -1428,6 +1582,10 @@ class _$AddProductLoadingImpl<T> implements AddProductLoading<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (addProductLoading != null) {
@@ -1472,6 +1630,12 @@ class _$AddProductLoadingImpl<T> implements AddProductLoading<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return addProductLoading(this);
   }
@@ -1506,6 +1670,11 @@ class _$AddProductLoadingImpl<T> implements AddProductLoading<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return addProductLoading?.call(this);
   }
@@ -1540,6 +1709,11 @@ class _$AddProductLoadingImpl<T> implements AddProductLoading<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (addProductLoading != null) {
@@ -1645,6 +1819,11 @@ class _$AddProductSuccessImpl<T> implements AddProductSuccess<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return addProductSuccess(data);
   }
@@ -1677,6 +1856,10 @@ class _$AddProductSuccessImpl<T> implements AddProductSuccess<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return addProductSuccess?.call(data);
   }
@@ -1709,6 +1892,10 @@ class _$AddProductSuccessImpl<T> implements AddProductSuccess<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (addProductSuccess != null) {
@@ -1753,6 +1940,12 @@ class _$AddProductSuccessImpl<T> implements AddProductSuccess<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return addProductSuccess(this);
   }
@@ -1787,6 +1980,11 @@ class _$AddProductSuccessImpl<T> implements AddProductSuccess<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return addProductSuccess?.call(this);
   }
@@ -1821,6 +2019,11 @@ class _$AddProductSuccessImpl<T> implements AddProductSuccess<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (addProductSuccess != null) {
@@ -1929,6 +2132,11 @@ class _$AddProductErrorImpl<T> implements AddProductError<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return addProductError(error);
   }
@@ -1961,6 +2169,10 @@ class _$AddProductErrorImpl<T> implements AddProductError<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return addProductError?.call(error);
   }
@@ -1993,6 +2205,10 @@ class _$AddProductErrorImpl<T> implements AddProductError<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (addProductError != null) {
@@ -2037,6 +2253,12 @@ class _$AddProductErrorImpl<T> implements AddProductError<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return addProductError(this);
   }
@@ -2071,6 +2293,11 @@ class _$AddProductErrorImpl<T> implements AddProductError<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return addProductError?.call(this);
   }
@@ -2105,6 +2332,11 @@ class _$AddProductErrorImpl<T> implements AddProductError<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (addProductError != null) {
@@ -2189,6 +2421,11 @@ class _$AddCoverPhotoProductImpl<T> implements AddCoverPhotoProduct<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return addCoverPhotoProduct();
   }
@@ -2221,6 +2458,10 @@ class _$AddCoverPhotoProductImpl<T> implements AddCoverPhotoProduct<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return addCoverPhotoProduct?.call();
   }
@@ -2253,6 +2494,10 @@ class _$AddCoverPhotoProductImpl<T> implements AddCoverPhotoProduct<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (addCoverPhotoProduct != null) {
@@ -2297,6 +2542,12 @@ class _$AddCoverPhotoProductImpl<T> implements AddCoverPhotoProduct<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return addCoverPhotoProduct(this);
   }
@@ -2331,6 +2582,11 @@ class _$AddCoverPhotoProductImpl<T> implements AddCoverPhotoProduct<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return addCoverPhotoProduct?.call(this);
   }
@@ -2365,6 +2621,11 @@ class _$AddCoverPhotoProductImpl<T> implements AddCoverPhotoProduct<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (addCoverPhotoProduct != null) {
@@ -2442,6 +2703,11 @@ class _$AddProductImagesImpl<T> implements AddProductImages<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return addProductImages();
   }
@@ -2474,6 +2740,10 @@ class _$AddProductImagesImpl<T> implements AddProductImages<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return addProductImages?.call();
   }
@@ -2506,6 +2776,10 @@ class _$AddProductImagesImpl<T> implements AddProductImages<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (addProductImages != null) {
@@ -2550,6 +2824,12 @@ class _$AddProductImagesImpl<T> implements AddProductImages<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return addProductImages(this);
   }
@@ -2584,6 +2864,11 @@ class _$AddProductImagesImpl<T> implements AddProductImages<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return addProductImages?.call(this);
   }
@@ -2618,6 +2903,11 @@ class _$AddProductImagesImpl<T> implements AddProductImages<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (addProductImages != null) {
@@ -2695,6 +2985,11 @@ class _$DeleteProductImagesImpl<T> implements DeleteProductImages<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return deleteProductImages();
   }
@@ -2727,6 +3022,10 @@ class _$DeleteProductImagesImpl<T> implements DeleteProductImages<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return deleteProductImages?.call();
   }
@@ -2759,6 +3058,10 @@ class _$DeleteProductImagesImpl<T> implements DeleteProductImages<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (deleteProductImages != null) {
@@ -2803,6 +3106,12 @@ class _$DeleteProductImagesImpl<T> implements DeleteProductImages<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return deleteProductImages(this);
   }
@@ -2837,6 +3146,11 @@ class _$DeleteProductImagesImpl<T> implements DeleteProductImages<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return deleteProductImages?.call(this);
   }
@@ -2871,6 +3185,11 @@ class _$DeleteProductImagesImpl<T> implements DeleteProductImages<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (deleteProductImages != null) {
@@ -2951,6 +3270,11 @@ class _$GetProductDetailsLoadingImpl<T> implements GetProductDetailsLoading<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getProductDetailsLoading();
   }
@@ -2983,6 +3307,10 @@ class _$GetProductDetailsLoadingImpl<T> implements GetProductDetailsLoading<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getProductDetailsLoading?.call();
   }
@@ -3015,6 +3343,10 @@ class _$GetProductDetailsLoadingImpl<T> implements GetProductDetailsLoading<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getProductDetailsLoading != null) {
@@ -3059,6 +3391,12 @@ class _$GetProductDetailsLoadingImpl<T> implements GetProductDetailsLoading<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getProductDetailsLoading(this);
   }
@@ -3093,6 +3431,11 @@ class _$GetProductDetailsLoadingImpl<T> implements GetProductDetailsLoading<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getProductDetailsLoading?.call(this);
   }
@@ -3127,6 +3470,11 @@ class _$GetProductDetailsLoadingImpl<T> implements GetProductDetailsLoading<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getProductDetailsLoading != null) {
@@ -3234,6 +3582,11 @@ class _$GetProductDetailsSuccessImpl<T> implements GetProductDetailsSuccess<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getProductDetailsSuccess(data);
   }
@@ -3266,6 +3619,10 @@ class _$GetProductDetailsSuccessImpl<T> implements GetProductDetailsSuccess<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getProductDetailsSuccess?.call(data);
   }
@@ -3298,6 +3655,10 @@ class _$GetProductDetailsSuccessImpl<T> implements GetProductDetailsSuccess<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getProductDetailsSuccess != null) {
@@ -3342,6 +3703,12 @@ class _$GetProductDetailsSuccessImpl<T> implements GetProductDetailsSuccess<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getProductDetailsSuccess(this);
   }
@@ -3376,6 +3743,11 @@ class _$GetProductDetailsSuccessImpl<T> implements GetProductDetailsSuccess<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getProductDetailsSuccess?.call(this);
   }
@@ -3410,6 +3782,11 @@ class _$GetProductDetailsSuccessImpl<T> implements GetProductDetailsSuccess<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getProductDetailsSuccess != null) {
@@ -3522,6 +3899,11 @@ class _$GetProductDetailsErrorImpl<T> implements GetProductDetailsError<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getProductDetailsError(error);
   }
@@ -3554,6 +3936,10 @@ class _$GetProductDetailsErrorImpl<T> implements GetProductDetailsError<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getProductDetailsError?.call(error);
   }
@@ -3586,6 +3972,10 @@ class _$GetProductDetailsErrorImpl<T> implements GetProductDetailsError<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getProductDetailsError != null) {
@@ -3630,6 +4020,12 @@ class _$GetProductDetailsErrorImpl<T> implements GetProductDetailsError<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getProductDetailsError(this);
   }
@@ -3664,6 +4060,11 @@ class _$GetProductDetailsErrorImpl<T> implements GetProductDetailsError<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getProductDetailsError?.call(this);
   }
@@ -3698,6 +4099,11 @@ class _$GetProductDetailsErrorImpl<T> implements GetProductDetailsError<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getProductDetailsError != null) {
@@ -3782,6 +4188,11 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return deleteProductLoading();
   }
@@ -3814,6 +4225,10 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return deleteProductLoading?.call();
   }
@@ -3846,6 +4261,10 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (deleteProductLoading != null) {
@@ -3890,6 +4309,12 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return deleteProductLoading(this);
   }
@@ -3924,6 +4349,11 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return deleteProductLoading?.call(this);
   }
@@ -3958,6 +4388,11 @@ class _$DeleteProductLoadingImpl<T> implements DeleteProductLoading<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (deleteProductLoading != null) {
@@ -4063,6 +4498,11 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return deleteProductSuccess(data);
   }
@@ -4095,6 +4535,10 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return deleteProductSuccess?.call(data);
   }
@@ -4127,6 +4571,10 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (deleteProductSuccess != null) {
@@ -4171,6 +4619,12 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return deleteProductSuccess(this);
   }
@@ -4205,6 +4659,11 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return deleteProductSuccess?.call(this);
   }
@@ -4239,6 +4698,11 @@ class _$DeleteProductSuccessImpl<T> implements DeleteProductSuccess<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (deleteProductSuccess != null) {
@@ -4348,6 +4812,11 @@ class _$DeleteProductErrorImpl<T> implements DeleteProductError<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return deleteProductError(error);
   }
@@ -4380,6 +4849,10 @@ class _$DeleteProductErrorImpl<T> implements DeleteProductError<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return deleteProductError?.call(error);
   }
@@ -4412,6 +4885,10 @@ class _$DeleteProductErrorImpl<T> implements DeleteProductError<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (deleteProductError != null) {
@@ -4456,6 +4933,12 @@ class _$DeleteProductErrorImpl<T> implements DeleteProductError<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return deleteProductError(this);
   }
@@ -4490,6 +4973,11 @@ class _$DeleteProductErrorImpl<T> implements DeleteProductError<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return deleteProductError?.call(this);
   }
@@ -4524,6 +5012,11 @@ class _$DeleteProductErrorImpl<T> implements DeleteProductError<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (deleteProductError != null) {
@@ -4607,6 +5100,11 @@ class _$GetStylesLoadingImpl<T> implements GetStylesLoading<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getStylesLoading();
   }
@@ -4639,6 +5137,10 @@ class _$GetStylesLoadingImpl<T> implements GetStylesLoading<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getStylesLoading?.call();
   }
@@ -4671,6 +5173,10 @@ class _$GetStylesLoadingImpl<T> implements GetStylesLoading<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getStylesLoading != null) {
@@ -4715,6 +5221,12 @@ class _$GetStylesLoadingImpl<T> implements GetStylesLoading<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getStylesLoading(this);
   }
@@ -4749,6 +5261,11 @@ class _$GetStylesLoadingImpl<T> implements GetStylesLoading<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getStylesLoading?.call(this);
   }
@@ -4783,6 +5300,11 @@ class _$GetStylesLoadingImpl<T> implements GetStylesLoading<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getStylesLoading != null) {
@@ -4887,6 +5409,11 @@ class _$GetStylesSuccessImpl<T> implements GetStylesSuccess<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getStylesSuccess(data);
   }
@@ -4919,6 +5446,10 @@ class _$GetStylesSuccessImpl<T> implements GetStylesSuccess<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getStylesSuccess?.call(data);
   }
@@ -4951,6 +5482,10 @@ class _$GetStylesSuccessImpl<T> implements GetStylesSuccess<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getStylesSuccess != null) {
@@ -4995,6 +5530,12 @@ class _$GetStylesSuccessImpl<T> implements GetStylesSuccess<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getStylesSuccess(this);
   }
@@ -5029,6 +5570,11 @@ class _$GetStylesSuccessImpl<T> implements GetStylesSuccess<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getStylesSuccess?.call(this);
   }
@@ -5063,6 +5609,11 @@ class _$GetStylesSuccessImpl<T> implements GetStylesSuccess<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getStylesSuccess != null) {
@@ -5171,6 +5722,11 @@ class _$GetStylesErrorImpl<T> implements GetStylesError<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getStylesError(error);
   }
@@ -5203,6 +5759,10 @@ class _$GetStylesErrorImpl<T> implements GetStylesError<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getStylesError?.call(error);
   }
@@ -5235,6 +5795,10 @@ class _$GetStylesErrorImpl<T> implements GetStylesError<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getStylesError != null) {
@@ -5279,6 +5843,12 @@ class _$GetStylesErrorImpl<T> implements GetStylesError<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getStylesError(this);
   }
@@ -5313,6 +5883,11 @@ class _$GetStylesErrorImpl<T> implements GetStylesError<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getStylesError?.call(this);
   }
@@ -5347,6 +5922,11 @@ class _$GetStylesErrorImpl<T> implements GetStylesError<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getStylesError != null) {
@@ -5431,6 +6011,11 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getCategoriesLoading();
   }
@@ -5463,6 +6048,10 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getCategoriesLoading?.call();
   }
@@ -5495,6 +6084,10 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getCategoriesLoading != null) {
@@ -5539,6 +6132,12 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getCategoriesLoading(this);
   }
@@ -5573,6 +6172,11 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getCategoriesLoading?.call(this);
   }
@@ -5607,6 +6211,11 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getCategoriesLoading != null) {
@@ -5712,6 +6321,11 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getCategoriesSuccess(data);
   }
@@ -5744,6 +6358,10 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getCategoriesSuccess?.call(data);
   }
@@ -5776,6 +6394,10 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getCategoriesSuccess != null) {
@@ -5820,6 +6442,12 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getCategoriesSuccess(this);
   }
@@ -5854,6 +6482,11 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getCategoriesSuccess?.call(this);
   }
@@ -5888,6 +6521,11 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getCategoriesSuccess != null) {
@@ -5997,6 +6635,11 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getCategoriesError(error);
   }
@@ -6029,6 +6672,10 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getCategoriesError?.call(error);
   }
@@ -6061,6 +6708,10 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getCategoriesError != null) {
@@ -6105,6 +6756,12 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getCategoriesError(this);
   }
@@ -6139,6 +6796,11 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getCategoriesError?.call(this);
   }
@@ -6173,6 +6835,11 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getCategoriesError != null) {
@@ -6256,6 +6923,11 @@ class _$GetBrandsLoadingImpl<T> implements GetBrandsLoading<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getSubjectsLoading();
   }
@@ -6288,6 +6960,10 @@ class _$GetBrandsLoadingImpl<T> implements GetBrandsLoading<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getSubjectsLoading?.call();
   }
@@ -6320,6 +6996,10 @@ class _$GetBrandsLoadingImpl<T> implements GetBrandsLoading<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getSubjectsLoading != null) {
@@ -6364,6 +7044,12 @@ class _$GetBrandsLoadingImpl<T> implements GetBrandsLoading<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getSubjectsLoading(this);
   }
@@ -6398,6 +7084,11 @@ class _$GetBrandsLoadingImpl<T> implements GetBrandsLoading<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getSubjectsLoading?.call(this);
   }
@@ -6432,6 +7123,11 @@ class _$GetBrandsLoadingImpl<T> implements GetBrandsLoading<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getSubjectsLoading != null) {
@@ -6536,6 +7232,11 @@ class _$GetBrandsSuccessImpl<T> implements GetBrandsSuccess<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getSubjectsSuccess(data);
   }
@@ -6568,6 +7269,10 @@ class _$GetBrandsSuccessImpl<T> implements GetBrandsSuccess<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getSubjectsSuccess?.call(data);
   }
@@ -6600,6 +7305,10 @@ class _$GetBrandsSuccessImpl<T> implements GetBrandsSuccess<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getSubjectsSuccess != null) {
@@ -6644,6 +7353,12 @@ class _$GetBrandsSuccessImpl<T> implements GetBrandsSuccess<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getSubjectsSuccess(this);
   }
@@ -6678,6 +7393,11 @@ class _$GetBrandsSuccessImpl<T> implements GetBrandsSuccess<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getSubjectsSuccess?.call(this);
   }
@@ -6712,6 +7432,11 @@ class _$GetBrandsSuccessImpl<T> implements GetBrandsSuccess<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getSubjectsSuccess != null) {
@@ -6820,6 +7545,11 @@ class _$GetBrandsErrorImpl<T> implements GetBrandsError<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
   }) {
     return getSubjectsError(error);
   }
@@ -6852,6 +7582,10 @@ class _$GetBrandsErrorImpl<T> implements GetBrandsError<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
   }) {
     return getSubjectsError?.call(error);
   }
@@ -6884,6 +7618,10 @@ class _$GetBrandsErrorImpl<T> implements GetBrandsError<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getSubjectsError != null) {
@@ -6928,6 +7666,12 @@ class _$GetBrandsErrorImpl<T> implements GetBrandsError<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
   }) {
     return getSubjectsError(this);
   }
@@ -6962,6 +7706,11 @@ class _$GetBrandsErrorImpl<T> implements GetBrandsError<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
   }) {
     return getSubjectsError?.call(this);
   }
@@ -6996,6 +7745,11 @@ class _$GetBrandsErrorImpl<T> implements GetBrandsError<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
     required TResult orElse(),
   }) {
     if (getSubjectsError != null) {
@@ -7013,4 +7767,927 @@ abstract class GetBrandsError<T> implements ProductsState<T> {
   @JsonKey(ignore: true)
   _$$GetBrandsErrorImplCopyWith<T, _$GetBrandsErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddProductToEventLoadingImplCopyWith<T, $Res> {
+  factory _$$AddProductToEventLoadingImplCopyWith(
+          _$AddProductToEventLoadingImpl<T> value,
+          $Res Function(_$AddProductToEventLoadingImpl<T>) then) =
+      __$$AddProductToEventLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AddProductToEventLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res,
+        _$AddProductToEventLoadingImpl<T>>
+    implements _$$AddProductToEventLoadingImplCopyWith<T, $Res> {
+  __$$AddProductToEventLoadingImplCopyWithImpl(
+      _$AddProductToEventLoadingImpl<T> _value,
+      $Res Function(_$AddProductToEventLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AddProductToEventLoadingImpl<T> implements AddProductToEventLoading<T> {
+  const _$AddProductToEventLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ProductsState<$T>.addProductToEventLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddProductToEventLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(T data) getProductSuccess,
+    required TResult Function(String error) getProductError,
+    required TResult Function() addProductLoading,
+    required TResult Function(T data) addProductSuccess,
+    required TResult Function(String error) addProductError,
+    required TResult Function() addCoverPhotoProduct,
+    required TResult Function() addProductImages,
+    required TResult Function() deleteProductImages,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
+    required TResult Function() getStylesLoading,
+    required TResult Function(T data) getStylesSuccess,
+    required TResult Function(String error) getStylesError,
+    required TResult Function() getCategoriesLoading,
+    required TResult Function(T data) getCategoriesSuccess,
+    required TResult Function(String error) getCategoriesError,
+    required TResult Function() getSubjectsLoading,
+    required TResult Function(T data) getSubjectsSuccess,
+    required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
+  }) {
+    return addProductToEventLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(T data)? getProductSuccess,
+    TResult? Function(String error)? getProductError,
+    TResult? Function()? addProductLoading,
+    TResult? Function(T data)? addProductSuccess,
+    TResult? Function(String error)? addProductError,
+    TResult? Function()? addCoverPhotoProduct,
+    TResult? Function()? addProductImages,
+    TResult? Function()? deleteProductImages,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
+    TResult? Function()? getStylesLoading,
+    TResult? Function(T data)? getStylesSuccess,
+    TResult? Function(String error)? getStylesError,
+    TResult? Function()? getCategoriesLoading,
+    TResult? Function(T data)? getCategoriesSuccess,
+    TResult? Function(String error)? getCategoriesError,
+    TResult? Function()? getSubjectsLoading,
+    TResult? Function(T data)? getSubjectsSuccess,
+    TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
+  }) {
+    return addProductToEventLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(T data)? getProductSuccess,
+    TResult Function(String error)? getProductError,
+    TResult Function()? addProductLoading,
+    TResult Function(T data)? addProductSuccess,
+    TResult Function(String error)? addProductError,
+    TResult Function()? addCoverPhotoProduct,
+    TResult Function()? addProductImages,
+    TResult Function()? deleteProductImages,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
+    TResult Function()? getStylesLoading,
+    TResult Function(T data)? getStylesSuccess,
+    TResult Function(String error)? getStylesError,
+    TResult Function()? getCategoriesLoading,
+    TResult Function(T data)? getCategoriesSuccess,
+    TResult Function(String error)? getCategoriesError,
+    TResult Function()? getSubjectsLoading,
+    TResult Function(T data)? getSubjectsSuccess,
+    TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
+    required TResult orElse(),
+  }) {
+    if (addProductToEventLoading != null) {
+      return addProductToEventLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProductLoading<T> value) getProductLoading,
+    required TResult Function(GetProductSuccess<T> value) getProductSuccess,
+    required TResult Function(GetProductError<T> value) getProductError,
+    required TResult Function(AddProductLoading<T> value) addProductLoading,
+    required TResult Function(AddProductSuccess<T> value) addProductSuccess,
+    required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(AddCoverPhotoProduct<T> value)
+        addCoverPhotoProduct,
+    required TResult Function(AddProductImages<T> value) addProductImages,
+    required TResult Function(DeleteProductImages<T> value) deleteProductImages,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
+    required TResult Function(GetStylesLoading<T> value) getStylesLoading,
+    required TResult Function(GetStylesSuccess<T> value) getStylesSuccess,
+    required TResult Function(GetStylesError<T> value) getStylesError,
+    required TResult Function(GetCategoriesLoading<T> value)
+        getCategoriesLoading,
+    required TResult Function(GetCategoriesSuccess<T> value)
+        getCategoriesSuccess,
+    required TResult Function(GetCategoriesError<T> value) getCategoriesError,
+    required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
+    required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
+    required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
+  }) {
+    return addProductToEventLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProductLoading<T> value)? getProductLoading,
+    TResult? Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult? Function(GetProductError<T> value)? getProductError,
+    TResult? Function(AddProductLoading<T> value)? addProductLoading,
+    TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(AddCoverPhotoProduct<T> value)? addCoverPhotoProduct,
+    TResult? Function(AddProductImages<T> value)? addProductImages,
+    TResult? Function(DeleteProductImages<T> value)? deleteProductImages,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
+    TResult? Function(GetStylesLoading<T> value)? getStylesLoading,
+    TResult? Function(GetStylesSuccess<T> value)? getStylesSuccess,
+    TResult? Function(GetStylesError<T> value)? getStylesError,
+    TResult? Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult? Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult? Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
+    TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
+    TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
+  }) {
+    return addProductToEventLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProductLoading<T> value)? getProductLoading,
+    TResult Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult Function(GetProductError<T> value)? getProductError,
+    TResult Function(AddProductLoading<T> value)? addProductLoading,
+    TResult Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(AddCoverPhotoProduct<T> value)? addCoverPhotoProduct,
+    TResult Function(AddProductImages<T> value)? addProductImages,
+    TResult Function(DeleteProductImages<T> value)? deleteProductImages,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
+    TResult Function(GetStylesLoading<T> value)? getStylesLoading,
+    TResult Function(GetStylesSuccess<T> value)? getStylesSuccess,
+    TResult Function(GetStylesError<T> value)? getStylesError,
+    TResult Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
+    TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
+    TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
+    required TResult orElse(),
+  }) {
+    if (addProductToEventLoading != null) {
+      return addProductToEventLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddProductToEventLoading<T> implements ProductsState<T> {
+  const factory AddProductToEventLoading() = _$AddProductToEventLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$AddProductToEventSuccessImplCopyWith<T, $Res> {
+  factory _$$AddProductToEventSuccessImplCopyWith(
+          _$AddProductToEventSuccessImpl<T> value,
+          $Res Function(_$AddProductToEventSuccessImpl<T>) then) =
+      __$$AddProductToEventSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({AddProductToEventResponse addProductToEventRequestBody});
+}
+
+/// @nodoc
+class __$$AddProductToEventSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res,
+        _$AddProductToEventSuccessImpl<T>>
+    implements _$$AddProductToEventSuccessImplCopyWith<T, $Res> {
+  __$$AddProductToEventSuccessImplCopyWithImpl(
+      _$AddProductToEventSuccessImpl<T> _value,
+      $Res Function(_$AddProductToEventSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? addProductToEventRequestBody = null,
+  }) {
+    return _then(_$AddProductToEventSuccessImpl<T>(
+      null == addProductToEventRequestBody
+          ? _value.addProductToEventRequestBody
+          : addProductToEventRequestBody // ignore: cast_nullable_to_non_nullable
+              as AddProductToEventResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddProductToEventSuccessImpl<T> implements AddProductToEventSuccess<T> {
+  const _$AddProductToEventSuccessImpl(this.addProductToEventRequestBody);
+
+  @override
+  final AddProductToEventResponse addProductToEventRequestBody;
+
+  @override
+  String toString() {
+    return 'ProductsState<$T>.addProductToEventSuccess(addProductToEventRequestBody: $addProductToEventRequestBody)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddProductToEventSuccessImpl<T> &&
+            (identical(other.addProductToEventRequestBody,
+                    addProductToEventRequestBody) ||
+                other.addProductToEventRequestBody ==
+                    addProductToEventRequestBody));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, addProductToEventRequestBody);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddProductToEventSuccessImplCopyWith<T, _$AddProductToEventSuccessImpl<T>>
+      get copyWith => __$$AddProductToEventSuccessImplCopyWithImpl<T,
+          _$AddProductToEventSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(T data) getProductSuccess,
+    required TResult Function(String error) getProductError,
+    required TResult Function() addProductLoading,
+    required TResult Function(T data) addProductSuccess,
+    required TResult Function(String error) addProductError,
+    required TResult Function() addCoverPhotoProduct,
+    required TResult Function() addProductImages,
+    required TResult Function() deleteProductImages,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
+    required TResult Function() getStylesLoading,
+    required TResult Function(T data) getStylesSuccess,
+    required TResult Function(String error) getStylesError,
+    required TResult Function() getCategoriesLoading,
+    required TResult Function(T data) getCategoriesSuccess,
+    required TResult Function(String error) getCategoriesError,
+    required TResult Function() getSubjectsLoading,
+    required TResult Function(T data) getSubjectsSuccess,
+    required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
+  }) {
+    return addProductToEventSuccess(addProductToEventRequestBody);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(T data)? getProductSuccess,
+    TResult? Function(String error)? getProductError,
+    TResult? Function()? addProductLoading,
+    TResult? Function(T data)? addProductSuccess,
+    TResult? Function(String error)? addProductError,
+    TResult? Function()? addCoverPhotoProduct,
+    TResult? Function()? addProductImages,
+    TResult? Function()? deleteProductImages,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
+    TResult? Function()? getStylesLoading,
+    TResult? Function(T data)? getStylesSuccess,
+    TResult? Function(String error)? getStylesError,
+    TResult? Function()? getCategoriesLoading,
+    TResult? Function(T data)? getCategoriesSuccess,
+    TResult? Function(String error)? getCategoriesError,
+    TResult? Function()? getSubjectsLoading,
+    TResult? Function(T data)? getSubjectsSuccess,
+    TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
+  }) {
+    return addProductToEventSuccess?.call(addProductToEventRequestBody);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(T data)? getProductSuccess,
+    TResult Function(String error)? getProductError,
+    TResult Function()? addProductLoading,
+    TResult Function(T data)? addProductSuccess,
+    TResult Function(String error)? addProductError,
+    TResult Function()? addCoverPhotoProduct,
+    TResult Function()? addProductImages,
+    TResult Function()? deleteProductImages,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
+    TResult Function()? getStylesLoading,
+    TResult Function(T data)? getStylesSuccess,
+    TResult Function(String error)? getStylesError,
+    TResult Function()? getCategoriesLoading,
+    TResult Function(T data)? getCategoriesSuccess,
+    TResult Function(String error)? getCategoriesError,
+    TResult Function()? getSubjectsLoading,
+    TResult Function(T data)? getSubjectsSuccess,
+    TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
+    required TResult orElse(),
+  }) {
+    if (addProductToEventSuccess != null) {
+      return addProductToEventSuccess(addProductToEventRequestBody);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProductLoading<T> value) getProductLoading,
+    required TResult Function(GetProductSuccess<T> value) getProductSuccess,
+    required TResult Function(GetProductError<T> value) getProductError,
+    required TResult Function(AddProductLoading<T> value) addProductLoading,
+    required TResult Function(AddProductSuccess<T> value) addProductSuccess,
+    required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(AddCoverPhotoProduct<T> value)
+        addCoverPhotoProduct,
+    required TResult Function(AddProductImages<T> value) addProductImages,
+    required TResult Function(DeleteProductImages<T> value) deleteProductImages,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
+    required TResult Function(GetStylesLoading<T> value) getStylesLoading,
+    required TResult Function(GetStylesSuccess<T> value) getStylesSuccess,
+    required TResult Function(GetStylesError<T> value) getStylesError,
+    required TResult Function(GetCategoriesLoading<T> value)
+        getCategoriesLoading,
+    required TResult Function(GetCategoriesSuccess<T> value)
+        getCategoriesSuccess,
+    required TResult Function(GetCategoriesError<T> value) getCategoriesError,
+    required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
+    required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
+    required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
+  }) {
+    return addProductToEventSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProductLoading<T> value)? getProductLoading,
+    TResult? Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult? Function(GetProductError<T> value)? getProductError,
+    TResult? Function(AddProductLoading<T> value)? addProductLoading,
+    TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(AddCoverPhotoProduct<T> value)? addCoverPhotoProduct,
+    TResult? Function(AddProductImages<T> value)? addProductImages,
+    TResult? Function(DeleteProductImages<T> value)? deleteProductImages,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
+    TResult? Function(GetStylesLoading<T> value)? getStylesLoading,
+    TResult? Function(GetStylesSuccess<T> value)? getStylesSuccess,
+    TResult? Function(GetStylesError<T> value)? getStylesError,
+    TResult? Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult? Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult? Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
+    TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
+    TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
+  }) {
+    return addProductToEventSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProductLoading<T> value)? getProductLoading,
+    TResult Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult Function(GetProductError<T> value)? getProductError,
+    TResult Function(AddProductLoading<T> value)? addProductLoading,
+    TResult Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(AddCoverPhotoProduct<T> value)? addCoverPhotoProduct,
+    TResult Function(AddProductImages<T> value)? addProductImages,
+    TResult Function(DeleteProductImages<T> value)? deleteProductImages,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
+    TResult Function(GetStylesLoading<T> value)? getStylesLoading,
+    TResult Function(GetStylesSuccess<T> value)? getStylesSuccess,
+    TResult Function(GetStylesError<T> value)? getStylesError,
+    TResult Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
+    TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
+    TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
+    required TResult orElse(),
+  }) {
+    if (addProductToEventSuccess != null) {
+      return addProductToEventSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddProductToEventSuccess<T> implements ProductsState<T> {
+  const factory AddProductToEventSuccess(
+          final AddProductToEventResponse addProductToEventRequestBody) =
+      _$AddProductToEventSuccessImpl<T>;
+
+  AddProductToEventResponse get addProductToEventRequestBody;
+  @JsonKey(ignore: true)
+  _$$AddProductToEventSuccessImplCopyWith<T, _$AddProductToEventSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddProductToEventErrorImplCopyWith<T, $Res> {
+  factory _$$AddProductToEventErrorImplCopyWith(
+          _$AddProductToEventErrorImpl<T> value,
+          $Res Function(_$AddProductToEventErrorImpl<T>) then) =
+      __$$AddProductToEventErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$AddProductToEventErrorImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res,
+        _$AddProductToEventErrorImpl<T>>
+    implements _$$AddProductToEventErrorImplCopyWith<T, $Res> {
+  __$$AddProductToEventErrorImplCopyWithImpl(
+      _$AddProductToEventErrorImpl<T> _value,
+      $Res Function(_$AddProductToEventErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$AddProductToEventErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddProductToEventErrorImpl<T> implements AddProductToEventError<T> {
+  const _$AddProductToEventErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'ProductsState<$T>.addProductToEventError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddProductToEventErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddProductToEventErrorImplCopyWith<T, _$AddProductToEventErrorImpl<T>>
+      get copyWith => __$$AddProductToEventErrorImplCopyWithImpl<T,
+          _$AddProductToEventErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(T data) getProductSuccess,
+    required TResult Function(String error) getProductError,
+    required TResult Function() addProductLoading,
+    required TResult Function(T data) addProductSuccess,
+    required TResult Function(String error) addProductError,
+    required TResult Function() addCoverPhotoProduct,
+    required TResult Function() addProductImages,
+    required TResult Function() deleteProductImages,
+    required TResult Function() getProductDetailsLoading,
+    required TResult Function(T data) getProductDetailsSuccess,
+    required TResult Function(String error) getProductDetailsError,
+    required TResult Function() deleteProductLoading,
+    required TResult Function(T data) deleteProductSuccess,
+    required TResult Function(String error) deleteProductError,
+    required TResult Function() getStylesLoading,
+    required TResult Function(T data) getStylesSuccess,
+    required TResult Function(String error) getStylesError,
+    required TResult Function() getCategoriesLoading,
+    required TResult Function(T data) getCategoriesSuccess,
+    required TResult Function(String error) getCategoriesError,
+    required TResult Function() getSubjectsLoading,
+    required TResult Function(T data) getSubjectsSuccess,
+    required TResult Function(String error) getSubjectsError,
+    required TResult Function() addProductToEventLoading,
+    required TResult Function(
+            AddProductToEventResponse addProductToEventRequestBody)
+        addProductToEventSuccess,
+    required TResult Function(String error) addProductToEventError,
+  }) {
+    return addProductToEventError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(T data)? getProductSuccess,
+    TResult? Function(String error)? getProductError,
+    TResult? Function()? addProductLoading,
+    TResult? Function(T data)? addProductSuccess,
+    TResult? Function(String error)? addProductError,
+    TResult? Function()? addCoverPhotoProduct,
+    TResult? Function()? addProductImages,
+    TResult? Function()? deleteProductImages,
+    TResult? Function()? getProductDetailsLoading,
+    TResult? Function(T data)? getProductDetailsSuccess,
+    TResult? Function(String error)? getProductDetailsError,
+    TResult? Function()? deleteProductLoading,
+    TResult? Function(T data)? deleteProductSuccess,
+    TResult? Function(String error)? deleteProductError,
+    TResult? Function()? getStylesLoading,
+    TResult? Function(T data)? getStylesSuccess,
+    TResult? Function(String error)? getStylesError,
+    TResult? Function()? getCategoriesLoading,
+    TResult? Function(T data)? getCategoriesSuccess,
+    TResult? Function(String error)? getCategoriesError,
+    TResult? Function()? getSubjectsLoading,
+    TResult? Function(T data)? getSubjectsSuccess,
+    TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? addProductToEventLoading,
+    TResult? Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult? Function(String error)? addProductToEventError,
+  }) {
+    return addProductToEventError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(T data)? getProductSuccess,
+    TResult Function(String error)? getProductError,
+    TResult Function()? addProductLoading,
+    TResult Function(T data)? addProductSuccess,
+    TResult Function(String error)? addProductError,
+    TResult Function()? addCoverPhotoProduct,
+    TResult Function()? addProductImages,
+    TResult Function()? deleteProductImages,
+    TResult Function()? getProductDetailsLoading,
+    TResult Function(T data)? getProductDetailsSuccess,
+    TResult Function(String error)? getProductDetailsError,
+    TResult Function()? deleteProductLoading,
+    TResult Function(T data)? deleteProductSuccess,
+    TResult Function(String error)? deleteProductError,
+    TResult Function()? getStylesLoading,
+    TResult Function(T data)? getStylesSuccess,
+    TResult Function(String error)? getStylesError,
+    TResult Function()? getCategoriesLoading,
+    TResult Function(T data)? getCategoriesSuccess,
+    TResult Function(String error)? getCategoriesError,
+    TResult Function()? getSubjectsLoading,
+    TResult Function(T data)? getSubjectsSuccess,
+    TResult Function(String error)? getSubjectsError,
+    TResult Function()? addProductToEventLoading,
+    TResult Function(AddProductToEventResponse addProductToEventRequestBody)?
+        addProductToEventSuccess,
+    TResult Function(String error)? addProductToEventError,
+    required TResult orElse(),
+  }) {
+    if (addProductToEventError != null) {
+      return addProductToEventError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetProductLoading<T> value) getProductLoading,
+    required TResult Function(GetProductSuccess<T> value) getProductSuccess,
+    required TResult Function(GetProductError<T> value) getProductError,
+    required TResult Function(AddProductLoading<T> value) addProductLoading,
+    required TResult Function(AddProductSuccess<T> value) addProductSuccess,
+    required TResult Function(AddProductError<T> value) addProductError,
+    required TResult Function(AddCoverPhotoProduct<T> value)
+        addCoverPhotoProduct,
+    required TResult Function(AddProductImages<T> value) addProductImages,
+    required TResult Function(DeleteProductImages<T> value) deleteProductImages,
+    required TResult Function(GetProductDetailsLoading<T> value)
+        getProductDetailsLoading,
+    required TResult Function(GetProductDetailsSuccess<T> value)
+        getProductDetailsSuccess,
+    required TResult Function(GetProductDetailsError<T> value)
+        getProductDetailsError,
+    required TResult Function(DeleteProductLoading<T> value)
+        deleteProductLoading,
+    required TResult Function(DeleteProductSuccess<T> value)
+        deleteProductSuccess,
+    required TResult Function(DeleteProductError<T> value) deleteProductError,
+    required TResult Function(GetStylesLoading<T> value) getStylesLoading,
+    required TResult Function(GetStylesSuccess<T> value) getStylesSuccess,
+    required TResult Function(GetStylesError<T> value) getStylesError,
+    required TResult Function(GetCategoriesLoading<T> value)
+        getCategoriesLoading,
+    required TResult Function(GetCategoriesSuccess<T> value)
+        getCategoriesSuccess,
+    required TResult Function(GetCategoriesError<T> value) getCategoriesError,
+    required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
+    required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
+    required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(AddProductToEventLoading<T> value)
+        addProductToEventLoading,
+    required TResult Function(AddProductToEventSuccess<T> value)
+        addProductToEventSuccess,
+    required TResult Function(AddProductToEventError<T> value)
+        addProductToEventError,
+  }) {
+    return addProductToEventError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetProductLoading<T> value)? getProductLoading,
+    TResult? Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult? Function(GetProductError<T> value)? getProductError,
+    TResult? Function(AddProductLoading<T> value)? addProductLoading,
+    TResult? Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult? Function(AddProductError<T> value)? addProductError,
+    TResult? Function(AddCoverPhotoProduct<T> value)? addCoverPhotoProduct,
+    TResult? Function(AddProductImages<T> value)? addProductImages,
+    TResult? Function(DeleteProductImages<T> value)? deleteProductImages,
+    TResult? Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult? Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult? Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult? Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult? Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult? Function(DeleteProductError<T> value)? deleteProductError,
+    TResult? Function(GetStylesLoading<T> value)? getStylesLoading,
+    TResult? Function(GetStylesSuccess<T> value)? getStylesSuccess,
+    TResult? Function(GetStylesError<T> value)? getStylesError,
+    TResult? Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult? Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult? Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
+    TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
+    TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult? Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult? Function(AddProductToEventError<T> value)? addProductToEventError,
+  }) {
+    return addProductToEventError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetProductLoading<T> value)? getProductLoading,
+    TResult Function(GetProductSuccess<T> value)? getProductSuccess,
+    TResult Function(GetProductError<T> value)? getProductError,
+    TResult Function(AddProductLoading<T> value)? addProductLoading,
+    TResult Function(AddProductSuccess<T> value)? addProductSuccess,
+    TResult Function(AddProductError<T> value)? addProductError,
+    TResult Function(AddCoverPhotoProduct<T> value)? addCoverPhotoProduct,
+    TResult Function(AddProductImages<T> value)? addProductImages,
+    TResult Function(DeleteProductImages<T> value)? deleteProductImages,
+    TResult Function(GetProductDetailsLoading<T> value)?
+        getProductDetailsLoading,
+    TResult Function(GetProductDetailsSuccess<T> value)?
+        getProductDetailsSuccess,
+    TResult Function(GetProductDetailsError<T> value)? getProductDetailsError,
+    TResult Function(DeleteProductLoading<T> value)? deleteProductLoading,
+    TResult Function(DeleteProductSuccess<T> value)? deleteProductSuccess,
+    TResult Function(DeleteProductError<T> value)? deleteProductError,
+    TResult Function(GetStylesLoading<T> value)? getStylesLoading,
+    TResult Function(GetStylesSuccess<T> value)? getStylesSuccess,
+    TResult Function(GetStylesError<T> value)? getStylesError,
+    TResult Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
+    TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
+    TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(AddProductToEventLoading<T> value)?
+        addProductToEventLoading,
+    TResult Function(AddProductToEventSuccess<T> value)?
+        addProductToEventSuccess,
+    TResult Function(AddProductToEventError<T> value)? addProductToEventError,
+    required TResult orElse(),
+  }) {
+    if (addProductToEventError != null) {
+      return addProductToEventError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddProductToEventError<T> implements ProductsState<T> {
+  const factory AddProductToEventError({required final String error}) =
+      _$AddProductToEventErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$AddProductToEventErrorImplCopyWith<T, _$AddProductToEventErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
