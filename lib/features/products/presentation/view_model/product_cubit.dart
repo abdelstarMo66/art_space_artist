@@ -5,6 +5,7 @@ import 'package:art_space_artist/core/constants/toast_color.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_response.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_response.dart';
+import 'package:art_space_artist/features/products/data/models/edit_product_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/get_category_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_styles_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_subject_response.dart';
@@ -19,9 +20,9 @@ import '../../data/models/get_product_details_response.dart';
 import '../../data/repo/repo.dart';
 
 class ProductsCubit extends Cubit<ProductsState> {
-  final ProductsRepo _getMyProductsRepo;
+  final ProductsRepo _productsRepo;
 
-  ProductsCubit(this._getMyProductsRepo) : super(const ProductsState.initial());
+  ProductsCubit(this._productsRepo) : super(const ProductsState.initial());
 
   TextEditingController nameController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
@@ -103,7 +104,7 @@ class ProductsCubit extends Cubit<ProductsState> {
       }
     }
 
-    final response = await _getMyProductsRepo.addProduct(
+    final response = await _productsRepo.addProduct(
       body: data,
     );
     response.when(
@@ -120,7 +121,7 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   void emitGetProductDetails({required String productId}) async {
     emit(const ProductsState.getProductDetailsLoading());
-    final response = await _getMyProductsRepo.getProductDetails(
+    final response = await _productsRepo.getProductDetails(
       productId: productId,
     );
     response.when(
@@ -136,7 +137,7 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   void emitDeleteProduct({required String productId}) async {
     emit(const ProductsState.deleteProductLoading());
-    final response = await _getMyProductsRepo.deleteProduct(
+    final response = await _productsRepo.deleteProduct(
       productId: productId,
     );
     response.when(
@@ -153,7 +154,7 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   void emitGetStyles() async {
     emit(const ProductsState.getStylesLoading());
-    final response = await _getMyProductsRepo.getStyles();
+    final response = await _productsRepo.getStyles();
     response.when(
       success: (data) {
         styles = data.stylesData;
@@ -170,7 +171,7 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   void emitGetSubjects() async {
     emit(const ProductsState.getSubjectsLoading());
-    final response = await _getMyProductsRepo.getSubject();
+    final response = await _productsRepo.getSubject();
     response.when(
       success: (data) {
         subjects = data.subjectData;
@@ -187,7 +188,7 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   void emitGetCategories() async {
     emit(const ProductsState.getCategoriesLoading());
-    final response = await _getMyProductsRepo.getCategory();
+    final response = await _productsRepo.getCategory();
     response.when(
       success: (data) {
         categories = data.categoryData;
@@ -241,13 +242,13 @@ class ProductsCubit extends Cubit<ProductsState> {
       }
     }
 
-    final response = await _getMyProductsRepo.addProduct(
+    final response = await _productsRepo.addProduct(
       body: data,
     );
 
     response.when(
       success: (AddProductResponse addProductResponse) async {
-        final eventResponse = await _getMyProductsRepo.addProductToEvent(
+        final eventResponse = await _productsRepo.addProductToEvent(
           eventId: eventId,
           addProductToEventRequestBody: AddProductToEventRequestBody(
               productId: addProductResponse.data.id),
@@ -280,5 +281,37 @@ class ProductsCubit extends Cubit<ProductsState> {
         state: ToastState.error,
       );
     }
+  }
+
+  void emitEditProduct({
+    required String id,
+    required String title,
+    required String description,
+    required String price,
+    required String height,
+    required String weight,
+    required String depth,
+}) async {
+    emit(const ProductsState.editProductLoading());
+    final response = await _productsRepo.editProduct(
+        productId: id,
+        editProductRequestBody: EditProductRequestBody(
+            title: title,
+            description: description,
+            price: price,
+            height: height,
+            weight: weight,
+            depth: depth
+        )
+    );
+    response.when(
+      success: (data) {
+        print(data.message);
+        emit(ProductsState.editProductSuccess(data));
+    },
+      failure: (error) {
+        emit(ProductsState.editProductError(error: error));
+      },
+    );
   }
 }

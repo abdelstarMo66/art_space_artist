@@ -4,6 +4,8 @@ import 'package:art_space_artist/features/products/data/models/add_product_respo
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_response.dart';
 import 'package:art_space_artist/features/products/data/models/delete_product_response.dart';
+import 'package:art_space_artist/features/products/data/models/edit_product_request_body.dart';
+import 'package:art_space_artist/features/products/data/models/edit_product_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_styles_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_subject_response.dart';
 import 'package:dio/dio.dart';
@@ -94,6 +96,22 @@ class ProductsRepo {
         token: 'Bearer $token',
         eventId: eventId,
         addProductToEventRequestBody: addProductToEventRequestBody,
+      );
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(error.toString());
+    }
+  }
+
+  Future<ApiResult<EditProductResponse>> editProduct ({
+    required String productId,
+    required EditProductRequestBody editProductRequestBody,
+}) async {
+    try {
+      final response = await _apiService.editProduct(
+        token: 'Bearer $token',
+        productId: productId,
+        editProductRequestBody: editProductRequestBody,
       );
       return ApiResult.success(response);
     } catch (error) {

@@ -40,4 +40,8 @@ class ProductsState<T> with _$ProductsState<T> {
   const factory ProductsState.addProductToEventLoading() = AddProductToEventLoading;
   const factory ProductsState.addProductToEventSuccess(AddProductToEventResponse addProductToEventRequestBody) = AddProductToEventSuccess;
   const factory ProductsState.addProductToEventError({required String error}) = AddProductToEventError;
+
+  const factory ProductsState.editProductLoading() = EditProductLoading;
+  const factory ProductsState.editProductSuccess(T data) = EditProductSuccess;
+  const factory ProductsState.editProductError({required String error}) = EditProductError;
 }

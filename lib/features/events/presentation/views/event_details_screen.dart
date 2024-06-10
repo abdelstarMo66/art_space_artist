@@ -23,9 +23,7 @@ class EventDetailsScreen extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: ColorManager.originalWhite.withOpacity(0.0),
             leading: IconButton(
-              onPressed: () => Navigator.of(
-                context,
-              ).pop(),
+              onPressed: () => Navigator.of(context).pop(),
               icon: SvgPicture.asset(
                 AssetsManager.icBackArrow,
                 height: 40.0,

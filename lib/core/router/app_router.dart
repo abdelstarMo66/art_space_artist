@@ -20,6 +20,8 @@ import 'package:art_space_artist/features/profile/presentation/view_model/profil
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/auth/forgetPassword/presentation/views/create_new_password.dart';
+import '../../features/products/data/models/get_product_details_response.dart';
+import '../../features/products/presentation/views/edit_product_screen.dart';
 import '../../features/products/presentation/views/view_product_details.dart';
 import '../../features/profile/presentation/views/change_password/change_password.dart';
 import '../../features/profile/presentation/views/edit_profile/edit_profile_screen.dart';
@@ -119,6 +121,13 @@ class AppRouter {
               ..emitGetStyles()
               ..emitGetSubjects(),
             child: const CreateAuctionScreen(),
+          ),
+        );
+      case AppRouterNames.editProduct:
+        return SlideRight(
+          page: BlocProvider<ProductsCubit>.value(
+            value: getIt<ProductsCubit>(),
+            child:  EditProductScreen(productDetails: settings.arguments as ProductDetails,),
           ),
         );
       default:

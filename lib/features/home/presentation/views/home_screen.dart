@@ -56,9 +56,6 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                actions: [
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.search))
-                ],
               ),
               body: CustomScrollView(
                 slivers: [
@@ -72,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(S.of(context).yourEvents,
+                            Text('Your exhibitions',
                                 style: TextStyles.textStyle20
                                     .copyWith(fontWeight: FontWeight.bold)),
                             const SizedBox(
@@ -104,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                               height: 12.0,
                             ),
                             Text(
-                              S.of(context).yourProduct,
+                             'Your artworks',
                                 style: TextStyles.textStyle20
                                     .copyWith(fontWeight: FontWeight.bold),
                             ),

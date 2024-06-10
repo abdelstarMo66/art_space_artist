@@ -147,7 +147,7 @@ class _CreateProductScreenState extends State<CreateProductScreen> {
                                 padding: 12,
                                 textAlign: TextAlign.start,
                                 keyboardType: TextInputType.name,
-                                text: 'Add name',
+                                text: 'Add title',
                                 controller: cubit.nameController,
                                 validator: (value) {
                                   if (value == null || value.length == 3) {
@@ -156,7 +156,7 @@ class _CreateProductScreenState extends State<CreateProductScreen> {
                                   return null;
                                 },
                                 widget: const Text(
-                                  'Name',
+                                  'Title',
                                   style: TextStyles.textStyle18,
                                 ),
                                 maxLines: 1,

@@ -16,7 +16,6 @@ class CustomProductViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 310.0,
       child: InkWell(
         onTap: () {
           Navigator.pushNamed(context, AppRouterNames.viewProductDetails,
@@ -35,7 +34,7 @@ class CustomProductViewWidget extends StatelessWidget {
             Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(10),
                   child: Column(
                     children: [
                       Text(
@@ -71,7 +70,7 @@ class CustomProductViewWidget extends StatelessWidget {
                   ),
                 ),
                 Card(
-                  margin: const EdgeInsets.all(12.0),
+                  margin: const EdgeInsets.all(5.0),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25.0)),
                   shadowColor: ColorManager.primaryColor,
@@ -80,7 +79,7 @@ class CustomProductViewWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(18.0),
                     child: Image.network(
                       '${productInfo.coverImage.image}',
-                      height: 80.0,
+                      height: MediaQuery.of(context).size.height * 0.09
                     ),
                   ),
                 ),

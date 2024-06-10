@@ -15,6 +15,8 @@ import 'package:art_space_artist/features/products/data/models/add_product_respo
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_response.dart';
 import 'package:art_space_artist/features/products/data/models/delete_product_response.dart';
+import 'package:art_space_artist/features/products/data/models/edit_product_request_body.dart';
+import 'package:art_space_artist/features/products/data/models/edit_product_response.dart';
 import 'package:art_space_artist/features/profile/data/model/edit_profile_request_body.dart';
 import 'package:art_space_artist/features/profile/data/model/edit_profile_response.dart';
 import 'package:art_space_artist/features/profile/data/model/get_profile_response.dart';
@@ -149,5 +151,12 @@ abstract class ApiService {
     @Path('eventId') required String eventId,
     @Header('Authorization') required String token,
     @Body() required AddProductToEventRequestBody addProductToEventRequestBody,
+  });
+
+  @PATCH(ApiConstant.updateProduct)
+  Future<EditProductResponse> editProduct({
+    @Path('id') required String? productId,
+    @Body() required EditProductRequestBody editProductRequestBody,
+    @Header('Authorization') required String token,
   });
 }

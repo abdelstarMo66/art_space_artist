@@ -47,11 +47,16 @@ class ViewProductDetails extends StatelessWidget {
                               onTap: () => Navigator.of(context).pop(),
                             ),
                             const SizedBox(height: 15.0),
-                            SvgPicture.asset(
-                              AssetsManager.icEdit,
-                              height: 40.0,
-                              colorFilter: const ColorFilter.mode(
-                                  ColorManager.primaryColor, BlendMode.srcIn),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).pushNamed(AppRouterNames.editProduct, arguments: productInfo);
+                              },
+                              child: SvgPicture.asset(
+                                AssetsManager.icEdit,
+                                height: 40.0,
+                                colorFilter: const ColorFilter.mode(
+                                    ColorManager.primaryColor, BlendMode.srcIn),
+                              ),
                             ),
                             const SizedBox(height: 15.0),
                             GestureDetector(
