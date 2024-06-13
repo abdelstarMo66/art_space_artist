@@ -187,4 +187,18 @@ class AuctionCubit extends Cubit<AuctionState> {
       emit(AuctionState.getAllAuctionsError(error: error));
     });
   }
+
+  void emitGetDetailsAuction({required String auctionId}) async {
+    emit(const AuctionState.getAuctionDetailsLoading());
+    final response = await _auctionRepo.getAuctionDetails(
+        auctionId: auctionId);
+    response.when(
+      success: (data) {
+        emit(AuctionState.getAllAuctionsSuccess(data));
+      },
+      failure: (error) {
+        emit(AuctionState.getAuctionDetailsError(error: error));
+      },
+    );
+  }
 }

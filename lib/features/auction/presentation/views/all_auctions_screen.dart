@@ -45,8 +45,14 @@ class AllAuctionsScreen extends StatelessWidget {
               return context.read<AuctionCubit>().myAuctions.isNotEmpty
                   ? ListView.builder(
                       physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) =>
-                          AuctionItem(index: index),
+                      itemBuilder: (context, index) => GestureDetector(
+                          onTap: () => Navigator.of(context).pushNamed(
+                              AppRouterNames.viewAuctionDetails,
+                              arguments: context
+                                  .read<AuctionCubit>()
+                                  .myAuctions[index]
+                                  .id),
+                          child: AuctionItem(index: index)),
                       itemCount: context.read<AuctionCubit>().myAuctions.length,
                     )
                   : Center(
@@ -56,6 +62,9 @@ class AllAuctionsScreen extends StatelessWidget {
                           SvgPicture.asset(
                             AssetsManager.imgDataEmpty,
                             height: MediaQuery.of(context).size.height * 0.35,
+                          ),
+                          const SizedBox(
+                            height: 20.0,
                           ),
                           const Text(
                             'Not auctions founded',

@@ -34,4 +34,5 @@ class ApiConstant {
   static const getAuctions = 'auction/me';
   static const createAuction = 'auction';
   static const deleteAuction = 'auction/me/{id}';
+  static const getAuctionDetails = 'auction/product/{id}';
 }

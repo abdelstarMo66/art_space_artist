@@ -1,6 +1,7 @@
 import 'package:art_space_artist/core/network/api_constants.dart';
 import 'package:art_space_artist/features/auction/data/models/create_auction_response.dart';
 import 'package:art_space_artist/features/auction/data/models/get_all_auction_response.dart';
+import 'package:art_space_artist/features/auction/data/models/get_auction_details_response.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/forget_password_request.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_request.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_response.dart';
@@ -173,4 +174,10 @@ abstract class ApiService {
   Future<GetAllAuctionResponse> getAllAuctions({
     @Header('Authorization') required String token,
 });
+
+  @GET(ApiConstant.getAuctionDetails)
+  Future<GetAuctionDetailsResponse> getAuctionDetails({
+    @Path('id') required String? id,
+    @Header('Authorization') required String token,
+  });
 }

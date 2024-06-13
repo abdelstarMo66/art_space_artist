@@ -2,6 +2,7 @@ import 'package:art_space_artist/core/router/animation_transition.dart';
 import 'package:art_space_artist/features/auction/presentation/view_model/auction_cubit.dart';
 import 'package:art_space_artist/features/auction/presentation/views/all_auctions_screen.dart';
 import 'package:art_space_artist/features/auction/presentation/views/create_auction_screen.dart';
+import 'package:art_space_artist/features/auction/presentation/views/view_auction_details_screen.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/view_model/forget_password_cubit.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/forget_password_screen.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/verify_email_otp_screen.dart';
@@ -151,6 +152,17 @@ class AppRouter {
             child: const AllAuctionsScreen(),
           ),
         );
+      case AppRouterNames.viewAuctionDetails:
+        return SlideRight(
+          page: BlocProvider<AuctionCubit>(
+            create: (context) => getIt<AuctionCubit>()
+             // ..emitGetAuctionDetails(auctionId: settings.arguments as String),
+             ,
+            child: const ViewAuctionDetailsScreen(),
+          ),
+        );
+      case AppRouterNames.editAuction:
+
 
       default:
         return unDefinedRoute(settings);

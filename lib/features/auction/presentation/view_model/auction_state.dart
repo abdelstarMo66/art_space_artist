@@ -24,4 +24,8 @@ class AuctionState<T> with _$AuctionState<T> {
   const factory AuctionState.getAllAuctionsLoading() = GetAllAuctionsLoading;
   const factory AuctionState.getAllAuctionsSuccess(T data) = GetAllAuctionsSuccess;
   const factory AuctionState.getAllAuctionsError({required String error}) = GetAllAuctionsError;
+
+  const factory AuctionState.getAuctionDetailsLoading() = GetAuctionDetailsLoading;
+  const factory AuctionState.getAuctionDetailsSuccess(T data) = GetAuctionDetailsSuccess;
+  const factory AuctionState.getAuctionDetailsError({required String error}) = GetAuctionDetailsError;
 }

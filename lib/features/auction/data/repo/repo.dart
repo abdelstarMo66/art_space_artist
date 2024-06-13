@@ -7,6 +7,7 @@ import '../../../../core/network/api_service.dart';
 import '../../../products/data/models/get_category_response.dart';
 import '../../../products/data/models/get_styles_response.dart';
 import '../../../products/data/models/get_subject_response.dart';
+import '../models/get_auction_details_response.dart';
 
 class AuctionRepo {
   final ApiService _apiService;
@@ -58,6 +59,17 @@ class AuctionRepo {
   Future<ApiResult<GetAllAuctionResponse>> getAllAuction() async {
     try {
       final response = await _apiService.getAllAuctions(token: 'Bearer $token');
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(error.toString());
+    }
+  }
+
+  Future<ApiResult<GetAuctionDetailsResponse>> getAuctionDetails({required String auctionId}) async {
+    try {
+      final response = await _apiService.getAuctionDetails(
+          token: 'Bearer $token',
+          id: auctionId);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(error.toString());
