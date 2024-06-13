@@ -1,4 +1,6 @@
 import 'package:art_space_artist/core/components/create_text_form.dart';
+import 'package:art_space_artist/core/constants/assets_manager.dart';
+import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/products/data/models/get_product_details_response.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
 import 'package:art_space_artist/features/products/presentation/views/widgets/custom_container_create_product.dart';
@@ -6,6 +8,7 @@ import 'package:art_space_artist/features/products/presentation/views/widgets/ed
 import 'package:art_space_artist/features/products/presentation/views/widgets/price_and_size_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/components/default_button.dart';
 import '../../../../core/constants/color_manager.dart';
 import '../../../../core/constants/text_style.dart';
@@ -28,6 +31,9 @@ class EditProductScreen extends StatelessWidget {
     var depthController = TextEditingController();
     depthController.text = productDetails.depth.toString();
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Edit product'),
+      ),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -83,8 +89,8 @@ class EditProductScreen extends StatelessWidget {
             ),
             Text(
               'Price and Size',
-              style: TextStyles.textStyle24
-                  .copyWith(color: ColorManager.originalBlack),
+              style: TextStyles.textStyle20
+                  .copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 8.0,
@@ -114,18 +120,29 @@ class EditProductScreen extends StatelessWidget {
             const SizedBox(
               height: 12.0,
             ),
-            Text(
-              'More images',
-              style: TextStyles.textStyle24
-                  .copyWith(color: ColorManager.originalBlack),
+            ListTile(
+              onTap: () => Navigator.of(context).pushNamed(AppRouterNames.editProductImages, arguments: productDetails.coverImage.image),
+              title: Text(
+                'Edit product images',
+                style: TextStyles.textStyle18.copyWith(
+                  color: ColorManager.originalBlack,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              leading: SvgPicture.asset(
+                AssetsManager.icImage,
+                height: MediaQuery.of(context).size.height * 0.06,
+                colorFilter: const ColorFilter.mode(
+                    ColorManager.primaryColor, BlendMode.srcIn,),
+              ),
             ),
             const SizedBox(
-              height: 8.0,
+              height: 24.0,
             ),
             DefaultButton(
               text: 'Update',
               onPressed: () => context.read<ProductsCubit>().emitEditProduct(
-                id: productDetails.id,
+                  id: productDetails.id,
                   title: titleController.text,
                   description: descriptionController.text,
                   price: priceController.text,

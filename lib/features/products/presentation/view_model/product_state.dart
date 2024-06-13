@@ -44,4 +44,8 @@ class ProductsState<T> with _$ProductsState<T> {
   const factory ProductsState.editProductLoading() = EditProductLoading;
   const factory ProductsState.editProductSuccess(T data) = EditProductSuccess;
   const factory ProductsState.editProductError({required String error}) = EditProductError;
+
+  const factory ProductsState.deleteSpecificImageLoading() = DeleteSpecificImageLoading;
+  const factory ProductsState.deleteSpecificImageSuccess(T data) = DeleteSpecificImageSuccess;
+  const factory ProductsState.deleteSpecificImageError({required String error}) = DeleteSpecificImageError;
 }

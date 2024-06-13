@@ -9,7 +9,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../generated/l10n.dart';
 
-
 class CustomProfileDrawer extends StatelessWidget {
   const CustomProfileDrawer({super.key});
   @override
@@ -158,6 +157,18 @@ class CustomProfileDrawer extends StatelessWidget {
                   ),
                 ),
                 ListTile(
+                  onTap: () => Navigator.of(context)
+                      .pushNamed(AppRouterNames.allAuctions),
+                  leading: SvgPicture.asset(
+                    AssetsManager.icAuction,
+                    height: 35,
+                  ),
+                  title: const Text(
+                    'Auctions',
+                    style: TextStyles.textStyle18,
+                  ),
+                ),
+                ListTile(
                   leading: SvgPicture.asset(
                     AssetsManager.icSettings,
                     height: 40,
@@ -167,28 +178,18 @@ class CustomProfileDrawer extends StatelessWidget {
                     style: TextStyles.textStyle18,
                   ),
                 ),
-                ListTile(
-                  onTap: () => Navigator.of(context)
-                      .pushNamed(AppRouterNames.createAuction),
-                  leading: SvgPicture.asset(
-                    AssetsManager.icAuction,
-                    height: 35,
-                  ),
-                  title: const Text(
-                    'Create auction',
-                    style: TextStyles.textStyle18,
-                  ),
-                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.3,),
                 GestureDetector(
                   onTap: () => cubit.emitLogout(context: context),
                   child: ListTile(
                     leading: SvgPicture.asset(
                       AssetsManager.icLogOut,
                       height: 40,
+                      colorFilter: const ColorFilter.mode(ColorManager.primaryColor, BlendMode.srcIn),
                     ),
                     title: Text(
                       S.of(context).logOut,
-                      style: TextStyles.textStyle18,
+                      style: TextStyles.textStyle18.copyWith(color: ColorManager.primaryColor),
                     ),
                   ),
                 ),
@@ -197,7 +198,7 @@ class CustomProfileDrawer extends StatelessWidget {
           );
         } else {
           return const Drawer(
-            child: Text('Error'),
+            child: Text('Not found data',),
           );
         }
       },

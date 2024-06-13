@@ -147,7 +147,7 @@ class ViewProductDetails extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(right: 12.0),
                               child: Text(
-                                '﹩${productInfo.price}',
+                                '💰 ${productInfo.price}',
                                 style: TextStyles.textStyle26.copyWith(
                                     color: ColorManager.originalWhite),
                               ),

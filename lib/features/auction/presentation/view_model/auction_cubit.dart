@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:art_space_artist/features/auction/data/models/get_all_auction_response.dart';
 import 'package:art_space_artist/features/auction/presentation/view_model/auction_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
@@ -169,5 +170,21 @@ class AuctionCubit extends Cubit<AuctionState> {
     if (formKey.currentState!.validate()) {
       emitCreateAuction();
     }
+  }
+
+  List<AuctionInfo> myAuctions = [];
+
+  void emitGetAllAuctions() async {
+    emit(const AuctionState.getAllAuctionsLoading());
+    final response = await _auctionRepo.getAllAuction();
+    response.when(
+        success: (data) {
+      for (AuctionInfo auctions in data.auctions.actionsInfo) {
+        myAuctions.add(auctions);
+      }
+      emit(AuctionState.getAllAuctionsSuccess(data));
+    }, failure: (error) {
+      emit(AuctionState.getAllAuctionsError(error: error));
+    });
   }
 }

@@ -34,6 +34,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   List<EventInfo> allEvents = [];
   final List<Widget> allEventImages = [];
+
   List<Widget> shimmerEventLoading = [
     AppCustomShimmer(
         child: Container(

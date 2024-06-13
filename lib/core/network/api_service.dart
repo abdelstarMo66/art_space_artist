@@ -1,5 +1,6 @@
 import 'package:art_space_artist/core/network/api_constants.dart';
 import 'package:art_space_artist/features/auction/data/models/create_auction_response.dart';
+import 'package:art_space_artist/features/auction/data/models/get_all_auction_response.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/forget_password_request.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_request.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_response.dart';
@@ -15,6 +16,7 @@ import 'package:art_space_artist/features/products/data/models/add_product_respo
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_response.dart';
 import 'package:art_space_artist/features/products/data/models/delete_product_response.dart';
+import 'package:art_space_artist/features/products/data/models/delete_specific_image_response.dart';
 import 'package:art_space_artist/features/products/data/models/edit_product_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/edit_product_response.dart';
 import 'package:art_space_artist/features/profile/data/model/edit_profile_request_body.dart';
@@ -26,6 +28,7 @@ import '../../features/auth/forgetPassword/data/model/forget_password_response.d
 import '../../features/auth/forgetPassword/data/model/verify_email_response.dart';
 import '../../features/auth/login/data/model/login_response.dart';
 import '../../features/home/data/models/get_my_products_response.dart';
+import '../../features/products/data/models/delete_specific_image_request_body.dart';
 import '../../features/products/data/models/get_category_response.dart';
 import '../../features/products/data/models/get_product_details_response.dart';
 import '../../features/products/data/models/get_styles_response.dart';
@@ -159,4 +162,15 @@ abstract class ApiService {
     @Body() required EditProductRequestBody editProductRequestBody,
     @Header('Authorization') required String token,
   });
+
+  @DELETE(ApiConstant.deleteSpecificImage)
+  Future<DeleteSpecificImageResponse> deleteSpecificImage({
+    @Path('id') required String? id,
+    @Body() required DeleteSpecificImageRequestBody deleteSpecificImageRequestBody,
+    @Header('Authorization') required String token,
+});
+  @GET(ApiConstant.getAuctions)
+  Future<GetAllAuctionResponse> getAllAuctions({
+    @Header('Authorization') required String token,
+});
 }

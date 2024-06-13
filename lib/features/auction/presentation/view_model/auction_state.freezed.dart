@@ -32,6 +32,9 @@ mixin _$AuctionState<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +53,9 @@ mixin _$AuctionState<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,6 +74,9 @@ mixin _$AuctionState<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -92,6 +101,11 @@ mixin _$AuctionState<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -110,6 +124,9 @@ mixin _$AuctionState<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -128,6 +145,9 @@ mixin _$AuctionState<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -203,6 +223,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return initial();
   }
@@ -224,6 +247,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return initial?.call();
   }
@@ -245,6 +271,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -275,6 +304,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return initial(this);
   }
@@ -296,6 +330,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return initial?.call(this);
   }
@@ -317,6 +354,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -384,6 +424,9 @@ class _$AddCoverPhotoAuctionImpl<T> implements AddCoverPhotoAuction<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return addCoverPhotoAuction();
   }
@@ -405,6 +448,9 @@ class _$AddCoverPhotoAuctionImpl<T> implements AddCoverPhotoAuction<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return addCoverPhotoAuction?.call();
   }
@@ -426,6 +472,9 @@ class _$AddCoverPhotoAuctionImpl<T> implements AddCoverPhotoAuction<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (addCoverPhotoAuction != null) {
@@ -456,6 +505,11 @@ class _$AddCoverPhotoAuctionImpl<T> implements AddCoverPhotoAuction<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return addCoverPhotoAuction(this);
   }
@@ -477,6 +531,9 @@ class _$AddCoverPhotoAuctionImpl<T> implements AddCoverPhotoAuction<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return addCoverPhotoAuction?.call(this);
   }
@@ -498,6 +555,9 @@ class _$AddCoverPhotoAuctionImpl<T> implements AddCoverPhotoAuction<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (addCoverPhotoAuction != null) {
@@ -565,6 +625,9 @@ class _$CreateAuctionLoadingImpl<T> implements CreateAuctionLoading<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return createAuctionLoading();
   }
@@ -586,6 +649,9 @@ class _$CreateAuctionLoadingImpl<T> implements CreateAuctionLoading<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return createAuctionLoading?.call();
   }
@@ -607,6 +673,9 @@ class _$CreateAuctionLoadingImpl<T> implements CreateAuctionLoading<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (createAuctionLoading != null) {
@@ -637,6 +706,11 @@ class _$CreateAuctionLoadingImpl<T> implements CreateAuctionLoading<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return createAuctionLoading(this);
   }
@@ -658,6 +732,9 @@ class _$CreateAuctionLoadingImpl<T> implements CreateAuctionLoading<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return createAuctionLoading?.call(this);
   }
@@ -679,6 +756,9 @@ class _$CreateAuctionLoadingImpl<T> implements CreateAuctionLoading<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (createAuctionLoading != null) {
@@ -773,6 +853,9 @@ class _$CreateAuctionSuccessImpl<T> implements CreateAuctionSuccess<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return createAuctionSuccess(data);
   }
@@ -794,6 +877,9 @@ class _$CreateAuctionSuccessImpl<T> implements CreateAuctionSuccess<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return createAuctionSuccess?.call(data);
   }
@@ -815,6 +901,9 @@ class _$CreateAuctionSuccessImpl<T> implements CreateAuctionSuccess<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (createAuctionSuccess != null) {
@@ -845,6 +934,11 @@ class _$CreateAuctionSuccessImpl<T> implements CreateAuctionSuccess<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return createAuctionSuccess(this);
   }
@@ -866,6 +960,9 @@ class _$CreateAuctionSuccessImpl<T> implements CreateAuctionSuccess<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return createAuctionSuccess?.call(this);
   }
@@ -887,6 +984,9 @@ class _$CreateAuctionSuccessImpl<T> implements CreateAuctionSuccess<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (createAuctionSuccess != null) {
@@ -985,6 +1085,9 @@ class _$CreateAuctionErrorImpl<T> implements CreateAuctionError<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return createAuctionError(error);
   }
@@ -1006,6 +1109,9 @@ class _$CreateAuctionErrorImpl<T> implements CreateAuctionError<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return createAuctionError?.call(error);
   }
@@ -1027,6 +1133,9 @@ class _$CreateAuctionErrorImpl<T> implements CreateAuctionError<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (createAuctionError != null) {
@@ -1057,6 +1166,11 @@ class _$CreateAuctionErrorImpl<T> implements CreateAuctionError<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return createAuctionError(this);
   }
@@ -1078,6 +1192,9 @@ class _$CreateAuctionErrorImpl<T> implements CreateAuctionError<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return createAuctionError?.call(this);
   }
@@ -1099,6 +1216,9 @@ class _$CreateAuctionErrorImpl<T> implements CreateAuctionError<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (createAuctionError != null) {
@@ -1171,6 +1291,9 @@ class _$GetStylesLoadingImpl<T> implements GetStylesLoading<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return getStylesLoading();
   }
@@ -1192,6 +1315,9 @@ class _$GetStylesLoadingImpl<T> implements GetStylesLoading<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return getStylesLoading?.call();
   }
@@ -1213,6 +1339,9 @@ class _$GetStylesLoadingImpl<T> implements GetStylesLoading<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getStylesLoading != null) {
@@ -1243,6 +1372,11 @@ class _$GetStylesLoadingImpl<T> implements GetStylesLoading<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return getStylesLoading(this);
   }
@@ -1264,6 +1398,9 @@ class _$GetStylesLoadingImpl<T> implements GetStylesLoading<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return getStylesLoading?.call(this);
   }
@@ -1285,6 +1422,9 @@ class _$GetStylesLoadingImpl<T> implements GetStylesLoading<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getStylesLoading != null) {
@@ -1378,6 +1518,9 @@ class _$GetStylesSuccessImpl<T> implements GetStylesSuccess<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return getStylesSuccess(data);
   }
@@ -1399,6 +1542,9 @@ class _$GetStylesSuccessImpl<T> implements GetStylesSuccess<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return getStylesSuccess?.call(data);
   }
@@ -1420,6 +1566,9 @@ class _$GetStylesSuccessImpl<T> implements GetStylesSuccess<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getStylesSuccess != null) {
@@ -1450,6 +1599,11 @@ class _$GetStylesSuccessImpl<T> implements GetStylesSuccess<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return getStylesSuccess(this);
   }
@@ -1471,6 +1625,9 @@ class _$GetStylesSuccessImpl<T> implements GetStylesSuccess<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return getStylesSuccess?.call(this);
   }
@@ -1492,6 +1649,9 @@ class _$GetStylesSuccessImpl<T> implements GetStylesSuccess<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getStylesSuccess != null) {
@@ -1589,6 +1749,9 @@ class _$GetStylesErrorImpl<T> implements GetStylesError<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return getStylesError(error);
   }
@@ -1610,6 +1773,9 @@ class _$GetStylesErrorImpl<T> implements GetStylesError<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return getStylesError?.call(error);
   }
@@ -1631,6 +1797,9 @@ class _$GetStylesErrorImpl<T> implements GetStylesError<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getStylesError != null) {
@@ -1661,6 +1830,11 @@ class _$GetStylesErrorImpl<T> implements GetStylesError<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return getStylesError(this);
   }
@@ -1682,6 +1856,9 @@ class _$GetStylesErrorImpl<T> implements GetStylesError<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return getStylesError?.call(this);
   }
@@ -1703,6 +1880,9 @@ class _$GetStylesErrorImpl<T> implements GetStylesError<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getStylesError != null) {
@@ -1776,6 +1956,9 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return getCategoriesLoading();
   }
@@ -1797,6 +1980,9 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return getCategoriesLoading?.call();
   }
@@ -1818,6 +2004,9 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getCategoriesLoading != null) {
@@ -1848,6 +2037,11 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return getCategoriesLoading(this);
   }
@@ -1869,6 +2063,9 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return getCategoriesLoading?.call(this);
   }
@@ -1890,6 +2087,9 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getCategoriesLoading != null) {
@@ -1984,6 +2184,9 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return getCategoriesSuccess(data);
   }
@@ -2005,6 +2208,9 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return getCategoriesSuccess?.call(data);
   }
@@ -2026,6 +2232,9 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getCategoriesSuccess != null) {
@@ -2056,6 +2265,11 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return getCategoriesSuccess(this);
   }
@@ -2077,6 +2291,9 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return getCategoriesSuccess?.call(this);
   }
@@ -2098,6 +2315,9 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getCategoriesSuccess != null) {
@@ -2196,6 +2416,9 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return getCategoriesError(error);
   }
@@ -2217,6 +2440,9 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return getCategoriesError?.call(error);
   }
@@ -2238,6 +2464,9 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getCategoriesError != null) {
@@ -2268,6 +2497,11 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return getCategoriesError(this);
   }
@@ -2289,6 +2523,9 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return getCategoriesError?.call(this);
   }
@@ -2310,6 +2547,9 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getCategoriesError != null) {
@@ -2382,6 +2622,9 @@ class _$GetBrandsLoadingImpl<T> implements GetBrandsLoading<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return getSubjectsLoading();
   }
@@ -2403,6 +2646,9 @@ class _$GetBrandsLoadingImpl<T> implements GetBrandsLoading<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return getSubjectsLoading?.call();
   }
@@ -2424,6 +2670,9 @@ class _$GetBrandsLoadingImpl<T> implements GetBrandsLoading<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getSubjectsLoading != null) {
@@ -2454,6 +2703,11 @@ class _$GetBrandsLoadingImpl<T> implements GetBrandsLoading<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return getSubjectsLoading(this);
   }
@@ -2475,6 +2729,9 @@ class _$GetBrandsLoadingImpl<T> implements GetBrandsLoading<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return getSubjectsLoading?.call(this);
   }
@@ -2496,6 +2753,9 @@ class _$GetBrandsLoadingImpl<T> implements GetBrandsLoading<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getSubjectsLoading != null) {
@@ -2589,6 +2849,9 @@ class _$GetBrandsSuccessImpl<T> implements GetBrandsSuccess<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return getSubjectsSuccess(data);
   }
@@ -2610,6 +2873,9 @@ class _$GetBrandsSuccessImpl<T> implements GetBrandsSuccess<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return getSubjectsSuccess?.call(data);
   }
@@ -2631,6 +2897,9 @@ class _$GetBrandsSuccessImpl<T> implements GetBrandsSuccess<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getSubjectsSuccess != null) {
@@ -2661,6 +2930,11 @@ class _$GetBrandsSuccessImpl<T> implements GetBrandsSuccess<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return getSubjectsSuccess(this);
   }
@@ -2682,6 +2956,9 @@ class _$GetBrandsSuccessImpl<T> implements GetBrandsSuccess<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return getSubjectsSuccess?.call(this);
   }
@@ -2703,6 +2980,9 @@ class _$GetBrandsSuccessImpl<T> implements GetBrandsSuccess<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getSubjectsSuccess != null) {
@@ -2800,6 +3080,9 @@ class _$GetBrandsErrorImpl<T> implements GetBrandsError<T> {
     required TResult Function() getSubjectsLoading,
     required TResult Function(T data) getSubjectsSuccess,
     required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
   }) {
     return getSubjectsError(error);
   }
@@ -2821,6 +3104,9 @@ class _$GetBrandsErrorImpl<T> implements GetBrandsError<T> {
     TResult? Function()? getSubjectsLoading,
     TResult? Function(T data)? getSubjectsSuccess,
     TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
   }) {
     return getSubjectsError?.call(error);
   }
@@ -2842,6 +3128,9 @@ class _$GetBrandsErrorImpl<T> implements GetBrandsError<T> {
     TResult Function()? getSubjectsLoading,
     TResult Function(T data)? getSubjectsSuccess,
     TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getSubjectsError != null) {
@@ -2872,6 +3161,11 @@ class _$GetBrandsErrorImpl<T> implements GetBrandsError<T> {
     required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
     required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
     required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
   }) {
     return getSubjectsError(this);
   }
@@ -2893,6 +3187,9 @@ class _$GetBrandsErrorImpl<T> implements GetBrandsError<T> {
     TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
   }) {
     return getSubjectsError?.call(this);
   }
@@ -2914,6 +3211,9 @@ class _$GetBrandsErrorImpl<T> implements GetBrandsError<T> {
     TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
     TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
     TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
     required TResult orElse(),
   }) {
     if (getSubjectsError != null) {
@@ -2931,4 +3231,673 @@ abstract class GetBrandsError<T> implements AuctionState<T> {
   @JsonKey(ignore: true)
   _$$GetBrandsErrorImplCopyWith<T, _$GetBrandsErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAllAuctionsLoadingImplCopyWith<T, $Res> {
+  factory _$$GetAllAuctionsLoadingImplCopyWith(
+          _$GetAllAuctionsLoadingImpl<T> value,
+          $Res Function(_$GetAllAuctionsLoadingImpl<T>) then) =
+      __$$GetAllAuctionsLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetAllAuctionsLoadingImplCopyWithImpl<T, $Res>
+    extends _$AuctionStateCopyWithImpl<T, $Res, _$GetAllAuctionsLoadingImpl<T>>
+    implements _$$GetAllAuctionsLoadingImplCopyWith<T, $Res> {
+  __$$GetAllAuctionsLoadingImplCopyWithImpl(
+      _$GetAllAuctionsLoadingImpl<T> _value,
+      $Res Function(_$GetAllAuctionsLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetAllAuctionsLoadingImpl<T> implements GetAllAuctionsLoading<T> {
+  const _$GetAllAuctionsLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuctionState<$T>.getAllAuctionsLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllAuctionsLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addCoverPhotoAuction,
+    required TResult Function() createAuctionLoading,
+    required TResult Function(T data) createAuctionSuccess,
+    required TResult Function(String error) createAuctionError,
+    required TResult Function() getStylesLoading,
+    required TResult Function(T data) getStylesSuccess,
+    required TResult Function(String error) getStylesError,
+    required TResult Function() getCategoriesLoading,
+    required TResult Function(T data) getCategoriesSuccess,
+    required TResult Function(String error) getCategoriesError,
+    required TResult Function() getSubjectsLoading,
+    required TResult Function(T data) getSubjectsSuccess,
+    required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
+  }) {
+    return getAllAuctionsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addCoverPhotoAuction,
+    TResult? Function()? createAuctionLoading,
+    TResult? Function(T data)? createAuctionSuccess,
+    TResult? Function(String error)? createAuctionError,
+    TResult? Function()? getStylesLoading,
+    TResult? Function(T data)? getStylesSuccess,
+    TResult? Function(String error)? getStylesError,
+    TResult? Function()? getCategoriesLoading,
+    TResult? Function(T data)? getCategoriesSuccess,
+    TResult? Function(String error)? getCategoriesError,
+    TResult? Function()? getSubjectsLoading,
+    TResult? Function(T data)? getSubjectsSuccess,
+    TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
+  }) {
+    return getAllAuctionsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addCoverPhotoAuction,
+    TResult Function()? createAuctionLoading,
+    TResult Function(T data)? createAuctionSuccess,
+    TResult Function(String error)? createAuctionError,
+    TResult Function()? getStylesLoading,
+    TResult Function(T data)? getStylesSuccess,
+    TResult Function(String error)? getStylesError,
+    TResult Function()? getCategoriesLoading,
+    TResult Function(T data)? getCategoriesSuccess,
+    TResult Function(String error)? getCategoriesError,
+    TResult Function()? getSubjectsLoading,
+    TResult Function(T data)? getSubjectsSuccess,
+    TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
+    required TResult orElse(),
+  }) {
+    if (getAllAuctionsLoading != null) {
+      return getAllAuctionsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddCoverPhotoAuction<T> value)
+        addCoverPhotoAuction,
+    required TResult Function(CreateAuctionLoading<T> value)
+        createAuctionLoading,
+    required TResult Function(CreateAuctionSuccess<T> value)
+        createAuctionSuccess,
+    required TResult Function(CreateAuctionError<T> value) createAuctionError,
+    required TResult Function(GetStylesLoading<T> value) getStylesLoading,
+    required TResult Function(GetStylesSuccess<T> value) getStylesSuccess,
+    required TResult Function(GetStylesError<T> value) getStylesError,
+    required TResult Function(GetCategoriesLoading<T> value)
+        getCategoriesLoading,
+    required TResult Function(GetCategoriesSuccess<T> value)
+        getCategoriesSuccess,
+    required TResult Function(GetCategoriesError<T> value) getCategoriesError,
+    required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
+    required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
+    required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
+  }) {
+    return getAllAuctionsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddCoverPhotoAuction<T> value)? addCoverPhotoAuction,
+    TResult? Function(CreateAuctionLoading<T> value)? createAuctionLoading,
+    TResult? Function(CreateAuctionSuccess<T> value)? createAuctionSuccess,
+    TResult? Function(CreateAuctionError<T> value)? createAuctionError,
+    TResult? Function(GetStylesLoading<T> value)? getStylesLoading,
+    TResult? Function(GetStylesSuccess<T> value)? getStylesSuccess,
+    TResult? Function(GetStylesError<T> value)? getStylesError,
+    TResult? Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult? Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult? Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
+    TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
+    TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
+  }) {
+    return getAllAuctionsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddCoverPhotoAuction<T> value)? addCoverPhotoAuction,
+    TResult Function(CreateAuctionLoading<T> value)? createAuctionLoading,
+    TResult Function(CreateAuctionSuccess<T> value)? createAuctionSuccess,
+    TResult Function(CreateAuctionError<T> value)? createAuctionError,
+    TResult Function(GetStylesLoading<T> value)? getStylesLoading,
+    TResult Function(GetStylesSuccess<T> value)? getStylesSuccess,
+    TResult Function(GetStylesError<T> value)? getStylesError,
+    TResult Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
+    TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
+    TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
+    required TResult orElse(),
+  }) {
+    if (getAllAuctionsLoading != null) {
+      return getAllAuctionsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAllAuctionsLoading<T> implements AuctionState<T> {
+  const factory GetAllAuctionsLoading() = _$GetAllAuctionsLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetAllAuctionsSuccessImplCopyWith<T, $Res> {
+  factory _$$GetAllAuctionsSuccessImplCopyWith(
+          _$GetAllAuctionsSuccessImpl<T> value,
+          $Res Function(_$GetAllAuctionsSuccessImpl<T>) then) =
+      __$$GetAllAuctionsSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$GetAllAuctionsSuccessImplCopyWithImpl<T, $Res>
+    extends _$AuctionStateCopyWithImpl<T, $Res, _$GetAllAuctionsSuccessImpl<T>>
+    implements _$$GetAllAuctionsSuccessImplCopyWith<T, $Res> {
+  __$$GetAllAuctionsSuccessImplCopyWithImpl(
+      _$GetAllAuctionsSuccessImpl<T> _value,
+      $Res Function(_$GetAllAuctionsSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$GetAllAuctionsSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAllAuctionsSuccessImpl<T> implements GetAllAuctionsSuccess<T> {
+  const _$GetAllAuctionsSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'AuctionState<$T>.getAllAuctionsSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllAuctionsSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAllAuctionsSuccessImplCopyWith<T, _$GetAllAuctionsSuccessImpl<T>>
+      get copyWith => __$$GetAllAuctionsSuccessImplCopyWithImpl<T,
+          _$GetAllAuctionsSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addCoverPhotoAuction,
+    required TResult Function() createAuctionLoading,
+    required TResult Function(T data) createAuctionSuccess,
+    required TResult Function(String error) createAuctionError,
+    required TResult Function() getStylesLoading,
+    required TResult Function(T data) getStylesSuccess,
+    required TResult Function(String error) getStylesError,
+    required TResult Function() getCategoriesLoading,
+    required TResult Function(T data) getCategoriesSuccess,
+    required TResult Function(String error) getCategoriesError,
+    required TResult Function() getSubjectsLoading,
+    required TResult Function(T data) getSubjectsSuccess,
+    required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
+  }) {
+    return getAllAuctionsSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addCoverPhotoAuction,
+    TResult? Function()? createAuctionLoading,
+    TResult? Function(T data)? createAuctionSuccess,
+    TResult? Function(String error)? createAuctionError,
+    TResult? Function()? getStylesLoading,
+    TResult? Function(T data)? getStylesSuccess,
+    TResult? Function(String error)? getStylesError,
+    TResult? Function()? getCategoriesLoading,
+    TResult? Function(T data)? getCategoriesSuccess,
+    TResult? Function(String error)? getCategoriesError,
+    TResult? Function()? getSubjectsLoading,
+    TResult? Function(T data)? getSubjectsSuccess,
+    TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
+  }) {
+    return getAllAuctionsSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addCoverPhotoAuction,
+    TResult Function()? createAuctionLoading,
+    TResult Function(T data)? createAuctionSuccess,
+    TResult Function(String error)? createAuctionError,
+    TResult Function()? getStylesLoading,
+    TResult Function(T data)? getStylesSuccess,
+    TResult Function(String error)? getStylesError,
+    TResult Function()? getCategoriesLoading,
+    TResult Function(T data)? getCategoriesSuccess,
+    TResult Function(String error)? getCategoriesError,
+    TResult Function()? getSubjectsLoading,
+    TResult Function(T data)? getSubjectsSuccess,
+    TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
+    required TResult orElse(),
+  }) {
+    if (getAllAuctionsSuccess != null) {
+      return getAllAuctionsSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddCoverPhotoAuction<T> value)
+        addCoverPhotoAuction,
+    required TResult Function(CreateAuctionLoading<T> value)
+        createAuctionLoading,
+    required TResult Function(CreateAuctionSuccess<T> value)
+        createAuctionSuccess,
+    required TResult Function(CreateAuctionError<T> value) createAuctionError,
+    required TResult Function(GetStylesLoading<T> value) getStylesLoading,
+    required TResult Function(GetStylesSuccess<T> value) getStylesSuccess,
+    required TResult Function(GetStylesError<T> value) getStylesError,
+    required TResult Function(GetCategoriesLoading<T> value)
+        getCategoriesLoading,
+    required TResult Function(GetCategoriesSuccess<T> value)
+        getCategoriesSuccess,
+    required TResult Function(GetCategoriesError<T> value) getCategoriesError,
+    required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
+    required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
+    required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
+  }) {
+    return getAllAuctionsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddCoverPhotoAuction<T> value)? addCoverPhotoAuction,
+    TResult? Function(CreateAuctionLoading<T> value)? createAuctionLoading,
+    TResult? Function(CreateAuctionSuccess<T> value)? createAuctionSuccess,
+    TResult? Function(CreateAuctionError<T> value)? createAuctionError,
+    TResult? Function(GetStylesLoading<T> value)? getStylesLoading,
+    TResult? Function(GetStylesSuccess<T> value)? getStylesSuccess,
+    TResult? Function(GetStylesError<T> value)? getStylesError,
+    TResult? Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult? Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult? Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
+    TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
+    TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
+  }) {
+    return getAllAuctionsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddCoverPhotoAuction<T> value)? addCoverPhotoAuction,
+    TResult Function(CreateAuctionLoading<T> value)? createAuctionLoading,
+    TResult Function(CreateAuctionSuccess<T> value)? createAuctionSuccess,
+    TResult Function(CreateAuctionError<T> value)? createAuctionError,
+    TResult Function(GetStylesLoading<T> value)? getStylesLoading,
+    TResult Function(GetStylesSuccess<T> value)? getStylesSuccess,
+    TResult Function(GetStylesError<T> value)? getStylesError,
+    TResult Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
+    TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
+    TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
+    required TResult orElse(),
+  }) {
+    if (getAllAuctionsSuccess != null) {
+      return getAllAuctionsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAllAuctionsSuccess<T> implements AuctionState<T> {
+  const factory GetAllAuctionsSuccess(final T data) =
+      _$GetAllAuctionsSuccessImpl<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$GetAllAuctionsSuccessImplCopyWith<T, _$GetAllAuctionsSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAllAuctionsErrorImplCopyWith<T, $Res> {
+  factory _$$GetAllAuctionsErrorImplCopyWith(_$GetAllAuctionsErrorImpl<T> value,
+          $Res Function(_$GetAllAuctionsErrorImpl<T>) then) =
+      __$$GetAllAuctionsErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetAllAuctionsErrorImplCopyWithImpl<T, $Res>
+    extends _$AuctionStateCopyWithImpl<T, $Res, _$GetAllAuctionsErrorImpl<T>>
+    implements _$$GetAllAuctionsErrorImplCopyWith<T, $Res> {
+  __$$GetAllAuctionsErrorImplCopyWithImpl(_$GetAllAuctionsErrorImpl<T> _value,
+      $Res Function(_$GetAllAuctionsErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetAllAuctionsErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAllAuctionsErrorImpl<T> implements GetAllAuctionsError<T> {
+  const _$GetAllAuctionsErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'AuctionState<$T>.getAllAuctionsError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllAuctionsErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAllAuctionsErrorImplCopyWith<T, _$GetAllAuctionsErrorImpl<T>>
+      get copyWith => __$$GetAllAuctionsErrorImplCopyWithImpl<T,
+          _$GetAllAuctionsErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addCoverPhotoAuction,
+    required TResult Function() createAuctionLoading,
+    required TResult Function(T data) createAuctionSuccess,
+    required TResult Function(String error) createAuctionError,
+    required TResult Function() getStylesLoading,
+    required TResult Function(T data) getStylesSuccess,
+    required TResult Function(String error) getStylesError,
+    required TResult Function() getCategoriesLoading,
+    required TResult Function(T data) getCategoriesSuccess,
+    required TResult Function(String error) getCategoriesError,
+    required TResult Function() getSubjectsLoading,
+    required TResult Function(T data) getSubjectsSuccess,
+    required TResult Function(String error) getSubjectsError,
+    required TResult Function() getAllAuctionsLoading,
+    required TResult Function(T data) getAllAuctionsSuccess,
+    required TResult Function(String error) getAllAuctionsError,
+  }) {
+    return getAllAuctionsError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addCoverPhotoAuction,
+    TResult? Function()? createAuctionLoading,
+    TResult? Function(T data)? createAuctionSuccess,
+    TResult? Function(String error)? createAuctionError,
+    TResult? Function()? getStylesLoading,
+    TResult? Function(T data)? getStylesSuccess,
+    TResult? Function(String error)? getStylesError,
+    TResult? Function()? getCategoriesLoading,
+    TResult? Function(T data)? getCategoriesSuccess,
+    TResult? Function(String error)? getCategoriesError,
+    TResult? Function()? getSubjectsLoading,
+    TResult? Function(T data)? getSubjectsSuccess,
+    TResult? Function(String error)? getSubjectsError,
+    TResult? Function()? getAllAuctionsLoading,
+    TResult? Function(T data)? getAllAuctionsSuccess,
+    TResult? Function(String error)? getAllAuctionsError,
+  }) {
+    return getAllAuctionsError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addCoverPhotoAuction,
+    TResult Function()? createAuctionLoading,
+    TResult Function(T data)? createAuctionSuccess,
+    TResult Function(String error)? createAuctionError,
+    TResult Function()? getStylesLoading,
+    TResult Function(T data)? getStylesSuccess,
+    TResult Function(String error)? getStylesError,
+    TResult Function()? getCategoriesLoading,
+    TResult Function(T data)? getCategoriesSuccess,
+    TResult Function(String error)? getCategoriesError,
+    TResult Function()? getSubjectsLoading,
+    TResult Function(T data)? getSubjectsSuccess,
+    TResult Function(String error)? getSubjectsError,
+    TResult Function()? getAllAuctionsLoading,
+    TResult Function(T data)? getAllAuctionsSuccess,
+    TResult Function(String error)? getAllAuctionsError,
+    required TResult orElse(),
+  }) {
+    if (getAllAuctionsError != null) {
+      return getAllAuctionsError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddCoverPhotoAuction<T> value)
+        addCoverPhotoAuction,
+    required TResult Function(CreateAuctionLoading<T> value)
+        createAuctionLoading,
+    required TResult Function(CreateAuctionSuccess<T> value)
+        createAuctionSuccess,
+    required TResult Function(CreateAuctionError<T> value) createAuctionError,
+    required TResult Function(GetStylesLoading<T> value) getStylesLoading,
+    required TResult Function(GetStylesSuccess<T> value) getStylesSuccess,
+    required TResult Function(GetStylesError<T> value) getStylesError,
+    required TResult Function(GetCategoriesLoading<T> value)
+        getCategoriesLoading,
+    required TResult Function(GetCategoriesSuccess<T> value)
+        getCategoriesSuccess,
+    required TResult Function(GetCategoriesError<T> value) getCategoriesError,
+    required TResult Function(GetBrandsLoading<T> value) getSubjectsLoading,
+    required TResult Function(GetBrandsSuccess<T> value) getSubjectsSuccess,
+    required TResult Function(GetBrandsError<T> value) getSubjectsError,
+    required TResult Function(GetAllAuctionsLoading<T> value)
+        getAllAuctionsLoading,
+    required TResult Function(GetAllAuctionsSuccess<T> value)
+        getAllAuctionsSuccess,
+    required TResult Function(GetAllAuctionsError<T> value) getAllAuctionsError,
+  }) {
+    return getAllAuctionsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddCoverPhotoAuction<T> value)? addCoverPhotoAuction,
+    TResult? Function(CreateAuctionLoading<T> value)? createAuctionLoading,
+    TResult? Function(CreateAuctionSuccess<T> value)? createAuctionSuccess,
+    TResult? Function(CreateAuctionError<T> value)? createAuctionError,
+    TResult? Function(GetStylesLoading<T> value)? getStylesLoading,
+    TResult? Function(GetStylesSuccess<T> value)? getStylesSuccess,
+    TResult? Function(GetStylesError<T> value)? getStylesError,
+    TResult? Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult? Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult? Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult? Function(GetBrandsLoading<T> value)? getSubjectsLoading,
+    TResult? Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
+    TResult? Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult? Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult? Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult? Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
+  }) {
+    return getAllAuctionsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddCoverPhotoAuction<T> value)? addCoverPhotoAuction,
+    TResult Function(CreateAuctionLoading<T> value)? createAuctionLoading,
+    TResult Function(CreateAuctionSuccess<T> value)? createAuctionSuccess,
+    TResult Function(CreateAuctionError<T> value)? createAuctionError,
+    TResult Function(GetStylesLoading<T> value)? getStylesLoading,
+    TResult Function(GetStylesSuccess<T> value)? getStylesSuccess,
+    TResult Function(GetStylesError<T> value)? getStylesError,
+    TResult Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult Function(GetBrandsLoading<T> value)? getSubjectsLoading,
+    TResult Function(GetBrandsSuccess<T> value)? getSubjectsSuccess,
+    TResult Function(GetBrandsError<T> value)? getSubjectsError,
+    TResult Function(GetAllAuctionsLoading<T> value)? getAllAuctionsLoading,
+    TResult Function(GetAllAuctionsSuccess<T> value)? getAllAuctionsSuccess,
+    TResult Function(GetAllAuctionsError<T> value)? getAllAuctionsError,
+    required TResult orElse(),
+  }) {
+    if (getAllAuctionsError != null) {
+      return getAllAuctionsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAllAuctionsError<T> implements AuctionState<T> {
+  const factory GetAllAuctionsError({required final String error}) =
+      _$GetAllAuctionsErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetAllAuctionsErrorImplCopyWith<T, _$GetAllAuctionsErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

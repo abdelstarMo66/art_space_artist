@@ -5,6 +5,7 @@ import 'package:art_space_artist/core/constants/toast_color.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_response.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_response.dart';
+import 'package:art_space_artist/features/products/data/models/delete_specific_image_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/edit_product_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/get_category_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_styles_response.dart';
@@ -311,6 +312,25 @@ class ProductsCubit extends Cubit<ProductsState> {
     },
       failure: (error) {
         emit(ProductsState.editProductError(error: error));
+      },
+    );
+  }
+
+  void emitDeleteSpecificImage({
+    required String productId,
+    required String imageId,
+  }) async {
+    emit(const ProductsState.deleteSpecificImageLoading());
+    final response = await _productsRepo.deleteSpecificImage(
+      productId: productId,
+      deleteSpecificImageRequestBody: DeleteSpecificImageRequestBody(publicId: imageId),
+    );
+    response.when(
+      success: (data) {
+        emit(ProductsState.deleteProductSuccess(data));
+      },
+      failure: (error) {
+        emit(ProductsState.deleteProductError(error: error));
       },
     );
   }

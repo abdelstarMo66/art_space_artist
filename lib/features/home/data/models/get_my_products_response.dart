@@ -45,17 +45,17 @@ class ProductsInfo {
   String  category;
   double  price;
   bool  isAvailable;
-  CoverImage coverImage;
+  Images coverImage;
 
   ProductsInfo({required this.id, required this.title, required this.description, required this.price, required this.coverImage, required this.isAvailable, required this.category});
 
   factory ProductsInfo.fromJson(Map<String, dynamic> json) => _$ProductsInfoFromJson(json);
 }
 @JsonSerializable()
-class CoverImage {
+class Images {
   String ? imageId;
-  String? image;
+  String ? image;
 
-  CoverImage({this.imageId, this.image});
-  factory CoverImage.fromJson(Map<String, dynamic> json) => _$CoverImageFromJson(json);
+  Images({this.imageId, this.image});
+  factory Images.fromJson(Map<String, dynamic> json) => _$ImagesFromJson(json);
 }

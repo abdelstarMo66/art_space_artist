@@ -59,8 +59,7 @@ ProductsInfo _$ProductsInfoFromJson(Map<String, dynamic> json) => ProductsInfo(
       title: json['title'] as String,
       description: json['description'] as String,
       price: (json['price'] as num).toDouble(),
-      coverImage:
-          CoverImage.fromJson(json['coverImage'] as Map<String, dynamic>),
+      coverImage: Images.fromJson(json['coverImage'] as Map<String, dynamic>),
       isAvailable: json['isAvailable'] as bool,
       category: json['category'] as String,
     );
@@ -76,13 +75,12 @@ Map<String, dynamic> _$ProductsInfoToJson(ProductsInfo instance) =>
       'coverImage': instance.coverImage,
     };
 
-CoverImage _$CoverImageFromJson(Map<String, dynamic> json) => CoverImage(
+Images _$ImagesFromJson(Map<String, dynamic> json) => Images(
       imageId: json['imageId'] as String?,
       image: json['image'] as String?,
     );
 
-Map<String, dynamic> _$CoverImageToJson(CoverImage instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ImagesToJson(Images instance) => <String, dynamic>{
       'imageId': instance.imageId,
       'image': instance.image,
     };

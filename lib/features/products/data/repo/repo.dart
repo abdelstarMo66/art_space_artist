@@ -4,6 +4,8 @@ import 'package:art_space_artist/features/products/data/models/add_product_respo
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_response.dart';
 import 'package:art_space_artist/features/products/data/models/delete_product_response.dart';
+import 'package:art_space_artist/features/products/data/models/delete_specific_image_request_body.dart';
+import 'package:art_space_artist/features/products/data/models/delete_specific_image_response.dart';
 import 'package:art_space_artist/features/products/data/models/edit_product_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/edit_product_response.dart';
 import 'package:art_space_artist/features/products/data/models/get_styles_response.dart';
@@ -112,6 +114,22 @@ class ProductsRepo {
         token: 'Bearer $token',
         productId: productId,
         editProductRequestBody: editProductRequestBody,
+      );
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(error.toString());
+    }
+  }
+
+  Future<ApiResult<DeleteSpecificImageResponse>> deleteSpecificImage({
+    required String productId,
+    required DeleteSpecificImageRequestBody deleteSpecificImageRequestBody,
+}) async {
+    try {
+      final response = await _apiService.deleteSpecificImage(
+        token: 'Bearer $token',
+        id: productId,
+        deleteSpecificImageRequestBody: deleteSpecificImageRequestBody,
       );
       return ApiResult.success(response);
     } catch (error) {
