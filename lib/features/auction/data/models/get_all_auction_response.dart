@@ -19,7 +19,7 @@ class GetAllAuctionResponse {
 class Auctions {
   Pagination pagination;
   @JsonKey(name: "auctions")
-  List<AuctionInfo> actionsInfo;
+  List<AuctionsInformations> actionsInfo;
 
   Auctions(this.pagination, this.actionsInfo);
 
@@ -27,7 +27,7 @@ class Auctions {
 }
 
 @JsonSerializable()
-class AuctionInfo {
+class AuctionsInformations {
   String id;
   String title;
   String description;
@@ -43,7 +43,7 @@ class AuctionInfo {
   FinalUser ?finalUser;
   List<Images> images;
 
-  AuctionInfo(
+  AuctionsInformations(
       this.id,
       this.title,
       this.description,
@@ -60,7 +60,7 @@ class AuctionInfo {
       this.price
       );
 
-  factory AuctionInfo.fromJson(Map<String, dynamic> json) => _$AuctionInfoFromJson(json);
+  factory AuctionsInformations.fromJson(Map<String, dynamic> json) => _$AuctionsInformationsFromJson(json);
 }
 
 @JsonSerializable()

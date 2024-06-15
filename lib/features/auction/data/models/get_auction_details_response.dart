@@ -5,7 +5,7 @@ part 'get_auction_details_response.g.dart';
 @JsonSerializable()
 class GetAuctionDetailsResponse {
   String status;
-  String code;
+  int code;
   String message;
   @JsonKey(name: 'data')
   AuctionInfo auctionInfo;

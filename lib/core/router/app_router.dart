@@ -1,4 +1,5 @@
 import 'package:art_space_artist/core/router/animation_transition.dart';
+import 'package:art_space_artist/features/auction/data/models/get_auction_details_response.dart';
 import 'package:art_space_artist/features/auction/presentation/view_model/auction_cubit.dart';
 import 'package:art_space_artist/features/auction/presentation/views/all_auctions_screen.dart';
 import 'package:art_space_artist/features/auction/presentation/views/create_auction_screen.dart';
@@ -155,10 +156,8 @@ class AppRouter {
       case AppRouterNames.viewAuctionDetails:
         return SlideRight(
           page: BlocProvider<AuctionCubit>(
-            create: (context) => getIt<AuctionCubit>()
-             // ..emitGetAuctionDetails(auctionId: settings.arguments as String),
-             ,
-            child: const ViewAuctionDetailsScreen(),
+            create: (context) => getIt<AuctionCubit>()..emitGetDetailsAuction(auctionId: settings.arguments as String),
+            child:  const ViewAuctionDetailsScreen(),
           ),
         );
       case AppRouterNames.editAuction:

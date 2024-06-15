@@ -59,10 +59,12 @@ class CustomProductViewWidget extends StatelessWidget {
                                 ColorManager.primaryColor, BlendMode.srcIn),
                           ),
                           const Spacer(),
-                          Text(
-                            productInfo.category,
-                            style: TextStyles.textStyle12
-                                .copyWith(color: ColorManager.originalBlack),
+                          Expanded(
+                            child: Text(
+                              productInfo.category,
+                              style: TextStyles.textStyle12
+                                  .copyWith(color: ColorManager.originalBlack, overflow: TextOverflow.ellipsis),
+                            ),
                           ),
                         ],
                       ),
@@ -79,7 +81,9 @@ class CustomProductViewWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(18.0),
                     child: Image.network(
                       '${productInfo.coverImage.image}',
-                      height: MediaQuery.of(context).size.height * 0.09
+                      height: MediaQuery.of(context).size.height * 0.092,
+                      width: 140,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),

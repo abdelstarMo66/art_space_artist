@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:art_space_artist/features/auction/data/models/get_all_auction_response.dart';
+import 'package:art_space_artist/features/auction/data/models/get_auction_details_response.dart';
 import 'package:art_space_artist/features/auction/presentation/view_model/auction_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
@@ -172,14 +173,14 @@ class AuctionCubit extends Cubit<AuctionState> {
     }
   }
 
-  List<AuctionInfo> myAuctions = [];
+  List<AuctionsInformations> myAuctions = [];
 
   void emitGetAllAuctions() async {
     emit(const AuctionState.getAllAuctionsLoading());
     final response = await _auctionRepo.getAllAuction();
     response.when(
         success: (data) {
-      for (AuctionInfo auctions in data.auctions.actionsInfo) {
+      for (AuctionsInformations auctions in data.auctions.actionsInfo) {
         myAuctions.add(auctions);
       }
       emit(AuctionState.getAllAuctionsSuccess(data));
@@ -188,13 +189,17 @@ class AuctionCubit extends Cubit<AuctionState> {
     });
   }
 
+
+  AuctionInfo ?auctionInfo;
+
   void emitGetDetailsAuction({required String auctionId}) async {
     emit(const AuctionState.getAuctionDetailsLoading());
     final response = await _auctionRepo.getAuctionDetails(
         auctionId: auctionId);
     response.when(
       success: (data) {
-        emit(AuctionState.getAllAuctionsSuccess(data));
+        auctionInfo = data.auctionInfo;
+        emit(AuctionState.getAuctionDetailsSuccess(data));
       },
       failure: (error) {
         emit(AuctionState.getAuctionDetailsError(error: error));

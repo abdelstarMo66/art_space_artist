@@ -50,8 +50,7 @@ class AllAuctionsScreen extends StatelessWidget {
                               AppRouterNames.viewAuctionDetails,
                               arguments: context
                                   .read<AuctionCubit>()
-                                  .myAuctions[index]
-                                  .id),
+                                  .myAuctions[index].id),
                           child: AuctionItem(index: index)),
                       itemCount: context.read<AuctionCubit>().myAuctions.length,
                     )
