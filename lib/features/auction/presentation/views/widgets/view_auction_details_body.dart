@@ -2,9 +2,16 @@ import 'dart:ui';
 import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
+import 'package:art_space_artist/features/auction/presentation/view_model/auction_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../../core/constants/constants.dart';
+import '../../../../../core/constants/toast_color.dart';
+import '../../../../../core/network/api_error_handler.dart';
+import '../../../../../core/router/app_router_names.dart';
 import '../../../data/models/get_auction_details_response.dart';
+import '../../view_model/auction_cubit.dart';
 
 class ViewAuctionDetailsBody extends StatelessWidget {
   final AuctionInfo? auctionInfo;
@@ -68,11 +75,46 @@ class ViewAuctionDetailsBody extends StatelessWidget {
                     const SizedBox(
                       width: 10.0,
                     ),
-                    SvgPicture.asset(
-                      AssetsManager.icTrash,
-                      colorFilter:
-                          const ColorFilter.mode(Colors.red, BlendMode.srcIn),
-                      height: 35,
+                    BlocListener<AuctionCubit, AuctionState>(
+                      listenWhen: (previous, current) => current is DeleteAuctionLoading||
+                      current is DeleteAuctionError||
+                      current is DeleteAuctionSuccess,
+                      listener: (context, state) {
+                        state.whenOrNull(
+                        deleteAuctionLoading: () {
+                           showDialog(
+                            context: context,
+                            builder: (context) => const Center(
+                                child: CircularProgressIndicator(
+                                  color: ColorManager.primaryColor,
+                                )),
+                          );
+                        },
+                        deleteAuctionError: (error) {
+                          Navigator.of(context).pop();
+                          showToast(
+                            msg: '${ServerFailure(error)}',
+                            state: ToastState.error,
+                          );
+                        },
+                        deleteAuctionSuccess: (data) {
+                          Navigator.of(context).pop();
+                          Navigator.of(context)
+                              .pushNamedAndRemoveUntil(
+                              AppRouterNames.home, (route) => false
+                          );
+                        },
+                      );
+                      },
+                      child: GestureDetector(
+                      onTap: () => context.read<AuctionCubit>().emitDeleteProduct(auctionId : auctionInfo!.id, context : context),
+                      child: SvgPicture.asset(
+                          AssetsManager.icTrash,
+                          colorFilter:
+                              const ColorFilter.mode(Colors.red, BlendMode.srcIn),
+                          height: 35,
+                        ),
+                      ),
                     ),
                   ],
                 ),

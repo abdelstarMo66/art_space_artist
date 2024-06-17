@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../../core/constants/color_manager.dart';
+import '../../../../core/router/app_router_names.dart';
 import '../../../products/data/models/get_category_response.dart';
 import '../../../products/data/models/get_styles_response.dart';
 import '../../../products/data/models/get_subject_response.dart';
@@ -203,6 +205,35 @@ class AuctionCubit extends Cubit<AuctionState> {
       },
       failure: (error) {
         emit(AuctionState.getAuctionDetailsError(error: error));
+      },
+    );
+  }
+
+  void emitDeleteProduct({required String auctionId,required context}) async {
+    emit(const AuctionState.deleteAuctionLoading());
+    final response = await _auctionRepo.deleteAuction(
+      auctionId: auctionId,
+    );
+    response.when(
+      success: (data) {
+        Navigator.pushReplacementNamed(
+            context, AppRouterNames.home);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              'Deleting...',
+              style: TextStyle(
+                color: ColorManager.primaryColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 20.0,
+              ),
+            ),
+          ),
+        );
+        emit(AuctionState.deleteAuctionSuccess(data));
+      },
+      failure: (error) {
+        emit(AuctionState.deleteAuctionError(error: error));
       },
     );
   }

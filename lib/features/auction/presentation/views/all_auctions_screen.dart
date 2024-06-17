@@ -18,7 +18,7 @@ class AllAuctionsScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           leading: GestureDetector(
-              onTap: () => Navigator.of(context).pop,
+              onTap: () => Navigator.of(context).pop(),
               child: SvgPicture.asset(
                 AssetsManager.icBackArrow,
               )),

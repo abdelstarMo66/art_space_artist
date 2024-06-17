@@ -4,7 +4,10 @@ import 'package:art_space_artist/features/home/presentation/view_model/home_stat
 import 'package:art_space_artist/features/home/presentation/views/widget/product_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../../../../core/components/app_customer_shimmer.dart';
+import '../../../../../core/constants/assets_manager.dart';
+import '../../../../../core/constants/text_style.dart';
 
 class GetProductList extends StatelessWidget {
   const GetProductList({super.key});
@@ -13,6 +16,26 @@ class GetProductList extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(builder: (context, state) {
       HomeCubit cubit = context.read<HomeCubit>();
+      if (cubit.myProducts.isEmpty) {
+        return Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                AssetsManager.imgDataEmpty,
+                height: MediaQuery.of(context).size.height * 0.35,
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              const Text(
+                'Not artworks founded',
+                style: TextStyles.textStyle18,
+              ),
+            ],
+          ),
+        );
+      }
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
@@ -23,7 +46,7 @@ class GetProductList extends StatelessWidget {
               mainAxisSpacing: MediaQuery.of(context).size.height * 0.05,
               crossAxisSpacing: 16.0,
           ),
-          itemBuilder: (context, index) => cubit.myProducts.isEmpty
+          itemBuilder: (context, index) => state is GetHomeProductLoading
               ? AppCustomShimmer(
                   child: Container(
                     height: 200.0,

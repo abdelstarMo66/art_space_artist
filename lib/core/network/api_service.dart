@@ -25,6 +25,7 @@ import 'package:art_space_artist/features/profile/data/model/edit_profile_respon
 import 'package:art_space_artist/features/profile/data/model/get_profile_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
+import '../../features/auction/data/models/delete_auction_response.dart';
 import '../../features/auth/forgetPassword/data/model/forget_password_response.dart';
 import '../../features/auth/forgetPassword/data/model/verify_email_response.dart';
 import '../../features/auth/login/data/model/login_response.dart';
@@ -177,6 +178,12 @@ abstract class ApiService {
 
   @GET(ApiConstant.getAuctionDetails)
   Future<GetAuctionDetailsResponse> getAuctionDetails({
+    @Path('id') required String? id,
+    @Header('Authorization') required String token,
+  });
+
+  @DELETE(ApiConstant.deleteAuction)
+  Future<DeleteAuctionResponse> deleteAuction({
     @Path('id') required String? id,
     @Header('Authorization') required String token,
   });
