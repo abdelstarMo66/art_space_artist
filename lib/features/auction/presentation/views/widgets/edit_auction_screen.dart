@@ -2,12 +2,10 @@ import 'package:art_space_artist/core/components/default_button.dart';
 import 'package:art_space_artist/features/auction/data/models/get_auction_details_response.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../../../../core/components/create_text_form.dart';
 import '../../../../../core/constants/assets_manager.dart';
 import '../../../../../core/constants/color_manager.dart';
 import '../../../../../core/constants/text_style.dart';
-import '../../../../../core/router/app_router_names.dart';
 import '../../../../products/presentation/views/widgets/custom_container_create_product.dart';
 import '../../../../products/presentation/views/widgets/price_and_size_widget.dart';
 

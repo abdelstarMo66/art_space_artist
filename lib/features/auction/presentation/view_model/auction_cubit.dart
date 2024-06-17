@@ -250,4 +250,8 @@ class AuctionCubit extends Cubit<AuctionState> {
       beganController.text = picked.toString().split(" ")[0];
     }
   }
+
+  final List<Widget> allAuctionImage = [];
+
+
 }
