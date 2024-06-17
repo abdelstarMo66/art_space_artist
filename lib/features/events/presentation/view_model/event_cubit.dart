@@ -6,6 +6,7 @@ import 'package:art_space_artist/features/events/presentation/view_model/event_s
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -82,5 +83,15 @@ class EventCubit extends Cubit<EventState> {
       },
     );
   }
+  Future<void> selectDate({required BuildContext context}) async {
+    DateTime? picked = await showDatePicker(
+        context: context,
+        firstDate: DateTime(2020),
+        initialDate: DateTime.now(),
+        lastDate: DateTime(2030));
 
+    if(picked != null) {
+      beganController.text = picked.toString().split(" ")[0];
+    }
+  }
 }

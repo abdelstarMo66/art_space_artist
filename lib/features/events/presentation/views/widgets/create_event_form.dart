@@ -50,28 +50,8 @@ class CreateEventForm extends StatelessWidget {
               height: 20.0
           ),
           CreateTextForm(
-            onTap: () {
-              // SfDateRangePicker(
-              //   minDate: DateTime.now(),
-              //   startRangeSelectionColor: ColorManager.secondaryColor,
-              //   rangeSelectionColor: ColorManager.primaryColor,
-              //   endRangeSelectionColor: ColorManager.secondaryColor,
-              //   selectionColor: ColorManager.primaryColor,
-              //   todayHighlightColor: ColorManager.originalBlack,
-              //   view: DateRangePickerView.month,
-              //   selectionMode: DateRangePickerSelectionMode.range,
-              //   showActionButtons: true,
-              //   showTodayButton: true,
-              //   onSelectionChanged: (value){},
-              //   onSubmit: (value){
-              //     print(value);
-              //   },
-              //   onCancel: (){},
-              //   selectionTextStyle: TextStyles.textStyle14Primary.copyWith(decoration: TextDecoration.none),
-              //   confirmText: 'Confirm',
-              //   cancelText: 'cancel',
-              // );
-            },
+            readOnly: true,
+            onTap: () => cubit.selectDate(context: context),
             text: 'Began date',
             controller: cubit.beganController,
             validator: (value) {

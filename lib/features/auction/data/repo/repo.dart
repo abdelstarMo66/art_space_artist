@@ -1,4 +1,6 @@
 import 'package:art_space_artist/features/auction/data/models/create_auction_response.dart';
+import 'package:art_space_artist/features/auction/data/models/edit_auction_request_body.dart';
+import 'package:art_space_artist/features/auction/data/models/edit_auction_response.dart';
 import 'package:art_space_artist/features/auction/data/models/get_all_auction_response.dart';
 import 'package:dio/dio.dart';
 import '../../../../core/constants/constants.dart';
@@ -83,6 +85,19 @@ class AuctionRepo {
       final response = await _apiService.deleteAuction(
         token: 'Bearer $token',
         id: auctionId,
+      );
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(error.toString());
+    }
+  }
+
+  Future<ApiResult<EditAuctionResponse>> editeAuction({required String auctionId, required EditAuctionRequestBody editAuctionRequestBody}) async {
+    try {
+      final response = await _apiService.editAuction(
+        token: 'Bearer $token',
+        id: auctionId,
+        editAuctionRequestBody: editAuctionRequestBody
       );
       return ApiResult.success(response);
     } catch (error) {

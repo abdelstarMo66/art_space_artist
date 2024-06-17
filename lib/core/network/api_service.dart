@@ -1,5 +1,6 @@
 import 'package:art_space_artist/core/network/api_constants.dart';
 import 'package:art_space_artist/features/auction/data/models/create_auction_response.dart';
+import 'package:art_space_artist/features/auction/data/models/edit_auction_response.dart';
 import 'package:art_space_artist/features/auction/data/models/get_all_auction_response.dart';
 import 'package:art_space_artist/features/auction/data/models/get_auction_details_response.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/forget_password_request.dart';
@@ -26,6 +27,7 @@ import 'package:art_space_artist/features/profile/data/model/get_profile_respons
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 import '../../features/auction/data/models/delete_auction_response.dart';
+import '../../features/auction/data/models/edit_auction_request_body.dart';
 import '../../features/auth/forgetPassword/data/model/forget_password_response.dart';
 import '../../features/auth/forgetPassword/data/model/verify_email_response.dart';
 import '../../features/auth/login/data/model/login_response.dart';
@@ -187,4 +189,11 @@ abstract class ApiService {
     @Path('id') required String? id,
     @Header('Authorization') required String token,
   });
+
+  @PATCH(ApiConstant.editAuction)
+  Future<EditAuctionResponse> editAuction({
+    @Path('id') required String? id,
+    @Body() required EditAuctionRequestBody editAuctionRequestBody,
+    @Header('Authorization') required String token,
+});
 }

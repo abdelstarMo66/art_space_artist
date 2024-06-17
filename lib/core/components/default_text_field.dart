@@ -13,19 +13,26 @@ class DefaultTextField extends StatelessWidget {
     required this.maxLines,
     this.icon,
     this.onPressedIcon,
+    this.onTap,
+    this.readOnly
   });
+
   final String hintText;
   final TextEditingController controller;
   final FormFieldValidator validator;
-  final TextInputType? keyboardType;
+  final TextInputType ? keyboardType;
   final bool obscureText;
-  final int? maxLines;
-  final IconData? icon;
-  final VoidCallback? onPressedIcon;
+  final int ? maxLines;
+  final IconData ? icon;
+  final VoidCallback ? onPressedIcon;
+  final GestureTapCallback ? onTap;
+  final bool ? readOnly;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onTap: onTap,
+      readOnly: readOnly == null ? false : true,
       cursorColor: ColorManager.primaryColor,
       controller: controller,
       obscureText: obscureText,
@@ -36,7 +43,9 @@ class DefaultTextField extends StatelessWidget {
         filled: true,
         fillColor: ColorManager.textFormBGColor,
         hintText: hintText,
-        hintStyle: TextStyles.textStyle16.copyWith(color: Colors.grey),
+        hintStyle: TextStyles.textStyle16.copyWith(
+            color: Colors.grey,
+        ),
         enabledBorder: customBorder(color: ColorManager.originalWhite),
         focusedBorder: customBorder(color: ColorManager.primaryColor),
         suffixIcon: IconButton(

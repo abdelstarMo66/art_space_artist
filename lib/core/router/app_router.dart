@@ -4,6 +4,7 @@ import 'package:art_space_artist/features/auction/presentation/view_model/auctio
 import 'package:art_space_artist/features/auction/presentation/views/all_auctions_screen.dart';
 import 'package:art_space_artist/features/auction/presentation/views/create_auction_screen.dart';
 import 'package:art_space_artist/features/auction/presentation/views/view_auction_details_screen.dart';
+import 'package:art_space_artist/features/auction/presentation/views/widgets/edit_auction_screen.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/view_model/forget_password_cubit.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/forget_password_screen.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/presentation/views/verify_email_otp_screen.dart';
@@ -138,8 +139,8 @@ class AppRouter {
       // Auction
       case AppRouterNames.createAuction:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider<AuctionCubit>.value(
-            value: getIt<AuctionCubit>()
+          builder: (_) => BlocProvider<AuctionCubit>(
+            create: (context) => getIt<AuctionCubit>()
               ..emitGetCategories()
               ..emitGetStyles()
               ..emitGetSubjects(),
@@ -161,7 +162,13 @@ class AppRouter {
           ),
         );
       case AppRouterNames.editAuction:
-
+          return SlideRight(
+              page: BlocProvider<AuctionCubit>.value(
+                value:  getIt<AuctionCubit>(),
+                child:  EditAuctionScreen(
+                  auctionInfo: settings.arguments as AuctionInfo,
+                ),
+              ));
 
       default:
         return unDefinedRoute(settings);

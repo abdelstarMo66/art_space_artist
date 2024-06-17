@@ -16,7 +16,7 @@ class GetProductList extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(builder: (context, state) {
       HomeCubit cubit = context.read<HomeCubit>();
-      if (cubit.myProducts.isEmpty) {
+      if (cubit.myProducts.isEmpty && state is GetHomeProductSuccess) {
         return Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,7 +36,8 @@ class GetProductList extends StatelessWidget {
           ),
         );
       }
-      return Padding(
+      else {
+        return Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
           shrinkWrap: true,
@@ -46,7 +47,7 @@ class GetProductList extends StatelessWidget {
               mainAxisSpacing: MediaQuery.of(context).size.height * 0.05,
               crossAxisSpacing: 16.0,
           ),
-          itemBuilder: (context, index) => state is GetHomeProductLoading
+          itemBuilder: (context, index) => state is GetHomeProductLoading || cubit.myProducts.isEmpty
               ? AppCustomShimmer(
                   child: Container(
                     height: 200.0,
@@ -67,6 +68,7 @@ class GetProductList extends StatelessWidget {
               : cubit.myProducts.length,
         ),
       );
+      }
     });
   }
 }

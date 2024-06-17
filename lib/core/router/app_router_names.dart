@@ -21,7 +21,7 @@ class AppRouterNames {
   static const createAuction ='/creteAuction';
   static const viewAuctionDetails ='/viewAuctionDetails';
   static const editAuction ='/editAuction';
-  static const allAuctions ='/auction/me';
+  static const allAuctions ='/allAuction';
   // Profile
   static const editProfile ='/editProfile';
   static const settings ='/settings';

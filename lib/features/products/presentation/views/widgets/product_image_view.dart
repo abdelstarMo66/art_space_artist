@@ -74,7 +74,8 @@ class _ProductImagesViewState extends State<ProductImagesView> {
               ),
               child: Image.network(
                 images[index],
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
+                height: 150,
               ),
             ),
             options: CarouselOptions(

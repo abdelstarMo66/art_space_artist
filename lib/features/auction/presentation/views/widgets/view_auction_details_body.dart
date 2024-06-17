@@ -66,52 +66,59 @@ class ViewAuctionDetailsBody extends StatelessWidget {
                       ),
                     ),
                     const Spacer(),
-                    SvgPicture.asset(
-                      AssetsManager.icEdit,
-                      colorFilter: const ColorFilter.mode(
-                          ColorManager.primaryColor, BlendMode.srcIn),
-                      height: 35,
+                    GestureDetector(
+                      onTap: () => Navigator.of(context)
+                          .pushNamed(AppRouterNames.editAuction, arguments: auctionInfo),
+                      child: SvgPicture.asset(
+                        AssetsManager.icEdit,
+                        colorFilter: const ColorFilter.mode(
+                            ColorManager.primaryColor, BlendMode.srcIn),
+                        height: 35,
+                      ),
                     ),
                     const SizedBox(
                       width: 10.0,
                     ),
                     BlocListener<AuctionCubit, AuctionState>(
-                      listenWhen: (previous, current) => current is DeleteAuctionLoading||
-                      current is DeleteAuctionError||
-                      current is DeleteAuctionSuccess,
+                      listenWhen: (previous, current) =>
+                          current is DeleteAuctionLoading ||
+                          current is DeleteAuctionError ||
+                          current is DeleteAuctionSuccess,
                       listener: (context, state) {
                         state.whenOrNull(
-                        deleteAuctionLoading: () {
-                           showDialog(
-                            context: context,
-                            builder: (context) => const Center(
-                                child: CircularProgressIndicator(
-                                  color: ColorManager.primaryColor,
-                                )),
-                          );
-                        },
-                        deleteAuctionError: (error) {
-                          Navigator.of(context).pop();
-                          showToast(
-                            msg: '${ServerFailure(error)}',
-                            state: ToastState.error,
-                          );
-                        },
-                        deleteAuctionSuccess: (data) {
-                          Navigator.of(context).pop();
-                          Navigator.of(context)
-                              .pushNamedAndRemoveUntil(
-                              AppRouterNames.home, (route) => false
-                          );
-                        },
-                      );
+                          deleteAuctionLoading: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) => const Center(
+                                  child: CircularProgressIndicator(
+                                color: ColorManager.primaryColor,
+                              )),
+                            );
+                          },
+                          deleteAuctionError: (error) {
+                            Navigator.of(context).pop();
+                            showToast(
+                              msg: '${ServerFailure(error)}',
+                              state: ToastState.error,
+                            );
+                          },
+                          deleteAuctionSuccess: (data) {
+                            Navigator.of(context).pop();
+                            Navigator.of(context).pushNamedAndRemoveUntil(
+                                AppRouterNames.home, (route) => false);
+                          },
+                        );
                       },
                       child: GestureDetector(
-                      onTap: () => context.read<AuctionCubit>().emitDeleteProduct(auctionId : auctionInfo!.id, context : context),
-                      child: SvgPicture.asset(
+                        onTap: () =>
+                            context.read<AuctionCubit>().emitDeleteProduct(
+                                  auctionId: auctionInfo!.id,
+                                  context: context,
+                                ),
+                        child: SvgPicture.asset(
                           AssetsManager.icTrash,
-                          colorFilter:
-                              const ColorFilter.mode(Colors.red, BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(
+                              Colors.red, BlendMode.srcIn),
                           height: 35,
                         ),
                       ),
@@ -185,22 +192,30 @@ class ViewAuctionDetailsBody extends StatelessWidget {
                   'Began : ${auctionInfo!.began.split("T")[0]}',
                   style: TextStyles.textStyle18,
                 ),
-                const SizedBox(height: 14.0,),
+                const SizedBox(
+                  height: 14.0,
+                ),
                 Text(
                   'End : ${auctionInfo!.end.split("T")[0]}',
                   style: TextStyles.textStyle18,
                 ),
-                const SizedBox(height: 14.0,),
+                const SizedBox(
+                  height: 14.0,
+                ),
                 Text(
                   'Style : ${auctionInfo!.style}',
                   style: TextStyles.textStyle18,
                 ),
-                const SizedBox(height: 14.0,),
+                const SizedBox(
+                  height: 14.0,
+                ),
                 Text(
                   'category : ${auctionInfo!.category}',
                   style: TextStyles.textStyle18,
                 ),
-                const SizedBox(height: 14.0,),
+                const SizedBox(
+                  height: 14.0,
+                ),
                 Text(
                   'material : ${auctionInfo!.material}',
                   style: TextStyles.textStyle18,

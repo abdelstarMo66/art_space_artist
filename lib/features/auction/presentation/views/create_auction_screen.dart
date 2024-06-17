@@ -62,9 +62,9 @@ class _CreateAuctionScreenState extends State<CreateAuctionScreen> {
       },
       builder: (context, state) {
         AuctionCubit cubit = context.read<AuctionCubit>();
-        if (cubit.getCategoriesSuccess &&
-            cubit.getStylesSuccess &&
-            cubit.getSubjectsSuccess) {
+        if (!cubit.getCategoriesSuccess || !cubit.getStylesSuccess || !cubit.getSubjectsSuccess) {
+          return const LoadingWidget();
+        } else {
           return Scaffold(
             backgroundColor: ColorManager.originalWhite,
             appBar: AppBar(
@@ -105,7 +105,7 @@ class _CreateAuctionScreenState extends State<CreateAuctionScreen> {
                                         BorderRadiusDirectional.circular(18.0),
                                     child: Image.file(
                                       cubit.coverImage!,
-                                      fit: BoxFit.cover,
+                                      fit: BoxFit.fill,
                                       height: 200,
                                       width: 400,
                                     ),
@@ -344,17 +344,17 @@ class _CreateAuctionScreenState extends State<CreateAuctionScreen> {
                               padding: 12,
                               textAlign: TextAlign.start,
                               maxLines: 1,
-                              text: 'Duration',
+                              text: ' Maximum 14 days',
                               controller: cubit.durationController,
                               validator: (value) {
                                 if (value == null) {
-                                  return 'please enter name';
+                                  return 'please valid duration';
                                 }
                                 return null;
                               },
                               keyboardType: TextInputType.number,
                               widget: const Text(
-                                '10 days',
+                                'Duration',
                                 style: TextStyles.textStyle18,
                               ),
                             ),
@@ -363,9 +363,11 @@ class _CreateAuctionScreenState extends State<CreateAuctionScreen> {
                             ),
                             CreateTextForm(
                               padding: 12,
+                              readOnly:  true,
                               textAlign: TextAlign.start,
                               maxLines: 1,
-                              text: '24-6-2024',
+                              onTap: () => context.read<AuctionCubit>().selectDate(context: context),
+                              text: 'tap to open calendar',
                               controller: cubit.beganController,
                               validator: (value) {
                                 if (value == null) {
@@ -482,8 +484,6 @@ class _CreateAuctionScreenState extends State<CreateAuctionScreen> {
               ),
             ),
           );
-        } else {
-          return const LoadingWidget();
         }
       },
     );
