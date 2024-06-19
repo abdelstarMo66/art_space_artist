@@ -1,6 +1,9 @@
+import 'package:art_space_artist/core/components/loading_widget.dart';
 import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
+import 'package:art_space_artist/core/constants/constants.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
+import 'package:art_space_artist/core/constants/toast_color.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/events/presentation/view_model/event_cubit.dart';
 import 'package:art_space_artist/features/events/presentation/view_model/event_state.dart';
@@ -16,7 +19,31 @@ class EventDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<EventCubit, EventState>(
+    return BlocConsumer<EventCubit, EventState>(
+      listenWhen: (previous, current) => current is DeleteEventLoading||
+          current is DeleteEventSuccess||
+          current is DeleteEventError,
+      listener:(context, state) {
+        if(state is DeleteEventLoading)
+        {
+          showDialog(context: context,
+            builder: (context) => const LoadingWidget(),
+          );
+        }
+        else if(state is DeleteEventSuccess)
+        {
+          Navigator.of(context).pop();
+          Navigator.of(context).pushReplacementNamed(AppRouterNames.home);
+          showToast(
+              msg: 'Event delete successfully',
+              state: ToastState.success);
+        }else {
+          Navigator.of(context).pop();
+          showToast(
+              msg: 'event not delete , please try again later',
+              state: ToastState.error);
+        }
+      },
       builder: (context, state) {
         EventCubit cubit = context.read<EventCubit>();
         return Scaffold(
@@ -83,7 +110,9 @@ class EventDetailsScreen extends StatelessWidget {
                                         ),
                                       ),
                                       IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+
+                                        },
                                         icon: SvgPicture.asset(
                                           AssetsManager.icEdit,
                                           height: 32.0,
@@ -94,7 +123,9 @@ class EventDetailsScreen extends StatelessWidget {
                                         ),
                                       ),
                                       IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          cubit.deleteEvent();
+                                        },
                                         icon: SvgPicture.asset(
                                           AssetsManager.icTrash,
                                           height: 32.0,

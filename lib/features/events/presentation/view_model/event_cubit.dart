@@ -94,4 +94,20 @@ class EventCubit extends Cubit<EventState> {
       beganController.text = picked.toString().split(" ")[0];
     }
   }
+
+  Future<void> deleteEvent() async {
+    emit(const EventState.deleteEventLoading());
+
+    final response = await _eventRepo.deleteEvent(
+      eventId: eventInfo!.id,
+    );
+    response.when(
+      success: (data) {
+        emit(EventState.deleteEventSuccess(data));
+      },
+      failure: (error) {
+        emit(EventState.deleteEventError(error.toString()));
+      },
+    );
+  }
 }

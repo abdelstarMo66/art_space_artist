@@ -26,6 +26,9 @@ mixin _$EventState<T> {
     required TResult Function() getEventDetailsLoading,
     required TResult Function(T event) getEventDetailsSuccess,
     required TResult Function(String message) getEventDetailsFailure,
+    required TResult Function() deleteEventLoading,
+    required TResult Function(T event) deleteEventSuccess,
+    required TResult Function(String message) deleteEventError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +41,9 @@ mixin _$EventState<T> {
     TResult? Function()? getEventDetailsLoading,
     TResult? Function(T event)? getEventDetailsSuccess,
     TResult? Function(String message)? getEventDetailsFailure,
+    TResult? Function()? deleteEventLoading,
+    TResult? Function(T event)? deleteEventSuccess,
+    TResult? Function(String message)? deleteEventError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +56,9 @@ mixin _$EventState<T> {
     TResult Function()? getEventDetailsLoading,
     TResult Function(T event)? getEventDetailsSuccess,
     TResult Function(String message)? getEventDetailsFailure,
+    TResult Function()? deleteEventLoading,
+    TResult Function(T event)? deleteEventSuccess,
+    TResult Function(String message)? deleteEventError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,6 +75,9 @@ mixin _$EventState<T> {
         getEventDetailsSuccess,
     required TResult Function(GetEventDetailsFailure<T> value)
         getEventDetailsFailure,
+    required TResult Function(DeleteEventLoading<T> value) deleteEventLoading,
+    required TResult Function(DeleteEventSuccess<T> value) deleteEventSuccess,
+    required TResult Function(DeleteEventError<T> value) deleteEventError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,6 +90,9 @@ mixin _$EventState<T> {
     TResult? Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult? Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult? Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult? Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult? Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult? Function(DeleteEventError<T> value)? deleteEventError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,6 +105,9 @@ mixin _$EventState<T> {
     TResult Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult Function(DeleteEventError<T> value)? deleteEventError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -159,6 +177,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() getEventDetailsLoading,
     required TResult Function(T event) getEventDetailsSuccess,
     required TResult Function(String message) getEventDetailsFailure,
+    required TResult Function() deleteEventLoading,
+    required TResult Function(T event) deleteEventSuccess,
+    required TResult Function(String message) deleteEventError,
   }) {
     return initial();
   }
@@ -174,6 +195,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? getEventDetailsLoading,
     TResult? Function(T event)? getEventDetailsSuccess,
     TResult? Function(String message)? getEventDetailsFailure,
+    TResult? Function()? deleteEventLoading,
+    TResult? Function(T event)? deleteEventSuccess,
+    TResult? Function(String message)? deleteEventError,
   }) {
     return initial?.call();
   }
@@ -189,6 +213,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? getEventDetailsLoading,
     TResult Function(T event)? getEventDetailsSuccess,
     TResult Function(String message)? getEventDetailsFailure,
+    TResult Function()? deleteEventLoading,
+    TResult Function(T event)? deleteEventSuccess,
+    TResult Function(String message)? deleteEventError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -211,6 +238,9 @@ class _$InitialImpl<T> implements _Initial<T> {
         getEventDetailsSuccess,
     required TResult Function(GetEventDetailsFailure<T> value)
         getEventDetailsFailure,
+    required TResult Function(DeleteEventLoading<T> value) deleteEventLoading,
+    required TResult Function(DeleteEventSuccess<T> value) deleteEventSuccess,
+    required TResult Function(DeleteEventError<T> value) deleteEventError,
   }) {
     return initial(this);
   }
@@ -226,6 +256,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult? Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult? Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult? Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult? Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult? Function(DeleteEventError<T> value)? deleteEventError,
   }) {
     return initial?.call(this);
   }
@@ -241,6 +274,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult Function(DeleteEventError<T> value)? deleteEventError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -301,6 +337,9 @@ class _$CreateEventLoadingImpl<T> implements CreateEventLoading<T> {
     required TResult Function() getEventDetailsLoading,
     required TResult Function(T event) getEventDetailsSuccess,
     required TResult Function(String message) getEventDetailsFailure,
+    required TResult Function() deleteEventLoading,
+    required TResult Function(T event) deleteEventSuccess,
+    required TResult Function(String message) deleteEventError,
   }) {
     return createEventLoading();
   }
@@ -316,6 +355,9 @@ class _$CreateEventLoadingImpl<T> implements CreateEventLoading<T> {
     TResult? Function()? getEventDetailsLoading,
     TResult? Function(T event)? getEventDetailsSuccess,
     TResult? Function(String message)? getEventDetailsFailure,
+    TResult? Function()? deleteEventLoading,
+    TResult? Function(T event)? deleteEventSuccess,
+    TResult? Function(String message)? deleteEventError,
   }) {
     return createEventLoading?.call();
   }
@@ -331,6 +373,9 @@ class _$CreateEventLoadingImpl<T> implements CreateEventLoading<T> {
     TResult Function()? getEventDetailsLoading,
     TResult Function(T event)? getEventDetailsSuccess,
     TResult Function(String message)? getEventDetailsFailure,
+    TResult Function()? deleteEventLoading,
+    TResult Function(T event)? deleteEventSuccess,
+    TResult Function(String message)? deleteEventError,
     required TResult orElse(),
   }) {
     if (createEventLoading != null) {
@@ -353,6 +398,9 @@ class _$CreateEventLoadingImpl<T> implements CreateEventLoading<T> {
         getEventDetailsSuccess,
     required TResult Function(GetEventDetailsFailure<T> value)
         getEventDetailsFailure,
+    required TResult Function(DeleteEventLoading<T> value) deleteEventLoading,
+    required TResult Function(DeleteEventSuccess<T> value) deleteEventSuccess,
+    required TResult Function(DeleteEventError<T> value) deleteEventError,
   }) {
     return createEventLoading(this);
   }
@@ -368,6 +416,9 @@ class _$CreateEventLoadingImpl<T> implements CreateEventLoading<T> {
     TResult? Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult? Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult? Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult? Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult? Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult? Function(DeleteEventError<T> value)? deleteEventError,
   }) {
     return createEventLoading?.call(this);
   }
@@ -383,6 +434,9 @@ class _$CreateEventLoadingImpl<T> implements CreateEventLoading<T> {
     TResult Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult Function(DeleteEventError<T> value)? deleteEventError,
     required TResult orElse(),
   }) {
     if (createEventLoading != null) {
@@ -470,6 +524,9 @@ class _$CreateEventSuccessImpl<T> implements CreateEventSuccess<T> {
     required TResult Function() getEventDetailsLoading,
     required TResult Function(T event) getEventDetailsSuccess,
     required TResult Function(String message) getEventDetailsFailure,
+    required TResult Function() deleteEventLoading,
+    required TResult Function(T event) deleteEventSuccess,
+    required TResult Function(String message) deleteEventError,
   }) {
     return createEventSuccess(event);
   }
@@ -485,6 +542,9 @@ class _$CreateEventSuccessImpl<T> implements CreateEventSuccess<T> {
     TResult? Function()? getEventDetailsLoading,
     TResult? Function(T event)? getEventDetailsSuccess,
     TResult? Function(String message)? getEventDetailsFailure,
+    TResult? Function()? deleteEventLoading,
+    TResult? Function(T event)? deleteEventSuccess,
+    TResult? Function(String message)? deleteEventError,
   }) {
     return createEventSuccess?.call(event);
   }
@@ -500,6 +560,9 @@ class _$CreateEventSuccessImpl<T> implements CreateEventSuccess<T> {
     TResult Function()? getEventDetailsLoading,
     TResult Function(T event)? getEventDetailsSuccess,
     TResult Function(String message)? getEventDetailsFailure,
+    TResult Function()? deleteEventLoading,
+    TResult Function(T event)? deleteEventSuccess,
+    TResult Function(String message)? deleteEventError,
     required TResult orElse(),
   }) {
     if (createEventSuccess != null) {
@@ -522,6 +585,9 @@ class _$CreateEventSuccessImpl<T> implements CreateEventSuccess<T> {
         getEventDetailsSuccess,
     required TResult Function(GetEventDetailsFailure<T> value)
         getEventDetailsFailure,
+    required TResult Function(DeleteEventLoading<T> value) deleteEventLoading,
+    required TResult Function(DeleteEventSuccess<T> value) deleteEventSuccess,
+    required TResult Function(DeleteEventError<T> value) deleteEventError,
   }) {
     return createEventSuccess(this);
   }
@@ -537,6 +603,9 @@ class _$CreateEventSuccessImpl<T> implements CreateEventSuccess<T> {
     TResult? Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult? Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult? Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult? Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult? Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult? Function(DeleteEventError<T> value)? deleteEventError,
   }) {
     return createEventSuccess?.call(this);
   }
@@ -552,6 +621,9 @@ class _$CreateEventSuccessImpl<T> implements CreateEventSuccess<T> {
     TResult Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult Function(DeleteEventError<T> value)? deleteEventError,
     required TResult orElse(),
   }) {
     if (createEventSuccess != null) {
@@ -643,6 +715,9 @@ class _$CreateEventFailureImpl<T> implements CreateEventFailure<T> {
     required TResult Function() getEventDetailsLoading,
     required TResult Function(T event) getEventDetailsSuccess,
     required TResult Function(String message) getEventDetailsFailure,
+    required TResult Function() deleteEventLoading,
+    required TResult Function(T event) deleteEventSuccess,
+    required TResult Function(String message) deleteEventError,
   }) {
     return createEventFailure(message);
   }
@@ -658,6 +733,9 @@ class _$CreateEventFailureImpl<T> implements CreateEventFailure<T> {
     TResult? Function()? getEventDetailsLoading,
     TResult? Function(T event)? getEventDetailsSuccess,
     TResult? Function(String message)? getEventDetailsFailure,
+    TResult? Function()? deleteEventLoading,
+    TResult? Function(T event)? deleteEventSuccess,
+    TResult? Function(String message)? deleteEventError,
   }) {
     return createEventFailure?.call(message);
   }
@@ -673,6 +751,9 @@ class _$CreateEventFailureImpl<T> implements CreateEventFailure<T> {
     TResult Function()? getEventDetailsLoading,
     TResult Function(T event)? getEventDetailsSuccess,
     TResult Function(String message)? getEventDetailsFailure,
+    TResult Function()? deleteEventLoading,
+    TResult Function(T event)? deleteEventSuccess,
+    TResult Function(String message)? deleteEventError,
     required TResult orElse(),
   }) {
     if (createEventFailure != null) {
@@ -695,6 +776,9 @@ class _$CreateEventFailureImpl<T> implements CreateEventFailure<T> {
         getEventDetailsSuccess,
     required TResult Function(GetEventDetailsFailure<T> value)
         getEventDetailsFailure,
+    required TResult Function(DeleteEventLoading<T> value) deleteEventLoading,
+    required TResult Function(DeleteEventSuccess<T> value) deleteEventSuccess,
+    required TResult Function(DeleteEventError<T> value) deleteEventError,
   }) {
     return createEventFailure(this);
   }
@@ -710,6 +794,9 @@ class _$CreateEventFailureImpl<T> implements CreateEventFailure<T> {
     TResult? Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult? Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult? Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult? Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult? Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult? Function(DeleteEventError<T> value)? deleteEventError,
   }) {
     return createEventFailure?.call(this);
   }
@@ -725,6 +812,9 @@ class _$CreateEventFailureImpl<T> implements CreateEventFailure<T> {
     TResult Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult Function(DeleteEventError<T> value)? deleteEventError,
     required TResult orElse(),
   }) {
     if (createEventFailure != null) {
@@ -791,6 +881,9 @@ class _$AddEventCoverImageImpl<T> implements AddEventCoverImage<T> {
     required TResult Function() getEventDetailsLoading,
     required TResult Function(T event) getEventDetailsSuccess,
     required TResult Function(String message) getEventDetailsFailure,
+    required TResult Function() deleteEventLoading,
+    required TResult Function(T event) deleteEventSuccess,
+    required TResult Function(String message) deleteEventError,
   }) {
     return addEventCoverImage();
   }
@@ -806,6 +899,9 @@ class _$AddEventCoverImageImpl<T> implements AddEventCoverImage<T> {
     TResult? Function()? getEventDetailsLoading,
     TResult? Function(T event)? getEventDetailsSuccess,
     TResult? Function(String message)? getEventDetailsFailure,
+    TResult? Function()? deleteEventLoading,
+    TResult? Function(T event)? deleteEventSuccess,
+    TResult? Function(String message)? deleteEventError,
   }) {
     return addEventCoverImage?.call();
   }
@@ -821,6 +917,9 @@ class _$AddEventCoverImageImpl<T> implements AddEventCoverImage<T> {
     TResult Function()? getEventDetailsLoading,
     TResult Function(T event)? getEventDetailsSuccess,
     TResult Function(String message)? getEventDetailsFailure,
+    TResult Function()? deleteEventLoading,
+    TResult Function(T event)? deleteEventSuccess,
+    TResult Function(String message)? deleteEventError,
     required TResult orElse(),
   }) {
     if (addEventCoverImage != null) {
@@ -843,6 +942,9 @@ class _$AddEventCoverImageImpl<T> implements AddEventCoverImage<T> {
         getEventDetailsSuccess,
     required TResult Function(GetEventDetailsFailure<T> value)
         getEventDetailsFailure,
+    required TResult Function(DeleteEventLoading<T> value) deleteEventLoading,
+    required TResult Function(DeleteEventSuccess<T> value) deleteEventSuccess,
+    required TResult Function(DeleteEventError<T> value) deleteEventError,
   }) {
     return addEventCoverImage(this);
   }
@@ -858,6 +960,9 @@ class _$AddEventCoverImageImpl<T> implements AddEventCoverImage<T> {
     TResult? Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult? Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult? Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult? Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult? Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult? Function(DeleteEventError<T> value)? deleteEventError,
   }) {
     return addEventCoverImage?.call(this);
   }
@@ -873,6 +978,9 @@ class _$AddEventCoverImageImpl<T> implements AddEventCoverImage<T> {
     TResult Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult Function(DeleteEventError<T> value)? deleteEventError,
     required TResult orElse(),
   }) {
     if (addEventCoverImage != null) {
@@ -935,6 +1043,9 @@ class _$GetEventDetailsLoadingImpl<T> implements GetEventDetailsLoading<T> {
     required TResult Function() getEventDetailsLoading,
     required TResult Function(T event) getEventDetailsSuccess,
     required TResult Function(String message) getEventDetailsFailure,
+    required TResult Function() deleteEventLoading,
+    required TResult Function(T event) deleteEventSuccess,
+    required TResult Function(String message) deleteEventError,
   }) {
     return getEventDetailsLoading();
   }
@@ -950,6 +1061,9 @@ class _$GetEventDetailsLoadingImpl<T> implements GetEventDetailsLoading<T> {
     TResult? Function()? getEventDetailsLoading,
     TResult? Function(T event)? getEventDetailsSuccess,
     TResult? Function(String message)? getEventDetailsFailure,
+    TResult? Function()? deleteEventLoading,
+    TResult? Function(T event)? deleteEventSuccess,
+    TResult? Function(String message)? deleteEventError,
   }) {
     return getEventDetailsLoading?.call();
   }
@@ -965,6 +1079,9 @@ class _$GetEventDetailsLoadingImpl<T> implements GetEventDetailsLoading<T> {
     TResult Function()? getEventDetailsLoading,
     TResult Function(T event)? getEventDetailsSuccess,
     TResult Function(String message)? getEventDetailsFailure,
+    TResult Function()? deleteEventLoading,
+    TResult Function(T event)? deleteEventSuccess,
+    TResult Function(String message)? deleteEventError,
     required TResult orElse(),
   }) {
     if (getEventDetailsLoading != null) {
@@ -987,6 +1104,9 @@ class _$GetEventDetailsLoadingImpl<T> implements GetEventDetailsLoading<T> {
         getEventDetailsSuccess,
     required TResult Function(GetEventDetailsFailure<T> value)
         getEventDetailsFailure,
+    required TResult Function(DeleteEventLoading<T> value) deleteEventLoading,
+    required TResult Function(DeleteEventSuccess<T> value) deleteEventSuccess,
+    required TResult Function(DeleteEventError<T> value) deleteEventError,
   }) {
     return getEventDetailsLoading(this);
   }
@@ -1002,6 +1122,9 @@ class _$GetEventDetailsLoadingImpl<T> implements GetEventDetailsLoading<T> {
     TResult? Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult? Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult? Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult? Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult? Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult? Function(DeleteEventError<T> value)? deleteEventError,
   }) {
     return getEventDetailsLoading?.call(this);
   }
@@ -1017,6 +1140,9 @@ class _$GetEventDetailsLoadingImpl<T> implements GetEventDetailsLoading<T> {
     TResult Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult Function(DeleteEventError<T> value)? deleteEventError,
     required TResult orElse(),
   }) {
     if (getEventDetailsLoading != null) {
@@ -1106,6 +1232,9 @@ class _$GetEventDetailsSuccessImpl<T> implements GetEventDetailsSuccess<T> {
     required TResult Function() getEventDetailsLoading,
     required TResult Function(T event) getEventDetailsSuccess,
     required TResult Function(String message) getEventDetailsFailure,
+    required TResult Function() deleteEventLoading,
+    required TResult Function(T event) deleteEventSuccess,
+    required TResult Function(String message) deleteEventError,
   }) {
     return getEventDetailsSuccess(event);
   }
@@ -1121,6 +1250,9 @@ class _$GetEventDetailsSuccessImpl<T> implements GetEventDetailsSuccess<T> {
     TResult? Function()? getEventDetailsLoading,
     TResult? Function(T event)? getEventDetailsSuccess,
     TResult? Function(String message)? getEventDetailsFailure,
+    TResult? Function()? deleteEventLoading,
+    TResult? Function(T event)? deleteEventSuccess,
+    TResult? Function(String message)? deleteEventError,
   }) {
     return getEventDetailsSuccess?.call(event);
   }
@@ -1136,6 +1268,9 @@ class _$GetEventDetailsSuccessImpl<T> implements GetEventDetailsSuccess<T> {
     TResult Function()? getEventDetailsLoading,
     TResult Function(T event)? getEventDetailsSuccess,
     TResult Function(String message)? getEventDetailsFailure,
+    TResult Function()? deleteEventLoading,
+    TResult Function(T event)? deleteEventSuccess,
+    TResult Function(String message)? deleteEventError,
     required TResult orElse(),
   }) {
     if (getEventDetailsSuccess != null) {
@@ -1158,6 +1293,9 @@ class _$GetEventDetailsSuccessImpl<T> implements GetEventDetailsSuccess<T> {
         getEventDetailsSuccess,
     required TResult Function(GetEventDetailsFailure<T> value)
         getEventDetailsFailure,
+    required TResult Function(DeleteEventLoading<T> value) deleteEventLoading,
+    required TResult Function(DeleteEventSuccess<T> value) deleteEventSuccess,
+    required TResult Function(DeleteEventError<T> value) deleteEventError,
   }) {
     return getEventDetailsSuccess(this);
   }
@@ -1173,6 +1311,9 @@ class _$GetEventDetailsSuccessImpl<T> implements GetEventDetailsSuccess<T> {
     TResult? Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult? Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult? Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult? Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult? Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult? Function(DeleteEventError<T> value)? deleteEventError,
   }) {
     return getEventDetailsSuccess?.call(this);
   }
@@ -1188,6 +1329,9 @@ class _$GetEventDetailsSuccessImpl<T> implements GetEventDetailsSuccess<T> {
     TResult Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult Function(DeleteEventError<T> value)? deleteEventError,
     required TResult orElse(),
   }) {
     if (getEventDetailsSuccess != null) {
@@ -1282,6 +1426,9 @@ class _$GetEventDetailsFailureImpl<T> implements GetEventDetailsFailure<T> {
     required TResult Function() getEventDetailsLoading,
     required TResult Function(T event) getEventDetailsSuccess,
     required TResult Function(String message) getEventDetailsFailure,
+    required TResult Function() deleteEventLoading,
+    required TResult Function(T event) deleteEventSuccess,
+    required TResult Function(String message) deleteEventError,
   }) {
     return getEventDetailsFailure(message);
   }
@@ -1297,6 +1444,9 @@ class _$GetEventDetailsFailureImpl<T> implements GetEventDetailsFailure<T> {
     TResult? Function()? getEventDetailsLoading,
     TResult? Function(T event)? getEventDetailsSuccess,
     TResult? Function(String message)? getEventDetailsFailure,
+    TResult? Function()? deleteEventLoading,
+    TResult? Function(T event)? deleteEventSuccess,
+    TResult? Function(String message)? deleteEventError,
   }) {
     return getEventDetailsFailure?.call(message);
   }
@@ -1312,6 +1462,9 @@ class _$GetEventDetailsFailureImpl<T> implements GetEventDetailsFailure<T> {
     TResult Function()? getEventDetailsLoading,
     TResult Function(T event)? getEventDetailsSuccess,
     TResult Function(String message)? getEventDetailsFailure,
+    TResult Function()? deleteEventLoading,
+    TResult Function(T event)? deleteEventSuccess,
+    TResult Function(String message)? deleteEventError,
     required TResult orElse(),
   }) {
     if (getEventDetailsFailure != null) {
@@ -1334,6 +1487,9 @@ class _$GetEventDetailsFailureImpl<T> implements GetEventDetailsFailure<T> {
         getEventDetailsSuccess,
     required TResult Function(GetEventDetailsFailure<T> value)
         getEventDetailsFailure,
+    required TResult Function(DeleteEventLoading<T> value) deleteEventLoading,
+    required TResult Function(DeleteEventSuccess<T> value) deleteEventSuccess,
+    required TResult Function(DeleteEventError<T> value) deleteEventError,
   }) {
     return getEventDetailsFailure(this);
   }
@@ -1349,6 +1505,9 @@ class _$GetEventDetailsFailureImpl<T> implements GetEventDetailsFailure<T> {
     TResult? Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult? Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult? Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult? Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult? Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult? Function(DeleteEventError<T> value)? deleteEventError,
   }) {
     return getEventDetailsFailure?.call(this);
   }
@@ -1364,6 +1523,9 @@ class _$GetEventDetailsFailureImpl<T> implements GetEventDetailsFailure<T> {
     TResult Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
     TResult Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
     TResult Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult Function(DeleteEventError<T> value)? deleteEventError,
     required TResult orElse(),
   }) {
     if (getEventDetailsFailure != null) {
@@ -1381,4 +1543,548 @@ abstract class GetEventDetailsFailure<T> implements EventState<T> {
   @JsonKey(ignore: true)
   _$$GetEventDetailsFailureImplCopyWith<T, _$GetEventDetailsFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteEventLoadingImplCopyWith<T, $Res> {
+  factory _$$DeleteEventLoadingImplCopyWith(_$DeleteEventLoadingImpl<T> value,
+          $Res Function(_$DeleteEventLoadingImpl<T>) then) =
+      __$$DeleteEventLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteEventLoadingImplCopyWithImpl<T, $Res>
+    extends _$EventStateCopyWithImpl<T, $Res, _$DeleteEventLoadingImpl<T>>
+    implements _$$DeleteEventLoadingImplCopyWith<T, $Res> {
+  __$$DeleteEventLoadingImplCopyWithImpl(_$DeleteEventLoadingImpl<T> _value,
+      $Res Function(_$DeleteEventLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteEventLoadingImpl<T> implements DeleteEventLoading<T> {
+  const _$DeleteEventLoadingImpl();
+
+  @override
+  String toString() {
+    return 'EventState<$T>.deleteEventLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteEventLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createEventLoading,
+    required TResult Function(T event) createEventSuccess,
+    required TResult Function(String message) createEventFailure,
+    required TResult Function() addEventCoverImage,
+    required TResult Function() getEventDetailsLoading,
+    required TResult Function(T event) getEventDetailsSuccess,
+    required TResult Function(String message) getEventDetailsFailure,
+    required TResult Function() deleteEventLoading,
+    required TResult Function(T event) deleteEventSuccess,
+    required TResult Function(String message) deleteEventError,
+  }) {
+    return deleteEventLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createEventLoading,
+    TResult? Function(T event)? createEventSuccess,
+    TResult? Function(String message)? createEventFailure,
+    TResult? Function()? addEventCoverImage,
+    TResult? Function()? getEventDetailsLoading,
+    TResult? Function(T event)? getEventDetailsSuccess,
+    TResult? Function(String message)? getEventDetailsFailure,
+    TResult? Function()? deleteEventLoading,
+    TResult? Function(T event)? deleteEventSuccess,
+    TResult? Function(String message)? deleteEventError,
+  }) {
+    return deleteEventLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createEventLoading,
+    TResult Function(T event)? createEventSuccess,
+    TResult Function(String message)? createEventFailure,
+    TResult Function()? addEventCoverImage,
+    TResult Function()? getEventDetailsLoading,
+    TResult Function(T event)? getEventDetailsSuccess,
+    TResult Function(String message)? getEventDetailsFailure,
+    TResult Function()? deleteEventLoading,
+    TResult Function(T event)? deleteEventSuccess,
+    TResult Function(String message)? deleteEventError,
+    required TResult orElse(),
+  }) {
+    if (deleteEventLoading != null) {
+      return deleteEventLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(CreateEventLoading<T> value) createEventLoading,
+    required TResult Function(CreateEventSuccess<T> value) createEventSuccess,
+    required TResult Function(CreateEventFailure<T> value) createEventFailure,
+    required TResult Function(AddEventCoverImage<T> value) addEventCoverImage,
+    required TResult Function(GetEventDetailsLoading<T> value)
+        getEventDetailsLoading,
+    required TResult Function(GetEventDetailsSuccess<T> value)
+        getEventDetailsSuccess,
+    required TResult Function(GetEventDetailsFailure<T> value)
+        getEventDetailsFailure,
+    required TResult Function(DeleteEventLoading<T> value) deleteEventLoading,
+    required TResult Function(DeleteEventSuccess<T> value) deleteEventSuccess,
+    required TResult Function(DeleteEventError<T> value) deleteEventError,
+  }) {
+    return deleteEventLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(CreateEventLoading<T> value)? createEventLoading,
+    TResult? Function(CreateEventSuccess<T> value)? createEventSuccess,
+    TResult? Function(CreateEventFailure<T> value)? createEventFailure,
+    TResult? Function(AddEventCoverImage<T> value)? addEventCoverImage,
+    TResult? Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
+    TResult? Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
+    TResult? Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult? Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult? Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult? Function(DeleteEventError<T> value)? deleteEventError,
+  }) {
+    return deleteEventLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(CreateEventLoading<T> value)? createEventLoading,
+    TResult Function(CreateEventSuccess<T> value)? createEventSuccess,
+    TResult Function(CreateEventFailure<T> value)? createEventFailure,
+    TResult Function(AddEventCoverImage<T> value)? addEventCoverImage,
+    TResult Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
+    TResult Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
+    TResult Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult Function(DeleteEventError<T> value)? deleteEventError,
+    required TResult orElse(),
+  }) {
+    if (deleteEventLoading != null) {
+      return deleteEventLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteEventLoading<T> implements EventState<T> {
+  const factory DeleteEventLoading() = _$DeleteEventLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteEventSuccessImplCopyWith<T, $Res> {
+  factory _$$DeleteEventSuccessImplCopyWith(_$DeleteEventSuccessImpl<T> value,
+          $Res Function(_$DeleteEventSuccessImpl<T>) then) =
+      __$$DeleteEventSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T event});
+}
+
+/// @nodoc
+class __$$DeleteEventSuccessImplCopyWithImpl<T, $Res>
+    extends _$EventStateCopyWithImpl<T, $Res, _$DeleteEventSuccessImpl<T>>
+    implements _$$DeleteEventSuccessImplCopyWith<T, $Res> {
+  __$$DeleteEventSuccessImplCopyWithImpl(_$DeleteEventSuccessImpl<T> _value,
+      $Res Function(_$DeleteEventSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? event = freezed,
+  }) {
+    return _then(_$DeleteEventSuccessImpl<T>(
+      freezed == event
+          ? _value.event
+          : event // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteEventSuccessImpl<T> implements DeleteEventSuccess<T> {
+  const _$DeleteEventSuccessImpl(this.event);
+
+  @override
+  final T event;
+
+  @override
+  String toString() {
+    return 'EventState<$T>.deleteEventSuccess(event: $event)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteEventSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.event, event));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(event));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteEventSuccessImplCopyWith<T, _$DeleteEventSuccessImpl<T>>
+      get copyWith => __$$DeleteEventSuccessImplCopyWithImpl<T,
+          _$DeleteEventSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createEventLoading,
+    required TResult Function(T event) createEventSuccess,
+    required TResult Function(String message) createEventFailure,
+    required TResult Function() addEventCoverImage,
+    required TResult Function() getEventDetailsLoading,
+    required TResult Function(T event) getEventDetailsSuccess,
+    required TResult Function(String message) getEventDetailsFailure,
+    required TResult Function() deleteEventLoading,
+    required TResult Function(T event) deleteEventSuccess,
+    required TResult Function(String message) deleteEventError,
+  }) {
+    return deleteEventSuccess(event);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createEventLoading,
+    TResult? Function(T event)? createEventSuccess,
+    TResult? Function(String message)? createEventFailure,
+    TResult? Function()? addEventCoverImage,
+    TResult? Function()? getEventDetailsLoading,
+    TResult? Function(T event)? getEventDetailsSuccess,
+    TResult? Function(String message)? getEventDetailsFailure,
+    TResult? Function()? deleteEventLoading,
+    TResult? Function(T event)? deleteEventSuccess,
+    TResult? Function(String message)? deleteEventError,
+  }) {
+    return deleteEventSuccess?.call(event);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createEventLoading,
+    TResult Function(T event)? createEventSuccess,
+    TResult Function(String message)? createEventFailure,
+    TResult Function()? addEventCoverImage,
+    TResult Function()? getEventDetailsLoading,
+    TResult Function(T event)? getEventDetailsSuccess,
+    TResult Function(String message)? getEventDetailsFailure,
+    TResult Function()? deleteEventLoading,
+    TResult Function(T event)? deleteEventSuccess,
+    TResult Function(String message)? deleteEventError,
+    required TResult orElse(),
+  }) {
+    if (deleteEventSuccess != null) {
+      return deleteEventSuccess(event);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(CreateEventLoading<T> value) createEventLoading,
+    required TResult Function(CreateEventSuccess<T> value) createEventSuccess,
+    required TResult Function(CreateEventFailure<T> value) createEventFailure,
+    required TResult Function(AddEventCoverImage<T> value) addEventCoverImage,
+    required TResult Function(GetEventDetailsLoading<T> value)
+        getEventDetailsLoading,
+    required TResult Function(GetEventDetailsSuccess<T> value)
+        getEventDetailsSuccess,
+    required TResult Function(GetEventDetailsFailure<T> value)
+        getEventDetailsFailure,
+    required TResult Function(DeleteEventLoading<T> value) deleteEventLoading,
+    required TResult Function(DeleteEventSuccess<T> value) deleteEventSuccess,
+    required TResult Function(DeleteEventError<T> value) deleteEventError,
+  }) {
+    return deleteEventSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(CreateEventLoading<T> value)? createEventLoading,
+    TResult? Function(CreateEventSuccess<T> value)? createEventSuccess,
+    TResult? Function(CreateEventFailure<T> value)? createEventFailure,
+    TResult? Function(AddEventCoverImage<T> value)? addEventCoverImage,
+    TResult? Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
+    TResult? Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
+    TResult? Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult? Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult? Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult? Function(DeleteEventError<T> value)? deleteEventError,
+  }) {
+    return deleteEventSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(CreateEventLoading<T> value)? createEventLoading,
+    TResult Function(CreateEventSuccess<T> value)? createEventSuccess,
+    TResult Function(CreateEventFailure<T> value)? createEventFailure,
+    TResult Function(AddEventCoverImage<T> value)? addEventCoverImage,
+    TResult Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
+    TResult Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
+    TResult Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult Function(DeleteEventError<T> value)? deleteEventError,
+    required TResult orElse(),
+  }) {
+    if (deleteEventSuccess != null) {
+      return deleteEventSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteEventSuccess<T> implements EventState<T> {
+  const factory DeleteEventSuccess(final T event) = _$DeleteEventSuccessImpl<T>;
+
+  T get event;
+  @JsonKey(ignore: true)
+  _$$DeleteEventSuccessImplCopyWith<T, _$DeleteEventSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteEventErrorImplCopyWith<T, $Res> {
+  factory _$$DeleteEventErrorImplCopyWith(_$DeleteEventErrorImpl<T> value,
+          $Res Function(_$DeleteEventErrorImpl<T>) then) =
+      __$$DeleteEventErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$DeleteEventErrorImplCopyWithImpl<T, $Res>
+    extends _$EventStateCopyWithImpl<T, $Res, _$DeleteEventErrorImpl<T>>
+    implements _$$DeleteEventErrorImplCopyWith<T, $Res> {
+  __$$DeleteEventErrorImplCopyWithImpl(_$DeleteEventErrorImpl<T> _value,
+      $Res Function(_$DeleteEventErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$DeleteEventErrorImpl<T>(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteEventErrorImpl<T> implements DeleteEventError<T> {
+  const _$DeleteEventErrorImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'EventState<$T>.deleteEventError(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteEventErrorImpl<T> &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteEventErrorImplCopyWith<T, _$DeleteEventErrorImpl<T>> get copyWith =>
+      __$$DeleteEventErrorImplCopyWithImpl<T, _$DeleteEventErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createEventLoading,
+    required TResult Function(T event) createEventSuccess,
+    required TResult Function(String message) createEventFailure,
+    required TResult Function() addEventCoverImage,
+    required TResult Function() getEventDetailsLoading,
+    required TResult Function(T event) getEventDetailsSuccess,
+    required TResult Function(String message) getEventDetailsFailure,
+    required TResult Function() deleteEventLoading,
+    required TResult Function(T event) deleteEventSuccess,
+    required TResult Function(String message) deleteEventError,
+  }) {
+    return deleteEventError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createEventLoading,
+    TResult? Function(T event)? createEventSuccess,
+    TResult? Function(String message)? createEventFailure,
+    TResult? Function()? addEventCoverImage,
+    TResult? Function()? getEventDetailsLoading,
+    TResult? Function(T event)? getEventDetailsSuccess,
+    TResult? Function(String message)? getEventDetailsFailure,
+    TResult? Function()? deleteEventLoading,
+    TResult? Function(T event)? deleteEventSuccess,
+    TResult? Function(String message)? deleteEventError,
+  }) {
+    return deleteEventError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createEventLoading,
+    TResult Function(T event)? createEventSuccess,
+    TResult Function(String message)? createEventFailure,
+    TResult Function()? addEventCoverImage,
+    TResult Function()? getEventDetailsLoading,
+    TResult Function(T event)? getEventDetailsSuccess,
+    TResult Function(String message)? getEventDetailsFailure,
+    TResult Function()? deleteEventLoading,
+    TResult Function(T event)? deleteEventSuccess,
+    TResult Function(String message)? deleteEventError,
+    required TResult orElse(),
+  }) {
+    if (deleteEventError != null) {
+      return deleteEventError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(CreateEventLoading<T> value) createEventLoading,
+    required TResult Function(CreateEventSuccess<T> value) createEventSuccess,
+    required TResult Function(CreateEventFailure<T> value) createEventFailure,
+    required TResult Function(AddEventCoverImage<T> value) addEventCoverImage,
+    required TResult Function(GetEventDetailsLoading<T> value)
+        getEventDetailsLoading,
+    required TResult Function(GetEventDetailsSuccess<T> value)
+        getEventDetailsSuccess,
+    required TResult Function(GetEventDetailsFailure<T> value)
+        getEventDetailsFailure,
+    required TResult Function(DeleteEventLoading<T> value) deleteEventLoading,
+    required TResult Function(DeleteEventSuccess<T> value) deleteEventSuccess,
+    required TResult Function(DeleteEventError<T> value) deleteEventError,
+  }) {
+    return deleteEventError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(CreateEventLoading<T> value)? createEventLoading,
+    TResult? Function(CreateEventSuccess<T> value)? createEventSuccess,
+    TResult? Function(CreateEventFailure<T> value)? createEventFailure,
+    TResult? Function(AddEventCoverImage<T> value)? addEventCoverImage,
+    TResult? Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
+    TResult? Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
+    TResult? Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult? Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult? Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult? Function(DeleteEventError<T> value)? deleteEventError,
+  }) {
+    return deleteEventError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(CreateEventLoading<T> value)? createEventLoading,
+    TResult Function(CreateEventSuccess<T> value)? createEventSuccess,
+    TResult Function(CreateEventFailure<T> value)? createEventFailure,
+    TResult Function(AddEventCoverImage<T> value)? addEventCoverImage,
+    TResult Function(GetEventDetailsLoading<T> value)? getEventDetailsLoading,
+    TResult Function(GetEventDetailsSuccess<T> value)? getEventDetailsSuccess,
+    TResult Function(GetEventDetailsFailure<T> value)? getEventDetailsFailure,
+    TResult Function(DeleteEventLoading<T> value)? deleteEventLoading,
+    TResult Function(DeleteEventSuccess<T> value)? deleteEventSuccess,
+    TResult Function(DeleteEventError<T> value)? deleteEventError,
+    required TResult orElse(),
+  }) {
+    if (deleteEventError != null) {
+      return deleteEventError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteEventError<T> implements EventState<T> {
+  const factory DeleteEventError(final String message) =
+      _$DeleteEventErrorImpl<T>;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$DeleteEventErrorImplCopyWith<T, _$DeleteEventErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
