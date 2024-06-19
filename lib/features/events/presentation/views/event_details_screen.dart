@@ -27,7 +27,11 @@ class EventDetailsScreen extends StatelessWidget {
         if(state is DeleteEventLoading)
         {
           showDialog(context: context,
-            builder: (context) => const LoadingWidget(),
+            builder: (context) => const Center(
+              child: CircularProgressIndicator(
+                backgroundColor: ColorManager.primaryColor,
+              ),
+            ),
           );
         }
         else if(state is DeleteEventSuccess)
