@@ -17,7 +17,7 @@ class LoginCubit extends Cubit<LoginState> {
           key: 'token', value: data.userData!.token);
       emit(LoginState.success(data));
     }, failure: (error) {
-      emit(LoginState.error(error: error.toString()));
+      emit(LoginState.error(error: error.apiErrorModel.message));
     });
   }
 
