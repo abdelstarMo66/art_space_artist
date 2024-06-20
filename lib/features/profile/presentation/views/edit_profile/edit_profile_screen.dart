@@ -1,6 +1,8 @@
 import 'package:art_space_artist/core/components/default_button.dart';
 import 'package:art_space_artist/core/components/loading_widget.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
+import 'package:art_space_artist/core/constants/constants.dart';
+import 'package:art_space_artist/core/constants/toast_color.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/profile_cubit.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/profile_state.dart';
 import 'package:art_space_artist/features/profile/presentation/views/edit_profile/widgets/cahnge_password_widget.dart';
@@ -17,8 +19,34 @@ class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({super.key});
   @override
   Widget build(BuildContext context) {
-        return BlocBuilder<ProfileCubit, ProfileState>(
+        return BlocConsumer<ProfileCubit, ProfileState>(
+          listenWhen: (previous, current) => current is EditProfileSuccess ||
+              current is EditProfileError ||
+              current is EditProfileLoading,
+          listener: (context, state) {
+            state.whenOrNull(
+              editProfileLoading: () {
+                showDialog(context: context, builder:
+                (context) => const Center(child: CircularProgressIndicator(
+                  backgroundColor: ColorManager.primaryColor,
+                ),),);
+              },
+              editProfileSuccess: (data) {
+                Navigator.of(context).pop();
+                showToast(msg: 'Profile edited successfully', state: ToastState.success);
+                Navigator.of(context).pushNamedAndRemoveUntil(AppRouterNames.home, (route) => false,);
+              },
+              editProfileError: (error) {
+                Navigator.of(context).pop();
+                showToast(msg: error, state: ToastState.success);
+              },
+            );
+          },
             builder: (context, state) {
+            if(state is GetProfileLoading)
+              {
+                return const LoadingWidget();
+              }
               if(context.read<ProfileCubit>().myProfile != null)
                 {
                   return Scaffold(

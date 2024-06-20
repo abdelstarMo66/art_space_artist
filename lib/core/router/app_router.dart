@@ -86,7 +86,7 @@ class AppRouter {
       case AppRouterNames.editProfile:
         return SlideRight(
             page: BlocProvider.value(
-                value: getIt<ProfileCubit>(),
+                value: getIt<ProfileCubit>()..emitGetProfileStates(),
                 child: const EditProfileScreen()));
       case AppRouterNames.changePassword:
         return SlideRight(

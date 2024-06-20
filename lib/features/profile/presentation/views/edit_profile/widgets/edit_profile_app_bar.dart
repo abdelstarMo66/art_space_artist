@@ -15,7 +15,7 @@ class EditProfileAppBar extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            Navigator.of(context).pushReplacementNamed(AppRouterNames.home);
+            Navigator.of(context).pushNamed(AppRouterNames.home);
           },
           child: SvgPicture.asset(
             AssetsManager.icBackArrow,
