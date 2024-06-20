@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:art_space_artist/core/constants/constants.dart';
 import 'package:art_space_artist/core/constants/toast_color.dart';
+import 'package:art_space_artist/core/network/api_error_handler.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_response.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_to_event_response.dart';
@@ -112,8 +113,8 @@ class ProductsCubit extends Cubit<ProductsState> {
       success: (data) {
         emit(ProductsState.addProductSuccess(data));
       },
-      failure: (error) {
-        emit(ProductsState.addProductError(error: error));
+      failure: (ErrorHandler error) {
+        emit(ProductsState.addProductError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -130,8 +131,8 @@ class ProductsCubit extends Cubit<ProductsState> {
         productDetails = data.productDetails;
         emit(ProductsState.getProductDetailsSuccess(data));
       },
-      failure: (error) {
-        emit(ProductsState.getProductDetailsError(error: error));
+      failure: (ErrorHandler error) {
+        emit(ProductsState.getProductDetailsError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -145,8 +146,8 @@ class ProductsCubit extends Cubit<ProductsState> {
       success: (data) {
         emit(ProductsState.deleteProductSuccess(data));
       },
-      failure: (error) {
-        emit(ProductsState.deleteProductError(error: error));
+      failure: (ErrorHandler error) {
+        emit(ProductsState.deleteProductError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -162,8 +163,8 @@ class ProductsCubit extends Cubit<ProductsState> {
         getStylesSuccess = true;
         emit(ProductsState.getStylesSuccess(data));
       },
-      failure: (error) {
-        emit(ProductsState.getStylesError(error: error));
+      failure: (ErrorHandler error) {
+        emit(ProductsState.getStylesError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -179,8 +180,8 @@ class ProductsCubit extends Cubit<ProductsState> {
         getSubjectsSuccess = true;
         emit(ProductsState.getSubjectsSuccess(data));
       },
-      failure: (message) {
-        emit(ProductsState.getSubjectsError(error: message));
+      failure: (ErrorHandler error) {
+        emit(ProductsState.getSubjectsError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -196,8 +197,8 @@ class ProductsCubit extends Cubit<ProductsState> {
         getCategoriesSuccess = true;
         emit(ProductsState.getCategoriesSuccess(data));
       },
-      failure: (message) {
-        emit(ProductsState.getCategoriesError(error: message));
+      failure: (ErrorHandler error) {
+        emit(ProductsState.getCategoriesError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -259,12 +260,12 @@ class ProductsCubit extends Cubit<ProductsState> {
             success: (AddProductToEventResponse addProductToEventResponse) {
           emit(ProductsState.addProductToEventSuccess(
               addProductToEventResponse));
-        }, failure: (String error) {
-          emit(ProductsState.addProductToEventError(error: error));
+        }, failure: (ErrorHandler error) {
+          emit(ProductsState.addProductToEventError(error: error.apiErrorModel.message));
         });
       },
-      failure: (String error) {
-        emit(ProductsState.addProductToEventError(error: error));
+      failure: (ErrorHandler error) {
+        emit(ProductsState.addProductToEventError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -310,8 +311,8 @@ class ProductsCubit extends Cubit<ProductsState> {
         print(data.message);
         emit(ProductsState.editProductSuccess(data));
     },
-      failure: (error) {
-        emit(ProductsState.editProductError(error: error));
+      failure: (ErrorHandler error) {
+        emit(ProductsState.editProductError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -329,8 +330,8 @@ class ProductsCubit extends Cubit<ProductsState> {
       success: (data) {
         emit(ProductsState.deleteProductSuccess(data));
       },
-      failure: (error) {
-        emit(ProductsState.deleteProductError(error: error));
+      failure: (ErrorHandler error) {
+        emit(ProductsState.deleteProductError(error: error.apiErrorModel.message));
       },
     );
   }

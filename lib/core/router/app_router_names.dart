@@ -17,6 +17,7 @@ class AppRouterNames {
   // Event
   static const createEvent ='/createEvent';
   static const eventDetails ='/eventDetails';
+  static const editEvent ='/editEvent';
   //Auction
   static const createAuction ='/creteAuction';
   static const viewAuctionDetails ='/viewAuctionDetails';

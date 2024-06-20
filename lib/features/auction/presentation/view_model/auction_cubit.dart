@@ -1,17 +1,14 @@
 import 'dart:io';
-
+import 'package:art_space_artist/core/network/api_error_handler.dart';
 import 'package:art_space_artist/features/auction/data/models/get_all_auction_response.dart';
 import 'package:art_space_artist/features/auction/data/models/get_auction_details_response.dart';
 import 'package:art_space_artist/features/auction/presentation/view_model/auction_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
-
 import '../../../../core/constants/color_manager.dart';
-import '../../../../core/router/app_router_names.dart';
 import '../../../products/data/models/get_category_response.dart';
 import '../../../products/data/models/get_styles_response.dart';
 import '../../../products/data/models/get_subject_response.dart';
@@ -113,8 +110,8 @@ class AuctionCubit extends Cubit<AuctionState> {
       success: (data) {
         emit(AuctionState.createAuctionSuccess(data));
       },
-      failure: (error) {
-        emit(AuctionState.createAuctionError(error: error));
+      failure: (ErrorHandler error) {
+        emit(AuctionState.createAuctionError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -131,7 +128,7 @@ class AuctionCubit extends Cubit<AuctionState> {
         emit(AuctionState.getStylesSuccess(data));
       },
       failure: (error) {
-        emit(AuctionState.getStylesError(error: error));
+        emit(AuctionState.getStylesError(error:  error.apiErrorModel.message));
       },
     );
   }
@@ -147,8 +144,8 @@ class AuctionCubit extends Cubit<AuctionState> {
         getSubjectsSuccess = true;
         emit(AuctionState.getSubjectsSuccess(data));
       },
-      failure: (message) {
-        emit(AuctionState.getSubjectsError(error: message));
+      failure: (ErrorHandler error) {
+        emit(AuctionState.getSubjectsError(error:  error.apiErrorModel.message));
       },
     );
   }
@@ -164,8 +161,8 @@ class AuctionCubit extends Cubit<AuctionState> {
         getCategoriesSuccess = true;
         emit(AuctionState.getCategoriesSuccess(data));
       },
-      failure: (message) {
-        emit(AuctionState.getCategoriesError(error: message));
+      failure: (ErrorHandler error) {
+        emit(AuctionState.getCategoriesError(error:  error.apiErrorModel.message));
       },
     );
   }
@@ -187,8 +184,8 @@ class AuctionCubit extends Cubit<AuctionState> {
         myAuctions.add(auctions);
       }
       emit(AuctionState.getAllAuctionsSuccess(data));
-    }, failure: (error) {
-      emit(AuctionState.getAllAuctionsError(error: error));
+    }, failure: (ErrorHandler error) {
+      emit(AuctionState.getAllAuctionsError(error:  error.apiErrorModel.message));
     });
   }
 
@@ -204,8 +201,8 @@ class AuctionCubit extends Cubit<AuctionState> {
         auctionInfo = data.auctionInfo;
         emit(AuctionState.getAuctionDetailsSuccess(data));
       },
-      failure: (error) {
-        emit(AuctionState.getAuctionDetailsError(error: error));
+      failure: (ErrorHandler error) {
+        emit(AuctionState.getAuctionDetailsError(error:  error.apiErrorModel.message));
       },
     );
   }
@@ -217,8 +214,6 @@ class AuctionCubit extends Cubit<AuctionState> {
     );
     response.when(
       success: (data) {
-        Navigator.pushReplacementNamed(
-            context, AppRouterNames.home);
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text(
@@ -233,8 +228,8 @@ class AuctionCubit extends Cubit<AuctionState> {
         );
         emit(AuctionState.deleteAuctionSuccess(data));
       },
-      failure: (error) {
-        emit(AuctionState.deleteAuctionError(error: error));
+      failure: (ErrorHandler error) {
+        emit(AuctionState.deleteAuctionError(error:  error.apiErrorModel.message));
       },
     );
   }

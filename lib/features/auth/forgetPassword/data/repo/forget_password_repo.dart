@@ -5,6 +5,7 @@ import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_p
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_response.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/verify_email_request.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/verify_email_response.dart';
+import '../../../../../core/network/api_error_handler.dart';
 import '../../../../../core/network/api_result.dart';
 
 class ForgetPasswordRepo {
@@ -19,7 +20,7 @@ class ForgetPasswordRepo {
       final response = await _apiService.forgetPassword(forgetPasswordRequest);
       return ApiResult.success(response);
   } catch (error) {
-      return ApiResult.failure("$error");
+      return ApiResult.failure(ErrorHandler.handle(error));
   }
 }
 
@@ -30,7 +31,7 @@ class ForgetPasswordRepo {
       final response = await _apiService.verifyCode(verifyEmailRequest);
       return ApiResult.success(response);
     } catch(error){
-      return ApiResult.failure("$error");
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
  }
 
@@ -41,7 +42,7 @@ class ForgetPasswordRepo {
       final response = await _apiService.resetPassword(resetPasswordRequest);
       return ApiResult.success(response);
     } catch(error) {
-      return ApiResult.failure("$error");
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
  }
 }

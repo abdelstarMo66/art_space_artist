@@ -12,6 +12,7 @@ import 'package:art_space_artist/features/products/data/models/get_styles_respon
 import 'package:art_space_artist/features/products/data/models/get_subject_response.dart';
 import 'package:dio/dio.dart';
 
+import '../../../../core/network/api_error_handler.dart';
 import '../../../../core/network/api_result.dart';
 import '../models/get_category_response.dart';
 import '../models/get_product_details_response.dart';
@@ -30,7 +31,7 @@ class ProductsRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -44,7 +45,7 @@ class ProductsRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -58,7 +59,7 @@ class ProductsRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -67,7 +68,7 @@ class ProductsRepo {
       final response = await _apiService.getStyles(token: 'Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -76,7 +77,7 @@ class ProductsRepo {
       final response = await _apiService.getCategory(token: 'Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -85,7 +86,7 @@ class ProductsRepo {
       final response = await _apiService.getSubject(token: 'Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -101,7 +102,7 @@ class ProductsRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -117,7 +118,7 @@ class ProductsRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -133,7 +134,7 @@ class ProductsRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 }

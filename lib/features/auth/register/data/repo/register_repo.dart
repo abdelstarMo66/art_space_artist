@@ -4,6 +4,7 @@ import 'package:art_space_artist/features/auth/register/data/models/verify_email
 import 'package:art_space_artist/features/auth/register/data/models/verify_email_response.dart';
 import 'package:dio/dio.dart';
 
+import '../../../../../core/network/api_error_handler.dart';
 import '../../../../../core/network/api_result.dart';
 
 class RegisterRepo {
@@ -24,7 +25,7 @@ class RegisterRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure('$error');
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -34,7 +35,7 @@ class RegisterRepo {
       final response = await _apiService.verifyEmail(verifyEmailRequestBody);
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure('$error');
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 }

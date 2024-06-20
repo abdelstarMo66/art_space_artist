@@ -13,6 +13,7 @@ import 'package:art_space_artist/features/auth/login/presentation/views/login_sc
 import 'package:art_space_artist/features/auth/register/presentation/view_model/register_cubit.dart';
 import 'package:art_space_artist/features/auth/register/presentation/views/register_screen.dart';
 import 'package:art_space_artist/features/auth/register/presentation/views/verify_email_screen.dart';
+import 'package:art_space_artist/features/events/data/model/get_event_details_response.dart';
 import 'package:art_space_artist/features/events/presentation/view_model/event_cubit.dart';
 import 'package:art_space_artist/features/events/presentation/views/create_event_screen.dart';
 import 'package:art_space_artist/features/events/presentation/views/event_details_screen.dart';
@@ -24,6 +25,7 @@ import 'package:art_space_artist/features/profile/presentation/view_model/profil
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/auth/forgetPassword/presentation/views/create_new_password.dart';
+import '../../features/events/presentation/views/edit_event_screen.dart';
 import '../../features/products/data/models/get_product_details_response.dart';
 import '../../features/products/presentation/views/edit_product_screen.dart';
 import '../../features/products/presentation/views/view_product_details.dart';
@@ -74,10 +76,13 @@ class AppRouter {
           create: (context) => getIt<ForgetPasswordCubit>(),
           child: CreateNewPassword(email: settings.arguments as String),
         ));
+
       // Home
       case AppRouterNames.home:
         return SlideRight(page: const HomeScreen());
-      //Profile
+
+
+        //Profile
       case AppRouterNames.editProfile:
         return SlideRight(
             page: BlocProvider.value(
@@ -88,7 +93,9 @@ class AppRouter {
             page: BlocProvider.value(
                 value: getIt<ProfileCubit>(),
                 child: const ChangePasswordScreen()));
-      //Product
+
+
+        //Product
       case AppRouterNames.createProduct:
         return SlideRight(
           page: BlocProvider(
@@ -122,6 +129,8 @@ class AppRouter {
             child: const ViewProductDetails(),
           ),
         );
+
+
       // event
       case AppRouterNames.eventDetails:
         return SlideRight(
@@ -136,6 +145,13 @@ class AppRouter {
             page: BlocProvider(
                 create: (context) => getIt<EventCubit>(),
                 child: const CreateEvent()));
+      case AppRouterNames.editEvent:
+        return SlideRight(
+            page: BlocProvider(
+                create: (context) => getIt<EventCubit>(),
+                child:  EditEventScreen(eventInfo: settings.arguments as EventInfo,)));
+
+
       // Auction
       case AppRouterNames.createAuction:
         return MaterialPageRoute(

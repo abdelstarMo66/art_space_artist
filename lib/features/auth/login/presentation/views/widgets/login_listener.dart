@@ -20,6 +20,7 @@ class LoginListener extends StatelessWidget {
           current is Error ||
           current is ShowPassword,
       listener: (context, state) {
+
         state.whenOrNull(
           loading: () {
             showDialog(
@@ -40,7 +41,7 @@ class LoginListener extends StatelessWidget {
           error: (error) {
             Navigator.of(context).pop();
             showToast(
-              msg: '${ServerFailure(error)}',
+              msg: error,
               state: ToastState.error,
             );
           },

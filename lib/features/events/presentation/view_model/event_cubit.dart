@@ -1,11 +1,11 @@
 import 'dart:io';
-
+import 'package:art_space_artist/core/network/api_error_handler.dart';
+import 'package:art_space_artist/features/events/data/model/edit_event_request_body.dart';
 import 'package:art_space_artist/features/events/data/model/get_event_details_response.dart';
 import 'package:art_space_artist/features/events/data/repo/repo.dart';
 import 'package:art_space_artist/features/events/presentation/view_model/event_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
@@ -60,9 +60,8 @@ class EventCubit extends Cubit<EventState> {
         print('Ba3at data ya sa7bi');
         emit(EventState.createEventSuccess(data));
       },
-      failure: (error) {
-        print(error);
-        emit(EventState.createEventFailure(error));
+      failure: (ErrorHandler error) {
+        emit(EventState.createEventFailure(error.apiErrorModel.message));
       },
     );
   }
@@ -70,16 +69,14 @@ class EventCubit extends Cubit<EventState> {
   EventInfo? eventInfo;
   void emitGetEventDetails({required String eventId}) async {
     emit(const EventState.getEventDetailsLoading());
-
     final response = await _eventRepo.getEventDetails(eventId: eventId);
-
     response.when(
       success: (data) {
         eventInfo = data.eventInfo;
         emit(EventState.getEventDetailsSuccess(data));
       },
-      failure: (error) {
-        emit(EventState.getEventDetailsFailure(error));
+      failure: (ErrorHandler error) {
+        emit(EventState.getEventDetailsFailure(error.apiErrorModel.message));
       },
     );
   }
@@ -110,4 +107,24 @@ class EventCubit extends Cubit<EventState> {
       },
     );
   }
+
+  Future<void> emitEditEvent({
+    required EditEventRequestBody editEventRequestBody,
+    required String eventId,
+}) async {
+    emit(const EventState.editEventLoading());
+
+    final response = await _eventRepo.editEvent(
+        eventId: eventInfo!.id,
+        editEventRequestBody: editEventRequestBody
+    );
+    response.when(
+      success: (data) {
+        emit(EventState.editEventSuccess(data));
+      },
+    failure: (ErrorHandler error) {
+        emit(EventState.editEventError(error.apiErrorModel.message));
+  },
+    );
+}
 }

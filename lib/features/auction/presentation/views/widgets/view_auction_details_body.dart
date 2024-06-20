@@ -106,7 +106,7 @@ class _ViewAuctionDetailsBodyState extends State<ViewAuctionDetailsBody> {
                             deleteAuctionError: (error) {
                               Navigator.of(context).pop();
                               showToast(
-                                msg: '${ServerFailure(error)}',
+                                msg: '${error}',
                                 state: ToastState.error,
                               );
                             },

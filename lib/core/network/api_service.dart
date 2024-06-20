@@ -13,6 +13,7 @@ import 'package:art_space_artist/features/auth/register/data/models/verify_email
 import 'package:art_space_artist/features/auth/register/data/models/verify_email_response.dart';
 import 'package:art_space_artist/features/events/data/model/create_event_response.dart';
 import 'package:art_space_artist/features/events/data/model/delete_event_response.dart';
+import 'package:art_space_artist/features/events/data/model/edit_event_request_body.dart';
 import 'package:art_space_artist/features/events/data/model/get_event_details_response.dart';
 import 'package:art_space_artist/features/home/data/models/get_event_response.dart';
 import 'package:art_space_artist/features/products/data/models/add_product_response.dart';
@@ -32,6 +33,7 @@ import '../../features/auction/data/models/edit_auction_request_body.dart';
 import '../../features/auth/forgetPassword/data/model/forget_password_response.dart';
 import '../../features/auth/forgetPassword/data/model/verify_email_response.dart';
 import '../../features/auth/login/data/model/login_response.dart';
+import '../../features/events/data/model/edit_event_response.dart';
 import '../../features/home/data/models/get_my_products_response.dart';
 import '../../features/products/data/models/delete_specific_image_request_body.dart';
 import '../../features/products/data/models/get_category_response.dart';
@@ -204,4 +206,11 @@ abstract class ApiService {
     @Path('id') required String? id,
     @Header('Authorization') required String token,
   });
+
+@PATCH(ApiConstant.editEvent)
+  Future<EditEventResponse> editEvent({
+  @Path('id') required String? id,
+  @Header('Authorization') required String token,
+  @Body() required EditEventRequestBody editEventRequestBody,
+});
 }

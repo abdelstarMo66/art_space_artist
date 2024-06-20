@@ -34,7 +34,7 @@ class ResetPasswordListener extends StatelessWidget {
           },
           resetPasswordError: (error) {
             Navigator.of(context).pop();
-            showToast(msg: '${ServerFailure(error)}', state: ToastState.error);
+            showToast(msg: error, state: ToastState.error);
           },
         );
       },

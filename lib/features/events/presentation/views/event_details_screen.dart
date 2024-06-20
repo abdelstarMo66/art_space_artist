@@ -1,4 +1,3 @@
-import 'package:art_space_artist/core/components/loading_widget.dart';
 import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/constants.dart';
@@ -20,28 +19,27 @@ class EventDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<EventCubit, EventState>(
-      listenWhen: (previous, current) => current is DeleteEventLoading||
-          current is DeleteEventSuccess||
+      listenWhen: (previous, current) =>
+          current is DeleteEventLoading ||
+          current is DeleteEventSuccess ||
           current is DeleteEventError,
-      listener:(context, state) {
-        if(state is DeleteEventLoading)
-        {
-          showDialog(context: context,
+      listener: (context, state) {
+        if (state is DeleteEventLoading) {
+          showDialog(
+            context: context,
             builder: (context) => const Center(
               child: CircularProgressIndicator(
                 backgroundColor: ColorManager.primaryColor,
               ),
             ),
           );
-        }
-        else if(state is DeleteEventSuccess)
-        {
+        } else if (state is DeleteEventSuccess) {
           Navigator.of(context).pop();
-          Navigator.of(context).pushReplacementNamed(AppRouterNames.home);
+          Navigator.of(context)
+              .pushNamedAndRemoveUntil(AppRouterNames.home, (route) => false);
           showToast(
-              msg: 'Event delete successfully',
-              state: ToastState.success);
-        }else {
+              msg: 'Event delete successfully', state: ToastState.success);
+        } else {
           Navigator.of(context).pop();
           showToast(
               msg: 'event not delete , please try again later',
@@ -115,7 +113,9 @@ class EventDetailsScreen extends StatelessWidget {
                                       ),
                                       IconButton(
                                         onPressed: () {
-
+                                          Navigator.pushNamed(
+                                              context, AppRouterNames.editEvent,
+                                              arguments: cubit.eventInfo);
                                         },
                                         icon: SvgPicture.asset(
                                           AssetsManager.icEdit,

@@ -1,5 +1,6 @@
 import 'package:art_space_artist/core/components/app_customer_shimmer.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
+import 'package:art_space_artist/core/network/api_error_handler.dart';
 import 'package:art_space_artist/features/home/data/repositories/home_repository.dart';
 import 'package:art_space_artist/features/home/presentation/view_model/home_state.dart';
 import 'package:art_space_artist/features/home/presentation/views/widget/event_list_item.dart';
@@ -27,8 +28,8 @@ class HomeCubit extends Cubit<HomeState> {
         myProducts.add(products);
       }
       emit(HomeState.getProductSuccess(data));
-    }, failure: (error) {
-      emit(HomeState.getProductError(error: error));
+    }, failure: (ErrorHandler error) {
+      emit(HomeState.getProductError(error: error.apiErrorModel.message));
     });
   }
 
@@ -63,8 +64,8 @@ class HomeCubit extends Cubit<HomeState> {
         allEventImages.add(EventListItem(eventInfo: event));
       }
       emit(HomeState.getEventSuccess(data));
-    }, failure: (error) {
-      emit(HomeState.getEventError(error: error));
+    }, failure: (ErrorHandler error) {
+      emit(HomeState.getEventError(error: error.apiErrorModel.message));
     });
   }
 }

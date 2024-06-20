@@ -5,6 +5,7 @@ import 'package:art_space_artist/features/profile/data/repo/profile_repo.dart';
 import 'package:art_space_artist/features/profile/presentation/view_model/profile_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/network/api_error_handler.dart';
 import '../../data/model/change_password_request_body.dart';
 import '../../data/model/edit_profile_request_body.dart';
 
@@ -23,8 +24,8 @@ class ProfileCubit extends Cubit<ProfileState> {
         myProfile = getProfileResponse;
         emit(ProfileState.getProfileSuccess(getProfileResponse));
       },
-      failure: (error) {
-        emit(ProfileState.getProfileError(error: error));
+      failure: (ErrorHandler error) {
+        emit(ProfileState.getProfileError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -58,8 +59,8 @@ class ProfileCubit extends Cubit<ProfileState> {
         emit(ProfileState.editProfileSuccess(getProfileResponse));
         emitGetProfileStates();
       },
-      failure: (error) {
-        emit(ProfileState.editProfileError(error: error));
+      failure: (ErrorHandler error) {
+        emit(ProfileState.editProfileError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -85,8 +86,8 @@ class ProfileCubit extends Cubit<ProfileState> {
         key: 'token',
         value: getProfileResponse.userData!.token,
       );
-    }, failure: (error) {
-      emit(ProfileState.changePasswordError(error: error));
+    }, failure: (ErrorHandler error) {
+      emit(ProfileState.changePasswordError(error: error.apiErrorModel.message));
     });
   }
 

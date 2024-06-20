@@ -4,6 +4,7 @@ import 'package:art_space_artist/features/auction/data/models/edit_auction_respo
 import 'package:art_space_artist/features/auction/data/models/get_all_auction_response.dart';
 import 'package:dio/dio.dart';
 import '../../../../core/constants/constants.dart';
+import '../../../../core/network/api_error_handler.dart';
 import '../../../../core/network/api_result.dart';
 import '../../../../core/network/api_service.dart';
 import '../../../products/data/models/get_category_response.dart';
@@ -26,7 +27,7 @@ class AuctionRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -35,7 +36,7 @@ class AuctionRepo {
       final response = await _apiService.getStyles(token: 'Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -45,7 +46,7 @@ class AuctionRepo {
       return ApiResult.success(response);
 
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -54,7 +55,7 @@ class AuctionRepo {
       final response = await _apiService.getSubject(token: 'Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -64,7 +65,7 @@ class AuctionRepo {
       final response = await _apiService.getAllAuctions(token: 'Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -75,7 +76,7 @@ class AuctionRepo {
           id: auctionId);
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
   Future<ApiResult<DeleteAuctionResponse>> deleteAuction({
@@ -88,7 +89,7 @@ class AuctionRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -101,7 +102,7 @@ class AuctionRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 

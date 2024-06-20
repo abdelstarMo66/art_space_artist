@@ -16,4 +16,8 @@ class EventState<T> with _$EventState<T> {
   const factory EventState.deleteEventLoading() = DeleteEventLoading;
   const factory EventState.deleteEventSuccess(T event) = DeleteEventSuccess;
   const factory EventState.deleteEventError(String message) = DeleteEventError;
+
+  const factory EventState.editEventLoading() = EditEventLoading;
+  const factory EventState.editEventSuccess(T event) = EditEventSuccess;
+  const factory EventState.editEventError(String message) = EditEventError;
 }

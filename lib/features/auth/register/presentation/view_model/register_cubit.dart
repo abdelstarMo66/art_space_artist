@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:art_space_artist/core/constants/constants.dart';
 import 'package:art_space_artist/core/constants/toast_color.dart';
 import 'package:art_space_artist/core/helpers/cache_helper.dart';
+import 'package:art_space_artist/core/network/api_error_handler.dart';
 import 'package:art_space_artist/features/auth/register/data/models/register_request_body.dart';
 import 'package:art_space_artist/features/auth/register/data/models/verify_email_request_body.dart';
 import 'package:art_space_artist/features/auth/register/data/repo/register_repo.dart';
@@ -104,8 +105,8 @@ class RegisterCubit extends Cubit<RegisterState> {
     );
     response.when(success: (data) {
       emit(RegisterState.success(data));
-    }, failure: (error) {
-      emit(RegisterState.error(error: error));
+    }, failure: (ErrorHandler error) {
+      emit(RegisterState.error(error: error.apiErrorModel.message));
     });
   }
 
@@ -117,8 +118,8 @@ class RegisterCubit extends Cubit<RegisterState> {
       CacheHelper.saveDataSharedPreference(
           key: 'token', value: data.data.token);
       emit(RegisterState.verifyEmailSuccess(data));
-    }, failure: (error) {
-      emit(RegisterState.verifyEmailError(error: error));
+    }, failure: (ErrorHandler error) {
+      emit(RegisterState.verifyEmailError(error: error.apiErrorModel.message));
     });
   }
 }

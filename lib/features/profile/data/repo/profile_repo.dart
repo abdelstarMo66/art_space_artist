@@ -5,6 +5,7 @@ import 'package:art_space_artist/features/profile/data/model/edit_profile_reques
 import 'package:art_space_artist/features/profile/data/model/edit_profile_response.dart';
 import 'package:art_space_artist/features/profile/data/model/get_profile_response.dart';
 
+import '../../../../core/network/api_error_handler.dart';
 import '../../../../core/network/api_result.dart';
 import '../model/change_password_request_body.dart';
 
@@ -17,7 +18,7 @@ class ProfileRepo {
       final response = await _apiService.getProfile('Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -30,7 +31,7 @@ class ProfileRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 
@@ -43,7 +44,7 @@ class ProfileRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 

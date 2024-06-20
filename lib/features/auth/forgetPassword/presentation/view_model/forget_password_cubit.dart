@@ -1,3 +1,4 @@
+import 'package:art_space_artist/core/network/api_error_handler.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/forget_password_request.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/reset_password_request.dart';
 import 'package:art_space_artist/features/auth/forgetPassword/data/model/verify_email_request.dart';
@@ -21,8 +22,8 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
         await _forgetPasswordRepo.forgetPassword(forgetPasswordRequest);
     response.when(success: (forgetPasswordResponse) {
       emit(ForgetPasswordState.success(forgetPasswordResponse));
-    }, failure: (error) {
-      emit(ForgetPasswordState.error(error: error));
+    }, failure: (ErrorHandler error) {
+      emit(ForgetPasswordState.error(error: error.apiErrorModel.message));
     });
   }
 
@@ -33,8 +34,8 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
     final response = await _forgetPasswordRepo.verifyEmail(verifyEmailRequest);
     response.when(success: (verifyEmailResponse) {
       emit(ForgetPasswordState.verifyEmailSuccess(verifyEmailResponse));
-    }, failure: (error) {
-      emit(ForgetPasswordState.verifyEmailError(error: error));
+    }, failure: (ErrorHandler error) {
+      emit(ForgetPasswordState.verifyEmailError(error: error.apiErrorModel.message));
     });
   }
 
@@ -48,8 +49,8 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
       CacheHelper.saveDataSharedPreference(
           key: 'token', value: data.userData!.token);
       emit(ForgetPasswordState.resetPasswordSuccess(data));
-    }, failure: (error) {
-      emit(ForgetPasswordState.resetPasswordError(error: error));
+    }, failure: (ErrorHandler error) {
+      emit(ForgetPasswordState.resetPasswordError(error: error.apiErrorModel.message));
     });
   }
   final formKeyEmailInForgetPassword = GlobalKey<FormState>();
