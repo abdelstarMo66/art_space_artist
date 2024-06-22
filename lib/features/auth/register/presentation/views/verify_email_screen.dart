@@ -112,13 +112,14 @@ class VerifyEmailScreen extends StatelessWidget {
                   ),
                 ],
               ),
+              const VerifyEmailListener(),
               DefaultButton(
                 text: S.of(context).verify,
                 onPressed: () {
                   validateThenVerify(context);
                 },
               ),
-              const VerifyEmailListener(),
+
             ],
           ),
         ),

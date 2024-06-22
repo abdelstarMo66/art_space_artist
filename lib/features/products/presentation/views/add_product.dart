@@ -201,18 +201,22 @@ class _CreateProductScreenState extends State<CreateProductScreen> {
                           widget: Column(
                             children: [
                               PriceAndSizeWidget(
+                                hintText: '0',
                                 text: 'Price',
                                 controller: cubit.priceController,
                               ),
                               PriceAndSizeWidget(
+                                hintText: '0',
                                 text: 'Height',
                                 controller: cubit.heightController,
                               ),
                               PriceAndSizeWidget(
+                                hintText: '0',
                                 text: 'Width',
                                 controller: cubit.widthController,
                               ),
                               PriceAndSizeWidget(
+                                hintText: '0',
                                 text: 'depth',
                                 controller: cubit.depthController,
                               ),

@@ -20,7 +20,7 @@ class FilterProductWidget extends StatelessWidget {
       child: Container(
         width: 80.0,
         decoration: BoxDecoration(
-          color:color,
+          color: color,
             borderRadius: BorderRadius.circular(25),
             border: Border.all(color: ColorManager.primaryColor)
         ),

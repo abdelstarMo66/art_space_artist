@@ -32,4 +32,10 @@ class AuctionState<T> with _$AuctionState<T> {
   const factory AuctionState.deleteAuctionLoading() = DeleteAuctionLoading;
   const factory AuctionState.deleteAuctionSuccess(T data) = DeleteAuctionSuccess;
   const factory AuctionState.deleteAuctionError({required String error}) = DeleteAuctionError;
+
+  const factory AuctionState.editAuctionLoading() = EditAuctionLoading;
+  const factory AuctionState.editAuctionSuccess(T data) = EditAuctionSuccess;
+  const factory AuctionState.editAuctionError({required String error}) = EditAuctionError;
+
+
 }

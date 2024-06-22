@@ -1,4 +1,5 @@
 import 'package:art_space_artist/core/components/loading_widget.dart';
+import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/const_method.dart';
 import 'package:art_space_artist/core/constants/constants.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
@@ -21,7 +22,11 @@ class CreateEventListener extends StatelessWidget {
         state.whenOrNull(
           createEventLoading: () {
             showDialog(
-                context: context, builder: (context) => const LoadingWidget());
+                context: context, builder: (context) => const Center(
+              child: CircularProgressIndicator(
+                color: ColorManager.primaryColor,
+              ),
+            ));
           },
           createEventSuccess: (data) {
             Navigator.of(context).pop();

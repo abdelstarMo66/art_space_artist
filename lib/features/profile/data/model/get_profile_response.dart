@@ -24,7 +24,8 @@ class ProfileInfo {
   bool? accountActive;
   List<String>? addresses;
   String? bio;
-  String? image;
+  String? profileImg;
+  String? imageId;
 
   ProfileInfo(
       {this.email,
@@ -34,7 +35,8 @@ class ProfileInfo {
       this.accountActive,
       this.id,
       this.bio,
-        this.image
+        this.profileImg,
+        this.imageId,
       });
 
   factory ProfileInfo.fromJson(Map<String, dynamic> json) =>

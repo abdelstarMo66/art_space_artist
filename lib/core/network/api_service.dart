@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:art_space_artist/core/network/api_constants.dart';
 import 'package:art_space_artist/features/auction/data/models/create_auction_response.dart';
 import 'package:art_space_artist/features/auction/data/models/edit_auction_response.dart';
@@ -42,6 +44,7 @@ import '../../features/products/data/models/get_styles_response.dart';
 import '../../features/products/data/models/get_subject_response.dart';
 import '../../features/profile/data/model/change_password_request_body.dart';
 import '../../features/profile/data/model/change_password_response.dart';
+import '../../features/profile/data/model/update_profile_response.dart';
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: ApiConstant.apiBaseURL)
@@ -213,4 +216,11 @@ abstract class ApiService {
   @Header('Authorization') required String token,
   @Body() required EditEventRequestBody editEventRequestBody,
 });
+
+  // @PUT(ApiConstant.updateImage)
+  // @MultiPart()
+  // Future<UpdateProfileImageResponse> updateProfileImage({
+  //   @Header("Authorization") required String token,
+  //   @Part(contentType: "image/*") required File profileImg,
+  // });
 }

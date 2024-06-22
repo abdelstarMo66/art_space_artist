@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:art_space_artist/core/network/api_error_handler.dart';
+import 'package:art_space_artist/features/auction/data/models/edit_auction_request_body.dart';
 import 'package:art_space_artist/features/auction/data/models/get_all_auction_response.dart';
 import 'package:art_space_artist/features/auction/data/models/get_auction_details_response.dart';
 import 'package:art_space_artist/features/auction/presentation/view_model/auction_state.dart';
@@ -248,5 +249,39 @@ class AuctionCubit extends Cubit<AuctionState> {
 
   final List<Widget> allAuctionImage = [];
 
+  TextEditingController editTitleController = TextEditingController();
+  TextEditingController editDescriptionController = TextEditingController();
+  TextEditingController editPriceController = TextEditingController();
+  TextEditingController editMaterialController  = TextEditingController();
+  TextEditingController editBeganController = TextEditingController();
+  TextEditingController editDurationController = TextEditingController();
 
+
+  void emitEditAuction({required String auctionId}) async {
+    emit(const AuctionState.editAuctionLoading());
+    final response = await _auctionRepo.editeAuction(
+      auctionId: auctionId,
+      editAuctionRequestBody: EditAuctionRequestBody(
+          title: editTitleController.text == "" ?
+          auctionInfo!.title : editTitleController.text,
+          description: editDescriptionController.text == "" ?
+          auctionInfo!.description : editDescriptionController.text,
+          material:editMaterialController.text == "" ?
+          auctionInfo!.material : editMaterialController.text,
+          duration: editDurationController.text == "" ?
+          auctionInfo!.duration.toString() : editDurationController.text,
+          price: editPriceController.text == "" ?
+          auctionInfo!.price.toString() : editPriceController.text,
+          began:editBeganController.text == "" ?
+          auctionInfo!.began : editBeganController.text,
+    ));
+    response.when(
+      success: (data) {
+        emit(AuctionState.editAuctionSuccess(data));
+      },
+      failure: (ErrorHandler error) {
+        emit(AuctionState.editAuctionError(error:  error.apiErrorModel.message));
+      },
+    );
+  }
 }

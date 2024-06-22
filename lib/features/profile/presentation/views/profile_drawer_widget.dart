@@ -41,71 +41,64 @@ class CustomProfileDrawer extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context)
-                              .pushNamed(AppRouterNames.editProfile);
-                        },
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CircleAvatar(
-                                backgroundColor: ColorManager.originalWhite,
-                                radius: 36.0,
-                                child: context
-                                            .read<ProfileCubit>()
-                                            .myProfile!
-                                            .profileInfo!
-                                            .image ==
-                                        null
-                                    ? CircleAvatar(
-                                        backgroundColor: ColorManager.darkGray,
-                                        radius: 34,
-                                        child: Align(
-                                            alignment: AlignmentDirectional
-                                                .bottomCenter,
-                                            child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadiusDirectional
-                                                        .circular(48),
-                                                child: Image.asset(
-                                                  AssetsManager.imgMaleProfile,
-                                                  height: 100,
-                                                  fit: BoxFit.cover,
-                                                ))),
-                                      )
-                                    : CircleAvatar(
-                                        radius: 34,
-                                        child: Image(
-                                          image: NetworkImage(
-                                              '${context.read<ProfileCubit>().myProfile!.profileInfo!.image}'),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CircleAvatar(
+                              backgroundColor: ColorManager.originalWhite,
+                              radius: 36.0,
+                              child: context
+                                          .read<ProfileCubit>()
+                                          .myProfile!
+                                          .profileInfo!
+                                          .profileImg ==
+                                      null
+                                  ? CircleAvatar(
+                                      backgroundColor: ColorManager.darkGray,
+                                      radius: 34,
+                                      child: Align(
+                                          alignment: AlignmentDirectional
+                                              .bottomCenter,
+                                          child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadiusDirectional
+                                                      .circular(48),
+                                              child: Image.asset(
+                                                AssetsManager.imgMaleProfile,
+                                                height: 100,
+                                                fit: BoxFit.cover,
+                                              ))),
+                                    )
+                                  : CircleAvatar(
+                                      radius: 34,
+                                      backgroundImage:  NetworkImage(
+                                            '${context.read<ProfileCubit>().myProfile!.profileInfo!.profileImg}',
                                         ),
-                                      )),
-                            const SizedBox(
-                              width: 10.0,
+                                    )),
+                          const SizedBox(
+                            width: 10.0,
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '${cubit.myProfile!.profileInfo!.name}',
+                                  style: TextStyles.textStyle21.copyWith(
+                                      color: ColorManager.originalWhite),
+                                ),
+                                const SizedBox(
+                                  height: 12,
+                                ),
+                                Text(
+                                  '${cubit.myProfile!.profileInfo!.email}',
+                                  style: TextStyles.textStyle12
+                                      .copyWith(color: ColorManager.gray),
+                                ),
+                              ],
                             ),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    '${cubit.myProfile!.profileInfo!.name}',
-                                    style: TextStyles.textStyle21.copyWith(
-                                        color: ColorManager.originalWhite),
-                                  ),
-                                  const SizedBox(
-                                    height: 12,
-                                  ),
-                                  Text(
-                                    '${cubit.myProfile!.profileInfo!.email}',
-                                    style: TextStyles.textStyle12
-                                        .copyWith(color: ColorManager.gray),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.012,
@@ -115,7 +108,10 @@ class CustomProfileDrawer extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.of(context)
+                                    .pushNamed(AppRouterNames.editProfile);
+                              },
                               child: SvgPicture.asset(
                                 AssetsManager.icDownArrow,
                                 height: 40,

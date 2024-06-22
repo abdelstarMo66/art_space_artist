@@ -32,8 +32,8 @@ class EventListItem extends StatelessWidget {
           Container(
             padding: const EdgeInsetsDirectional.symmetric(
               horizontal: 12.0,
-              vertical: 6.0,
             ),
+            height: MediaQuery.of(context).size.height * 0.09,
             width: double.infinity,
             decoration: BoxDecoration(
               color: ColorManager.lighterGray.withOpacity(0.8),
@@ -53,7 +53,7 @@ class EventListItem extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(height: 4.0),
+                const Spacer(),
                 Align(
                   alignment: Alignment.centerRight,
                   child: Text(

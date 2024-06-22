@@ -99,18 +99,22 @@ class EditProductScreen extends StatelessWidget {
               widget: Column(
                 children: [
                   PriceAndSizeWidget(
+                    hintText: productDetails.price.toString(),
                     text: 'Price',
                     controller: priceController,
                   ),
                   PriceAndSizeWidget(
+                    hintText: productDetails.height.toString(),
                     text: 'Height',
                     controller: heightController,
                   ),
                   PriceAndSizeWidget(
+                    hintText: productDetails.width.toString(),
                     text: 'Width',
                     controller: widthController,
                   ),
                   PriceAndSizeWidget(
+                    hintText: productDetails.height.toString(),
                     text: 'depth',
                     controller: depthController,
                   ),

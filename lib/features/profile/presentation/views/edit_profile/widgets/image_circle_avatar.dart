@@ -18,7 +18,7 @@ class EditProfileImage extends StatelessWidget {
               backgroundColor: ColorManager.originalWhite,
               radius: 60.0,
               child:
-                  context.read<ProfileCubit>().myProfile!.profileInfo!.image ==
+                  context.read<ProfileCubit>().myProfile!.profileInfo!.profileImg ==
                           null
                       ? CircleAvatar(
                           backgroundColor: ColorManager.darkGray,
@@ -35,10 +35,9 @@ class EditProfileImage extends StatelessWidget {
                                   ))),
                         )
                       : CircleAvatar(
-                          child: Image(
-                            image: NetworkImage(
-                                '${context.read<ProfileCubit>().myProfile!.profileInfo!.image}'),
-                          ),
+                    radius: 55,
+                          backgroundImage: NetworkImage(
+                                '${context.read<ProfileCubit>().myProfile!.profileInfo!.profileImg}'),
                         )),
           InkWell(
             onTap: () {

@@ -6,11 +6,11 @@ import '../../../../../core/constants/text_style.dart';
 class PriceAndSizeWidget extends StatelessWidget {
   final TextEditingController controller;
   final String text;
-
+  final String hintText;
   const PriceAndSizeWidget({
     super.key,
     required this.controller,
-    required this.text,
+    required this.text, required this.hintText,
   });
 
   @override
@@ -27,7 +27,7 @@ class PriceAndSizeWidget extends StatelessWidget {
         child: CreateTextForm(
           padding: 4,
           textAlign: TextAlign.center,
-          text: '0',
+          text: hintText,
           maxLength: 5,
           counterWidget: const Offstage(),
           controller: controller,

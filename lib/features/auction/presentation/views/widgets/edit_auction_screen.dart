@@ -1,6 +1,8 @@
 import 'package:art_space_artist/core/components/default_button.dart';
 import 'package:art_space_artist/features/auction/data/models/get_auction_details_response.dart';
+import 'package:art_space_artist/features/auction/presentation/view_model/auction_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../../core/components/create_text_form.dart';
 import '../../../../../core/constants/assets_manager.dart';
@@ -8,24 +10,14 @@ import '../../../../../core/constants/color_manager.dart';
 import '../../../../../core/constants/text_style.dart';
 import '../../../../products/presentation/views/widgets/custom_container_create_product.dart';
 import '../../../../products/presentation/views/widgets/price_and_size_widget.dart';
+import 'edit_auction_listener.dart';
 
 class EditAuctionScreen extends StatelessWidget {
   const EditAuctionScreen({super.key, required this.auctionInfo});
     final AuctionInfo auctionInfo;
   @override
   Widget build(BuildContext context) {
-    var titleController = TextEditingController();
-    titleController.text = auctionInfo.title.toString();
-    var descriptionController = TextEditingController();
-    descriptionController.text = auctionInfo.description.toString();
-    var priceController = TextEditingController();
-    priceController.text = auctionInfo.price.toString();
-    var materialController = TextEditingController();
-    materialController.text = auctionInfo.style.toString();
-    var beganController = TextEditingController();
-    beganController.text = auctionInfo.began.toString().split("T")[0];
-    var durationController = TextEditingController();
-    durationController.text = auctionInfo.duration.toString();
+    AuctionCubit cubit = context.read<AuctionCubit>();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit auction'),
@@ -43,8 +35,8 @@ class EditAuctionScreen extends StatelessWidget {
                     padding: 12,
                     textAlign: TextAlign.start,
                     keyboardType: TextInputType.name,
-                    text: 'Add new title',
-                    controller: titleController,
+                    text: auctionInfo.title,
+                    controller: cubit.editTitleController,
                     validator: (value) {
                       if (value == null || value.length == 3) {
                         return 'please enter name';
@@ -74,8 +66,8 @@ class EditAuctionScreen extends StatelessWidget {
                       }
                       return null;
                     },
-                    controller: descriptionController,
-                    text: 'Description....',
+                    controller: cubit.editDescriptionController,
+                    text: auctionInfo.description,
                     minLines: 5,
                     maxLength: 500,
                   ),
@@ -89,15 +81,16 @@ class EditAuctionScreen extends StatelessWidget {
               widget: Column(
                 children: [
                   PriceAndSizeWidget(
+                    hintText: auctionInfo.price.toString(),
                     text: 'Price',
-                    controller: priceController,
+                    controller: cubit.editPriceController,
                   ),
                   CreateTextForm(
                     padding: 12,
                     textAlign: TextAlign.start,
                     maxLines: 1,
-                    text: 'Began',
-                    controller: beganController,
+                    text: auctionInfo.began.split("T")[0],
+                    controller: cubit.editBeganController,
                     validator: (value) {
                       return null;
                     },
@@ -108,15 +101,16 @@ class EditAuctionScreen extends StatelessWidget {
                     ),
                   ),
                   PriceAndSizeWidget(
+                    hintText: auctionInfo.duration.toString(),
                     text: 'duration',
-                    controller: durationController,
+                    controller: cubit.editDurationController,
                   ),
                   CreateTextForm(
                     padding: 12,
                     textAlign: TextAlign.start,
                     maxLines: 1,
                     text: 'material',
-                    controller: materialController,
+                    controller: cubit.editMaterialController,
                     validator: (value) {
                       return null;
                     },
@@ -151,7 +145,10 @@ class EditAuctionScreen extends StatelessWidget {
             const SizedBox(
               height: 24.0,
             ),
-            DefaultButton(text: 'Save', onPressed: () {})
+            const EditAuctionListener(),
+            DefaultButton(text: 'Save', onPressed: () {
+              cubit.emitEditAuction(auctionId: auctionInfo.id);
+            })
           ],
         ),
       ),

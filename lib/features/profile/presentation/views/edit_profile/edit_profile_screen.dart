@@ -26,8 +26,9 @@ class EditProfileScreen extends StatelessWidget {
           listener: (context, state) {
             state.whenOrNull(
               editProfileLoading: () {
-                showDialog(context: context, builder:
-                (context) => const Center(child: CircularProgressIndicator(
+                showDialog(
+                  context: context,
+                  builder: (context) => const Center(child: CircularProgressIndicator(
                   backgroundColor: ColorManager.primaryColor,
                 ),),);
               },
@@ -38,7 +39,7 @@ class EditProfileScreen extends StatelessWidget {
               },
               editProfileError: (error) {
                 Navigator.of(context).pop();
-                showToast(msg: error, state: ToastState.success);
+                showToast(msg: error, state: ToastState.error);
               },
             );
           },

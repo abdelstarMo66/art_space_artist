@@ -16,10 +16,11 @@ class HomeCubit extends Cubit<HomeState> {
 
   HomeCubit(this._homeRepo) : super(const HomeState.initial());
 
-  int productView = 0;
+  bool available = true;
 
   List<ProductsInfo> myProducts = [];
-
+  List<ProductsInfo> availableProduct = [];
+  List<ProductsInfo> soldProduct =[];
   void emitGetMyProducts() async {
     emit(const HomeState.getProductLoading());
     final response = await _homeRepo.getMyProducts();
@@ -27,6 +28,14 @@ class HomeCubit extends Cubit<HomeState> {
       for (ProductsInfo products in data.products!.productsInfo) {
         myProducts.add(products);
       }
+      for(int i = 0; i < data.products!.productsInfo.length; i++) {
+        if(data.products!.productsInfo[i].isAvailable){
+          availableProduct.add(data.products!.productsInfo[i]);
+        }else {
+          soldProduct.add(data.products!.productsInfo[i]);
+        }
+      }
+      print(soldProduct[0]);
       emit(HomeState.getProductSuccess(data));
     }, failure: (ErrorHandler error) {
       emit(HomeState.getProductError(error: error.apiErrorModel.message));

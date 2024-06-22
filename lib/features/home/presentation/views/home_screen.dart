@@ -2,6 +2,7 @@ import 'package:art_space_artist/core/components/loading_widget.dart';
 import 'package:art_space_artist/core/constants/color_manager.dart';
 import 'package:art_space_artist/core/constants/text_style.dart';
 import 'package:art_space_artist/core/di/dependency_injection.dart';
+import 'package:art_space_artist/core/router/app_router_names.dart';
 import 'package:art_space_artist/features/home/presentation/view_model/home_cubit.dart';
 import 'package:art_space_artist/features/home/presentation/view_model/home_state.dart';
 import 'package:art_space_artist/features/home/presentation/views/widget/filter_product_widget.dart';
@@ -12,12 +13,16 @@ import 'package:art_space_artist/features/profile/presentation/views/profile_dra
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../generated/l10n.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -73,10 +78,34 @@ class HomeScreen extends StatelessWidget {
                                 style: TextStyles.textStyle20
                                     .copyWith(fontWeight: FontWeight.bold)),
                             const SizedBox(
-                              height: 8.0,
+                              height: 16.0,
                             ),
                             BlocBuilder<HomeCubit, HomeState>(
                               builder: (context, state) {
+                                if(state is GetHomeEventSuccess && cubit.allEvents.isEmpty)
+                                  {
+                                    return Padding(
+                                      padding: const EdgeInsets.symmetric(vertical: 23.0),
+                                      child: Center(
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          children: [
+                                            const Text('No events created !!', style: TextStyles.textStyle18,),
+                                            const SizedBox(
+                                              height: 15,
+                                            ),
+                                            TextButton(child:  Text('Create your first event', style: TextStyles.textStyle18.copyWith(
+                                              color: ColorManager.primaryColor,
+                                              fontWeight: FontWeight.bold,
+                                            ),), onPressed: () {
+                                              Navigator.of(context).pushNamed(AppRouterNames.createEvent);
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  }
                                 return CarouselSlider(
                                   items: cubit.allEventImages.isEmpty
                                       ? cubit.shimmerEventLoading
@@ -112,32 +141,30 @@ class HomeScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 FilterProductWidget(
-                                  text: S.of(context).all,
-                                  onTap: () {},
-                                  textStyles: cubit.productView == 0
-                                      ? TextStyles.textStyle14
-                                      : TextStyles.textStyle14Primary,
-                                  color: cubit.productView == 0
-                                      ? ColorManager.primaryColor
-                                      : ColorManager.originalWhite,
-                                ),
-                                FilterProductWidget(
                                   text: S.of(context).available,
-                                  onTap: () {},
-                                  textStyles: cubit.productView == 1
+                                  onTap: () {
+                                    setState(() {
+                                      cubit.available = true;
+                                    });
+                                  },
+                                  textStyles: cubit.available == true
                                       ? TextStyles.textStyle14
                                       : TextStyles.textStyle14Primary,
-                                  color: cubit.productView == 1
+                                  color: cubit.available == true
                                       ? ColorManager.primaryColor
                                       : ColorManager.originalWhite,
                                 ),
                                 FilterProductWidget(
                                   text: S.of(context).sold,
-                                  onTap: () {},
-                                  textStyles: cubit.productView == 2
+                                  onTap: () {
+                                    setState(() {
+                                      cubit.available = false;
+                                    });
+                                  },
+                                  textStyles: cubit.available == false
                                       ? TextStyles.textStyle14
                                       : TextStyles.textStyle14Primary,
-                                  color: cubit.productView == 2
+                                  color: cubit.available == false
                                       ? ColorManager.primaryColor
                                       : ColorManager.originalWhite,
                                 ),

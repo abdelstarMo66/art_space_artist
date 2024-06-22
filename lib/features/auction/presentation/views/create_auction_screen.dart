@@ -198,18 +198,22 @@ class _CreateAuctionScreenState extends State<CreateAuctionScreen> {
                         widget: Column(
                           children: [
                             PriceAndSizeWidget(
+                              hintText: '0',
                               text: 'Initial price',
                               controller: cubit.priceController,
                             ),
                             PriceAndSizeWidget(
+                              hintText: '0',
                               text: 'Height',
                               controller: cubit.heightController,
                             ),
                             PriceAndSizeWidget(
+                              hintText: '0',
                               text: 'Width',
                               controller: cubit.widthController,
                             ),
                             PriceAndSizeWidget(
+                              hintText: '0',
                               text: 'depth',
                               controller: cubit.depthController,
                             ),

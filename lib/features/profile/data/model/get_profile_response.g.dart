@@ -34,7 +34,8 @@ ProfileInfo _$ProfileInfoFromJson(Map<String, dynamic> json) => ProfileInfo(
       accountActive: json['accountActive'] as bool?,
       id: json['_id'] as String?,
       bio: json['bio'] as String?,
-      image: json['image'] as String?,
+      profileImg: json['profileImg'] as String?,
+      imageId: json['imageId'] as String?,
     );
 
 Map<String, dynamic> _$ProfileInfoToJson(ProfileInfo instance) =>
@@ -46,5 +47,6 @@ Map<String, dynamic> _$ProfileInfoToJson(ProfileInfo instance) =>
       'accountActive': instance.accountActive,
       'addresses': instance.addresses,
       'bio': instance.bio,
-      'image': instance.image,
+      'profileImg': instance.profileImg,
+      'imageId': instance.imageId,
     };

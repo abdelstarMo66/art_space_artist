@@ -47,7 +47,7 @@ class GetProductList extends StatelessWidget {
               mainAxisSpacing: MediaQuery.of(context).size.height * 0.05,
               crossAxisSpacing: 16.0,
           ),
-          itemBuilder: (context, index) => state is GetHomeProductLoading || cubit.myProducts.isEmpty
+          itemBuilder: (context, index) => state is GetHomeProductLoading || cubit.availableProduct.isEmpty
               ? AppCustomShimmer(
                   child: Container(
                     height: 200.0,
@@ -61,11 +61,11 @@ class GetProductList extends StatelessWidget {
                   ),
                 )
               : CustomProductViewWidget(
-                  productInfo: cubit.myProducts[index] ,
+                  productInfo: cubit.availableProduct[index] ,
                 ),
-          itemCount: cubit.myProducts.isEmpty
+          itemCount: cubit.availableProduct.isEmpty
               ? 6
-              : cubit.myProducts.length,
+              : cubit.availableProduct.length,
         ),
       );
       }
