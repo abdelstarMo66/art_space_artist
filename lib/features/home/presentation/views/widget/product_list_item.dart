@@ -59,12 +59,10 @@ class CustomProductViewWidget extends StatelessWidget {
                                 ColorManager.primaryColor, BlendMode.srcIn),
                           ),
                           const Spacer(),
-                          Expanded(
-                            child: Text(
-                              productInfo.category,
-                              style: TextStyles.textStyle12
-                                  .copyWith(color: ColorManager.originalBlack, overflow: TextOverflow.ellipsis),
-                            ),
+                          Text(
+                            productInfo.category,
+                            style: TextStyles.textStyle12
+                                .copyWith(color: ColorManager.originalBlack, overflow: TextOverflow.ellipsis),
                           ),
                         ],
                       ),

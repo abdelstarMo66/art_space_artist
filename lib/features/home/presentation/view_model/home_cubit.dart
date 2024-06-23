@@ -35,7 +35,6 @@ class HomeCubit extends Cubit<HomeState> {
           soldProduct.add(data.products!.productsInfo[i]);
         }
       }
-      print(soldProduct[0]);
       emit(HomeState.getProductSuccess(data));
     }, failure: (ErrorHandler error) {
       emit(HomeState.getProductError(error: error.apiErrorModel.message));

@@ -20,20 +20,26 @@ class EventListItem extends StatelessWidget {
       child: Stack(
         alignment: AlignmentDirectional.bottomCenter,
         children: [
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(eventInfo.coverImage),
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadiusDirectional.circular(18.0),
+          // Container(
+          //   decoration: BoxDecoration(
+          //     image: DecorationImage(
+          //       image: NetworkImage(eventInfo.coverImage),
+          //       fit: BoxFit.cover,
+          //     ),
+          //   ),
+          // ),
+          ClipRRect(
+            borderRadius: BorderRadiusDirectional.circular(18.0),
+            child: Image.network(
+              eventInfo.coverImage,
+              width: double.maxFinite,
+              fit: BoxFit.cover,
+              // height: 220.0,
             ),
           ),
           Container(
             padding: const EdgeInsetsDirectional.symmetric(
-              horizontal: 12.0,
-            ),
-            height: MediaQuery.of(context).size.height * 0.09,
+                horizontal: 16.0, vertical: 12.0),
             width: double.infinity,
             decoration: BoxDecoration(
               color: ColorManager.lighterGray.withOpacity(0.8),
@@ -45,15 +51,27 @@ class EventListItem extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  eventInfo.title,
-                  style: TextStyles.textStyle18.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+                Row(
+                  children: [
+                    Text(
+                      eventInfo.title,
+                      style: TextStyles.textStyle18.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const Spacer(),
+                    Text(
+                      "${eventInfo.duration} days",
+                      style: TextStyles.textStyle14Primary.copyWith(
+                        fontWeight: FontWeight.w500,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
                 ),
-                const Spacer(),
                 Align(
                   alignment: Alignment.centerRight,
                   child: Text(

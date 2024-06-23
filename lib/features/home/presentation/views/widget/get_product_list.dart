@@ -42,9 +42,9 @@ class GetProductList extends StatelessWidget {
         child: GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisSpacing: MediaQuery.of(context).size.height * 0.05,
+              mainAxisSpacing: 12.0,
               crossAxisSpacing: 16.0,
           ),
           itemBuilder: (context, index) => state is GetHomeProductLoading || cubit.availableProduct.isEmpty

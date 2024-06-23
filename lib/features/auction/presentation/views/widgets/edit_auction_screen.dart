@@ -4,17 +4,21 @@ import 'package:art_space_artist/features/auction/presentation/view_model/auctio
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../../core/components/create_text_form.dart';
 import '../../../../../core/constants/assets_manager.dart';
 import '../../../../../core/constants/color_manager.dart';
 import '../../../../../core/constants/text_style.dart';
 import '../../../../products/presentation/views/widgets/custom_container_create_product.dart';
 import '../../../../products/presentation/views/widgets/price_and_size_widget.dart';
+import '../../../data/models/edit_auction_request_body.dart';
 import 'edit_auction_listener.dart';
 
 class EditAuctionScreen extends StatelessWidget {
   const EditAuctionScreen({super.key, required this.auctionInfo});
-    final AuctionInfo auctionInfo;
+
+  final AuctionInfo auctionInfo;
+
   @override
   Widget build(BuildContext context) {
     AuctionCubit cubit = context.read<AuctionCubit>();
@@ -22,7 +26,11 @@ class EditAuctionScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Edit auction'),
         leadingWidth: 35,
-        leading: SvgPicture.asset(AssetsManager.icBackArrow),
+        leading: GestureDetector(
+            onTap: () => Navigator.of(context).pop(),
+            child: SvgPicture.asset(
+              AssetsManager.icBackArrow,
+            ),),
       ),
       body: SafeArea(
         child: ListView(
@@ -139,16 +147,42 @@ class EditAuctionScreen extends StatelessWidget {
                 AssetsManager.icImage,
                 height: MediaQuery.of(context).size.height * 0.06,
                 colorFilter: const ColorFilter.mode(
-                  ColorManager.primaryColor, BlendMode.srcIn,),
+                  ColorManager.primaryColor,
+                  BlendMode.srcIn,
+                ),
               ),
             ),
             const SizedBox(
               height: 24.0,
             ),
             const EditAuctionListener(),
-            DefaultButton(text: 'Save', onPressed: () {
-              cubit.emitEditAuction(auctionId: auctionInfo.id);
-            })
+            DefaultButton(
+                text: 'Save',
+                onPressed: () {
+                  cubit.emitEditAuction(
+                    auctionId: auctionInfo.id,
+                    editAuctionRequestBody: EditAuctionRequestBody(
+                      title: cubit.editTitleController.text == ""
+                          ? auctionInfo.title
+                          : cubit.editTitleController.text,
+                      description: cubit.editDescriptionController.text == ""
+                          ? auctionInfo.description
+                          : cubit.editDescriptionController.text,
+                      material: cubit.editMaterialController.text == ""
+                          ? auctionInfo.material
+                          : cubit.editMaterialController.text,
+                      duration: cubit.editDurationController.text == ""
+                          ? auctionInfo.duration.toString()
+                          : cubit.editDurationController.text,
+                      price: cubit.editPriceController.text == ""
+                          ? auctionInfo.price.toString()
+                          : cubit.editPriceController.text,
+                      began: cubit.editBeganController.text == ""
+                          ? auctionInfo.began
+                          : cubit.editBeganController.text,
+                    ),
+                  );
+                })
           ],
         ),
       ),

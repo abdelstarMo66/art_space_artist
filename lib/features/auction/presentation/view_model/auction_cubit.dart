@@ -74,8 +74,8 @@ class AuctionCubit extends Cubit<AuctionState> {
       'category': categoryId,
       'subject': subjectId,
       'style': styleId,
-      'duration' : durationController.text,
-      'began' : beganController.text,
+      'duration': durationController.text,
+      'began': beganController.text,
     });
 
     data.files.add(
@@ -112,7 +112,8 @@ class AuctionCubit extends Cubit<AuctionState> {
         emit(AuctionState.createAuctionSuccess(data));
       },
       failure: (ErrorHandler error) {
-        emit(AuctionState.createAuctionError(error: error.apiErrorModel.message));
+        emit(AuctionState.createAuctionError(
+            error: error.apiErrorModel.message));
       },
     );
   }
@@ -129,7 +130,7 @@ class AuctionCubit extends Cubit<AuctionState> {
         emit(AuctionState.getStylesSuccess(data));
       },
       failure: (error) {
-        emit(AuctionState.getStylesError(error:  error.apiErrorModel.message));
+        emit(AuctionState.getStylesError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -146,7 +147,7 @@ class AuctionCubit extends Cubit<AuctionState> {
         emit(AuctionState.getSubjectsSuccess(data));
       },
       failure: (ErrorHandler error) {
-        emit(AuctionState.getSubjectsError(error:  error.apiErrorModel.message));
+        emit(AuctionState.getSubjectsError(error: error.apiErrorModel.message));
       },
     );
   }
@@ -163,7 +164,8 @@ class AuctionCubit extends Cubit<AuctionState> {
         emit(AuctionState.getCategoriesSuccess(data));
       },
       failure: (ErrorHandler error) {
-        emit(AuctionState.getCategoriesError(error:  error.apiErrorModel.message));
+        emit(AuctionState.getCategoriesError(
+            error: error.apiErrorModel.message));
       },
     );
   }
@@ -179,36 +181,35 @@ class AuctionCubit extends Cubit<AuctionState> {
   void emitGetAllAuctions() async {
     emit(const AuctionState.getAllAuctionsLoading());
     final response = await _auctionRepo.getAllAuction();
-    response.when(
-        success: (data) {
+    response.when(success: (data) {
       for (AuctionsInformations auctions in data.auctions.actionsInfo) {
         myAuctions.add(auctions);
       }
       emit(AuctionState.getAllAuctionsSuccess(data));
     }, failure: (ErrorHandler error) {
-      emit(AuctionState.getAllAuctionsError(error:  error.apiErrorModel.message));
+      emit(
+          AuctionState.getAllAuctionsError(error: error.apiErrorModel.message));
     });
   }
 
-
-  AuctionInfo ?auctionInfo;
+  AuctionInfo? auctionInfo;
 
   void emitGetDetailsAuction({required String auctionId}) async {
     emit(const AuctionState.getAuctionDetailsLoading());
-    final response = await _auctionRepo.getAuctionDetails(
-        auctionId: auctionId);
+    final response = await _auctionRepo.getAuctionDetails(auctionId: auctionId);
     response.when(
       success: (data) {
         auctionInfo = data.auctionInfo;
         emit(AuctionState.getAuctionDetailsSuccess(data));
       },
       failure: (ErrorHandler error) {
-        emit(AuctionState.getAuctionDetailsError(error:  error.apiErrorModel.message));
+        emit(AuctionState.getAuctionDetailsError(
+            error: error.apiErrorModel.message));
       },
     );
   }
 
-  void emitDeleteProduct({required String auctionId,required context}) async {
+  void emitDeleteProduct({required String auctionId, required context}) async {
     emit(const AuctionState.deleteAuctionLoading());
     final response = await _auctionRepo.deleteAuction(
       auctionId: auctionId,
@@ -230,7 +231,8 @@ class AuctionCubit extends Cubit<AuctionState> {
         emit(AuctionState.deleteAuctionSuccess(data));
       },
       failure: (ErrorHandler error) {
-        emit(AuctionState.deleteAuctionError(error:  error.apiErrorModel.message));
+        emit(AuctionState.deleteAuctionError(
+            error: error.apiErrorModel.message));
       },
     );
   }
@@ -242,7 +244,7 @@ class AuctionCubit extends Cubit<AuctionState> {
         initialDate: DateTime.now(),
         lastDate: DateTime(2030));
 
-    if(picked != null) {
+    if (picked != null) {
       beganController.text = picked.toString().split(" ")[0];
     }
   }
@@ -252,35 +254,24 @@ class AuctionCubit extends Cubit<AuctionState> {
   TextEditingController editTitleController = TextEditingController();
   TextEditingController editDescriptionController = TextEditingController();
   TextEditingController editPriceController = TextEditingController();
-  TextEditingController editMaterialController  = TextEditingController();
+  TextEditingController editMaterialController = TextEditingController();
   TextEditingController editBeganController = TextEditingController();
   TextEditingController editDurationController = TextEditingController();
 
-
-  void emitEditAuction({required String auctionId}) async {
+  void emitEditAuction(
+      {required String auctionId,
+      required EditAuctionRequestBody editAuctionRequestBody}) async {
     emit(const AuctionState.editAuctionLoading());
     final response = await _auctionRepo.editeAuction(
       auctionId: auctionId,
-      editAuctionRequestBody: EditAuctionRequestBody(
-          title: editTitleController.text == "" ?
-          auctionInfo!.title : editTitleController.text,
-          description: editDescriptionController.text == "" ?
-          auctionInfo!.description : editDescriptionController.text,
-          material:editMaterialController.text == "" ?
-          auctionInfo!.material : editMaterialController.text,
-          duration: editDurationController.text == "" ?
-          auctionInfo!.duration.toString() : editDurationController.text,
-          price: editPriceController.text == "" ?
-          auctionInfo!.price.toString() : editPriceController.text,
-          began:editBeganController.text == "" ?
-          auctionInfo!.began : editBeganController.text,
-    ));
+      editAuctionRequestBody: editAuctionRequestBody,
+    );
     response.when(
       success: (data) {
         emit(AuctionState.editAuctionSuccess(data));
       },
       failure: (ErrorHandler error) {
-        emit(AuctionState.editAuctionError(error:  error.apiErrorModel.message));
+        emit(AuctionState.editAuctionError(error: error.apiErrorModel.message));
       },
     );
   }

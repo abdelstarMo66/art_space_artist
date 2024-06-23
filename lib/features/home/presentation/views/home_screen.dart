@@ -47,36 +47,40 @@ class _HomeScreenState extends State<HomeScreen> {
               drawer: const CustomProfileDrawer(),
               appBar: AppBar(
                 scrolledUnderElevation: 0.0,
-                title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      S.of(context).welcome,
-                      style: TextStyles.textStyle18,
-                    ),
-                    Text(
-                      '${context.read<ProfileCubit>().myProfile!.profileInfo!.name}',
-                      style: TextStyles.textStyle18
-                          .copyWith(fontWeight: FontWeight.bold),
-                    ),
-                  ],
+                centerTitle: true,
+                title: Text(
+                  "${S.of(context).welcome} ${context.read<ProfileCubit>().myProfile!.profileInfo!.name!.split(" ")[0]}",
+                  style: TextStyles.textStyle18.copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
               body: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                        top: 10.0,
-                        bottom: 0.0,
-                        left: 10.0,
-                      ),
+                      padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 12.0),
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Your exhibitions',
-                                style: TextStyles.textStyle20
-                                    .copyWith(fontWeight: FontWeight.bold)),
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                              decoration: const BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: ColorManager.primaryColor,
+                                    width: 5.0,
+                                  ),
+                                ),
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(12.0),
+                                  bottomRight: Radius.circular(12.0),
+                                ),
+                              ),
+                              child: Text(
+                                'Your exhibitions',
+                                style: TextStyles.textStyle24
+                                    .copyWith(color: ColorManager.originalBlack),
+                              ),
+                            ),
                             const SizedBox(
                               height: 16.0,
                             ),
@@ -116,8 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     autoPlayCurve: Curves.elasticInOut,
                                     scrollPhysics:
                                         const BouncingScrollPhysics(),
-                                    height: MediaQuery.of(context).size.height *
-                                        0.23,
+                                    // height: 225.0,
                                     enableInfiniteScroll: false,
                                     enlargeCenterPage: true,
                                     enlargeFactor: 0.8,
@@ -127,49 +130,64 @@ class _HomeScreenState extends State<HomeScreen> {
                               },
                             ),
                             const SizedBox(
-                              height: 12.0,
+                              height: 22.0,
                             ),
-                            Text(
-                             'Your artworks',
-                                style: TextStyles.textStyle20
-                                    .copyWith(fontWeight: FontWeight.bold),
-                            ),
-                            const SizedBox(
-                              height: 15.0,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                FilterProductWidget(
-                                  text: S.of(context).available,
-                                  onTap: () {
-                                    setState(() {
-                                      cubit.available = true;
-                                    });
-                                  },
-                                  textStyles: cubit.available == true
-                                      ? TextStyles.textStyle14
-                                      : TextStyles.textStyle14Primary,
-                                  color: cubit.available == true
-                                      ? ColorManager.primaryColor
-                                      : ColorManager.originalWhite,
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                              decoration: const BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: ColorManager.primaryColor,
+                                    width: 5.0,
+                                  ),
                                 ),
-                                FilterProductWidget(
-                                  text: S.of(context).sold,
-                                  onTap: () {
-                                    setState(() {
-                                      cubit.available = false;
-                                    });
-                                  },
-                                  textStyles: cubit.available == false
-                                      ? TextStyles.textStyle14
-                                      : TextStyles.textStyle14Primary,
-                                  color: cubit.available == false
-                                      ? ColorManager.primaryColor
-                                      : ColorManager.originalWhite,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(12.0),
+                                  bottomRight: Radius.circular(12.0),
                                 ),
-                              ],
+                              ),
+                              child: Text(
+                                'Your artworks',
+                                style: TextStyles.textStyle24
+                                    .copyWith(color: ColorManager.originalBlack),
+                              ),
                             ),
+                            // const SizedBox(
+                            //   height: 15.0,
+                            // ),
+                            // Row(
+                            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            //   children: [
+                            //     FilterProductWidget(
+                            //       text: S.of(context).available,
+                            //       onTap: () {
+                            //         setState(() {
+                            //           cubit.available = true;
+                            //         });
+                            //       },
+                            //       textStyles: cubit.available == true
+                            //           ? TextStyles.textStyle14
+                            //           : TextStyles.textStyle14Primary,
+                            //       color: cubit.available == true
+                            //           ? ColorManager.primaryColor
+                            //           : ColorManager.originalWhite,
+                            //     ),
+                            //     FilterProductWidget(
+                            //       text: S.of(context).sold,
+                            //       onTap: () {
+                            //         setState(() {
+                            //           cubit.available = false;
+                            //         });
+                            //       },
+                            //       textStyles: cubit.available == false
+                            //           ? TextStyles.textStyle14
+                            //           : TextStyles.textStyle14Primary,
+                            //       color: cubit.available == false
+                            //           ? ColorManager.primaryColor
+                            //           : ColorManager.originalWhite,
+                            //     ),
+                            //   ],
+                            // ),
                             const SizedBox(
                               height: 12.0,
                             ),
