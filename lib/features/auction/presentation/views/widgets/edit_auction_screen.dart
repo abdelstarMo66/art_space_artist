@@ -132,27 +132,6 @@ class EditAuctionScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 12.0,
-            ),
-            ListTile(
-              //onTap: () => Navigator.of(context).pushNamed(AppRouterNames.editProductImages, arguments: productDetails.coverImage.image),
-              title: Text(
-                'Edit auction images',
-                style: TextStyles.textStyle18.copyWith(
-                  color: ColorManager.originalBlack,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              leading: SvgPicture.asset(
-                AssetsManager.icImage,
-                height: MediaQuery.of(context).size.height * 0.06,
-                colorFilter: const ColorFilter.mode(
-                  ColorManager.primaryColor,
-                  BlendMode.srcIn,
-                ),
-              ),
-            ),
-            const SizedBox(
               height: 24.0,
             ),
             const EditAuctionListener(),
@@ -172,8 +151,8 @@ class EditAuctionScreen extends StatelessWidget {
                           ? auctionInfo.material
                           : cubit.editMaterialController.text,
                       duration: cubit.editDurationController.text == ""
-                          ? auctionInfo.duration.toString()
-                          : cubit.editDurationController.text,
+                          ? auctionInfo.duration
+                          : cubit.editDurationController.hashCode,
                       price: cubit.editPriceController.text == ""
                           ? auctionInfo.price.toString()
                           : cubit.editPriceController.text,

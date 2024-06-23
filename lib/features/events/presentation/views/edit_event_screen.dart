@@ -17,10 +17,6 @@ class EditEventScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cubit = context.read<EventCubit>();
-    TextEditingController descriptionController = TextEditingController(text: eventInfo.description);
-        TextEditingController beganController = TextEditingController(text: eventInfo.began.split("T")[0]);
-        TextEditingController titleController = TextEditingController(text: eventInfo.title);
-        TextEditingController durationController = TextEditingController(text: eventInfo.duration.toString());
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit event'),
@@ -36,7 +32,7 @@ class EditEventScreen extends StatelessWidget {
           children: [
             CreateTextForm(
               text: 'Title',
-              controller: titleController,
+              controller: cubit.editTitleController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter title';
@@ -50,7 +46,7 @@ class EditEventScreen extends StatelessWidget {
             const SizedBox(height: 20.0),
             CreateTextForm(
               text: 'Description',
-              controller: descriptionController,
+              controller: cubit.editDescriptionController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter description';
@@ -66,7 +62,7 @@ class EditEventScreen extends StatelessWidget {
               readOnly: true,
               onTap: () => cubit.selectDate(context: context),
               text: 'Began date',
-              controller: beganController,
+              controller: cubit.editBeganController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter began date';
@@ -80,7 +76,7 @@ class EditEventScreen extends StatelessWidget {
             const SizedBox(height: 20.0),
             CreateTextForm(
               text: 'Duration',
-              controller: durationController,
+              controller: cubit.editDurationController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter the duration';
@@ -101,10 +97,19 @@ class EditEventScreen extends StatelessWidget {
                     cubit.emitEditEvent(
                       eventId: eventInfo.id,
                       editEventRequestBody: EditEventRequestBody(
-                        title: titleController.text,
-                        description: descriptionController.text,
-                        duration: durationController.hashCode,
-                        began: beganController.text)
+                        title: cubit.editTitleController.text == ""
+                            ? eventInfo.title
+                            : cubit.editTitleController.text,
+                        description: cubit.editDescriptionController.text == ""
+                            ? eventInfo.description
+                            : cubit.editDescriptionController.text,
+                        began: cubit.editBeganController.text == ""
+                            ? eventInfo.began
+                            : cubit.editBeganController.text,
+                        duration: cubit.editDurationController.text == ""
+                            ? eventInfo.duration :
+                        cubit.editDurationController.hashCode,
+                      )
                   );
                   }
             }),

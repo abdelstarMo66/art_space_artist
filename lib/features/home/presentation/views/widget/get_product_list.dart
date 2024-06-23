@@ -16,7 +16,7 @@ class GetProductList extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(builder: (context, state) {
       HomeCubit cubit = context.read<HomeCubit>();
-      if (cubit.myProducts.isEmpty && state is GetHomeProductSuccess) {
+      if (cubit.availableProduct.isEmpty) {
         return Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,7 +47,7 @@ class GetProductList extends StatelessWidget {
               mainAxisSpacing: 12.0,
               crossAxisSpacing: 16.0,
           ),
-          itemBuilder: (context, index) => state is GetHomeProductLoading || cubit.availableProduct.isEmpty
+          itemBuilder: (context, index) => state is GetHomeProductLoading ||state is GetHomeEventLoading
               ? AppCustomShimmer(
                   child: Container(
                     height: 200.0,
@@ -61,11 +61,11 @@ class GetProductList extends StatelessWidget {
                   ),
                 )
               : CustomProductViewWidget(
-                  productInfo: cubit.availableProduct[index] ,
+                  productInfo: cubit.myProducts[index] ,
                 ),
-          itemCount: cubit.availableProduct.isEmpty
+          itemCount: cubit.myProducts.isEmpty
               ? 6
-              : cubit.availableProduct.length,
+              : cubit.myProducts.length,
         ),
       );
       }

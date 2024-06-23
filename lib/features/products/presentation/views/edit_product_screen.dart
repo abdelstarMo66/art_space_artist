@@ -1,6 +1,7 @@
 import 'package:art_space_artist/core/components/create_text_form.dart';
 import 'package:art_space_artist/core/constants/assets_manager.dart';
 import 'package:art_space_artist/core/router/app_router_names.dart';
+import 'package:art_space_artist/features/products/data/models/edit_product_request_body.dart';
 import 'package:art_space_artist/features/products/data/models/get_product_details_response.dart';
 import 'package:art_space_artist/features/products/presentation/view_model/product_cubit.dart';
 import 'package:art_space_artist/features/products/presentation/views/widgets/custom_container_create_product.dart';
@@ -18,18 +19,8 @@ class EditProductScreen extends StatelessWidget {
   final ProductDetails productDetails;
   @override
   Widget build(BuildContext context) {
-    var titleController = TextEditingController();
-    titleController.text = productDetails.title.toString();
-    var descriptionController = TextEditingController();
-    descriptionController.text = productDetails.description.toString();
-    var priceController = TextEditingController();
-    priceController.text = productDetails.price.toString();
-    var heightController = TextEditingController();
-    heightController.text = productDetails.height.toString();
-    var widthController = TextEditingController();
-    widthController.text = productDetails.width.toString();
-    var depthController = TextEditingController();
-    depthController.text = productDetails.depth.toString();
+
+    ProductsCubit cubit = context.read<ProductsCubit>();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit product'),
@@ -46,7 +37,7 @@ class EditProductScreen extends StatelessWidget {
                     textAlign: TextAlign.start,
                     keyboardType: TextInputType.name,
                     text: 'Add new title',
-                    controller: titleController,
+                    controller: cubit.editTitleController,
                     validator: (value) {
                       if (value == null || value.length == 3) {
                         return 'please enter name';
@@ -76,7 +67,7 @@ class EditProductScreen extends StatelessWidget {
                       }
                       return null;
                     },
-                    controller: descriptionController,
+                    controller: cubit.editDescriptionController,
                     text: 'Description....',
                     minLines: 5,
                     maxLength: 500,
@@ -101,43 +92,24 @@ class EditProductScreen extends StatelessWidget {
                   PriceAndSizeWidget(
                     hintText: productDetails.price.toString(),
                     text: 'Price',
-                    controller: priceController,
+                    controller: cubit.editPriceController,
                   ),
                   PriceAndSizeWidget(
                     hintText: productDetails.height.toString(),
                     text: 'Height',
-                    controller: heightController,
+                    controller: cubit.editHeightController,
                   ),
                   PriceAndSizeWidget(
                     hintText: productDetails.width.toString(),
                     text: 'Width',
-                    controller: widthController,
+                    controller: cubit.editWidthController,
                   ),
                   PriceAndSizeWidget(
                     hintText: productDetails.height.toString(),
                     text: 'depth',
-                    controller: depthController,
+                    controller: cubit.editDepthController,
                   ),
                 ],
-              ),
-            ),
-            const SizedBox(
-              height: 12.0,
-            ),
-            ListTile(
-              onTap: () => Navigator.of(context).pushNamed(AppRouterNames.editProductImages, arguments: productDetails.coverImage.image),
-              title: Text(
-                'Edit product images',
-                style: TextStyles.textStyle18.copyWith(
-                  color: ColorManager.originalBlack,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              leading: SvgPicture.asset(
-                AssetsManager.icImage,
-                height: MediaQuery.of(context).size.height * 0.06,
-                colorFilter: const ColorFilter.mode(
-                    ColorManager.primaryColor, BlendMode.srcIn,),
               ),
             ),
             const SizedBox(
@@ -147,12 +119,25 @@ class EditProductScreen extends StatelessWidget {
               text: 'Update',
               onPressed: () => context.read<ProductsCubit>().emitEditProduct(
                   id: productDetails.id,
-                  title: titleController.text,
-                  description: descriptionController.text,
-                  price: priceController.text,
-                  height: heightController.text,
-                  weight: widthController.text,
-                  depth: depthController.text
+                  editProductRequestBody: EditProductRequestBody(
+                      title: cubit.editTitleController.text == ""
+                          ? productDetails.title
+                          : cubit.editTitleController.text,
+                      description: cubit.editDescriptionController.text == ""
+                          ? productDetails.title
+                          : cubit.editDescriptionController.text,
+                      price: cubit.editPriceController.text == ""
+                          ? productDetails.title
+                          : cubit.editPriceController.text,
+                      height: cubit.editHeightController.text == ""
+                      ? productDetails.title
+                          : cubit.editHeightController.text,
+                      weight: cubit.editWidthController.text == ""
+                          ? productDetails.title
+                          : cubit.editWidthController.text,
+                      depth: cubit.editDepthController.text == ""
+                          ? productDetails.title
+                          : cubit.editDepthController.text,)
               ),
             ),
             const EditProductListener()

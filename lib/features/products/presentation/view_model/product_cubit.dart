@@ -17,7 +17,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
-
 import '../../data/models/get_product_details_response.dart';
 import '../../data/repo/repo.dart';
 
@@ -285,26 +284,23 @@ class ProductsCubit extends Cubit<ProductsState> {
     }
   }
 
+  TextEditingController editTitleController = TextEditingController();
+  TextEditingController editDescriptionController = TextEditingController();
+  TextEditingController editPriceController = TextEditingController();
+  TextEditingController editWidthController = TextEditingController();
+  TextEditingController editHeightController = TextEditingController();
+  TextEditingController editDepthController = TextEditingController();
+
+
   void emitEditProduct({
+    required EditProductRequestBody editProductRequestBody,
     required String id,
-    required String title,
-    required String description,
-    required String price,
-    required String height,
-    required String weight,
-    required String depth,
+
 }) async {
     emit(const ProductsState.editProductLoading());
     final response = await _productsRepo.editProduct(
         productId: id,
-        editProductRequestBody: EditProductRequestBody(
-            title: title,
-            description: description,
-            price: price,
-            height: height,
-            weight: weight,
-            depth: depth
-        )
+        editProductRequestBody: editProductRequestBody,
     );
     response.when(
       success: (data) {

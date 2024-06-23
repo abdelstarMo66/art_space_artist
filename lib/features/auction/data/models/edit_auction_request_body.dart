@@ -6,7 +6,7 @@ class EditAuctionRequestBody {
   String description;
   String material;
   String price;
-  String duration;
+  int duration;
   String began;
 
   EditAuctionRequestBody({

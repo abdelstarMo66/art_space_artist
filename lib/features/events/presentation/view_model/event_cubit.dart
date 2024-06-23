@@ -107,6 +107,10 @@ class EventCubit extends Cubit<EventState> {
       },
     );
   }
+  TextEditingController editTitleController = TextEditingController();
+  TextEditingController editDescriptionController = TextEditingController();
+  TextEditingController editBeganController = TextEditingController();
+  TextEditingController editDurationController = TextEditingController();
 
   Future<void> emitEditEvent({
     required EditEventRequestBody editEventRequestBody,

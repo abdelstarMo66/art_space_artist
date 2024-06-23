@@ -39,19 +39,14 @@ class EditProfileImage extends StatelessWidget {
                           backgroundImage: NetworkImage(
                                 '${context.read<ProfileCubit>().myProfile!.profileInfo!.profileImg}'),
                         )),
-          InkWell(
-            onTap: () {
-              print('dsfffd');
-            },
-            child: CircleAvatar(
-              backgroundColor: ColorManager.lightGray,
-              radius: 18,
-              child: SvgPicture.asset(
-                AssetsManager.icEdit,
-                height: 30,
-                colorFilter: const ColorFilter.mode(
-                    ColorManager.secondaryColor, BlendMode.srcIn),
-              ),
+          CircleAvatar(
+            backgroundColor: ColorManager.lightGray,
+            radius: 18,
+            child: SvgPicture.asset(
+              AssetsManager.icEdit,
+              height: 30,
+              colorFilter: const ColorFilter.mode(
+                  ColorManager.secondaryColor, BlendMode.srcIn),
             ),
           ),
         ],

@@ -13,7 +13,7 @@ EditAuctionRequestBody _$EditAuctionRequestBodyFromJson(
       description: json['description'] as String,
       material: json['material'] as String,
       price: json['price'] as String,
-      duration: json['duration'] as String,
+      duration: (json['duration'] as num).toInt(),
       began: json['began'] as String,
     );
 
